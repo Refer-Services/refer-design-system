@@ -5,11 +5,6 @@ import { rimraf } from "rimraf"
 import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
 
-import { blocks } from "@/www/registry/registry-blocks"
-import { charts } from "@/www/registry/registry-charts"
-import { lib } from "@/www/registry/registry-lib"
-import { ui } from "@/www/registry/registry-ui"
-
 const DEPRECATED_ITEMS = ["toast"]
 
 const registry = {
@@ -26,10 +21,6 @@ const registry = {
         cssVars: {},
         files: [],
       },
-      ...ui,
-      ...blocks,
-      ...charts,
-      ...lib,
       {
         name: "use-mobile",
         type: "registry:hook",
