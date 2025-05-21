@@ -46,12 +46,16 @@ import { TextareaDemo } from "@/components/textarea-demo"
 import { ToggleDemo } from "@/components/toggle-demo"
 import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
+import { TypographyDemo } from "@/components/typography-demo"
 
 export default function SinkPage() {
   return (
     <div className="@container grid flex-1 gap-4 p-4">
-      <ComponentWrapper name="chart" className="w-full">
+      {/* <ComponentWrapper name="chart" className="w-full">
         <ChartDemo />
+      </ComponentWrapper> */}
+      <ComponentWrapper name="Typography">
+        <TypographyDemo />
       </ComponentWrapper>
       <ComponentWrapper name="accordion">
         <AccordionDemo />
