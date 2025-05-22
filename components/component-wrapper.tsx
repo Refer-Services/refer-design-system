@@ -16,7 +16,7 @@ export function ComponentWrapper({
         id={name}
         data-name={name.toLowerCase()}
         className={cn(
-          "flex w-full scroll-mt-16 flex-col rounded-lg border",
+          "flex w-full scroll-mt-16 flex-col rounded-lg border bg-card",
           className
         )}
         {...props}
