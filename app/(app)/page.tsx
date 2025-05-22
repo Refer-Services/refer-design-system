@@ -47,6 +47,7 @@ import { ToggleDemo } from "@/components/toggle-demo"
 import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
 import { TypographyDemo } from "@/components/typography-demo"
+import { ShadowDemo } from "@/components/shadow-demo"
 
 export default function SinkPage() {
   return (
@@ -56,6 +57,9 @@ export default function SinkPage() {
       </ComponentWrapper> */}
       <ComponentWrapper name="Typography">
         <TypographyDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Shadow">
+        <ShadowDemo />
       </ComponentWrapper>
       <ComponentWrapper name="accordion">
         <AccordionDemo />

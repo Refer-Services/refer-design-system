@@ -6,19 +6,29 @@ export function ButtonDemo() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button>Button</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="destructive">Destructive</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="link">Link</Button>
-        <Button variant="outline">
+        <Button size="xs">xSmall</Button>
+        <Button variant="outline" size="xs">
+          Outline
+        </Button>
+        <Button variant="ghost" size="xs">
+          Ghost
+        </Button>
+        <Button variant="destructive" size="xs">
+          Destructive
+        </Button>
+        <Button variant="secondary" size="xs">
+          Secondary
+        </Button>
+        <Button variant="link" size="xs">
+          Link
+        </Button>
+        <Button variant="outline" size="xs">
           <SendIcon /> Send
         </Button>
-        <Button variant="outline">
+        <Button variant="outline" size="xs">
           Learn More <ArrowRightIcon />
         </Button>
-        <Button disabled variant="outline">
+        <Button disabled size="xs" variant="outline">
           <Loader2Icon className="animate-spin" />
           Please wait
         </Button>
@@ -47,6 +57,24 @@ export function ButtonDemo() {
           Learn More <ArrowRightIcon />
         </Button>
         <Button disabled size="sm" variant="outline">
+          <Loader2Icon className="animate-spin" />
+          Please wait
+        </Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 md:flex-row">
+        <Button>Button</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="outline">
+          <SendIcon /> Send
+        </Button>
+        <Button variant="outline">
+          Learn More <ArrowRightIcon />
+        </Button>
+        <Button disabled variant="outline">
           <Loader2Icon className="animate-spin" />
           Please wait
         </Button>
