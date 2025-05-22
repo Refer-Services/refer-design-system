@@ -21,8 +21,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/new-york-v4/ui/avatar"
-import { Button } from "@/registry/new-york-v4/ui/button"
+} from "@/registry/refer/ui/avatar"
+import { Button } from "@/registry/refer/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -39,7 +39,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/registry/new-york-v4/ui/dropdown-menu"
+} from "@/registry/refer/ui/dropdown-menu"
 
 export function DropdownMenuDemo() {
   return (

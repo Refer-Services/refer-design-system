@@ -4,7 +4,7 @@ import { cookies } from "next/headers"
 import { fontVariables } from "@/lib/fonts"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/registry/new-york-v4/ui/sonner"
+import { Toaster } from "@/registry/refer/ui/sonner"
 import { siteConfig } from "@/config/site"
 
 import "./globals.css"

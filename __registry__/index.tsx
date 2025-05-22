@@ -28,7 +28,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/accordion.tsx")
+      const mod = await import("@/registry/refer/ui/accordion.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -51,7 +51,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/alert.tsx")
+      const mod = await import("@/registry/refer/ui/alert.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -74,7 +74,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/alert-dialog.tsx")
+      const mod = await import("@/registry/refer/ui/alert-dialog.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -97,7 +97,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/aspect-ratio.tsx")
+      const mod = await import("@/registry/refer/ui/aspect-ratio.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -120,7 +120,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/avatar.tsx")
+      const mod = await import("@/registry/refer/ui/avatar.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -143,7 +143,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/badge.tsx")
+      const mod = await import("@/registry/refer/ui/badge.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -166,7 +166,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/breadcrumb.tsx")
+      const mod = await import("@/registry/refer/ui/breadcrumb.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -189,7 +189,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/button.tsx")
+      const mod = await import("@/registry/refer/ui/button.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -212,7 +212,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/calendar.tsx")
+      const mod = await import("@/registry/refer/ui/calendar.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -235,7 +235,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/card.tsx")
+      const mod = await import("@/registry/refer/ui/card.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -258,7 +258,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/carousel.tsx")
+      const mod = await import("@/registry/refer/ui/carousel.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -281,7 +281,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/chart.tsx")
+      const mod = await import("@/registry/refer/ui/chart.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -304,7 +304,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/checkbox.tsx")
+      const mod = await import("@/registry/refer/ui/checkbox.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -327,7 +327,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/collapsible.tsx")
+      const mod = await import("@/registry/refer/ui/collapsible.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -350,7 +350,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/command.tsx")
+      const mod = await import("@/registry/refer/ui/command.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -373,7 +373,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/context-menu.tsx")
+      const mod = await import("@/registry/refer/ui/context-menu.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -396,7 +396,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/dialog.tsx")
+      const mod = await import("@/registry/refer/ui/dialog.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -419,7 +419,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/drawer.tsx")
+      const mod = await import("@/registry/refer/ui/drawer.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -442,7 +442,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/dropdown-menu.tsx")
+      const mod = await import("@/registry/refer/ui/dropdown-menu.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -465,7 +465,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/form.tsx")
+      const mod = await import("@/registry/refer/ui/form.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -488,7 +488,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/hover-card.tsx")
+      const mod = await import("@/registry/refer/ui/hover-card.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -511,7 +511,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/input.tsx")
+      const mod = await import("@/registry/refer/ui/input.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -534,7 +534,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/input-otp.tsx")
+      const mod = await import("@/registry/refer/ui/input-otp.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -557,7 +557,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/label.tsx")
+      const mod = await import("@/registry/refer/ui/label.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -580,7 +580,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/menubar.tsx")
+      const mod = await import("@/registry/refer/ui/menubar.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -603,7 +603,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/navigation-menu.tsx")
+      const mod = await import("@/registry/refer/ui/navigation-menu.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -626,7 +626,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/pagination.tsx")
+      const mod = await import("@/registry/refer/ui/pagination.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -649,7 +649,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/popover.tsx")
+      const mod = await import("@/registry/refer/ui/popover.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -672,7 +672,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/progress.tsx")
+      const mod = await import("@/registry/refer/ui/progress.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -695,7 +695,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/radio-group.tsx")
+      const mod = await import("@/registry/refer/ui/radio-group.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -718,7 +718,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/resizable.tsx")
+      const mod = await import("@/registry/refer/ui/resizable.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -741,7 +741,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/scroll-area.tsx")
+      const mod = await import("@/registry/refer/ui/scroll-area.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -764,7 +764,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/select.tsx")
+      const mod = await import("@/registry/refer/ui/select.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -787,7 +787,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/separator.tsx")
+      const mod = await import("@/registry/refer/ui/separator.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -810,7 +810,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/sheet.tsx")
+      const mod = await import("@/registry/refer/ui/sheet.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -841,7 +841,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/sidebar.tsx")
+      const mod = await import("@/registry/refer/ui/sidebar.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -864,7 +864,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/skeleton.tsx")
+      const mod = await import("@/registry/refer/ui/skeleton.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -887,7 +887,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/slider.tsx")
+      const mod = await import("@/registry/refer/ui/slider.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -910,7 +910,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/sonner.tsx")
+      const mod = await import("@/registry/refer/ui/sonner.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -933,7 +933,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/switch.tsx")
+      const mod = await import("@/registry/refer/ui/switch.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -956,7 +956,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/table.tsx")
+      const mod = await import("@/registry/refer/ui/table.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -979,7 +979,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/tabs.tsx")
+      const mod = await import("@/registry/refer/ui/tabs.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1002,7 +1002,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/textarea.tsx")
+      const mod = await import("@/registry/refer/ui/textarea.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1025,7 +1025,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/toggle.tsx")
+      const mod = await import("@/registry/refer/ui/toggle.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1048,7 +1048,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/toggle-group.tsx")
+      const mod = await import("@/registry/refer/ui/toggle-group.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1071,7 +1071,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/ui/tooltip.tsx")
+      const mod = await import("@/registry/refer/ui/tooltip.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1165,7 +1165,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/dashboard-01/page.tsx"
+        "@/registry/refer/blocks/dashboard-01/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1211,7 +1211,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-01/page.tsx"
+        "@/registry/refer/blocks/sidebar-01/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1257,7 +1257,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-02/page.tsx"
+        "@/registry/refer/blocks/sidebar-02/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1287,7 +1287,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-03/page.tsx"
+        "@/registry/refer/blocks/sidebar-03/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1317,7 +1317,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-04/page.tsx"
+        "@/registry/refer/blocks/sidebar-04/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1358,7 +1358,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-05/page.tsx"
+        "@/registry/refer/blocks/sidebar-05/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1404,7 +1404,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-06/page.tsx"
+        "@/registry/refer/blocks/sidebar-06/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1461,7 +1461,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-07/page.tsx"
+        "@/registry/refer/blocks/sidebar-07/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1518,7 +1518,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-08/page.tsx"
+        "@/registry/refer/blocks/sidebar-08/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1562,7 +1562,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-09/page.tsx"
+        "@/registry/refer/blocks/sidebar-09/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1629,7 +1629,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-10/page.tsx"
+        "@/registry/refer/blocks/sidebar-10/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1659,7 +1659,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-11/page.tsx"
+        "@/registry/refer/blocks/sidebar-11/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1712,7 +1712,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-12/page.tsx"
+        "@/registry/refer/blocks/sidebar-12/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1742,7 +1742,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-13/page.tsx"
+        "@/registry/refer/blocks/sidebar-13/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1772,7 +1772,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-14/page.tsx"
+        "@/registry/refer/blocks/sidebar-14/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1856,7 +1856,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-15/page.tsx"
+        "@/registry/refer/blocks/sidebar-15/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1925,7 +1925,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/sidebar-16/page.tsx"
+        "@/registry/refer/blocks/sidebar-16/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1955,7 +1955,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/login-01/page.tsx"
+        "@/registry/refer/blocks/login-01/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1985,7 +1985,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/login-02/page.tsx"
+        "@/registry/refer/blocks/login-02/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2015,7 +2015,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/login-03/page.tsx"
+        "@/registry/refer/blocks/login-03/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2045,7 +2045,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/login-04/page.tsx"
+        "@/registry/refer/blocks/login-04/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2075,7 +2075,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/login-05/page.tsx"
+        "@/registry/refer/blocks/login-05/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2100,7 +2100,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-axes.tsx"
+        "@/registry/refer/charts/chart-area-axes.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2125,7 +2125,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-default.tsx"
+        "@/registry/refer/charts/chart-area-default.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2150,7 +2150,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-gradient.tsx"
+        "@/registry/refer/charts/chart-area-gradient.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2175,7 +2175,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-icons.tsx"
+        "@/registry/refer/charts/chart-area-icons.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2200,7 +2200,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-interactive.tsx"
+        "@/registry/refer/charts/chart-area-interactive.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2225,7 +2225,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-legend.tsx"
+        "@/registry/refer/charts/chart-area-legend.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2250,7 +2250,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-linear.tsx"
+        "@/registry/refer/charts/chart-area-linear.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2275,7 +2275,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-stacked-expand.tsx"
+        "@/registry/refer/charts/chart-area-stacked-expand.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2300,7 +2300,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-stacked.tsx"
+        "@/registry/refer/charts/chart-area-stacked.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2325,7 +2325,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-area-step.tsx"
+        "@/registry/refer/charts/chart-area-step.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2350,7 +2350,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-active.tsx"
+        "@/registry/refer/charts/chart-bar-active.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2375,7 +2375,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-default.tsx"
+        "@/registry/refer/charts/chart-bar-default.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2400,7 +2400,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-horizontal.tsx"
+        "@/registry/refer/charts/chart-bar-horizontal.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2425,7 +2425,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-interactive.tsx"
+        "@/registry/refer/charts/chart-bar-interactive.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2450,7 +2450,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-label-custom.tsx"
+        "@/registry/refer/charts/chart-bar-label-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2475,7 +2475,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-label.tsx"
+        "@/registry/refer/charts/chart-bar-label.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2500,7 +2500,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-mixed.tsx"
+        "@/registry/refer/charts/chart-bar-mixed.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2525,7 +2525,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-multiple.tsx"
+        "@/registry/refer/charts/chart-bar-multiple.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2550,7 +2550,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-negative.tsx"
+        "@/registry/refer/charts/chart-bar-negative.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2575,7 +2575,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-bar-stacked.tsx"
+        "@/registry/refer/charts/chart-bar-stacked.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2600,7 +2600,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-default.tsx"
+        "@/registry/refer/charts/chart-line-default.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2625,7 +2625,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-dots-colors.tsx"
+        "@/registry/refer/charts/chart-line-dots-colors.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2650,7 +2650,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-dots-custom.tsx"
+        "@/registry/refer/charts/chart-line-dots-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2675,7 +2675,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-dots.tsx"
+        "@/registry/refer/charts/chart-line-dots.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2700,7 +2700,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-interactive.tsx"
+        "@/registry/refer/charts/chart-line-interactive.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2725,7 +2725,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-label-custom.tsx"
+        "@/registry/refer/charts/chart-line-label-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2750,7 +2750,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-label.tsx"
+        "@/registry/refer/charts/chart-line-label.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2775,7 +2775,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-linear.tsx"
+        "@/registry/refer/charts/chart-line-linear.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2800,7 +2800,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-multiple.tsx"
+        "@/registry/refer/charts/chart-line-multiple.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2825,7 +2825,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-line-step.tsx"
+        "@/registry/refer/charts/chart-line-step.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2850,7 +2850,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-donut-active.tsx"
+        "@/registry/refer/charts/chart-pie-donut-active.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2875,7 +2875,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-donut-text.tsx"
+        "@/registry/refer/charts/chart-pie-donut-text.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2900,7 +2900,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-donut.tsx"
+        "@/registry/refer/charts/chart-pie-donut.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2925,7 +2925,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-interactive.tsx"
+        "@/registry/refer/charts/chart-pie-interactive.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2950,7 +2950,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-label-custom.tsx"
+        "@/registry/refer/charts/chart-pie-label-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2975,7 +2975,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-label-list.tsx"
+        "@/registry/refer/charts/chart-pie-label-list.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3000,7 +3000,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-label.tsx"
+        "@/registry/refer/charts/chart-pie-label.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3025,7 +3025,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-legend.tsx"
+        "@/registry/refer/charts/chart-pie-legend.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3050,7 +3050,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-separator-none.tsx"
+        "@/registry/refer/charts/chart-pie-separator-none.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3075,7 +3075,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-simple.tsx"
+        "@/registry/refer/charts/chart-pie-simple.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3100,7 +3100,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-pie-stacked.tsx"
+        "@/registry/refer/charts/chart-pie-stacked.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3125,7 +3125,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-default.tsx"
+        "@/registry/refer/charts/chart-radar-default.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3150,7 +3150,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-dots.tsx"
+        "@/registry/refer/charts/chart-radar-dots.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3175,7 +3175,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-circle-fill.tsx"
+        "@/registry/refer/charts/chart-radar-grid-circle-fill.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3200,7 +3200,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-circle-no-lines.tsx"
+        "@/registry/refer/charts/chart-radar-grid-circle-no-lines.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3225,7 +3225,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-circle.tsx"
+        "@/registry/refer/charts/chart-radar-grid-circle.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3250,7 +3250,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-custom.tsx"
+        "@/registry/refer/charts/chart-radar-grid-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3275,7 +3275,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-fill.tsx"
+        "@/registry/refer/charts/chart-radar-grid-fill.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3300,7 +3300,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-grid-none.tsx"
+        "@/registry/refer/charts/chart-radar-grid-none.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3325,7 +3325,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-icons.tsx"
+        "@/registry/refer/charts/chart-radar-icons.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3350,7 +3350,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-label-custom.tsx"
+        "@/registry/refer/charts/chart-radar-label-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3375,7 +3375,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-legend.tsx"
+        "@/registry/refer/charts/chart-radar-legend.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3400,7 +3400,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-lines-only.tsx"
+        "@/registry/refer/charts/chart-radar-lines-only.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3425,7 +3425,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-multiple.tsx"
+        "@/registry/refer/charts/chart-radar-multiple.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3450,7 +3450,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radar-radius.tsx"
+        "@/registry/refer/charts/chart-radar-radius.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3475,7 +3475,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-grid.tsx"
+        "@/registry/refer/charts/chart-radial-grid.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3500,7 +3500,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-label.tsx"
+        "@/registry/refer/charts/chart-radial-label.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3525,7 +3525,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-shape.tsx"
+        "@/registry/refer/charts/chart-radial-shape.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3550,7 +3550,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-simple.tsx"
+        "@/registry/refer/charts/chart-radial-simple.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3575,7 +3575,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-stacked.tsx"
+        "@/registry/refer/charts/chart-radial-stacked.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3600,7 +3600,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-radial-text.tsx"
+        "@/registry/refer/charts/chart-radial-text.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3625,7 +3625,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-default.tsx"
+        "@/registry/refer/charts/chart-tooltip-default.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3650,7 +3650,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-indicator-line.tsx"
+        "@/registry/refer/charts/chart-tooltip-indicator-line.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3675,7 +3675,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-indicator-none.tsx"
+        "@/registry/refer/charts/chart-tooltip-indicator-none.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3700,7 +3700,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-label-none.tsx"
+        "@/registry/refer/charts/chart-tooltip-label-none.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3725,7 +3725,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-label-custom.tsx"
+        "@/registry/refer/charts/chart-tooltip-label-custom.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3750,7 +3750,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-label-formatter.tsx"
+        "@/registry/refer/charts/chart-tooltip-label-formatter.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3775,7 +3775,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-formatter.tsx"
+        "@/registry/refer/charts/chart-tooltip-formatter.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3800,7 +3800,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-icons.tsx"
+        "@/registry/refer/charts/chart-tooltip-icons.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3825,7 +3825,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/charts/chart-tooltip-advanced.tsx"
+        "@/registry/refer/charts/chart-tooltip-advanced.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -3849,7 +3849,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/lib/utils.ts")
+      const mod = await import("@/registry/refer/lib/utils.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -3872,7 +3872,7 @@ export const Index: Record<string, any> = {
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/new-york-v4/hooks/use-mobile.ts")
+      const mod = await import("@/registry/refer/hooks/use-mobile.ts")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -3910,7 +3910,7 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/new-york-v4/blocks/products-01/page.tsx"
+        "@/registry/refer/blocks/products-01/page.tsx"
       )
       const exportName =
         Object.keys(mod).find(

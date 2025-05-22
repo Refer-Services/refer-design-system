@@ -14,14 +14,14 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavUser } from "@/registry/new-york-v4/blocks/sidebar-07/components/nav-user"
-import { TeamSwitcher } from "@/registry/new-york-v4/blocks/sidebar-07/components/team-switcher"
+import { NavUser } from "@/registry/refer/blocks/sidebar-07/components/nav-user"
+import { TeamSwitcher } from "@/registry/refer/blocks/sidebar-07/components/team-switcher"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/registry/new-york-v4/ui/collapsible"
-import { Label } from "@/registry/new-york-v4/ui/label"
+} from "@/registry/refer/ui/collapsible"
+import { Label } from "@/registry/refer/ui/label"
 import {
   Sidebar,
   SidebarContent,
@@ -38,7 +38,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-} from "@/registry/new-york-v4/ui/sidebar"
+} from "@/registry/refer/ui/sidebar"
 
 // This is sample data.
 const data = {

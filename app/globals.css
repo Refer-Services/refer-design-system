@@ -72,21 +72,21 @@
 }
 
 .dark {
-  --background: var(--color-stone-900);
-  --foreground: var(--color-stone-200);
-  --card: var(--color-stone-800);
-  --card-foreground: var(--color-stone-200);
-  --popover: var(--color-stone-800);
+  --background: var(--color-zinc-900);
+  --foreground: var(--color-zinc-200);
+  --card: var(--color-zinc-800);
+  --card-foreground: var(--color-zinc-200);
+  --popover: var(--color-zinc-800);
   --popover-foreground: var(--foreground);
   --primary: var(--color-refer-500);
   --primary-subtle: --alpha(var(--color-primary) / 15%);
   --primary-border: --alpha(var(--color-primary) / 15%);
-  --primary-foreground: var(--color-stone-50);
-  --secondary: var(--color-stone-500);
+  --primary-foreground: var(--color-zinc-50);
+  --secondary: var(--color-zinc-500);
   --secondary-foreground: var(--foreground);
-  --muted: --alpha(var(--color-stone-200) / 8%);
-  --muted-foreground: var(--color-stone-400);
-  --accent: --alpha(var(--color-stone-200) / 10%);
+  --muted: --alpha(var(--color-zinc-200) / 8%);
+  --muted-foreground: var(--color-zinc-400);
+  --accent: --alpha(var(--color-zinc-200) / 10%);
   --accent-foreground: var(--foreground);
   --destructive: var(--color-amber-500);
   --destructive-subtle: --alpha(var(--color-amber-700) / 5%);
@@ -100,10 +100,10 @@
   --info-subtle: --alpha(var(--info) / 5%);
   --info-border: --alpha(var(--info) / 10%);
   --info-foreground: var(--color-sky-950);
-  --border: --alpha(var(--color-stone-200) / 10%);
-  --border-low: --alpha(var(--color-stone-900) / 4%);
-  --input: var(--color-stone-600);
-  --ring: var(--color-stone-200);
+  --border: --alpha(var(--color-zinc-200) / 10%);
+  --border-low: --alpha(var(--color-zinc-900) / 4%);
+  --input: var(--color-zinc-600);
+  --ring: var(--color-zinc-200);
 
   --chart-1: #b05730;
   --chart-2: #9c87f5;

@@ -87,14 +87,14 @@ import * as React from "react"
 export const Index: Record<string, any> = {`
   for (const item of registry.items) {
     const resolveFiles = item.files?.map(
-      (file) => `registry/new-york-v4/${file.path}`
+      (file) => `registry/refer/${file.path}`
     )
     if (!resolveFiles) {
       continue
     }
 
     const componentPath = item.files?.[0]?.path
-      ? `@/registry/new-york-v4/${item.files[0].path}`
+      ? `@/registry/refer/${item.files[0].path}`
       : ""
 
     index += `
@@ -143,7 +143,7 @@ async function buildRegistryJsonFile() {
       const files = item.files?.map((file) => {
         return {
           ...file,
-          path: `registry/new-york-v4/${file.path}`,
+          path: `registry/refer/${file.path}`,
         }
       })
 
@@ -165,7 +165,7 @@ async function buildRegistryJsonFile() {
 async function buildRegistry() {
   return new Promise((resolve, reject) => {
     const process = exec(
-      `pnpm dlx shadcn build registry.json --output ../www/public/r/styles/new-york-v4`
+      `pnpm dlx shadcn build registry.json --output ../www/public/r/styles/refer`
     )
 
     process.on("exit", (code) => {

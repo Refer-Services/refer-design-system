@@ -3,7 +3,7 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/registry/refer/ui/button"
 import {
   Card,
   CardContent,
@@ -11,22 +11,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york-v4/ui/card"
-import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
-import { Input } from "@/registry/new-york-v4/ui/input"
-import { Label } from "@/registry/new-york-v4/ui/label"
+} from "@/registry/refer/ui/card"
+import { Checkbox } from "@/registry/refer/ui/checkbox"
+import { Input } from "@/registry/refer/ui/input"
+import { Label } from "@/registry/refer/ui/label"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@/registry/new-york-v4/ui/radio-group"
+} from "@/registry/refer/ui/radio-group"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york-v4/ui/select"
-import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+} from "@/registry/refer/ui/select"
+import { Textarea } from "@/registry/refer/ui/textarea"
 
 const plans = [
   {

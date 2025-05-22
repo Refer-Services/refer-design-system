@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/registry/refer/ui/button"
 import {
   Card,
   CardAction,
@@ -10,10 +10,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york-v4/ui/card"
-import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
-import { Input } from "@/registry/new-york-v4/ui/input"
-import { Label } from "@/registry/new-york-v4/ui/label"
+} from "@/registry/refer/ui/card"
+import { Checkbox } from "@/registry/refer/ui/checkbox"
+import { Input } from "@/registry/refer/ui/input"
+import { Label } from "@/registry/refer/ui/label"
 import {
   Select,
   SelectContent,
@@ -22,8 +22,8 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york-v4/ui/select"
-import { Switch } from "@/registry/new-york-v4/ui/switch"
+} from "@/registry/refer/ui/select"
+import { Switch } from "@/registry/refer/ui/switch"
 import {
   Table,
   TableBody,
@@ -31,13 +31,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/new-york-v4/ui/table"
+} from "@/registry/refer/ui/table"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york-v4/ui/tabs"
+} from "@/registry/refer/ui/tabs"
 
 export const metadata: Metadata = {
   title: "Settings",

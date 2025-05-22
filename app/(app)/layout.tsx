@@ -4,12 +4,12 @@ import { AppSidebar } from "@/components/app-sidebar"
 import { ModeSwitcher } from "@/components/mode-switcher"
 import { NavHeader } from "@/components/nav-header"
 import { ThemeSelector } from "@/components/theme-selector"
-import { Separator } from "@/registry/new-york-v4/ui/separator"
+import { Separator } from "@/registry/refer/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/registry/new-york-v4/ui/sidebar"
+} from "@/registry/refer/ui/sidebar"
 
 export default async function AppLayout({
   children,

@@ -6,7 +6,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/registry/new-york-v4/ui/pagination"
+} from "@/registry/refer/ui/pagination"
 
 export function PaginationDemo() {
   return (
