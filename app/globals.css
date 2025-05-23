@@ -81,7 +81,7 @@
   --popover: var(--color-neutral-800);
   --popover-foreground: var(--foreground);
   --primary: var(--color-refer-500);
-  --primary-subtle: --alpha(var(--color-primary) / 15%);
+  --primary-subtle: --alpha(var(--color-primary) / 10%);
   --primary-border: --alpha(var(--color-primary) / 15%);
   --primary-foreground: var(--color-neutral-50);
   --secondary: var(--color-neutral-500);
@@ -132,9 +132,9 @@
   --shadow-xs: 0 1px 2px 0 --alpha(var(--color-zinc-950) / 25%);
   --shadow-sm: 0 1px 3px 0 --alpha(var(--color-zinc-950) / 25%), 0 1px 2px -1px --alpha(var(--color-zinc-950) / 25%);
   --shadow-md: 0 4px 6px -1px --alpha(var(--color-zinc-950) / 25%), 0 2px 4px -2px --alpha(var(--color-zinc-950) / 25%);
-  --shadow-lg: 0 10px 15px -3px --alpha(var(--color-zinc-950) / 25%), 0 4px 6px -4px --alpha(var(--color-zinc-950) / 25%);
-  --shadow-xl: 0 25px 25px -5px --alpha(var(--color-zinc-950) / 25%), 0 8px 10px -6px --alpha(var(--color-zinc-950) / 25%);
-  --shadow-2xl: 0 25px 50px -12px --alpha(var(--color-zinc-950) / 50%);
+  --shadow-lg: 0 10px 15px -3px --alpha(var(--color-zinc-950) / 40%), 0 4px 6px -4px --alpha(var(--color-zinc-950) / 40%);
+  --shadow-xl: 0 25px 25px -5px --alpha(var(--color-zinc-950) / 40%), 0 8px 10px -6px --alpha(var(--color-zinc-950) / 40%);
+  --shadow-2xl: 0 30px 50px -12px --alpha(var(--color-zinc-950) / 60%);
 }
 
 @theme inline {
