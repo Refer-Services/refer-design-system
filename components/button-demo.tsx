@@ -1,4 +1,6 @@
-import { ArrowRightIcon, Loader2Icon, SendIcon } from "lucide-react"
+import { ArrowRightIcon, Loader2Icon, SendIcon, X, Trash2 } from "lucide-react"
+import { Separator } from "@/registry/refer/ui/separator"
+
 
 import { Button } from "@/registry/refer/ui/button"
 
@@ -79,6 +81,9 @@ export function ButtonDemo() {
           Please wait
         </Button>
       </div>
+
+      <Separator />
+
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
         <Button size="lg">Large</Button>
         <Button variant="outline" size="lg">
@@ -107,6 +112,30 @@ export function ButtonDemo() {
           Please wait
         </Button>
       </div>
+
+      <Separator />
+
+      <div className="flex flex-wrap items-center gap-2 md:flex-row">
+
+        <Button variant="default" size="icon" className="rounded-lg">
+          <X />
+        </Button>
+        <Button variant="outline" size="icon">
+          <SendIcon />
+        </Button>
+        <Button variant="secondary" size="icon" className="size-9 rounded-lg">
+          <ArrowRightIcon />
+        </Button>
+        <Button variant="outline" size="icon" className="size-8 rounded-lg">
+          <Trash2 />
+        </Button>
+        <Button variant="ghost" size="icon" className="size-8 rounded-lg">
+          <X />
+        </Button>
+
+      </div>
+
+      
     </div>
   )
 }

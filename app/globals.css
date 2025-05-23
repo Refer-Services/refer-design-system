@@ -90,10 +90,10 @@
   --muted-foreground: var(--color-neutral-400);
   --accent: --alpha(var(--color-neutral-200) / 10%);
   --accent-foreground: var(--foreground);
-  --destructive: var(--color-amber-600);
+  --destructive: var(--color-orange-400);
   --destructive-subtle: --alpha(var(--destructive) / 5%);
   --destructive-border: --alpha(var(--destructive) / 10%);
-  --destructive-foreground: var(--color-amber-950);
+  --destructive-foreground: var(--color-orange-950);
   --positive: var(--color-emerald-500);
   --positive-subtle: --alpha(var(--positive) / 5%);
   --positive-border: --alpha(var(--positive) / 10%);
