@@ -135,7 +135,7 @@ function FrameworkCombobox({ frameworks }: { frameworks: Framework[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between md:max-w-[200px]"
+          className="w-full justify-between md:max-w-[200px] rounded-input"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
@@ -197,7 +197,7 @@ function UserCombobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between px-2 md:max-w-[200px]"
+          className="w-full justify-between px-2 md:max-w-[200px] rounded-input"
         >
           {selectedUser ? (
             <div className="flex items-center gap-2">
@@ -288,7 +288,7 @@ function TimezoneCombobox({
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="h-12 w-full justify-between px-2.5 md:max-w-[200px]"
+          className="h-12 w-full justify-between px-2.5 md:max-w-[200px] rounded-input"
         >
           {selectedTimezone ? (
             <div className="flex flex-col items-start gap-0.5">
@@ -331,7 +331,7 @@ function TimezoneCombobox({
               </CommandGroup>
             ))}
             <CommandSeparator className="sticky bottom-10" />
-            <CommandGroup className="bg-popover sticky bottom-0">
+            <CommandGroup className="bg-popover sticky bottom-0 rounded-bl-xl">
               <CommandItem>
                 <PlusCircleIcon />
                 Create timezone
@@ -357,7 +357,7 @@ function ComboboxWithCheckbox({ frameworks }: { frameworks: Framework[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-fit min-w-[280px] justify-between"
+          className="w-fit min-w-[280px] justify-between rounded-input"
         >
           {selectedFrameworks.length > 0
             ? selectedFrameworks.map((framework) => framework.label).join(", ")
@@ -386,7 +386,7 @@ function ComboboxWithCheckbox({ frameworks }: { frameworks: Framework[] }) {
                   }}
                 >
                   <div
-                    className="border-input data-[selected=true]:border-primary data-[selected=true]:bg-primary data-[selected=true]:text-primary-foreground pointer-events-none size-4 shrink-0 rounded-[4px] border transition-all select-none *:[svg]:opacity-0 data-[selected=true]:*:[svg]:opacity-100"
+                    className="border-input bg-card data-[selected=true]:border-primary data-[selected=true]:bg-primary data-[selected=true]:text-primary-foreground pointer-events-none size-4 shrink-0 rounded-[4px] border transition-all select-none *:[svg]:opacity-0 data-[selected=true]:*:[svg]:opacity-100"
                     data-selected={selectedFrameworks.some(
                       (f) => f.value === framework.value
                     )}

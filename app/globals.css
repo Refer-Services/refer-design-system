@@ -38,7 +38,7 @@
   --border: --alpha(var(--color-stone-900) / 10%);
   --border-low: --alpha(var(--color-stone-900) / 5%);
   --input: var(--color-stone-300);
-  --ring: var(--color-stone-700);
+  --ring: --alpha(var(--primary) / 80%);
 
   --chart-1: #b05730;
   --chart-2: #9c87f5;
@@ -60,6 +60,7 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --radius: 0.5rem;
+  --input-radius: 0.5rem;
 
   --shadow-2xs: 0 1px --alpha(var(--color-refer-950) / 5%);
   --shadow-xs: 0 1px 2px 0 --alpha(var(--color-refer-950) / 5%);
@@ -79,7 +80,7 @@
   --card-foreground: var(--color-neutral-200);
   --popover: var(--color-neutral-800);
   --popover-foreground: var(--foreground);
-  --primary: var(--color-refer-600);
+  --primary: var(--color-refer-500);
   --primary-subtle: --alpha(var(--color-primary) / 15%);
   --primary-border: --alpha(var(--color-primary) / 15%);
   --primary-foreground: var(--color-neutral-50);
@@ -203,6 +204,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --radius-input: var(--input-radius);
 
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
