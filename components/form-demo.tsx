@@ -268,7 +268,7 @@ export function FormDemo() {
                       return (
                         <FormItem
                           key={item.id}
-                          className="flex items-start gap-3"
+                          className="flex items-start gap-2"
                         >
                           <FormControl>
                             <Checkbox

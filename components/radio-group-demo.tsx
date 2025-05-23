@@ -40,17 +40,16 @@ export function RadioGroupDemo() {
       <RadioGroup defaultValue="starter" className="max-w-sm">
         {plans.map((plan) => (
           <Label
-            className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-4 has-[[data-state=checked]]:border-green-600 has-[[data-state=checked]]:bg-green-50 dark:has-[[data-state=checked]]:border-green-900 dark:has-[[data-state=checked]]:bg-green-950"
+            className="hover:bg-accent/50 flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[data-state=checked]]:border-primary-border has-[[data-state=checked]]:bg-primary-subtle has-[[data-state=checked]]:border-t-[2px] has-[[data-state=checked]]:pt-[11px] group"
             key={plan.id}
           >
             <RadioGroupItem
               value={plan.id}
               id={plan.name}
-              className="shadow-none data-[state=checked]:border-green-600 data-[state=checked]:bg-green-600 *:data-[slot=radio-group-indicator]:[&>svg]:fill-white *:data-[slot=radio-group-indicator]:[&>svg]:stroke-white"
             />
             <div className="grid gap-1 font-normal">
-              <div className="font-medium">{plan.name}</div>
-              <div className="text-muted-foreground leading-snug">
+              <div className="font-medium group-has-[[data-state=checked]]:text-primary">{plan.name}</div>
+              <div className="text-muted-foreground leading-snug group-has-[[data-state=checked]]:text-primary/70">
                 {plan.description}
               </div>
             </div>
