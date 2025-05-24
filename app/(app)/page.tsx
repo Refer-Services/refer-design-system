@@ -197,6 +197,9 @@ export default function SinkPage() {
       <ComponentWrapper name="toggle-group">
         <ToggleGroupDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="tooltip">
+        <TooltipDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="Refer Menu Item" className="bg-background">
         <MenuItemDemo />
       </ComponentWrapper>
