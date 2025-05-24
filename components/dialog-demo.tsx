@@ -11,6 +11,8 @@ import {
 } from "@/registry/refer/ui/dialog"
 import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
+import { ScrollArea, ScrollBar } from "@/registry/refer/ui/scroll-area"
+
 
 export function DialogDemo() {
   return (
@@ -104,10 +106,10 @@ function DialogWithStickyFooter() {
             This is a dialog with scrollable content.
           </DialogDescription>
         </DialogHeader>
-        <div className="-mx-6 max-h-[500px] overflow-y-auto px-6 text-sm">
+        <ScrollArea className="-mx-6 max-h-[500px] overflow-y-auto px-6">
           <h4 className="mb-4 text-lg leading-none font-medium">Lorem Ipsum</h4>
           {Array.from({ length: 10 }).map((_, index) => (
-            <p key={index} className="mb-4 leading-normal">
+            <p key={index} className="mb-4 leading-normal text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -117,7 +119,7 @@ function DialogWithStickyFooter() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           ))}
-        </div>
+        </ScrollArea>
         <DialogFooter>
           <DialogClose asChild>
             <Button variant="outline">Close</Button>
