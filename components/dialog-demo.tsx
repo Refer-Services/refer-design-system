@@ -11,7 +11,7 @@ import {
 } from "@/registry/refer/ui/dialog"
 import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
-import { ScrollArea, ScrollBar } from "@/registry/refer/ui/scroll-area"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 
 
 export function DialogDemo() {
