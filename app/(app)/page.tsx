@@ -51,7 +51,7 @@ import { ShadowDemo } from "@/components/shadow-demo"
 
 export default function SinkPage() {
   return (
-    <div className="@container grid flex-1 gap-4 p-4">
+    <div className="@container grid flex-1 gap-5 p-6">
       {/* <ComponentWrapper name="chart" className="w-full">
         <ChartDemo />
       </ComponentWrapper> */}
@@ -88,7 +88,7 @@ export default function SinkPage() {
       <ComponentWrapper name="calendar">
         <CalendarDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="card">
+      <ComponentWrapper name="card" className="bg-background border border-[.5px]">
         <CardDemo />
       </ComponentWrapper>
       <ComponentWrapper name="carousel">
