@@ -9,7 +9,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const fontSans = Geist({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })
