@@ -73,13 +73,6 @@ export function AlertDemo() {
       </Alert>
       <Alert variant="destructive">
         <AlertCircleIcon />
-        <AlertTitle>Something went wrong!</AlertTitle>
-        <AlertDescription>
-          Your session has expired. Please log in again.
-        </AlertDescription>
-      </Alert>
-      <Alert variant="destructive">
-        <AlertCircleIcon />
         <AlertTitle>Unable to process your payment.</AlertTitle>
         <AlertDescription>
           <p>Please verify your billing information and try again.</p>
@@ -90,6 +83,20 @@ export function AlertDemo() {
           </ul>
         </AlertDescription>
       </Alert>
+      <Alert variant="positive">
+        <CheckCircle2Icon />
+        <AlertTitle>A positive message!</AlertTitle>
+        <AlertDescription>
+          Your session has expired. Please log in again.
+        </AlertDescription>
+      </Alert>
+      <Alert variant="info">
+        <CheckCircle2Icon />
+        <AlertTitle>A positive message!</AlertTitle>
+        <AlertDescription>
+          Your session has expired. Please log in again.
+        </AlertDescription>
+      </Alert>
       <Alert>
         <CheckCircle2Icon />
         <AlertTitle className="max-w-[calc(100%-4rem)] overflow-ellipsis">
@@ -98,17 +105,10 @@ export function AlertDemo() {
         <Button
           size="sm"
           variant="outline"
-          className="absolute top-2.5 right-3 h-6 shadow-none"
+          className="absolute top-3 right-3 h-7 shadow-none text-muted-foreground"
         >
           Undo
         </Button>
-      </Alert>
-      <Alert className="border-amber-50 bg-amber-50 text-amber-900 dark:border-amber-950 dark:bg-amber-950 dark:text-amber-100">
-        <CheckCircle2Icon />
-        <AlertTitle>Plot Twist: This Alert is Actually Amber!</AlertTitle>
-        <AlertDescription>
-          This one has custom colors for light and dark mode.
-        </AlertDescription>
       </Alert>
     </div>
   )

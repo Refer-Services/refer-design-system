@@ -99,11 +99,11 @@
   --destructive-border: --alpha(var(--destructive) / 10%);
   --destructive-foreground: var(--color-orange-950);
   --positive: var(--color-emerald-500);
-  --positive-subtle: --alpha(var(--positive) / 5%);
+  --positive-subtle: --alpha(var(--color-emerald-200) / 5%);
   --positive-border: --alpha(var(--positive) / 10%);
   --positive-foreground: var(--color-emerald-950);
   --info: var(--color-sky-500);
-  --info-subtle: --alpha(var(--info) / 5%);
+  --info-subtle: --alpha(var(--color-sky-300) / 5%);
   --info-border: --alpha(var(--info) / 10%);
   --info-foreground: var(--color-sky-950);
   --border: --alpha(var(--color-neutral-200) / 10%);
