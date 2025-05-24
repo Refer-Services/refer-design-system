@@ -48,6 +48,7 @@ import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
 import { TypographyDemo } from "@/components/typography-demo"
 import { ShadowDemo } from "@/components/shadow-demo"
+import { MenuItemDemo } from "@/components/menu-item-demo"
 
 export default function SinkPage() {
   return (
@@ -196,8 +197,8 @@ export default function SinkPage() {
       <ComponentWrapper name="toggle-group">
         <ToggleGroupDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="tooltip">
-        <TooltipDemo />
+      <ComponentWrapper name="Refer Menu Item" className="bg-background">
+        <MenuItemDemo />
       </ComponentWrapper>
     </div>
   )
