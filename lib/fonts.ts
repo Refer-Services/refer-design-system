@@ -1,5 +1,5 @@
 import {
-  // Geist,
+  Geist,
   Geist_Mono,
   Instrument_Sans,
   Inter,
@@ -9,7 +9,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const fontSans = Inter({
+const fontSans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
 })
