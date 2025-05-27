@@ -12,15 +12,6 @@ const registry = {
   homepage: "https://ds.tryrefer.com",
   items: z.array(registryItemSchema).parse([
     {
-      name: "index",
-      type: "registry:style",
-      dependencies: ["class-variance-authority", "lucide-react"],
-      devDependencies: ["tw-animate-css"],
-      registryDependencies: ["utils"],
-      files: [],
-      cssVars: {},
-    },
-    {
       name: "accordion",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-accordion"],
@@ -2264,22 +2255,22 @@ async function buildRegistryJsonFile() {
 
   // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
   const REG_DIR = path.join(ROOT, "registry") // pasta registry
-  const BASE_URL = "https://ds.tryrefer.com/r/refer"
+  // const BASE_URL = "https://ds.tryrefer.com/r/refer"
 
-  /** Atualiza o refer-style.json */
+  /** Atualiza o index item */
   const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
   const style = JSON.parse(readFileSync(stylePath, "utf-8"))
 
   // adiciona todos os items
-  style.registryDependencies = []
+  style.registryDependencies = ["utils","refer"]
 
-  for (const item of fixedRegistry.items) {
-    if (item.registryDependencies) {
-      style.registryDependencies.push(`${BASE_URL}/${item.name}`)
-    }
-  }
+  // for (const item of fixedRegistry.items) {
+  //   if (item.registryDependencies) {
+  //     style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
+  //   }
+  // }
 
-  // adiciona o refer-style.json como items
+  // adiciona o style ao registry
   fixedRegistry.items.push(style)
 
   // 3. Write the content of the registry to `registry.json`
