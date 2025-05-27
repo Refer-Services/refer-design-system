@@ -4,7 +4,6 @@
   "type": "registry:style",
   "title": "Refer Design System",
   "registryDependencies": [
-    "utils",
     "https://ds.tryrefer.com/r/refer/accordion.json",
     "https://ds.tryrefer.com/r/refer/alert.json",
     "https://ds.tryrefer.com/r/refer/alert-dialog.json",
