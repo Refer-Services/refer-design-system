@@ -6,7 +6,7 @@ import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
 
 const ROOT = process.cwd()
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ds.tryrefer.com"
 
 const registry = {
   name: "shadcn/ui",
