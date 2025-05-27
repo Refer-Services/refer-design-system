@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "refer",
+  "name": "index",
   "type": "registry:style",
   "title": "Refer Design System",
   "extends": "refer",

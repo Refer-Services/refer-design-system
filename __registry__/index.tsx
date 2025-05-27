@@ -6,15 +6,6 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
-  "index": {
-    name: "index",
-    description: "",
-    type: "registry:style",
-    registryDependencies: ["utils"],
-    files: [],
-    component: null,
-    meta: undefined,
-  },
   "accordion": {
     name: "accordion",
     description: "",

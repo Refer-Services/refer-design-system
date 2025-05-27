@@ -1,7 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "extends": "refer",
   "name": "index",
   "type": "registry:style",
+  "title": "Refer Design System",
   "dependencies": [
     "class-variance-authority",
     "lucide-react"
