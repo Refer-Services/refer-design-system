@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "refer",
+  "type": "registry:style",
+  "title": "Refer Design System",
+  "extends": "refer",
+  "registryDependencies": [],
+  "tailwind": {
+    "colors": {
+      "brand": {
+        "50": "#ffeaea",
+        "500": "#8c1616"
+      }
+    }
+  },
+  "cssVars": {
+    "--radius": "0.75rem"
+  },
+  "npmDependencies": ["@radix-ui/react-scroll-area", "clsx"]
+}
