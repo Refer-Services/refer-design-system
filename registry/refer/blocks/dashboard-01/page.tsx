@@ -3,10 +3,7 @@ import { ChartAreaInteractive } from "@/registry/refer/blocks/dashboard-01/compo
 import { DataTable } from "@/registry/refer/blocks/dashboard-01/components/data-table"
 import { SectionCards } from "@/registry/refer/blocks/dashboard-01/components/section-cards"
 import { SiteHeader } from "@/registry/refer/blocks/dashboard-01/components/site-header"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/registry/refer/ui/sidebar"
+import { SidebarInset, SidebarProvider } from "@/registry/refer/ui/sidebar"
 
 import data from "./data.json"
 

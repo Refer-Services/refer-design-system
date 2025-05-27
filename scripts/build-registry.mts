@@ -1,9 +1,11 @@
 import { exec } from "child_process"
-import { promises as fs } from "fs"
+import { promises as fs, readFileSync } from "fs"
 import path from "path"
 import { rimraf } from "rimraf"
 import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
+
+const ROOT = process.cwd()
 
 const registry = {
   name: "shadcn/ui",
@@ -2260,7 +2262,27 @@ async function buildRegistryJsonFile() {
     }),
   }
 
-  // 2. Write the content of the registry to `registry.json`
+  // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
+  const REG_DIR = path.join(ROOT, "registry") // pasta registry
+  const BASE_URL = "https://ds.tryrefer.com/r/refer"
+
+  /** Atualiza o refer-style.json */
+  const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
+  const style = JSON.parse(readFileSync(stylePath, "utf-8"))
+
+  // adiciona todos os items
+  style.registryDependencies = []
+
+  for (const item of fixedRegistry.items) {
+    if (item.registryDependencies) {
+      style.registryDependencies.push(`${BASE_URL}/${item.name}`)
+    }
+  }
+
+  // adiciona o refer-style.json como items
+  fixedRegistry.items.push(style)
+
+  // 3. Write the content of the registry to `registry.json`
   rimraf.sync(path.join(process.cwd(), `registry.json`))
   await fs.writeFile(
     path.join(process.cwd(), `registry.json`),
@@ -2271,7 +2293,7 @@ async function buildRegistryJsonFile() {
 async function buildRegistry() {
   return new Promise((resolve, reject) => {
     const process = exec(
-      `pnpm dlx shadcn build registry.json --output public/r/styles/refer`
+      `pnpm dlx shadcn build registry.json --output public/r/refer`
     )
 
     process.on("exit", (code) => {
