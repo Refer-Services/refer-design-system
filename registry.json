@@ -2793,7 +2793,6 @@
       "name": "index",
       "type": "registry:style",
       "title": "Refer Design System",
-      "extends": "refer",
       "registryDependencies": [
         "utils",
         "https://ds.tryrefer.com/r/refer/accordion.json",
@@ -2938,6 +2937,7 @@
         "https://ds.tryrefer.com/r/refer/use-mobile.json",
         "https://ds.tryrefer.com/r/refer/products-01.json"
       ],
+      "files": [],
       "tailwind": {
         "colors": {
           "brand": {

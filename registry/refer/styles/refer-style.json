@@ -3,8 +3,8 @@
   "name": "index",
   "type": "registry:style",
   "title": "Refer Design System",
-  "extends": "refer",
   "registryDependencies": [],
+  "files": [],
   "tailwind": {
     "colors": {
       "brand": {
