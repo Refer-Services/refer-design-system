@@ -2180,7 +2180,7 @@ const registry = {
 async function addStyleItem() {
   // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
   const REG_DIR = path.join(ROOT, "registry") // pasta registry
-  // const BASE_URL = "https://ds.tryrefer.com/r/refer"
+  const BASE_URL = "https://ds.tryrefer.com/r/refer"
 
   /** Atualiza o index item */
   const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
@@ -2190,10 +2190,8 @@ async function addStyleItem() {
   style.registryDependencies = ["utils"]
 
   for (const item of registry.items) {
-    if (item.registryDependencies) {
-      // style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
-      style.registryDependencies.push(item.name)
-    }
+    style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
+    // style.registryDependencies.push(item.name)
   }
 
   // adiciona o style ao registry
