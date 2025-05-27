@@ -2262,13 +2262,14 @@ async function buildRegistryJsonFile() {
   const style = JSON.parse(readFileSync(stylePath, "utf-8"))
 
   // adiciona todos os items
-  style.registryDependencies = ["utils","refer"]
+  style.registryDependencies = ["utils"]
 
-  // for (const item of fixedRegistry.items) {
-  //   if (item.registryDependencies) {
-  //     style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
-  //   }
-  // }
+  for (const item of fixedRegistry.items) {
+    if (item.registryDependencies) {
+      // style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
+      style.registryDependencies.push(item.name)
+    }
+  }
 
   // adiciona o style ao registry
   fixedRegistry.items.push(style)
