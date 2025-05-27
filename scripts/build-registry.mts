@@ -2177,6 +2177,29 @@ const registry = {
   ]),
 } satisfies Registry
 
+async function addStyleItem() {
+  // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
+  const REG_DIR = path.join(ROOT, "registry") // pasta registry
+  // const BASE_URL = "https://ds.tryrefer.com/r/refer"
+
+  /** Atualiza o index item */
+  const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
+  const style = JSON.parse(readFileSync(stylePath, "utf-8"))
+
+  // adiciona todos os items
+  style.registryDependencies = ["utils"]
+
+  for (const item of registry.items) {
+    if (item.registryDependencies) {
+      // style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
+      style.registryDependencies.push(item.name)
+    }
+  }
+
+  // adiciona o style ao registry
+  registry.items.push(style)
+}
+
 async function buildRegistryIndex() {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -2253,27 +2276,6 @@ async function buildRegistryJsonFile() {
     }),
   }
 
-  // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
-  const REG_DIR = path.join(ROOT, "registry") // pasta registry
-  // const BASE_URL = "https://ds.tryrefer.com/r/refer"
-
-  /** Atualiza o index item */
-  const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
-  const style = JSON.parse(readFileSync(stylePath, "utf-8"))
-
-  // adiciona todos os items
-  style.registryDependencies = ["utils"]
-
-  for (const item of fixedRegistry.items) {
-    if (item.registryDependencies) {
-      // style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
-      style.registryDependencies.push(item.name)
-    }
-  }
-
-  // adiciona o style ao registry
-  fixedRegistry.items.push(style)
-
   // 3. Write the content of the registry to `registry.json`
   rimraf.sync(path.join(process.cwd(), `registry.json`))
   await fs.writeFile(
@@ -2299,6 +2301,9 @@ async function buildRegistry() {
 }
 
 try {
+  console.log("📝 Adding style item to registry...")
+  await addStyleItem()
+
   console.log("🗂️ Building registry/__index__.tsx...")
   await buildRegistryIndex()
 
