@@ -2313,6 +2313,8 @@ try {
 
   console.log("🏗️ Building registry...")
   await buildRegistry()
+
+  console.log("✅ Registry build completed successfully!")
 } catch (error) {
   console.error(error)
   process.exit(1)
