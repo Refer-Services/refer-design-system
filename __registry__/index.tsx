@@ -22,6 +22,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "alert": {
     name: "alert",
@@ -39,6 +41,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "alert-dialog": {
     name: "alert-dialog",
@@ -56,6 +60,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "aspect-ratio": {
     name: "aspect-ratio",
@@ -73,6 +79,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "avatar": {
     name: "avatar",
@@ -90,6 +98,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "badge": {
     name: "badge",
@@ -107,6 +117,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "breadcrumb": {
     name: "breadcrumb",
@@ -124,6 +136,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "button": {
     name: "button",
@@ -141,6 +155,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "calendar": {
     name: "calendar",
@@ -158,6 +174,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "card": {
     name: "card",
@@ -175,6 +193,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "carousel": {
     name: "carousel",
@@ -192,6 +212,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart": {
     name: "chart",
@@ -209,6 +231,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "checkbox": {
     name: "checkbox",
@@ -226,6 +250,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "collapsible": {
     name: "collapsible",
@@ -243,6 +269,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "command": {
     name: "command",
@@ -260,6 +288,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "context-menu": {
     name: "context-menu",
@@ -277,6 +307,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "dialog": {
     name: "dialog",
@@ -294,6 +326,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "drawer": {
     name: "drawer",
@@ -311,6 +345,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "dropdown-menu": {
     name: "dropdown-menu",
@@ -328,6 +364,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "form": {
     name: "form",
@@ -345,6 +383,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "hover-card": {
     name: "hover-card",
@@ -362,6 +402,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "input": {
     name: "input",
@@ -379,6 +421,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "input-otp": {
     name: "input-otp",
@@ -396,6 +440,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "label": {
     name: "label",
@@ -413,6 +459,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "menubar": {
     name: "menubar",
@@ -430,6 +478,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "navigation-menu": {
     name: "navigation-menu",
@@ -447,6 +497,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "pagination": {
     name: "pagination",
@@ -464,6 +516,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "popover": {
     name: "popover",
@@ -481,6 +535,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "progress": {
     name: "progress",
@@ -498,6 +554,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "radio-group": {
     name: "radio-group",
@@ -515,6 +573,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "resizable": {
     name: "resizable",
@@ -532,6 +592,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "scroll-area": {
     name: "scroll-area",
@@ -549,6 +611,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "select": {
     name: "select",
@@ -566,6 +630,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "separator": {
     name: "separator",
@@ -583,6 +649,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sheet": {
     name: "sheet",
@@ -600,6 +668,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar": {
     name: "sidebar",
@@ -617,6 +687,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {"config":{"theme":{"extend":{"colors":{"sidebar":{"DEFAULT":"hsl(var(--sidebar-background))","foreground":"hsl(var(--sidebar-foreground))","primary":"hsl(var(--sidebar-primary))","primary-foreground":"hsl(var(--sidebar-primary-foreground))","accent":"hsl(var(--sidebar-accent))","accent-foreground":"hsl(var(--sidebar-accent-foreground))","border":"hsl(var(--sidebar-border))","ring":"hsl(var(--sidebar-ring))"}}}}}},
+    cssVars: {"light":{"sidebar-background":"0 0% 98%","sidebar-foreground":"240 5.3% 26.1%","sidebar-primary":"240 5.9% 10%","sidebar-primary-foreground":"0 0% 98%","sidebar-accent":"240 4.8% 95.9%","sidebar-accent-foreground":"240 5.9% 10%","sidebar-border":"220 13% 91%","sidebar-ring":"217.2 91.2% 59.8%"},"dark":{"sidebar-background":"240 5.9% 10%","sidebar-foreground":"240 4.8% 95.9%","sidebar-primary":"224.3 76.3% 48%","sidebar-primary-foreground":"0 0% 100%","sidebar-accent":"240 3.7% 15.9%","sidebar-accent-foreground":"240 4.8% 95.9%","sidebar-border":"240 3.7% 15.9%","sidebar-ring":"217.2 91.2% 59.8%"}},
   },
   "skeleton": {
     name: "skeleton",
@@ -634,6 +706,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "slider": {
     name: "slider",
@@ -651,6 +725,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sonner": {
     name: "sonner",
@@ -668,6 +744,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "switch": {
     name: "switch",
@@ -685,6 +763,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "table": {
     name: "table",
@@ -702,6 +782,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "tabs": {
     name: "tabs",
@@ -719,6 +801,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "textarea": {
     name: "textarea",
@@ -736,6 +820,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "toggle": {
     name: "toggle",
@@ -753,6 +839,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "toggle-group": {
     name: "toggle-group",
@@ -770,6 +858,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "tooltip": {
     name: "tooltip",
@@ -787,6 +877,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "dashboard-01": {
     name: "dashboard-01",
@@ -844,6 +936,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-01": {
     name: "sidebar-01",
@@ -873,6 +967,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-02": {
     name: "sidebar-02",
@@ -902,6 +998,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-03": {
     name: "sidebar-03",
@@ -923,6 +1021,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-04": {
     name: "sidebar-04",
@@ -944,6 +1044,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-05": {
     name: "sidebar-05",
@@ -969,6 +1071,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-06": {
     name: "sidebar-06",
@@ -998,6 +1102,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-07": {
     name: "sidebar-07",
@@ -1035,6 +1141,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-08": {
     name: "sidebar-08",
@@ -1072,6 +1180,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-09": {
     name: "sidebar-09",
@@ -1097,6 +1207,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-10": {
     name: "sidebar-10",
@@ -1142,6 +1254,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-11": {
     name: "sidebar-11",
@@ -1163,6 +1277,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-12": {
     name: "sidebar-12",
@@ -1196,6 +1312,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-13": {
     name: "sidebar-13",
@@ -1217,6 +1335,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-14": {
     name: "sidebar-14",
@@ -1238,6 +1358,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-15": {
     name: "sidebar-15",
@@ -1295,6 +1417,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "sidebar-16": {
     name: "sidebar-16",
@@ -1340,6 +1464,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "login-01": {
     name: "login-01",
@@ -1361,6 +1487,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "login-02": {
     name: "login-02",
@@ -1382,6 +1510,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "login-03": {
     name: "login-03",
@@ -1403,6 +1533,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "login-04": {
     name: "login-04",
@@ -1424,6 +1556,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "login-05": {
     name: "login-05",
@@ -1445,6 +1579,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-axes": {
     name: "chart-area-axes",
@@ -1462,6 +1598,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-default": {
     name: "chart-area-default",
@@ -1479,6 +1617,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-gradient": {
     name: "chart-area-gradient",
@@ -1496,6 +1636,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-icons": {
     name: "chart-area-icons",
@@ -1513,6 +1655,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-interactive": {
     name: "chart-area-interactive",
@@ -1530,6 +1674,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-legend": {
     name: "chart-area-legend",
@@ -1547,6 +1693,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-linear": {
     name: "chart-area-linear",
@@ -1564,6 +1712,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-stacked-expand": {
     name: "chart-area-stacked-expand",
@@ -1581,6 +1731,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-stacked": {
     name: "chart-area-stacked",
@@ -1598,6 +1750,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-area-step": {
     name: "chart-area-step",
@@ -1615,6 +1769,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-active": {
     name: "chart-bar-active",
@@ -1632,6 +1788,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-default": {
     name: "chart-bar-default",
@@ -1649,6 +1807,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-horizontal": {
     name: "chart-bar-horizontal",
@@ -1666,6 +1826,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-interactive": {
     name: "chart-bar-interactive",
@@ -1683,6 +1845,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-label-custom": {
     name: "chart-bar-label-custom",
@@ -1700,6 +1864,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-label": {
     name: "chart-bar-label",
@@ -1717,6 +1883,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-mixed": {
     name: "chart-bar-mixed",
@@ -1734,6 +1902,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-multiple": {
     name: "chart-bar-multiple",
@@ -1751,6 +1921,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-negative": {
     name: "chart-bar-negative",
@@ -1768,6 +1940,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-bar-stacked": {
     name: "chart-bar-stacked",
@@ -1785,6 +1959,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-default": {
     name: "chart-line-default",
@@ -1802,6 +1978,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-dots-colors": {
     name: "chart-line-dots-colors",
@@ -1819,6 +1997,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-dots-custom": {
     name: "chart-line-dots-custom",
@@ -1836,6 +2016,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-dots": {
     name: "chart-line-dots",
@@ -1853,6 +2035,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-interactive": {
     name: "chart-line-interactive",
@@ -1870,6 +2054,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-label-custom": {
     name: "chart-line-label-custom",
@@ -1887,6 +2073,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-label": {
     name: "chart-line-label",
@@ -1904,6 +2092,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-linear": {
     name: "chart-line-linear",
@@ -1921,6 +2111,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-multiple": {
     name: "chart-line-multiple",
@@ -1938,6 +2130,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-line-step": {
     name: "chart-line-step",
@@ -1955,6 +2149,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-donut-active": {
     name: "chart-pie-donut-active",
@@ -1972,6 +2168,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-donut-text": {
     name: "chart-pie-donut-text",
@@ -1989,6 +2187,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-donut": {
     name: "chart-pie-donut",
@@ -2006,6 +2206,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-interactive": {
     name: "chart-pie-interactive",
@@ -2023,6 +2225,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-label-custom": {
     name: "chart-pie-label-custom",
@@ -2040,6 +2244,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-label-list": {
     name: "chart-pie-label-list",
@@ -2057,6 +2263,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-label": {
     name: "chart-pie-label",
@@ -2074,6 +2282,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-legend": {
     name: "chart-pie-legend",
@@ -2091,6 +2301,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-separator-none": {
     name: "chart-pie-separator-none",
@@ -2108,6 +2320,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-simple": {
     name: "chart-pie-simple",
@@ -2125,6 +2339,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-pie-stacked": {
     name: "chart-pie-stacked",
@@ -2142,6 +2358,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-default": {
     name: "chart-radar-default",
@@ -2159,6 +2377,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-dots": {
     name: "chart-radar-dots",
@@ -2176,6 +2396,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-circle-fill": {
     name: "chart-radar-grid-circle-fill",
@@ -2193,6 +2415,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-circle-no-lines": {
     name: "chart-radar-grid-circle-no-lines",
@@ -2210,6 +2434,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-circle": {
     name: "chart-radar-grid-circle",
@@ -2227,6 +2453,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-custom": {
     name: "chart-radar-grid-custom",
@@ -2244,6 +2472,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-fill": {
     name: "chart-radar-grid-fill",
@@ -2261,6 +2491,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-grid-none": {
     name: "chart-radar-grid-none",
@@ -2278,6 +2510,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-icons": {
     name: "chart-radar-icons",
@@ -2295,6 +2529,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-label-custom": {
     name: "chart-radar-label-custom",
@@ -2312,6 +2548,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-legend": {
     name: "chart-radar-legend",
@@ -2329,6 +2567,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-lines-only": {
     name: "chart-radar-lines-only",
@@ -2346,6 +2586,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-multiple": {
     name: "chart-radar-multiple",
@@ -2363,6 +2605,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radar-radius": {
     name: "chart-radar-radius",
@@ -2380,6 +2624,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-grid": {
     name: "chart-radial-grid",
@@ -2397,6 +2643,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-label": {
     name: "chart-radial-label",
@@ -2414,6 +2662,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-shape": {
     name: "chart-radial-shape",
@@ -2431,6 +2681,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-simple": {
     name: "chart-radial-simple",
@@ -2448,6 +2700,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-stacked": {
     name: "chart-radial-stacked",
@@ -2465,6 +2719,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-radial-text": {
     name: "chart-radial-text",
@@ -2482,6 +2738,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-default": {
     name: "chart-tooltip-default",
@@ -2499,6 +2757,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-indicator-line": {
     name: "chart-tooltip-indicator-line",
@@ -2516,6 +2776,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-indicator-none": {
     name: "chart-tooltip-indicator-none",
@@ -2533,6 +2795,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-label-none": {
     name: "chart-tooltip-label-none",
@@ -2550,6 +2814,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-label-custom": {
     name: "chart-tooltip-label-custom",
@@ -2567,6 +2833,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-label-formatter": {
     name: "chart-tooltip-label-formatter",
@@ -2584,6 +2852,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-formatter": {
     name: "chart-tooltip-formatter",
@@ -2601,6 +2871,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-icons": {
     name: "chart-tooltip-icons",
@@ -2618,6 +2890,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "chart-tooltip-advanced": {
     name: "chart-tooltip-advanced",
@@ -2635,6 +2909,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "utils": {
     name: "utils",
@@ -2652,6 +2928,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "use-mobile": {
     name: "use-mobile",
@@ -2669,6 +2947,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "products-01": {
     name: "products-01",
@@ -2690,6 +2970,8 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   "index": {
     name: "index",
@@ -2699,5 +2981,7 @@ export const Index: Record<string, any> = {
     files: [],
     component: null,
     meta: undefined,
+    tailwind: {"colors":{"refer":{"50":"#fcf4f4","100":"#fae7e6","200":"#f7d3d1","300":"#f0b4b1","400":"#e68883","500":"#d8625b","600":"#bf423b","700":"#a43731","800":"#88312c","900":"#722e2a","950":"#3d1412"},"background":"var(--background)","foreground":"var(--foreground)","card":"var(--card)","card-foreground":"var(--card-foreground)","popover":"var(--popover)","popover-foreground":"var(--popover-foreground)","primary":"var(--primary)","primary-subtle":"var(--primary-subtle)","primary-border":"var(--primary-border)","primary-foreground":"var(--primary-foreground)","secondary":"var(--secondary)","secondary-foreground":"var(--secondary-foreground)","muted":"var(--muted)","muted-foreground":"var(--muted-foreground)","accent":"var(--accent)","accent-foreground":"var(--accent-foreground)","destructive":"var(--destructive)","destructive-subtle":"var(--destructive-subtle)","destructive-border":"var(--destructive-border)","destructive-foreground":"var(--destructive-foreground)","positive":"var(--positive)","positive-subtle":"var(--positive-subtle)","positive-border":"var(--positive-border)","positive-foreground":"var(--positive-foreground)","info":"var(--info)","info-subtle":"var(--info-subtle)","info-border":"var(--info-border)","info-foreground":"var(--info-foreground)","border":"var(--border)","border-low":"var(--border-low)","input":"var(--input)","ring":"var(--ring)","chart-1":"var(--chart-1)","chart-2":"var(--chart-2)","chart-3":"var(--chart-3)","chart-4":"var(--chart-4)","chart-5":"var(--chart-5)","sidebar":"var(--sidebar)","sidebar-foreground":"var(--sidebar-foreground)","sidebar-primary":"var(--sidebar-primary)","sidebar-primary-foreground":"var(--sidebar-primary-foreground)","sidebar-accent":"var(--sidebar-accent)","sidebar-accent-foreground":"var(--sidebar-accent-foreground)","sidebar-border":"var(--sidebar-border)","sidebar-ring":"var(--sidebar-ring)"}},
+    cssVars: {"--radius":"0.5rem","--input-radius":"0.5rem","--radius-sm":"calc(var(--radius) - 4px)","--radius-md":"calc(var(--radius) - 2px)","--radius-lg":"var(--radius)","--radius-xl":"calc(var(--radius) + 4px)","--font-sans":"Inter, sans-serif","--font-serif":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","--font-mono":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","--shadow-2xs":"0 1px --alpha(var(--color-refer-950) / 5%)","--shadow-xs":"0 1px 2px 0 --alpha(var(--color-refer-950) / 5%)","--shadow-sm":"0 1px 3px 0 --alpha(var(--color-refer-950) / 10%), 0 1px 2px -1px --alpha(var(--color-refer-950) / 10%)","--shadow-md":"0 4px 6px -1px --alpha(var(--color-refer-950) / 10%), 0 2px 4px -2px --alpha(var(--color-refer-950) / 10%)","--shadow-lg":"0 10px 15px -3px --alpha(var(--color-refer-950) / 10%), 0 4px 6px -4px --alpha(var(--color-refer-950) / 10%)","--shadow-xl":"0 20px 25px -5px --alpha(var(--color-refer-950) / 10%), 0 8px 10px -6px --alpha(var(--color-refer-950) / 10%)","--shadow-2xl":"0 25px 50px -12px --alpha(var(--color-refer-950) / 25%)","--shadow-card":"0px 0px 0px 0.5px --alpha(var(--color-refer-950) / 6%), 0px 2px 0px 0px --alpha(var(--color-refer-950) / 4%), 0px 8px 20px -4px --alpha(var(--color-refer-950) / 3%)","--transform-pressed":".97"},
   },
   }

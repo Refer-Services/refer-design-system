@@ -2244,6 +2244,8 @@ export const Index: Record<string, any> = {`
         : "null"
     },
     meta: ${JSON.stringify(item.meta)},
+    tailwind: ${JSON.stringify(item.tailwind || {})},
+    cssVars: ${JSON.stringify(item.cssVars || {})},
   },`
   }
 
