@@ -2790,7 +2790,7 @@
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-      "name": "refer-style",
+      "name": "index",
       "type": "registry:style",
       "title": "Refer Design System",
       "description": "Comprehensive styling system for Refer with multiple themes and dark mode support",
