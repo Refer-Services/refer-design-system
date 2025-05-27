@@ -102,7 +102,7 @@ const registry = {
     {
       name: "calendar",
       type: "registry:ui",
-      dependencies: ["react-day-picker@8.10.1", "date-fns"],
+      dependencies: ["react-day-picker@9.7.0", "date-fns"],
       registryDependencies: ["button"],
       files: [
         {
