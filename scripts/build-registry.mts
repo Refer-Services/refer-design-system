@@ -6,10 +6,11 @@ import { registryItemSchema, type Registry } from "shadcn/registry"
 import { z } from "zod"
 
 const ROOT = process.cwd()
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
 
 const registry = {
   name: "shadcn/ui",
-  homepage: "https://ds.tryrefer.com",
+  homepage: BASE_URL,
   items: z.array(registryItemSchema).parse([
     {
       name: "accordion",
@@ -102,7 +103,7 @@ const registry = {
     {
       name: "calendar",
       type: "registry:ui",
-      dependencies: ["react-day-picker@9.7.0", "date-fns"],
+      dependencies: ["react-day-picker@9.7.0", "date-fns@3.0.0"],
       registryDependencies: ["button"],
       files: [
         {
@@ -2180,7 +2181,7 @@ const registry = {
 async function addStyleItem() {
   // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
   const REG_DIR = path.join(ROOT, "registry") // pasta registry
-  const BASE_URL = "https://ds.tryrefer.com/r/refer"
+  const REGISTRY_PATH = `${BASE_URL}/r/refer`
 
   /** Atualiza o index item */
   const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
@@ -2190,7 +2191,7 @@ async function addStyleItem() {
   style.registryDependencies = []
 
   for (const item of registry.items) {
-    style.registryDependencies.push(`${BASE_URL}/${item.name}.json`)
+    style.registryDependencies.push(`${REGISTRY_PATH}/${item.name}.json`)
     // style.registryDependencies.push(item.name)
   }
 
