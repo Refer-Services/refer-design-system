@@ -19,7 +19,7 @@
   --primary-foreground: var(--color-stone-50);
   --secondary: var(--color-stone-500);
   --secondary-foreground: var(--color-stone-100);
-  --muted: --alpha(var(--color-stone-700) / 7%);
+  --muted: --alpha(var(--color-stone-200) / 36%);
   --muted-foreground: var(--color-stone-500);
   --accent: --alpha(var(--color-stone-700) / 5%);
   --accent-foreground: var(--foreground);
