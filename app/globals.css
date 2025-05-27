@@ -11,7 +11,7 @@
   --foreground: var(--color-stone-700);
   --card: var(--color-white);
   --card-foreground: var(--foreground);
-  --popover: --alpha(var(--color-stone-200) / 20%);
+  --popover: --alpha(var(--color-stone-200) / 50%);
   --popover-foreground: var(--foreground);
   --primary: var(--color-refer-600);
   --primary-subtle: --alpha(var(--primary) / 5%);
