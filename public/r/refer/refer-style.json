@@ -343,10 +343,6 @@
     }
   },
   "css": {
-    "@import": "\"tailwindcss\"",
-    "@import tw-animate-css": "\"tw-animate-css\"",
-    "@custom-variant dark": "(&:is(.dark *))",
-    "@import themes": "\"./themes.css\"",
     ".theme-stone": {
       "--radius": "0.625rem",
       "--background": "oklch(1 0 0)",
