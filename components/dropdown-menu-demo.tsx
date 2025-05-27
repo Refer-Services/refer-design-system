@@ -17,11 +17,7 @@ import {
   UserIcon,
 } from "lucide-react"
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/refer/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/refer/ui/avatar"
 import { Button } from "@/registry/refer/ui/button"
 import {
   DropdownMenu,

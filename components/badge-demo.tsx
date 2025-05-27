@@ -1,8 +1,7 @@
 import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react"
-import { Separator } from "@/registry/refer/ui/separator"
-
 
 import { Badge } from "@/registry/refer/ui/badge"
+import { Separator } from "@/registry/refer/ui/separator"
 
 export function BadgeDemo() {
   return (
@@ -54,7 +53,10 @@ export function BadgeDemo() {
           <AlertCircleIcon />
           Alert
         </Badge>
-        <Badge variant="primary_subtle" className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
+        <Badge
+          variant="primary_subtle"
+          className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
+        >
           8
         </Badge>
         <Badge

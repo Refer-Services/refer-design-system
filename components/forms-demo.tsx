@@ -15,10 +15,7 @@ import {
 import { Checkbox } from "@/registry/refer/ui/checkbox"
 import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/registry/refer/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
 import {
   Select,
   SelectContent,

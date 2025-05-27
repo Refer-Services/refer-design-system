@@ -1,11 +1,7 @@
 import Image from "next/image"
 import { BathIcon, BedIcon, LandPlotIcon } from "lucide-react"
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/refer/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/refer/ui/avatar"
 import { Badge } from "@/registry/refer/ui/badge"
 import { Button } from "@/registry/refer/ui/button"
 import {

@@ -1,8 +1,7 @@
-import { ArrowRightIcon, Loader2Icon, SendIcon, X, Trash2 } from "lucide-react"
-import { Separator } from "@/registry/refer/ui/separator"
-
+import { ArrowRightIcon, Loader2Icon, SendIcon, Trash2, X } from "lucide-react"
 
 import { Button } from "@/registry/refer/ui/button"
+import { Separator } from "@/registry/refer/ui/separator"
 
 export function ButtonDemo() {
   return (
@@ -116,7 +115,6 @@ export function ButtonDemo() {
       <Separator />
 
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-
         <Button variant="default" size="icon" className="rounded-lg">
           <X />
         </Button>
@@ -132,10 +130,7 @@ export function ButtonDemo() {
         <Button variant="ghost" size="icon" className="size-8 rounded-lg">
           <X />
         </Button>
-
       </div>
-
-      
     </div>
   )
 }

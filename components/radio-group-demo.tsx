@@ -1,8 +1,5 @@
 import { Label } from "@/registry/refer/ui/label"
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/registry/refer/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
 
 const plans = [
   {
@@ -40,16 +37,15 @@ export function RadioGroupDemo() {
       <RadioGroup defaultValue="starter" className="max-w-sm">
         {plans.map((plan) => (
           <Label
-            className="hover:bg-accent flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[data-state=checked]]:border-primary-border has-[[data-state=checked]]:bg-primary-subtle has-[[data-state=checked]]:border-t-[2px] dark:has-[[data-state=checked]]:border-t-[1px] has-[[data-state=checked]]:pt-[11px] dark:has-[[data-state=checked]]:pt-3 group"
+            className="hover:bg-accent has-[[data-state=checked]]:border-primary-border has-[[data-state=checked]]:bg-primary-subtle group flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[data-state=checked]]:border-t-[2px] has-[[data-state=checked]]:pt-[11px] dark:has-[[data-state=checked]]:border-t-[1px] dark:has-[[data-state=checked]]:pt-3"
             key={plan.id}
           >
-            <RadioGroupItem
-              value={plan.id}
-              id={plan.name}
-            />
+            <RadioGroupItem value={plan.id} id={plan.name} />
             <div className="grid gap-1 font-normal">
-              <div className="font-medium group-has-[[data-state=checked]]:text-primary dark:group-has-[[data-state=checked]]:text-foreground">{plan.name}</div>
-              <div className="text-muted-foreground leading-snug group-has-[[data-state=checked]]:text-primary/70 dark:group-has-[[data-state=checked]]:text-primary">
+              <div className="group-has-[[data-state=checked]]:text-primary dark:group-has-[[data-state=checked]]:text-foreground font-medium">
+                {plan.name}
+              </div>
+              <div className="text-muted-foreground group-has-[[data-state=checked]]:text-primary/70 dark:group-has-[[data-state=checked]]:text-primary leading-snug">
                 {plan.description}
               </div>
             </div>

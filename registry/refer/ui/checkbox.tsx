@@ -23,10 +23,21 @@ function Checkbox({
         data-slot="checkbox-indicator"
         className="flex items-center justify-center text-current transition-none"
       >
-        <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 1L3.46154 7L1 4.33333" stroke="#FAFAF9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg
+          width="10"
+          height="8"
+          viewBox="0 0 10 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9 1L3.46154 7L1 4.33333"
+            stroke="#FAFAF9"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
-
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next"
 import { cookies } from "next/headers"
 
+import { siteConfig } from "@/config/site"
 import { fontVariables } from "@/lib/fonts"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/registry/refer/ui/sonner"
-import { siteConfig } from "@/config/site"
 
 import "./globals.css"
 import { cn } from "@/lib/utils"

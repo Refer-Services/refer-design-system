@@ -1,43 +1,169 @@
 import { Separator } from "@/registry/refer/ui/separator"
 
-
 export function TypographyDemo() {
-    return (
-        <div>
-            <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">Sizes</p>
-            <p className="text-4xl">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">4xl - 36px</span></p>
-            <p className="text-3xl">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">3xl - 30px</span></p>
-            <p className="text-2xl">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">2xl - 24px</span></p>
-            <p className="text-xl">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">xl - 20px</span></p>
-            <p className="text-lg">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">lg - 18px</span></p>
-            <p className="text-base">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">md - 16px</span></p>
-            <p className="text-sm">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">sm - 14px</span></p>
-            <p className="text-xs">The quick brown fox jumps over the lazy dog. <span className="text-xs text-muted-foreground bg-muted rounded rounded-sm px-1">xs - 12px</span></p>
+  return (
+    <div>
+      <p className="text-muted-foreground mb-2 text-xs tracking-widest uppercase">
+        Sizes
+      </p>
+      <p className="text-4xl">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          4xl - 36px
+        </span>
+      </p>
+      <p className="text-3xl">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          3xl - 30px
+        </span>
+      </p>
+      <p className="text-2xl">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          2xl - 24px
+        </span>
+      </p>
+      <p className="text-xl">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          xl - 20px
+        </span>
+      </p>
+      <p className="text-lg">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          lg - 18px
+        </span>
+      </p>
+      <p className="text-base">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          md - 16px
+        </span>
+      </p>
+      <p className="text-sm">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          sm - 14px
+        </span>
+      </p>
+      <p className="text-xs">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          xs - 12px
+        </span>
+      </p>
 
-            <p className="text-xs text-muted-foreground uppercase tracking-widest mt-6 mb-2">Font wheight</p>
-            <p className="text-sm font-normal">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1">font-normal</span></p>
-            <p className="text-sm font-medium">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1">font-medium</span></p>
-            <p className="text-sm font-semibold">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1">font-semibold</span></p>
-            <p className="text-sm font-bold">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1">font-bold</span></p>
+      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
+        Font wheight
+      </p>
+      <p className="text-sm font-normal">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
+          font-normal
+        </span>
+      </p>
+      <p className="text-sm font-medium">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
+          font-medium
+        </span>
+      </p>
+      <p className="text-sm font-semibold">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
+          font-semibold
+        </span>
+      </p>
+      <p className="text-sm font-bold">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
+          font-bold
+        </span>
+      </p>
 
-            <p className="text-xs text-muted-foreground uppercase tracking-widest mt-6 mb-2">Leading</p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-none">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-none 1 - 100%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-tight">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-tight 1.25 - 125%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-snug">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-snug 1.375 - 137,5%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-normal">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-normal 1.5 - 150%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-relaxed">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-relaxed 1.625 - 162,5%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-loose">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-loose 2 - 200%</span></p>
+      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
+        Leading
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-none">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-none 1 - 100%
+        </span>
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-tight">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-tight 1.25 - 125%
+        </span>
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-snug">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-snug 1.375 - 137,5%
+        </span>
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-normal">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-normal 1.5 - 150%
+        </span>
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-relaxed">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-relaxed 1.625 - 162,5%
+        </span>
+      </p>
+      <p className="bg-positive-subtle mb-0.5 text-sm leading-loose">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-positive text-xs font-normal">
+          leading-loose 2 - 200%
+        </span>
+      </p>
 
-            <p className="text-xs text-muted-foreground uppercase tracking-widest mt-6 mb-2">Tracking</p>
-            <p className="text-sm tracking-tighter">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-tighter -5%</span></p>
-            <p className="text-sm tracking-tight">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-tight -2,5%</span></p>
-            <p className="text-sm tracking-normal">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-normal</span></p>
-            <p className="text-sm tracking-wide">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-wide 2,5%</span></p>
-            <p className="text-sm tracking-wider">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-wider 5%</span></p>
-            <p className="text-sm tracking-widest">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-widest 10%</span></p>
+      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
+        Tracking
+      </p>
+      <p className="text-sm tracking-tighter">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-tighter -5%
+        </span>
+      </p>
+      <p className="text-sm tracking-tight">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-tight -2,5%
+        </span>
+      </p>
+      <p className="text-sm tracking-normal">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-normal
+        </span>
+      </p>
+      <p className="text-sm tracking-wide">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-wide 2,5%
+        </span>
+      </p>
+      <p className="text-sm tracking-wider">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-wider 5%
+        </span>
+      </p>
+      <p className="text-sm tracking-widest">
+        The quick brown fox jumps over the lazy dog.{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
+          tracking-widest 10%
+        </span>
+      </p>
 
-
-            <Separator className="my-4" />
+      <Separator className="my-4" />
 
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         The Joke Tax Chronicles
@@ -54,7 +180,7 @@ export function TypographyDemo() {
         The king thought long and hard, and finally came up with{" "}
         <a
           href="#"
-          className="font-medium text-primary underline underline-offset-4"
+          className="text-primary font-medium underline underline-offset-4"
         >
           a brilliant plan
         </a>
@@ -106,7 +232,7 @@ export function TypographyDemo() {
       <div className="my-6 w-full overflow-y-auto">
         <table className="w-full">
           <thead>
-            <tr className="m-0 border-t p-0 even:bg-muted">
+            <tr className="even:bg-muted m-0 border-t p-0">
               <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
                 King's Treasury
               </th>
@@ -116,7 +242,7 @@ export function TypographyDemo() {
             </tr>
           </thead>
           <tbody>
-            <tr className="m-0 border-t p-0 even:bg-muted">
+            <tr className="even:bg-muted m-0 border-t p-0">
               <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
                 Empty
               </td>
@@ -124,7 +250,7 @@ export function TypographyDemo() {
                 Overflowing
               </td>
             </tr>
-            <tr className="m-0 border-t p-0 even:bg-muted">
+            <tr className="even:bg-muted m-0 border-t p-0">
               <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
                 Modest
               </td>
@@ -132,7 +258,7 @@ export function TypographyDemo() {
                 Satisfied
               </td>
             </tr>
-            <tr className="m-0 border-t p-0 even:bg-muted">
+            <tr className="even:bg-muted m-0 border-t p-0">
               <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
                 Full
               </td>

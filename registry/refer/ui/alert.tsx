@@ -13,8 +13,7 @@ const alertVariants = cva(
           "text-destructive bg-destructive-subtle border-destructive-border [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
         positive:
           "text-positive bg-positive-subtle border-positive-border [&>svg]:text-current *:data-[slot=alert-description]:text-positive/90",
-        info:
-          "text-info bg-info-subtle border-info-border [&>svg]:text-current *:data-[slot=alert-description]:text-info/90",
+        info: "text-info bg-info-subtle border-info-border [&>svg]:text-current *:data-[slot=alert-description]:text-info/90",
       },
     },
     defaultVariants: {

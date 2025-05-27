@@ -7,11 +7,7 @@ import {
   ShieldAlertIcon,
 } from "lucide-react"
 
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/registry/refer/ui/alert"
+import { Alert, AlertDescription, AlertTitle } from "@/registry/refer/ui/alert"
 import { Button } from "@/registry/refer/ui/button"
 
 export function AlertDemo() {
@@ -105,7 +101,7 @@ export function AlertDemo() {
         <Button
           size="sm"
           variant="outline"
-          className="absolute top-3 right-3 h-7 shadow-none text-muted-foreground"
+          className="text-muted-foreground absolute top-3 right-3 h-7 shadow-none"
         >
           Undo
         </Button>

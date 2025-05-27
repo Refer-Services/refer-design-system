@@ -27,8 +27,7 @@ const badgeVariants = cva(
           "border-transparent bg-positive text-positive-foreground [a&]:hover:bg-positive/90",
         positive_subtle:
           "border border-positive-border bg-positive-subtle text-positive [a&]:hover:bg-positive/20",
-        info:
-          "border-transparent bg-info text-info-foreground [a&]:hover:bg-info/90",
+        info: "border-transparent bg-info text-info-foreground [a&]:hover:bg-info/90",
         info_subtle:
           "border border-info-border bg-info-subtle text-info [a&]:hover:bg-info/20",
       },

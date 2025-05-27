@@ -4,9 +4,9 @@ import { notFound } from "next/navigation"
 import { registryItemSchema } from "shadcn/registry"
 import { z } from "zod"
 
+import { siteConfig } from "@/config/site"
 import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { siteConfig } from "@/config/site"
 
 const getCachedRegistryItem = React.cache(async (name: string) => {
   return await getRegistryItem(name)

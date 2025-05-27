@@ -25,10 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/refer/ui/select"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/registry/refer/ui/toggle-group"
+import { ToggleGroup, ToggleGroupItem } from "@/registry/refer/ui/toggle-group"
 
 export const description = "An interactive area chart"
 

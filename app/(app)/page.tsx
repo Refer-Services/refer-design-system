@@ -25,6 +25,7 @@ import { HoverCardDemo } from "@/components/hover-card-demo"
 import { InputDemo } from "@/components/input-demo"
 import { InputOTPDemo } from "@/components/input-otp-demo"
 import { LabelDemo } from "@/components/label-demo"
+import { MenuItemDemo } from "@/components/menu-item-demo"
 import { MenubarDemo } from "@/components/menubar-demo"
 import { NavigationMenuDemo } from "@/components/navigation-menu-demo"
 import { PaginationDemo } from "@/components/pagination-demo"
@@ -35,6 +36,7 @@ import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
 import { SelectDemo } from "@/components/select-demo"
 import { SeparatorDemo } from "@/components/separator-demo"
+import { ShadowDemo } from "@/components/shadow-demo"
 import { SheetDemo } from "@/components/sheet-demo"
 import { SkeletonDemo } from "@/components/skeleton-demo"
 import { SliderDemo } from "@/components/slider-demo"
@@ -47,8 +49,6 @@ import { ToggleDemo } from "@/components/toggle-demo"
 import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
 import { TypographyDemo } from "@/components/typography-demo"
-import { ShadowDemo } from "@/components/shadow-demo"
-import { MenuItemDemo } from "@/components/menu-item-demo"
 
 export default function SinkPage() {
   return (
@@ -89,7 +89,10 @@ export default function SinkPage() {
       <ComponentWrapper name="calendar">
         <CalendarDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="card" className="bg-background border border-[.5px]">
+      <ComponentWrapper
+        name="card"
+        className="bg-background border border-[.5px]"
+      >
         <CardDemo />
       </ComponentWrapper>
       <ComponentWrapper name="carousel">

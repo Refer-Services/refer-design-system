@@ -26,10 +26,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/refer/ui/popover"
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/registry/refer/ui/radio-group"
+import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
 import {
   Select,
   SelectContent,

@@ -9,11 +9,7 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/refer/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/registry/refer/ui/avatar"
 import { Button } from "@/registry/refer/ui/button"
 import {
   Command,
@@ -135,7 +131,7 @@ function FrameworkCombobox({ frameworks }: { frameworks: Framework[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between md:max-w-[200px] rounded-input"
+          className="rounded-input w-full justify-between md:max-w-[200px]"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
@@ -197,7 +193,7 @@ function UserCombobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between px-2 md:max-w-[200px] rounded-input"
+          className="rounded-input w-full justify-between px-2 md:max-w-[200px]"
         >
           {selectedUser ? (
             <div className="flex items-center gap-2">
@@ -288,7 +284,7 @@ function TimezoneCombobox({
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className="h-12 w-full justify-between px-2.5 md:max-w-[200px] rounded-input"
+          className="rounded-input h-12 w-full justify-between px-2.5 md:max-w-[200px]"
         >
           {selectedTimezone ? (
             <div className="flex flex-col items-start gap-0.5">
@@ -357,7 +353,7 @@ function ComboboxWithCheckbox({ frameworks }: { frameworks: Framework[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-fit min-w-[280px] justify-between rounded-input"
+          className="rounded-input w-fit min-w-[280px] justify-between"
         >
           {selectedFrameworks.length > 0
             ? selectedFrameworks.map((framework) => framework.label).join(", ")

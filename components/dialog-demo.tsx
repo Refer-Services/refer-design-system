@@ -13,7 +13,6 @@ import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
 import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 
-
 export function DialogDemo() {
   return (
     <div className="flex flex-col items-start gap-4 md:flex-row">
@@ -109,7 +108,7 @@ function DialogWithStickyFooter() {
         <ScrollArea className="-mx-6 max-h-[500px] overflow-y-auto px-6">
           <h4 className="mb-4 text-lg leading-none font-medium">Lorem Ipsum</h4>
           {Array.from({ length: 10 }).map((_, index) => (
-            <p key={index} className="mb-4 leading-normal text-sm">
+            <p key={index} className="mb-4 text-sm leading-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
