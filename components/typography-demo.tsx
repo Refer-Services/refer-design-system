@@ -21,12 +21,12 @@ export function TypographyDemo() {
             <p className="text-sm font-bold">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1">font-bold</span></p>
 
             <p className="text-xs text-muted-foreground uppercase tracking-widest mt-6 mb-2">Leading</p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-[1]">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-[1] 1 100%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-tight">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-tight 1.25 125%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-snug">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-snug 1.375 137,5%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-normal">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-normal 1.5 150%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-relaxed">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-relaxed 1.625 162,5%</span></p>
-            <p className="text-sm bg-positive-subtle mb-0.5 leading-loose">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-loose 2 200%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-none">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-none 1 - 100%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-tight">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-tight 1.25 - 125%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-snug">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-snug 1.375 - 137,5%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-normal">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-normal 1.5 - 150%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-relaxed">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-relaxed 1.625 - 162,5%</span></p>
+            <p className="text-sm bg-positive-subtle mb-0.5 leading-loose">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-positive">leading-loose 2 - 200%</span></p>
 
             <p className="text-xs text-muted-foreground uppercase tracking-widest mt-6 mb-2">Tracking</p>
             <p className="text-sm tracking-tighter">The quick brown fox jumps over the lazy dog. <span className="text-xs font-normal text-muted-foreground bg-muted rounded rounded-sm px-1 tracking-normal">tracking-tighter -5%</span></p>
