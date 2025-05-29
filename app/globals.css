@@ -38,7 +38,7 @@
   --info-foreground: var(--color-white);
   --border: --alpha(var(--color-stone-900) / 10%);
   --border-low: --alpha(var(--color-stone-900) / 5%);
-  --input: var(--color-stone-300);
+  --input: --alpha(var(--color-stone-300) / 70%);
   --ring: --alpha(var(--primary) / 80%);
 
   --chart-1: #b05730;
@@ -111,7 +111,7 @@
   --border: --alpha(var(--color-neutral-200) / 10%);
   --border-low: --alpha(var(--color-neutral-200) / 4%);
   --input: var(--color-neutral-600);
-  --ring: var(--color-neutral-200);
+  --ring: var(--color-refer-400);
 
   --chart-1: #b05730;
   --chart-2: #9c87f5;
