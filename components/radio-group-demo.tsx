@@ -42,10 +42,10 @@ export function RadioGroupDemo() {
           >
             <RadioGroupItem value={plan.id} id={plan.name} />
             <div className="grid gap-1 font-normal">
-              <div className="group-has-[[data-state=checked]]:text-primary dark:group-has-[[data-state=checked]]:text-foreground font-medium">
+              <div className="group-has-[[data-state=checked]]:text-primary-content dark:group-has-[[data-state=checked]]:text-foreground font-medium">
                 {plan.name}
               </div>
-              <div className="text-muted-foreground group-has-[[data-state=checked]]:text-primary/70 dark:group-has-[[data-state=checked]]:text-primary leading-snug">
+              <div className="text-muted-foreground group-has-[[data-state=checked]]:text-primary-content/80 dark:group-has-[[data-state=checked]]:text-primary-content leading-snug">
                 {plan.description}
               </div>
             </div>

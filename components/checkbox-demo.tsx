@@ -27,10 +27,10 @@ export function CheckboxDemo() {
       <Label className="hover:bg-accent has-[[aria-checked=true]]:border-primary-border has-[[aria-checked=true]]:bg-primary-subtle group flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[aria-checked=true]]:border-t-[2px] has-[[aria-checked=true]]:pt-[11px] dark:has-[[aria-checked=true]]:border-t-[1px] dark:has-[[aria-checked=true]]:pt-3">
         <Checkbox id="toggle-2" defaultChecked className="" />
         <div className="grid gap-0.5 font-normal">
-          <p className="group-has-[[aria-checked=true]]:text-primary dark:group-has-[[aria-checked=true]]:text-foreground text-sm leading-none font-medium">
+          <p className="group-has-[[aria-checked=true]]:text-primary-content dark:group-has-[[aria-checked=true]]:text-foreground text-sm leading-none font-medium">
             Enable notifications
           </p>
-          <p className="text-muted-foreground group-has-[[aria-checked=true]]:text-primary/70 dark:group-has-[[aria-checked=true]]:text-primary text-sm">
+          <p className="text-muted-foreground group-has-[[aria-checked=true]]:text-primary-content/80 dark:group-has-[[aria-checked=true]]:text-primary-content text-sm">
             You can enable or disable notifications at any time.
           </p>
         </div>

@@ -12,7 +12,7 @@ const menuItemVariants = cva(
         default:
           "bg-transparent text-foreground hover:bg-accent focus-visible:bg-accent/50 active:bg-foreground/10 [&_svg:not([class*='text-'])]:text-muted-foreground active:scale-pressed duration-150 ease-out",
         selected:
-          "bg-primary/7 text-primary font-medium cursor-default border-primary/10 border-t-[0.5px] border-x-[0.5px] border-b-[2px] shadow-[0px_12px_16px_-4px_--alpha(var(--color-primary)_/_4%),_0px_1px_2px_0px_--alpha(var(--color-refer-950)_/_5%)]",
+          "bg-primary/7 text-primary-content font-medium cursor-default border-primary/10 border-t-[0.5px] border-x-[0.5px] border-b-[2px] shadow-[0px_12px_16px_-4px_--alpha(var(--color-primary)_/_4%),_0px_1px_2px_0px_--alpha(var(--color-refer-950)_/_5%)]",
       },
       size: {
         sm: "h-9 gap-1.5 px-4 has-[>svg]:px-3.5",

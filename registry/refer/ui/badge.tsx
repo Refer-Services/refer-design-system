@@ -12,24 +12,24 @@ const badgeVariants = cva(
         primary:
           "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
         primary_subtle:
-          "border border-primary-border bg-primary-subtle text-primary [a&]:hover:bg-primary/20",
+          "border border-primary-border bg-primary-subtle text-primary-content [a&]:hover:bg-primary/20",
         secondary:
           "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
         secondary_subtle:
           "border bg-muted text-muted-foreground [a&]:hover:bg-foreground/20",
         destructive:
-          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "border-transparent bg-destructive text-destructive-foreground [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/80",
         destructive_subtle:
-          "border border-destructive-border bg-destructive-subtle text-destructive [a&]:hover:bg-destructive/20",
+          "border border-destructive-subtle bg-destructive-subtle text-destructive-content [a&]:hover:bg-destructive/20",
         outline:
           "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         positive:
           "border-transparent bg-positive text-positive-foreground [a&]:hover:bg-positive/90",
         positive_subtle:
-          "border border-positive-border bg-positive-subtle text-positive [a&]:hover:bg-positive/20",
+          "border border-positive-subtle bg-positive-subtle text-positive-content [a&]:hover:bg-positive/20",
         info: "border-transparent bg-info text-info-foreground [a&]:hover:bg-info/90",
         info_subtle:
-          "border border-info-border bg-info-subtle text-info [a&]:hover:bg-info/20",
+          "border border-info-subtle bg-info-subtle text-info-content [a&]:hover:bg-info/20",
       },
     },
     defaultVariants: {
