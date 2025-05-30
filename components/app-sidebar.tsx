@@ -6,10 +6,8 @@ import {
   AudioWaveform,
   BookOpen,
   Bot,
-  ChevronRightIcon,
   Command,
   GalleryVerticalEnd,
-  Search,
   Settings2,
   SquareTerminal,
 } from "lucide-react"
@@ -17,26 +15,15 @@ import {
 import { NavUser } from "@/registry/refer/blocks/sidebar-07/components/nav-user"
 import { TeamSwitcher } from "@/registry/refer/blocks/sidebar-07/components/team-switcher"
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/refer/ui/collapsible"
-import { Label } from "@/registry/refer/ui/label"
-import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
-  SidebarInput,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarRail,
 } from "@/registry/refer/ui/sidebar"
 
