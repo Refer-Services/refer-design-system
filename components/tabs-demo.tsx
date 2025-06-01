@@ -80,7 +80,18 @@ export function TabsDemo() {
         <TabsList>
           <TabsTrigger value="home">Home</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
-          <TabsTrigger value="profile">Profile<Badge variant="secondary" className="h-4 min-w-4 px-1 py-0.5 rounded-md opacity-60 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">3</Badge></TabsTrigger>  
+          <TabsTrigger value="profile">
+            Profile
+            <Badge variant="secondary" className="h-[18px] min-w-[18px] px-1 py-0.5 -mr-0.5 rounded-md opacity-50 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">
+              1
+            </Badge>
+          </TabsTrigger>  
+          <TabsTrigger value="account">
+            Account
+            <Badge variant="secondary" className="h-[18px] min-w-[18px] px-1 py-0.5 -mr-0.5 rounded-md opacity-50 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">
+              27
+            </Badge>
+          </TabsTrigger>  
         </TabsList>
       </Tabs>
       <Tabs defaultValue="home">
