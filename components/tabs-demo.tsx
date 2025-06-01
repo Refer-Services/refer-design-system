@@ -11,6 +11,7 @@ import {
 } from "@/registry/refer/ui/card"
 import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
+import { Badge } from "@/registry/refer/ui/badge"
 import {
   Tabs,
   TabsContent,
@@ -79,6 +80,7 @@ export function TabsDemo() {
         <TabsList>
           <TabsTrigger value="home">Home</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
+          <TabsTrigger value="profile">Profile<Badge variant="secondary" className="h-4 min-w-4 px-1 py-0.5 rounded-md opacity-60 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">3</Badge></TabsTrigger>  
         </TabsList>
       </Tabs>
       <Tabs defaultValue="home">
