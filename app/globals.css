@@ -83,7 +83,7 @@
   --background: var(--color-neutral-900);
   --foreground: var(--color-neutral-200);
   --card: var(--color-neutral-800);
-  --card-foreground: var(--color-neutral-200);
+  --card-foreground: var(--foreground);
   --popover: --alpha(var(--color-neutral-700) / 50%);
   --popover-foreground: var(--foreground);
   --primary: var(--color-refer-500);
@@ -109,9 +109,9 @@
   --info-subtle: --alpha(var(--color-sky-300) / 12%);
   --info-content: var(--color-sky-400);
   --info-foreground: var(--color-sky-950);
-  --border-high: --alpha(var(--color-neutral-200) / 20%);
-  --border: --alpha(var(--color-neutral-200) / 10%);
-  --border-low: --alpha(var(--color-neutral-200) / 4%);
+  --border-high: --alpha(var(--foreground) / 20%);
+  --border: --alpha(var(--foreground) / 10%);
+  --border-low: --alpha(var(--foreground) / 4%);
   --input: var(--color-neutral-600);
   --ring: var(--color-refer-400);
 
