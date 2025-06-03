@@ -1,4 +1,4 @@
-import { ArrowRightIcon, Loader2Icon, SendIcon, Trash2, X } from "lucide-react"
+import { ArrowRightIcon, Loader2Icon, Plus, Trash2, X } from "lucide-react"
 
 import { Button } from "@/registry/refer/ui/button"
 import { Separator } from "@/registry/refer/ui/separator"
@@ -24,7 +24,7 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="xs">
-          <SendIcon /> Send
+          <Plus /> Add new
         </Button>
         <Button variant="outline" size="xs">
           Learn More <ArrowRightIcon />
@@ -52,7 +52,7 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="sm">
-          <SendIcon /> Send
+          <Plus /> Add new
         </Button>
         <Button variant="outline" size="sm">
           Learn More <ArrowRightIcon />
@@ -70,7 +70,7 @@ export function ButtonDemo() {
         <Button variant="secondary">Secondary</Button>
         <Button variant="link">Link</Button>
         <Button variant="outline">
-          <SendIcon /> Send
+          <Plus /> Add new
         </Button>
         <Button variant="outline">
           Learn More <ArrowRightIcon />
@@ -101,7 +101,7 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="lg">
-          <SendIcon /> Send
+          <Plus /> Add new
         </Button>
         <Button variant="outline" size="lg">
           Learn More <ArrowRightIcon />
@@ -119,7 +119,7 @@ export function ButtonDemo() {
           <X />
         </Button>
         <Button variant="outline" size="icon">
-          <SendIcon />
+          <Plus />
         </Button>
         <Button variant="secondary" size="icon" className="size-9 rounded-lg">
           <ArrowRightIcon />

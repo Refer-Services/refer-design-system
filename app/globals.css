@@ -36,6 +36,7 @@
   --info-subtle: --alpha(var(--color-sky-400) / 12%);
   --info-content: var(--color-sky-700);
   --info-foreground: var(--color-white);
+  --border-high: --alpha(var(--color-stone-900) / 20%);
   --border: --alpha(var(--color-stone-900) / 10%);
   --border-low: --alpha(var(--color-stone-900) / 5%);
   --input: --alpha(var(--color-stone-300) / 70%);
@@ -108,6 +109,7 @@
   --info-subtle: --alpha(var(--color-sky-300) / 12%);
   --info-content: var(--color-sky-400);
   --info-foreground: var(--color-sky-950);
+  --border-high: --alpha(var(--color-neutral-200) / 20%);
   --border: --alpha(var(--color-neutral-200) / 10%);
   --border-low: --alpha(var(--color-neutral-200) / 4%);
   --input: var(--color-neutral-600);
@@ -175,6 +177,7 @@
   --color-info-subtle: var(--info-subtle);
   --color-info-content: var(--info-content);
   --color-info-foreground: var(--info-foreground);
+  --color-border-high: var(--border-high);
   --color-border: var(--border);
   --color-border-low: var(--border-low);
   --color-input: var(--input);
