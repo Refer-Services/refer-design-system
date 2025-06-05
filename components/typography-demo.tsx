@@ -61,25 +61,25 @@ export function TypographyDemo() {
       <p className="text-sm font-normal">
         The quick brown fox jumps over the lazy dog.{" "}
         <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-normal
+          font-normal - 400
         </span>
       </p>
       <p className="text-sm font-medium">
         The quick brown fox jumps over the lazy dog.{" "}
         <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-medium
+          font-medium - 500
         </span>
       </p>
       <p className="text-sm font-semibold">
         The quick brown fox jumps over the lazy dog.{" "}
         <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-semibold
+          font-semibold - 550 (Edit to variable)
         </span>
       </p>
       <p className="text-sm font-bold">
         The quick brown fox jumps over the lazy dog.{" "}
         <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-bold
+          font-bold - 700
         </span>
       </p>
 
