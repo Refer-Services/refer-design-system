@@ -67,8 +67,7 @@
       "--shadow-lg": "0 10px 15px -3px --alpha(var(--color-refer-950) / 10%), 0 4px 6px -4px --alpha(var(--color-refer-950) / 10%)",
       "--shadow-xl": "0 20px 25px -5px --alpha(var(--color-refer-950) / 10%), 0 8px 10px -6px --alpha(var(--color-refer-950) / 10%)",
       "--shadow-2xl": "0 25px 50px -12px --alpha(var(--color-refer-950) / 25%)",
-      "--shadow-card": "0px 0px 0px 0.5px --alpha(var(--color-refer-950) / 6%), 0px 2px 0px 0px --alpha(var(--color-refer-950) / 4%), 0px 8px 20px -4px --alpha(var(--color-refer-950) / 3%)",
-      "--transform-pressed": ".97"
+      "--shadow-card": "0px 0px 0px 0.5px --alpha(var(--color-refer-950) / 6%), 0px 2px 0px 0px --alpha(var(--color-refer-950) / 4%), 0px 8px 20px -4px --alpha(var(--color-refer-950) / 3%)"
     },
     "dark": {
       "--color-neutral-800": "#1f1f1f",
@@ -205,7 +204,7 @@
       "--shadow-xl": "var(--shadow-xl)",
       "--shadow-2xl": "var(--shadow-2xl)",
       "--shadow-card": "var(--shadow-card)",
-      "--scale-pressed": "var(--transform-pressed)"
+      "--scale-pressed": ".97"
     }
   },
   "css": {
