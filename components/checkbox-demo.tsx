@@ -2,6 +2,11 @@
 
 import { Checkbox } from "@/registry/refer/ui/checkbox"
 import { Label } from "@/registry/refer/ui/label"
+import {
+  CheckboxBoxed,
+  CheckboxBoxedTitle,
+  CheckboxBoxedDescription
+} from "@/registry/refer/ui/checkbox-boxed"
 
 export function CheckboxDemo() {
   return (
@@ -24,7 +29,7 @@ export function CheckboxDemo() {
         <Label htmlFor="toggle">Enable notifications</Label>
       </div>
 
-      <Label className="hover:bg-accent has-[[aria-checked=true]]:border-primary-border has-[[aria-checked=true]]:bg-primary-subtle group flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[aria-checked=true]]:border-t-[2px] has-[[aria-checked=true]]:pt-[11px] dark:has-[[aria-checked=true]]:border-t-[1px] dark:has-[[aria-checked=true]]:pt-3">
+      {/* <Label className="hover:bg-accent has-[[aria-checked=true]]:border-primary-border has-[[aria-checked=true]]:bg-primary-subtle group flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[aria-checked=true]]:border-t-[2px] has-[[aria-checked=true]]:pt-[11px] dark:has-[[aria-checked=true]]:border-t-[1px] dark:has-[[aria-checked=true]]:pt-3">
         <Checkbox id="toggle-2" defaultChecked className="" />
         <div className="grid gap-0.5 font-normal">
           <p className="group-has-[[aria-checked=true]]:text-primary-content dark:group-has-[[aria-checked=true]]:text-foreground text-sm leading-none font-medium">
@@ -34,7 +39,34 @@ export function CheckboxDemo() {
             You can enable or disable notifications at any time.
           </p>
         </div>
-      </Label>
+      </Label> */}
+
+      <CheckboxBoxed>
+          <CheckboxBoxedTitle> 
+            Enable notificationsss
+          </CheckboxBoxedTitle>
+          <CheckboxBoxedDescription>
+            You can enable or disable notifications at any time.
+          </CheckboxBoxedDescription>
+      </CheckboxBoxed>
+
+      <div className="flex flex-row gap-2">
+        <CheckboxBoxed>
+          <CheckboxBoxedTitle> 
+            Option 1
+          </CheckboxBoxedTitle>
+        </CheckboxBoxed>
+        <CheckboxBoxed>
+          <CheckboxBoxedTitle> 
+            Option 2
+          </CheckboxBoxedTitle>
+        </CheckboxBoxed>
+        <CheckboxBoxed>
+          <CheckboxBoxedTitle> 
+            Option 3
+          </CheckboxBoxedTitle>
+        </CheckboxBoxed>
+      </div>
     </div>
   )
 }

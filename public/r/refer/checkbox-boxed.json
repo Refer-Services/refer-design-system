@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-boxed",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "checkbox, label"
+  ],
+  "files": [
+    {
+      "path": "registry/refer/ui/checkbox-boxed.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Checkbox } from \"@/registry/refer/ui/checkbox\"\nimport { Label } from \"@/registry/refer/ui/label\"\n\ninterface CheckboxBoxedProps\n  extends React.LabelHTMLAttributes<HTMLLabelElement> {\n  className?: string\n  children?: React.ReactNode\n}\n\ninterface CheckboxBoxedSubComponentProps\n  extends React.HTMLAttributes<HTMLParagraphElement> {\n  className?: string\n}\n\nfunction CheckboxBoxed({ className, children, ...props }: CheckboxBoxedProps) {\n  return (\n    <Label\n      className={cn(\n        \"hover:bg-accent has-[[aria-checked=true]]:border-primary-border has-[[aria-checked=true]]:bg-primary-subtle group flex items-start gap-2 rounded-xl border px-3.5 py-3 has-[[aria-checked=true]]:border-t-[2px] has-[[aria-checked=true]]:pt-[11px] dark:has-[[aria-checked=true]]:border-t-[1px] dark:has-[[aria-checked=true]]:pt-3\",\n        className\n      )}\n      {...props}\n    >\n      <Checkbox id=\"toggle\" />\n      <div className=\"grid gap-0.5 font-normal\">{children}</div>\n    </Label>\n  )\n}\n\nfunction CheckboxBoxedTitle({\n  className,\n  ...props\n}: CheckboxBoxedSubComponentProps) {\n  return (\n    <p\n      className={cn(\n        \"group-has-[[aria-checked=true]]:text-primary-content dark:group-has-[[aria-checked=true]]:text-foreground text-sm leading-none font-medium\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction CheckboxBoxedDescription({\n  className,\n  ...props\n}: CheckboxBoxedSubComponentProps) {\n  return (\n    <p\n      className={cn(\n        \"text-muted-foreground group-has-[[aria-checked=true]]:text-primary-content/80 dark:group-has-[[aria-checked=true]]:text-primary-content text-sm\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nCheckboxBoxed.Title = CheckboxBoxedTitle\nCheckboxBoxed.Description = CheckboxBoxedDescription\n\nexport { CheckboxBoxed, CheckboxBoxedTitle, CheckboxBoxedDescription }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

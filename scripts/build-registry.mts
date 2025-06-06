@@ -158,6 +158,17 @@ const registry = {
       ],
     },
     {
+      name: "checkbox-boxed",
+      type: "registry:ui",
+      registryDependencies: ["checkbox, label"],
+      files: [
+        {
+          path: "ui/checkbox-boxed.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "collapsible",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-collapsible"],
