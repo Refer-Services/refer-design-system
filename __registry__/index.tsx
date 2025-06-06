@@ -257,7 +257,7 @@ export const Index: Record<string, any> = {
     name: "checkbox-boxed",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["checkbox, label"],
+    registryDependencies: ["checkbox","label"],
     files: [{
       path: "registry/ui/checkbox-boxed.tsx",
       type: "registry:ui",

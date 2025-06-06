@@ -160,7 +160,7 @@ const registry = {
     {
       name: "checkbox-boxed",
       type: "registry:ui",
-      registryDependencies: ["checkbox, label"],
+      registryDependencies: ["checkbox", "label"],
       files: [
         {
           path: "ui/checkbox-boxed.tsx",

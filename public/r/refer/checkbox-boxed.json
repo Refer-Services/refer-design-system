@@ -3,7 +3,8 @@
   "name": "checkbox-boxed",
   "type": "registry:ui",
   "registryDependencies": [
-    "checkbox, label"
+    "checkbox",
+    "label"
   ],
   "files": [
     {
