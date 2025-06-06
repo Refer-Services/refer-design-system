@@ -4,8 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@import "./themes.css";
-
 :root {
   --background: var(--color-stone-50);
   --foreground: var(--color-stone-700);
@@ -62,7 +60,8 @@
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --radius: 0.5rem;
-  --input-radius: 0.5rem;
+  --radius-input: 0.5rem;
+  --radius-card: 1rem;
 
   --shadow-2xs: 0 1px --alpha(var(--color-refer-950) / 5%);
   --shadow-xs: 0 1px 2px 0 --alpha(var(--color-refer-950) / 5%);
@@ -211,7 +210,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --radius-input: var(--input-radius);
+  --radius-input: var(--radius-input);
+  --radius-card: var(--radius-card);
 
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
