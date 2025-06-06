@@ -11,6 +11,9 @@ export function ButtonDemo() {
         <Button variant="outline" size="xs">
           Outline
         </Button>
+        <Button variant="subtle" size="xs">
+          Subtle
+        </Button>
         <Button variant="ghost" size="xs">
           Ghost
         </Button>
@@ -39,6 +42,9 @@ export function ButtonDemo() {
         <Button variant="outline" size="sm">
           Outline
         </Button>
+        <Button variant="subtle" size="sm">
+          Subtle
+        </Button>
         <Button variant="ghost" size="sm">
           Ghost
         </Button>
@@ -65,6 +71,7 @@ export function ButtonDemo() {
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
         <Button>Button</Button>
         <Button variant="outline">Outline</Button>
+        <Button variant="subtle">Subtle</Button>
         <Button variant="ghost">Ghost</Button>
         <Button variant="destructive">Destructive</Button>
         <Button variant="secondary">Secondary</Button>
@@ -87,6 +94,9 @@ export function ButtonDemo() {
         <Button size="lg">Large</Button>
         <Button variant="outline" size="lg">
           Outline
+        </Button>
+        <Button variant="subtle" size="lg">
+          Subtle
         </Button>
         <Button variant="ghost" size="lg">
           Ghost
@@ -126,6 +136,9 @@ export function ButtonDemo() {
         </Button>
         <Button variant="outline" size="icon" className="size-8 rounded-lg">
           <Trash2 />
+        </Button>
+        <Button variant="subtle" size="icon" className="size-8">
+          <X />
         </Button>
         <Button variant="ghost" size="icon" className="size-8 rounded-lg">
           <X />
