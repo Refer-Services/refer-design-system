@@ -223,7 +223,7 @@
   --shadow-2xl: var(--shadow-2xl);
   --shadow-card: var(--shadow-card);
 
-  --scale-pressed: .97;
+  --scale-pressed: .98;
 }
 
 @layer base {
