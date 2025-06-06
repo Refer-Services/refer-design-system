@@ -363,6 +363,17 @@ const registry = {
       ],
     },
     {
+      name: "radio-group-boxed",
+      type: "registry:ui",
+      registryDependencies: ["radio-group", "label"],
+      files: [
+        {
+          path: "ui/radio-group-boxed.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "resizable",
       type: "registry:ui",
       dependencies: ["react-resizable-panels"],

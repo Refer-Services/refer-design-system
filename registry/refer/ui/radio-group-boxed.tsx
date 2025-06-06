@@ -1,12 +1,14 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { Checkbox } from "@/registry/refer/ui/checkbox"
 import { Label } from "@/registry/refer/ui/label"
+import { RadioGroupItem } from "@/registry/refer/ui/radio-group"
 
-interface CheckboxBoxedProps
+interface RadioGroupItemBoxedProps
   extends React.LabelHTMLAttributes<HTMLLabelElement> {
   className?: string
+  id: string
+  name: string
   children?: React.ReactNode
 }
 
@@ -15,7 +17,13 @@ interface CheckboxBoxedSubComponentProps
   className?: string
 }
 
-function CheckboxBoxed({ className, children, ...props }: CheckboxBoxedProps) {
+function RadioGroupItemBoxed({
+  className,
+  children,
+  id,
+  name,
+  ...props
+}: RadioGroupItemBoxedProps) {
   return (
     <Label
       className={cn(
@@ -24,20 +32,20 @@ function CheckboxBoxed({ className, children, ...props }: CheckboxBoxedProps) {
       )}
       {...props}
     >
-      <Checkbox id="toggle" />
-      <div className="grid gap-1 font-normal">{children}</div>
+      <RadioGroupItem value={id} id={name} />
+      <div className="grid gap-0.5 font-normal">{children}</div>
     </Label>
   )
 }
 
-function CheckboxBoxedTitle({
+function RadioGroupItemBoxedTitle({
   className,
   ...props
 }: CheckboxBoxedSubComponentProps) {
   return (
     <p
       className={cn(
-        "group-has-[[aria-checked=true]]:text-primary-content dark:group-has-[[aria-checked=true]]:text-foreground text-sm leading-none font-medium",
+        "group-has-[[aria-checked=true]]:text-primary-content dark:group-has-[[aria-checked=true]]:text-foreground pt-px text-sm leading-none font-medium",
         className
       )}
       {...props}
@@ -45,7 +53,7 @@ function CheckboxBoxedTitle({
   )
 }
 
-function CheckboxBoxedDescription({
+function RadioGroupItemBoxedDescription({
   className,
   ...props
 }: CheckboxBoxedSubComponentProps) {
@@ -60,7 +68,11 @@ function CheckboxBoxedDescription({
   )
 }
 
-CheckboxBoxed.Title = CheckboxBoxedTitle
-CheckboxBoxed.Description = CheckboxBoxedDescription
+RadioGroupItemBoxed.Title = RadioGroupItemBoxedTitle
+RadioGroupItemBoxed.Description = RadioGroupItemBoxedDescription
 
-export { CheckboxBoxed, CheckboxBoxedTitle, CheckboxBoxedDescription }
+export {
+  RadioGroupItemBoxed,
+  RadioGroupItemBoxedTitle,
+  RadioGroupItemBoxedDescription,
+}
