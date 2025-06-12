@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/registry/refer/ui/table"
+import { Separator } from "@/registry/refer/ui/separator"
 
 const invoices = [
   {
@@ -56,6 +57,7 @@ const invoices = [
 
 export function TableDemo() {
   return (
+    <div className="flex flex-col w-200">
     <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
@@ -83,5 +85,30 @@ export function TableDemo() {
         </TableRow>
       </TableFooter>
     </Table>
+
+    <Separator className="my-10" />
+    <div className="bg-muted rounded-card p-1.5 pt-0.5">
+      <Table className="">
+        <TableHeader>
+          <TableRow className="border-none">
+            <TableHead className="w-[100px]">Invoice</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Method</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody className="">
+          {invoices.map((invoice) => (
+            <TableRow key={invoice.invoice} className="h-14 bg-card hover:bg-background group shadow-xs rounded-xl">
+              <TableCell className="font-medium group-first:rounded-tl-lg group-last:rounded-bl-xl">{invoice.invoice}</TableCell>
+              <TableCell>{invoice.paymentStatus}</TableCell>
+              <TableCell>{invoice.paymentMethod}</TableCell>
+              <TableCell className="text-right group-first:rounded-tr-lg group-last:rounded-br-xl">{invoice.totalAmount}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+    </div>
   )
 }
