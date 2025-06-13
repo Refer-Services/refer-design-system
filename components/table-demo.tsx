@@ -99,11 +99,11 @@ export function TableDemo() {
         </TableHeader>
         <TableBody className="">
           {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice} className="h-14 bg-card hover:bg-background group shadow-xs rounded-xl">
-              <TableCell className="font-medium group-first:rounded-tl-lg group-last:rounded-bl-xl">{invoice.invoice}</TableCell>
-              <TableCell>{invoice.paymentStatus}</TableCell>
-              <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell className="text-right group-first:rounded-tr-lg group-last:rounded-br-xl">{invoice.totalAmount}</TableCell>
+            <TableRow key={invoice.invoice} className="h-14 group shadow-xs rounded-xl">
+              <TableCell className="bg-card font-medium group-first:rounded-tl-lg group-last:rounded-bl-xl">{invoice.invoice}</TableCell>
+              <TableCell className="bg-card">{invoice.paymentStatus}</TableCell>
+              <TableCell className="bg-card">{invoice.paymentMethod}</TableCell>
+              <TableCell className="bg-card text-right group-first:rounded-tr-lg group-last:rounded-br-xl">{invoice.totalAmount}</TableCell>
             </TableRow>
           ))}
         </TableBody>
