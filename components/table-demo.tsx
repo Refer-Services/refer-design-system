@@ -88,9 +88,9 @@ export function TableDemo() {
 
     <Separator className="my-10" />
     <div className="bg-muted rounded-card p-1.5 pt-0.5">
-      <Table className="">
+      <Table className="border-separate border-spacing-x-0 border-spacing-y-px">
         <TableHeader>
-          <TableRow className="border-none">
+          <TableRow className="">
             <TableHead className="w-[100px]">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>
