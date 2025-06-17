@@ -7,18 +7,18 @@ import { ChevronDownIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface AccordionProps {
-  type?: "single" | "multiple";
-  allowMultiple?: boolean;
-  defaultValue?: string | string[];
-  value?: string | string[];
-  onValueChange?: (value: string | string[]) => void;
-  className?: string;
-  children?: React.ReactNode;
+  type?: "single" | "multiple"
+  collapsible?: boolean
+  defaultValue?: string | string[]
+  value?: string | string[]
+  onValueChange?: (value: string | string[]) => void
+  className?: string
+  children?: React.ReactNode
 }
 
 function Accordion({
   type = "single",
-  allowMultiple = false,
+  collapsible,
   defaultValue,
   value,
   onValueChange,
@@ -26,9 +26,7 @@ function Accordion({
   children,
   ...props
 }: AccordionProps) {
-  const accordionType = allowMultiple ? "multiple" : type;
-
-  if (accordionType === "multiple") {
+  if (type === "multiple") {
     return (
       <AccordionPrimitive.Root
         data-slot="accordion"
@@ -41,13 +39,14 @@ function Accordion({
       >
         {children}
       </AccordionPrimitive.Root>
-    );
+    )
   }
 
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
       type="single"
+      collapsible={collapsible}
       defaultValue={defaultValue as string}
       value={value as string}
       onValueChange={onValueChange as (value: string) => void}
@@ -56,7 +55,7 @@ function Accordion({
     >
       {children}
     </AccordionPrimitive.Root>
-  );
+  )
 }
 
 function AccordionItem({
@@ -69,7 +68,7 @@ function AccordionItem({
       className={cn("border-b last:border-b-0", className)}
       {...props}
     />
-  );
+  )
 }
 
 function AccordionTrigger({
@@ -78,10 +77,9 @@ function AccordionTrigger({
   iconPosition = "end",
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
-  iconPosition?: "start" | "end";
+  iconPosition?: "start" | "end"
 }) {
-  const isIconStart = iconPosition === "start";
-
+  const isIconStart = iconPosition === "start"
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
@@ -89,7 +87,7 @@ function AccordionTrigger({
         className={cn(
           "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
           isIconStart ? "justify-start" : "justify-between",
-          className,
+          className
         )}
         {...props}
       >
@@ -102,7 +100,7 @@ function AccordionTrigger({
         )}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
-  );
+  )
 }
 
 function AccordionContent({
@@ -118,7 +116,7 @@ function AccordionContent({
     >
       <div className={cn("pt-0 pb-4", className)}>{children}</div>
     </AccordionPrimitive.Content>
-  );
+  )
 }
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
