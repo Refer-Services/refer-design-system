@@ -8,6 +8,8 @@ export function ButtonDemo() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
         <Button size="xs">xSmall</Button>
+        <Button variant="primary_subtle" size="xs">Subtle</Button>
+        <Button variant="primary_ghost" size="xs">Ghost</Button>
         <Button variant="outline" size="xs">
           Outline
         </Button>
@@ -27,18 +29,20 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="xs">
-          <Plus /> Add new
+          <Plus /> Add
         </Button>
-        <Button variant="outline" size="xs">
-          Learn More <ArrowRightIcon />
+        <Button variant="outline" size="xs" className="has-[>svg]:pl-3.5 has-[>svg]:pr-3">
+          Learn <ArrowRightIcon />
         </Button>
         <Button disabled size="xs" variant="outline">
           <Loader2Icon className="animate-spin" />
-          Please wait
+          Wait
         </Button>
       </div>
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
         <Button size="sm">Small</Button>
+        <Button variant="primary_subtle" size="sm">Subtle</Button>
+        <Button variant="primary_ghost" size="sm">Ghost</Button>
         <Button variant="outline" size="sm">
           Outline
         </Button>
@@ -58,18 +62,20 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="sm">
-          <Plus /> Add new
+          <Plus /> Add
         </Button>
-        <Button variant="outline" size="sm">
-          Learn More <ArrowRightIcon />
+        <Button variant="outline" size="sm" className="has-[>svg]:pl-4 has-[>svg]:pr-3.5">
+          Learn <ArrowRightIcon />
         </Button>
         <Button disabled size="sm" variant="outline">
           <Loader2Icon className="animate-spin" />
-          Please wait
+          Wait
         </Button>
       </div>
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button>Button</Button>
+        <Button>Medium</Button>
+        <Button variant="primary_subtle">Subtle</Button>
+        <Button variant="primary_ghost">Ghost</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="subtle">Subtle</Button>
         <Button variant="ghost">Ghost</Button>
@@ -77,14 +83,14 @@ export function ButtonDemo() {
         <Button variant="secondary">Secondary</Button>
         <Button variant="link">Link</Button>
         <Button variant="outline">
-          <Plus /> Add new
+          <Plus /> Add
         </Button>
-        <Button variant="outline">
-          Learn More <ArrowRightIcon />
+        <Button variant="outline" className="has-[>svg]:pl-4 has-[>svg]:pr-3.5">
+          Learn <ArrowRightIcon />
         </Button>
         <Button disabled variant="outline">
           <Loader2Icon className="animate-spin" />
-          Please wait
+          Wait
         </Button>
       </div>
 
@@ -92,6 +98,8 @@ export function ButtonDemo() {
 
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
         <Button size="lg">Large</Button>
+        <Button variant="primary_subtle" size="lg">Subtle</Button>
+        <Button variant="primary_ghost" size="lg">Ghost</Button>
         <Button variant="outline" size="lg">
           Outline
         </Button>
@@ -111,21 +119,27 @@ export function ButtonDemo() {
           Link
         </Button>
         <Button variant="outline" size="lg">
-          <Plus /> Add new
+          <Plus /> Add
         </Button>
-        <Button variant="outline" size="lg">
-          Learn More <ArrowRightIcon />
+        <Button variant="outline" size="lg" className="has-[>svg]:pl-5 has-[>svg]:pr-4">
+          Learn <ArrowRightIcon />
         </Button>
         <Button disabled size="lg" variant="outline">
           <Loader2Icon className="animate-spin" />
-          Please wait
+          Wait
         </Button>
       </div>
 
       <Separator />
 
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button variant="default" size="icon" className="rounded-lg">
+        <Button variant="primary" size="icon" className="rounded-lg">
+          <X />
+        </Button>
+        <Button variant="primary_subtle" size="icon" className="rounded-lg">
+          <X />
+        </Button>
+        <Button variant="primary_ghost" size="icon" className="rounded-lg">
           <X />
         </Button>
         <Button variant="outline" size="icon">

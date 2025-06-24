@@ -9,8 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 active:bg-primary border-black/20 border-t-[0.5px] border-x-[0.5px] border-b-[2px]",
+        primary:
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 active:bg-primary border-black/20 border-x-[0.5px] border-t-[0.5px] border-b-[2px]",
+        primary_subtle:
+          "bg-primary-subtle text-primary-content shadow-xs hover:bg-primary/8 active:bg-primary/12 border-primary-border border-t-[0.5px] border-x-[0.5px] border-b-[2px]",
+        primary_ghost:
+          "text-primary-content border border-transparent hover:border-primary-border/25 hover:bg-primary-subtle active:bg-primary/8",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 active:bg-destructive dark:bg-destructive/80 dark:hover:bg-destructive/70 border-black/20 border-t-[0.5px] border-x-[0.5px] border-b-[2px] focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:
@@ -20,20 +24,20 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-muted hover:text-accent-foreground active:bg-border/70 dark:hover:bg-accent dark:active:bg-accent/60 [&_svg:not([class*='text-'])]:text-muted-foreground",
         subtle:
-          "bg-muted hover:bg-border/70 active:bg-stone-200/70 dark:active:bg-border/90 [&_svg:not([class*='text-'])]:text-muted-foreground",
+          "bg-muted hover:bg-border/60 hover:border-border-low hover:shadow-xs border border-transparent active:bg-stone-200/65 dark:active:bg-border/90 [&_svg:not([class*='text-'])]:text-muted-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        xs: "h-8 gap-1.5 px-3.5 has-[>svg]:px-3",
-        sm: "h-9 gap-1.5 px-4 has-[>svg]:px-3.5",
-        default: "h-10 px-4 py-2 has-[>svg]:px-3.5",
-        lg: "h-11 px-5 has-[>svg]:px-4",
+        xs: "h-8 gap-1.5 px-3.5 has-[>svg]:pl-3",
+        sm: "h-9 gap-1.5 px-4 has-[>svg]:pl-3.5",
+        md: "h-10 px-4 py-2 has-[>svg]:pl-3.5",
+        lg: "h-11 px-5 has-[>svg]:pl-4",
         icon: "size-10",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
+      size: "md",
     },
   }
 )
