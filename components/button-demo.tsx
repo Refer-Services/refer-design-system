@@ -133,28 +133,28 @@ export function ButtonDemo() {
       <Separator />
 
       <div className="flex flex-wrap items-center gap-2 md:flex-row">
-        <Button variant="primary" size="icon" className="rounded-lg">
+        <Button variant="primary" size="icon" className="rounded-input">
           <X />
         </Button>
-        <Button variant="primary_subtle" size="icon" className="rounded-lg">
+        <Button variant="primary_subtle" size="icon" className="rounded-input">
           <X />
         </Button>
-        <Button variant="primary_ghost" size="icon" className="rounded-lg">
+        <Button variant="primary_ghost" size="icon" className="rounded-input">
           <X />
         </Button>
         <Button variant="outline" size="icon">
           <Plus />
         </Button>
-        <Button variant="secondary" size="icon" className="size-9 rounded-lg">
+        <Button variant="secondary" size="icon" className="size-9 rounded-input">
           <ArrowRightIcon />
         </Button>
-        <Button variant="outline" size="icon" className="size-8 rounded-lg">
+        <Button variant="outline" size="icon" className="size-8 rounded-input">
           <Trash2 />
         </Button>
         <Button variant="subtle" size="icon" className="size-8">
           <X />
         </Button>
-        <Button variant="ghost" size="icon" className="size-8 rounded-lg">
+        <Button variant="ghost" size="icon" className="size-8 rounded-input">
           <X />
         </Button>
       </div>
