@@ -17,6 +17,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
           "--normal-border": "var(--border)",
         } as React.CSSProperties
       }
+      toastOptions={{
+        style: {
+          borderRadius: '12px',
+          backdropFilter: 'blur(24px)',
+        },
+      }}
       {...props}
     />
   )
