@@ -77,6 +77,8 @@
                     0px 0px 1px 0px --alpha(var(--color-stone-950) / 50%),
                     0px 2px 4px 0px --alpha(var(--color-stone-950) / 6%), 
                     0px 12px 40px -8px --alpha(var(--color-stone-950) / 20%);
+  --shadow-avatar: inset 0px 0px 0 1px --alpha(var(--color-stone-950) / 5%),
+                    0px 4px 6px -2px --alpha(var(--color-stone-950) / 5%);
 }
 
 .dark {
@@ -143,7 +145,8 @@
   --shadow-2xl: 0 30px 50px -12px --alpha(var(--color-zinc-950) / 60%);
   --shadow-card: 0px 0px 0px 0.5px --alpha(var(--color-white) / 8%), 0px 2px 0px 0px --alpha(var(--color-white) / 5%), 0px 8px 20px -4px --alpha(var(--color-black) / 10%);
   --shadow-popover: inset 0px 0px 0px 1px --alpha(var(--color-white) / 8%), 0px 2px 0px 0px --alpha(var(--color-zinc-950) / 25%), 0px 16px 40px -8px --alpha(var(--color-zinc-950) / 60%);
-
+  --shadow-avatar: inset 0px 0px 0 1px --alpha(var(--color-white) / 5%),
+                  0px 4px 6px -2px --alpha(var(--color-stone-950) / 60%);
 }
 
 @theme inline {
@@ -231,6 +234,7 @@
   --shadow-2xl: var(--shadow-2xl);
   --shadow-card: var(--shadow-card);
   --shadow-popover: var(--shadow-popover);
+  --shadow-avatar: var(--shadow-avatar);
 
   --scale-pressed: .98;
 }
