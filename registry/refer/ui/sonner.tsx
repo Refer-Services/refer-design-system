@@ -19,8 +19,8 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }
       toastOptions={{
         style: {
-          borderRadius: '12px',
-          backdropFilter: 'blur(24px)',
+          borderRadius: "12px",
+          backdropFilter: "blur(24px)",
         },
       }}
       {...props}
