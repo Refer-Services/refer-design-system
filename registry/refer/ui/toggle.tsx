@@ -13,9 +13,9 @@ const toggleVariants = cva(
       variant: {
         default: "bg-transparent",
         outline:
-          "border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground focus-visible:outline-offset-5",
+          "border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground",
         dashed:
-          "rounded-full border-border-high border-1 border-dashed text-sm text-muted-foreground font-medium shadow-none hover:bg-muted/70 cursor-pointer data-[state=on]:text-primary-content data-[state=on]:bg-primary-subtle data-[state=on]:border-t-[2px] data-[state=on]:border-solid data-[state=on]:border-primary-border data-[state=on]:hover:bg-primary/10 flex-shrink-0 focus-visible:outline-offset-5",
+          "rounded-full border-border-high border-1 border-dashed text-sm text-muted-foreground font-medium shadow-none hover:bg-muted/70 cursor-pointer data-[state=on]:text-primary-content data-[state=on]:bg-primary-subtle data-[state=on]:border-t-[2px] data-[state=on]:border-solid data-[state=on]:border-primary-border data-[state=on]:hover:bg-primary/10 flex-shrink-0",
       },
       size: {
         default: "h-9 px-3 min-w-9",
