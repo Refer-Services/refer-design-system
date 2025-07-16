@@ -30,6 +30,15 @@ export function ToggleDemo() {
       <Toggle variant="outline" aria-label="Toggle italic" size="lg">
         Large
       </Toggle>
+      <Toggle variant="dashed" aria-label="Toggle italic" size="sm">
+        Small Dashed
+      </Toggle>
+      <Toggle variant="dashed" aria-label="Toggle italic">
+        Default Dashed
+      </Toggle>
+      <Toggle variant="dashed" aria-label="Toggle italic" size="lg">
+        Large Dashed
+      </Toggle>
     </div>
   )
 }
