@@ -38,7 +38,7 @@
   --border: --alpha(var(--color-stone-900) / 10%);
   --border-low: --alpha(var(--color-stone-900) / 5%);
   --input: --alpha(var(--color-stone-300) / 70%);
-  --ring: --alpha(var(--primary) / 80%);
+  --ring: --alpha(var(--info) / 70%);
 
   --chart-1: #b05730;
   --chart-2: #9c87f5;
@@ -241,7 +241,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring outline-offset-4;
   }
   body {
     @apply bg-background text-foreground;
