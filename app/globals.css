@@ -241,7 +241,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring outline-offset-2 focus-visible:outline-dashed focus-visible:outline-2;
+    @apply border-border outline-ring outline-offset-2 focus-visible:outline-2;
   }
   body {
     @apply bg-background text-foreground;
