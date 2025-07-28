@@ -175,6 +175,7 @@ interface DialogContentWithNavigationProps
   canGoPrevious?: boolean;
   canGoNext?: boolean;
   navigationPosition?: "external" | "internal";
+  open?: boolean;
 }
 
 function DialogContentWithNavigation({
@@ -186,10 +187,11 @@ function DialogContentWithNavigation({
   canGoPrevious = false,
   canGoNext = false,
   navigationPosition = "external",
+  open = true,
   ...props
 }: DialogContentWithNavigationProps) {
   React.useEffect(() => {
-    if (!showNavigation) return;
+    if (!showNavigation || !open) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft" && canGoPrevious && onPrevious) {
@@ -203,7 +205,7 @@ function DialogContentWithNavigation({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [showNavigation, onPrevious, onNext, canGoPrevious, canGoNext]);
+  }, [showNavigation, open, onPrevious, onNext, canGoPrevious, canGoNext]);
 
   if (!showNavigation || navigationPosition === "internal") {
     return (
