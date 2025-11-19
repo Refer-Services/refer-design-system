@@ -1,18 +1,19 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
+import * as React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDownIcon, ChevronRightIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
 
 interface AccordionProps {
-  type?: "single" | "multiple";
-  collapsible?: boolean;
-  defaultValue?: string | string[];
-  value?: string | string[];
-  onValueChange?: (value: string | string[]) => void;
-  className?: string;
-  children?: React.ReactNode;
+  type?: "single" | "multiple"
+  collapsible?: boolean
+  defaultValue?: string | string[]
+  value?: string | string[]
+  onValueChange?: (value: string | string[]) => void
+  className?: string
+  children?: React.ReactNode
 }
 
 function Accordion({
@@ -38,7 +39,7 @@ function Accordion({
       >
         {children}
       </AccordionPrimitive.Root>
-    );
+    )
   }
 
   return (
@@ -54,7 +55,7 @@ function Accordion({
     >
       {children}
     </AccordionPrimitive.Root>
-  );
+  )
 }
 
 function AccordionItem({
@@ -67,12 +68,14 @@ function AccordionItem({
       className={cn("border-b last:border-b-0", className)}
       {...props}
     />
-  );
+  )
 }
 
-interface AccordionTriggerProps extends Omit<React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>,
-  "children" | "prefix"
-> {
+interface AccordionTriggerProps
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>,
+    "children" | "prefix"
+  > {
   iconPosition?: "start" | "end"
   prefix?: React.ReactNode
   children?: React.ReactNode
@@ -88,12 +91,14 @@ function AccordionTrigger({
   const isIconStart = iconPosition === "start"
   return (
     <AccordionPrimitive.Header className="flex w-full items-center gap-2">
-      {prefix && <div className="shrink-0 flex items-center">{prefix}</div>}
+      {prefix && <div className="flex shrink-0 items-center">{prefix}</div>}
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
           "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center gap-2 rounded-md py-4 text-left text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50",
-          isIconStart ? "justify-start [&[data-state=open]>svg]:rotate-90" : "justify-between [&[data-state=open]>svg]:rotate-180",
+          isIconStart
+            ? "justify-start [&[data-state=open]>svg]:rotate-90"
+            : "justify-between [&[data-state=open]>svg]:rotate-180",
           className
         )}
         {...props}
@@ -123,7 +128,7 @@ function AccordionContent({
     >
       <div className={cn("pt-0 pb-4", className)}>{children}</div>
     </AccordionPrimitive.Content>
-  );
+  )
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

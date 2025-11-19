@@ -13,7 +13,7 @@ function Switch({
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "group peer data-[state=checked]:bg-primary hover:inset-shadow-sm data-[state=unchecked]:bg-input/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[22px] w-10 shrink-0 items-center rounded-full border border-transparent hover:border-border-low transition-all disabled:cursor-not-allowed disabled:opacity-50",
+        "group peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input/50 dark:data-[state=unchecked]:bg-input/80 hover:border-border-low inline-flex h-[22px] w-10 shrink-0 items-center rounded-full border border-transparent transition-all hover:inset-shadow-sm disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
@@ -21,7 +21,7 @@ function Switch({
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
         className={cn(
-          "bg-card dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block w-[18px] group-active:w-[22px] h-[18px] rounded-full shadow-md ring-0 transition-all data-[state=checked]:translate-x-[19px] data-[state=checked]:group-active:translate-x-[15px] data-[state=unchecked]:translate-x-px"
+          "bg-card dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block h-[18px] w-[18px] rounded-full shadow-md ring-0 transition-all group-active:w-[22px] data-[state=checked]:translate-x-[19px] data-[state=checked]:group-active:translate-x-[15px] data-[state=unchecked]:translate-x-px"
         )}
       />
     </SwitchPrimitive.Root>
