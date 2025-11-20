@@ -6,6 +6,12 @@ export function TypographyDemo() {
       <p className="text-muted-foreground mb-2 text-xs tracking-widest uppercase">
         Sizes
       </p>
+      <p className="text-5xl font-medium">
+        The quick brown fox jumps over...{" "}
+        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
+          5xl - 48px
+        </span>
+      </p>
       <p className="text-4xl">
         The quick brown fox jumps over the lazy dog.{" "}
         <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
