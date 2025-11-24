@@ -33,7 +33,7 @@ function RadioGroupItemBoxed({
       {...props}
     >
       <RadioGroupItem value={id} id={name} />
-      <div className="grid gap-0.5 font-normal">{children}</div>
+      <div className="grid gap-1.5 font-normal">{children}</div>
     </Label>
   )
 }
