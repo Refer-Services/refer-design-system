@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "index",
-  "type": "registry:style",
   "title": "Refer Design System",
   "description": "Comprehensive styling system for Refer with dark mode support",
   "registryDependencies": [
@@ -266,5 +265,6 @@
         "@apply": "bg-background text-foreground"
       }
     }
-  }
+  },
+  "type": "registry:style"
 }
