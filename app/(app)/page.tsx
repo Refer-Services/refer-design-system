@@ -36,6 +36,7 @@ import { RadioGroupDemo } from "@/components/radio-group-demo"
 import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
 import { SelectDemo } from "@/components/select-demo"
+import { SelectExample } from "@/components/select2-demo"
 import { SeparatorDemo } from "@/components/separator-demo"
 import { ShadowDemo } from "@/components/shadow-demo"
 import { SheetDemo } from "@/components/sheet-demo"
@@ -170,6 +171,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="select">
         <SelectDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="select-2">
+        <SelectExample />
       </ComponentWrapper>
       <ComponentWrapper name="separator">
         <SeparatorDemo />
