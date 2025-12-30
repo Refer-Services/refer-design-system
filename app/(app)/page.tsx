@@ -20,6 +20,7 @@ import { DatePickerDemo } from "@/components/date-picker-demo"
 import { DialogDemo } from "@/components/dialog-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
+import { EmptyExample } from "@/components/empty-demo"
 import { FormDemo } from "@/components/form-demo"
 import { HoverCardDemo } from "@/components/hover-card-demo"
 import { InputDemo } from "@/components/input-demo"
@@ -124,6 +125,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="dropdown-menu">
         <DropdownMenuDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="empty">
+        <EmptyExample />
       </ComponentWrapper>
       <ComponentWrapper name="form">
         <FormDemo />

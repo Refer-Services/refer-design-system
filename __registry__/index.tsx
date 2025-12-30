@@ -386,6 +386,25 @@ export const Index: Record<string, any> = {
     tailwind: {},
     cssVars: {},
   },
+  "empty": {
+    name: "empty",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/ui/empty.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/empty.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
   "form": {
     name: "form",
     description: "",
