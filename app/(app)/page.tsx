@@ -13,6 +13,7 @@ import { CarouselDemo } from "@/components/carousel-demo"
 import { CheckboxDemo } from "@/components/checkbox-demo"
 import { CollapsibleDemo } from "@/components/collapsible-demo"
 import { ComboboxDemo } from "@/components/combobox-demo"
+import { ComboboxExample } from "@/components/combobox2-demo"
 import { CommandDemo } from "@/components/command-demo"
 import { ComponentWrapper } from "@/components/component-wrapper"
 import { ContextMenuDemo } from "@/components/context-menu-demo"
@@ -108,6 +109,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="combobox">
         <ComboboxDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="combobox-2">
+        <ComboboxExample />
       </ComponentWrapper>
       <ComponentWrapper name="command">
         <CommandDemo />
