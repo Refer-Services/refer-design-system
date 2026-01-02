@@ -146,19 +146,19 @@ function ComboboxItem({
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       className={cn(
-        "my-0.5 last:my-0 data-highlighted:bg-secondary/15  not-data-[variant=destructive]:data-highlighted:**:text-accent-foreground gap-2 rounded-input py-1.5 pr-8 pl-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+        "group my-0.5 last:my-0 data-highlighted:bg-primary/85 data-highlighted:active:bg-primary/65 data-highlighted:text-primary-foreground data-highlighted:[&_svg]:text-primary-foreground gap-2 rounded-input py-1.5 pr-8 pl-2 text-sm [&_svg:not([class*='size-'])]:size-4",
         "relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        "data-selected:bg-primary/10 data-selected:font-medium data-selected:text-primary-content hover:data-selected:bg-primary/15 data-selected:[&_svg]:text-primary-content hover:data-selected:[&_svg]:text-primary-content",
+        "data-selected:bg-primary/10 data-selected:font-medium data-selected:text-primary-content data-selected:[&_svg]:text-primary-content data-selected:shadow-[inset_0_1px_1px_rgba(191,66,59,.2)] data-highlighted:data-selected:bg-primary/85 data-highlighted:data-selected:active:bg-primary/70 data-highlighted:data-selected:shadow-[inset_0_1px_1px_rgba(0,0,0,.2)] data-highlighted:data-selected:text-primary-foreground data-highlighted:data-selected:[&_svg]:text-primary-foreground data-highlighted:data-selected:font-normal",
         className
       )}
       {...props}
     >
       {children}
-      <ComboboxPrimitive.ItemIndicator
-        render={<span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />}
-      >
-        <Check className="size-3.5 stroke-3" />
-      </ComboboxPrimitive.ItemIndicator>
+    <ComboboxPrimitive.ItemIndicator
+      render={<span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />}
+    >
+      <Check className="size-[13px] stroke-3 -mr-px" />
+    </ComboboxPrimitive.ItemIndicator>
     </ComboboxPrimitive.Item>
   )
 }

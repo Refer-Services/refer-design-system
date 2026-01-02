@@ -107,15 +107,15 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "focus:bg-primary/85 active:bg-primary/70 focus:text-primary-foreground [&_svg:not([class*='text-'])]:text-muted-foreground hover:[&_svg:not([class*='text-'])]:text-primary-foreground focus:[&_svg:not([class*='text-'])]:text-primary-foreground rounded-input relative flex w-full cursor-default items-center gap-2 py-1.5 pr-8 pl-2 text-sm outline-hidden select-none text-shadow-white/50 text-shadow-xs focus:text-shadow-black/25 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:text-shadow-black/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
-        "data-[state=checked]:bg-primary/10 data-[state=checked]:text-primary-content hover:data-[state=checked]:bg-primary/85 hover:data-[state=checked]:[&_svg:not([class*='text-'])]:text-primary-foreground data-[state=checked]:[&_svg:not([class*='text-'])]:text-primary-content hover:data-[state=checked]:text-primary-foreground",
+        "data-highlighted:bg-primary/85 data-highlighted:active:bg-primary/70 data-highlighted:text-primary-foreground [&_svg:not([class*='text-'])]:text-muted-foreground data-highlighted:[&_svg:not([class*='text-'])]:text-primary-foreground data-highlighted:[&_svg:not([class*='text-'])]:text-primary-foreground rounded-input relative flex w-full cursor-default items-center gap-2 py-1.5 pr-8 pl-2 text-sm outline-hidden select-none text-shadow-white/50 text-shadow-xs data-highlighted:text-shadow-black/25 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:text-shadow-black/25 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+        "data-[state=checked]:bg-primary/10 data-[state=checked]:text-primary-content data-[state=checked]:font-medium data-[state=checked]:shadow-[inset_0_1px_1px_rgba(191,66,59,.2)] data-highlighted:data-[state=checked]:bg-primary/85 data-highlighted:data-[state=checked]:shadow-[inset_0_1px_1px_rgba(0,0,0,.2)] data-highlighted:data-[state=checked]:[&_svg:not([class*='text-'])]:text-primary-foreground data-[state=checked]:[&_svg:not([class*='text-'])]:text-primary-content data-highlighted:data-[state=checked]:text-primary-foreground",
         className
       )}
       {...props}
     >
       <span className="absolute right-2 flex size-3.5 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="size-3 stroke-3 -mr-0.5" />
+          <CheckIcon className="size-[13px] stroke-3 -mr-px" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
