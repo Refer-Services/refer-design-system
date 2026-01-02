@@ -2,7 +2,7 @@ import { exec } from "child_process"
 import { promises as fs, readFileSync } from "fs"
 import path from "path"
 import { rimraf } from "rimraf"
-import { registryItemSchema, type Registry } from "shadcn/registry"
+import { registryItemSchema, type Registry } from "shadcn/schema"
 import { z } from "zod"
 
 const ROOT = process.cwd()
