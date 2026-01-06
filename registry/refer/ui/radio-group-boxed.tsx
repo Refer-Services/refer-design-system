@@ -4,16 +4,14 @@ import { cn } from "@/lib/utils"
 import { Label } from "@/registry/refer/ui/label"
 import { RadioGroupItem } from "@/registry/refer/ui/radio-group"
 
-interface RadioGroupItemBoxedProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement> {
+interface RadioGroupItemBoxedProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   className?: string
   id: string
   name: string
   children?: React.ReactNode
 }
 
-interface CheckboxBoxedSubComponentProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {
+interface CheckboxBoxedSubComponentProps extends React.HTMLAttributes<HTMLParagraphElement> {
   className?: string
 }
 

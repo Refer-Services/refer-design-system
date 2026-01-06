@@ -180,6 +180,17 @@ const registry = {
       ],
     },
     {
+      name: "combobox",
+      type: "registry:ui",
+      dependencies: ["@base-ui/react/combobox"],
+      files: [
+        {
+          path: "ui/combobox.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "command",
       type: "registry:ui",
       dependencies: ["cmdk"],
@@ -231,6 +242,16 @@ const registry = {
       files: [
         {
           path: "ui/dropdown-menu.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "empty",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/empty.tsx",
           type: "registry:ui",
         },
       ],
