@@ -1075,16 +1075,14 @@ function ComboboxWithCustomItems() {
           <ComboboxList>
             {(country) => (
               <ComboboxItem key={country.code} value={country}>
-                <Item size="sm" className="p-0">
-                  <ItemContent>
-                    <ItemTitle className="whitespace-nowrap">
+                <div className="flex flex-col">
+                    <div className="text-sm font-medium">
                       {country.label}
-                    </ItemTitle>
-                    <ItemDescription>
+                    </div>
+                    <div className="text-xs opacity-60">
                       {country.continent} ({country.code})
-                    </ItemDescription>
-                  </ItemContent>
-                </Item>
+                    </div>
+                </div>
               </ComboboxItem>
             )}
           </ComboboxList>

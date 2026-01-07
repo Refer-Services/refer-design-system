@@ -148,7 +148,7 @@ function ComboboxItem({
       className={cn(
         "group data-highlighted:bg-primary/85 data-highlighted:active:bg-primary/65 data-highlighted:text-primary-foreground data-highlighted:[&_svg]:text-primary-foreground rounded-input my-0.5 gap-2 py-1.5 pr-8 pl-2 text-sm last:my-0 [&_svg:not([class*='size-'])]:size-4",
         "relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        "data-selected:bg-primary/10 data-selected:text-primary-content data-selected:[&_svg]:text-primary-content data-highlighted:data-selected:bg-primary/85 data-highlighted:data-selected:active:bg-primary/70 data-highlighted:data-selected:text-primary-foreground data-highlighted:data-selected:[&_svg]:text-primary-foreground data-selected:font-medium data-selected:shadow-[inset_0_1px_1px_rgba(191,66,59,.2)] data-highlighted:data-selected:font-normal data-highlighted:data-selected:shadow-[inset_0_1px_1px_rgba(0,0,0,.2)]",
+        "data-selected:bg-primary/10 data-selected:text-primary-content data-selected:[&_svg]:text-primary-content data-highlighted:data-selected:bg-primary/85 data-highlighted:data-selected:active:bg-primary/70 data-highlighted:data-selected:text-primary-foreground data-highlighted:data-selected:[&_svg]:text-primary-foreground data-selected:font-medium data-selected:shadow-[inset_0_1px_1px_rgba(191,66,59,.12)] data-highlighted:data-selected:font-normal data-highlighted:data-selected:shadow-[inset_0_1px_1px_rgba(0,0,0,.16)]",
         className
       )}
       {...props}
