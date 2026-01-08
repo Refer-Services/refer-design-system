@@ -13,6 +13,7 @@ import { CarouselDemo } from "@/components/carousel-demo"
 import { CheckboxDemo } from "@/components/checkbox-demo"
 import { CollapsibleDemo } from "@/components/collapsible-demo"
 import { ComboboxDemo } from "@/components/combobox-demo"
+import { ComboboxExample } from "@/components/combobox2-demo"
 import { CommandDemo } from "@/components/command-demo"
 import { ComponentWrapper } from "@/components/component-wrapper"
 import { ContextMenuDemo } from "@/components/context-menu-demo"
@@ -20,6 +21,7 @@ import { DatePickerDemo } from "@/components/date-picker-demo"
 import { DialogDemo } from "@/components/dialog-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
+import { EmptyExample } from "@/components/empty-demo"
 import { FormDemo } from "@/components/form-demo"
 import { HoverCardDemo } from "@/components/hover-card-demo"
 import { InputDemo } from "@/components/input-demo"
@@ -35,6 +37,7 @@ import { RadioGroupDemo } from "@/components/radio-group-demo"
 import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
 import { SelectDemo } from "@/components/select-demo"
+import { SelectExample } from "@/components/select2-demo"
 import { SeparatorDemo } from "@/components/separator-demo"
 import { ShadowDemo } from "@/components/shadow-demo"
 import { SheetDemo } from "@/components/sheet-demo"
@@ -107,6 +110,9 @@ export default function SinkPage() {
       <ComponentWrapper name="combobox">
         <ComboboxDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="combobox-2">
+        <ComboboxExample />
+      </ComponentWrapper>
       <ComponentWrapper name="command">
         <CommandDemo />
       </ComponentWrapper>
@@ -124,6 +130,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="dropdown-menu">
         <DropdownMenuDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="empty">
+        <EmptyExample />
       </ComponentWrapper>
       <ComponentWrapper name="form">
         <FormDemo />
@@ -166,6 +175,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="select">
         <SelectDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="select-2">
+        <SelectExample />
       </ComponentWrapper>
       <ComponentWrapper name="separator">
         <SeparatorDemo />

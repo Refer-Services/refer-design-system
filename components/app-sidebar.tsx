@@ -140,11 +140,11 @@ const data = {
   ],
   components: Object.values(Index)
     .filter((item) => item.type === "registry:ui")
-    .concat([
-      {
-        name: "combobox",
-      },
-    ])
+    // .concat([
+    //   {
+    //     name: "combobox",
+    //   },
+    // ])
     .sort((a, b) => a.name.localeCompare(b.name)),
 }
 

@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils"
 import { Checkbox } from "@/registry/refer/ui/checkbox"
 import { Label } from "@/registry/refer/ui/label"
 
-interface CheckboxBoxedProps
-  extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "onChange"> {
+interface CheckboxBoxedProps extends Omit<
+  React.LabelHTMLAttributes<HTMLLabelElement>,
+  "onChange"
+> {
   className?: string
   children?: React.ReactNode
   checked?: boolean
@@ -15,8 +17,7 @@ interface CheckboxBoxedProps
   defaultChecked?: boolean
 }
 
-interface CheckboxBoxedSubComponentProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {
+interface CheckboxBoxedSubComponentProps extends React.HTMLAttributes<HTMLParagraphElement> {
   className?: string
 }
 

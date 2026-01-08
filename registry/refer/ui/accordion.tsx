@@ -71,11 +71,10 @@ function AccordionItem({
   )
 }
 
-interface AccordionTriggerProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>,
-    "children" | "prefix"
-  > {
+interface AccordionTriggerProps extends Omit<
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>,
+  "children" | "prefix"
+> {
   iconPosition?: "start" | "end"
   prefix?: React.ReactNode
   children?: React.ReactNode

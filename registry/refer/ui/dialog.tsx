@@ -168,8 +168,9 @@ function NavigationArrow({
   )
 }
 
-interface DialogContentWithNavigationProps
-  extends React.ComponentProps<typeof DialogPrimitive.Content> {
+interface DialogContentWithNavigationProps extends React.ComponentProps<
+  typeof DialogPrimitive.Content
+> {
   showNavigation?: boolean
   onPrevious?: () => void
   onNext?: () => void
