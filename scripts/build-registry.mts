@@ -182,7 +182,7 @@ const registry = {
     {
       name: "combobox",
       type: "registry:ui",
-      dependencies: ["@base-ui/react/combobox"],
+      dependencies: ["@base-ui/react"],
       files: [
         {
           path: "ui/combobox.tsx",
