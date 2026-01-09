@@ -296,6 +296,17 @@ const registry = {
       ],
     },
     {
+      name: "input-group",
+      type: "registry:ui",
+      registryDependencies: ["button", "input", "textarea"],
+      files: [
+        {
+          path: "ui/input-group.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "input-otp",
       type: "registry:ui",
       dependencies: ["input-otp"],
