@@ -10,17 +10,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 active:bg-primary border-black/20 border-x-[0.5px] border-t-[0.5px] border-b-[2px]",
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 active:bg-primary border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
         primary_subtle:
-          "bg-primary-subtle text-primary-content hover:shadow-xs hover:bg-primary/8 active:bg-primary/12 border-primary-border border-t-[0.5px] border-x-[0.5px] border-b-[1.5px]",
+          "bg-primary-subtle text-primary-content hover:shadow-xs hover:bg-primary/8 active:bg-primary/12 border-primary-border border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
         primary_ghost:
           "text-primary-content border border-transparent hover:border-primary-border/25 hover:bg-primary-subtle active:bg-primary/8",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 active:bg-destructive dark:bg-destructive/80 dark:hover:bg-destructive/70 border-black/20 border-t-[0.5px] border-x-[0.5px] border-b-[2px]",
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 active:bg-destructive dark:bg-destructive/80 dark:hover:bg-destructive/70 border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
         outline:
           "border border-input bg-card shadow-xs hover:bg-background active:bg-stone-100  dark:hover:bg-accent dark:active:bg-accent/60 hover:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/90 active:bg-secondary border-black/20 border-t-[0.5px] border-x-[0.5px] border-b-[2px]",
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/90 active:bg-secondary border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
         ghost:
           "hover:bg-muted hover:text-accent-foreground active:bg-border/70 dark:hover:bg-accent dark:active:bg-accent/60 [&_svg:not([class*='text-'])]:text-muted-foreground",
         subtle:
