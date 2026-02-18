@@ -5,6 +5,21 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 import { cn } from "@/lib/utils"
 
+function VisuallyHidden({ children, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      className="absolute h-px w-px overflow-hidden border-0 p-0 whitespace-nowrap"
+      style={{
+        clip: "rect(0, 0, 0, 0)",
+        clipPath: "inset(50%)",
+      }}
+      {...props}
+    >
+      {children}
+    </span>
+  )
+}
+
 function Drawer({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) {
@@ -37,7 +52,7 @@ function DrawerOverlay({
     <DrawerPrimitive.Overlay
       data-slot="drawer-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50 backdrop-blur-[1px]",
         className
       )}
       {...props}
@@ -48,8 +63,15 @@ function DrawerOverlay({
 function DrawerContent({
   className,
   children,
+  title = "Dialog",
+  hideTitle = false,
+  showDragHandle = true,
   ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Content>) {
+}: React.ComponentProps<typeof DrawerPrimitive.Content> & {
+  title?: string
+  hideTitle?: boolean
+  showDragHandle?: boolean
+}) {
   return (
     <DrawerPortal data-slot="drawer-portal">
       <DrawerOverlay />
@@ -65,7 +87,19 @@ function DrawerContent({
         )}
         {...props}
       >
-        <div className="bg-muted mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        {hideTitle ? (
+          <VisuallyHidden>
+            <DrawerPrimitive.Title>{title}</DrawerPrimitive.Title>
+          </VisuallyHidden>
+        ) : (
+          <DrawerPrimitive.Title className="sr-only">
+            {title}
+          </DrawerPrimitive.Title>
+        )}
+
+        {showDragHandle && (
+          <div className="bg-border mx-auto mt-2 hidden h-1 w-10 shrink-0 rounded-full group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        )}
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -129,4 +163,5 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
+  VisuallyHidden,
 }
