@@ -245,6 +245,9 @@
 @layer base {
   * {
     @apply border-border outline-ring outline-offset-2 focus-visible:outline-2;
+    @supports (corner-shape: superellipse(1.125)) {
+      corner-shape: superellipse(1.125);
+    }
   }
   body {
     @apply bg-background text-foreground;
