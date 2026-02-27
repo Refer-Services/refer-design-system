@@ -84,6 +84,7 @@ export function ComboboxExample() {
       <ComboboxMultipleInvalid />
       <ComboboxMultipleNoRemove />
       <ComboboxWithCustomItems />
+      <ComboboxWithCustomItemsAndTrigger />
       <ComboboxInDialog />
       <ComboboxWithOtherInputs />
     </ExampleWrapper>
@@ -1071,6 +1072,70 @@ function ComboboxWithCustomItems() {
       >
         <ComboboxInput placeholder="Search countries..." />
         <ComboboxContent>
+          <ComboboxEmpty>No countries found.</ComboboxEmpty>
+          <ComboboxList>
+            {(country) => (
+              <ComboboxItem key={country.code} value={country}>
+                <div className="flex flex-col">
+                    <div className="text-sm font-medium">
+                      {country.label}
+                    </div>
+                    <div className="text-xs opacity-60">
+                      {country.continent} ({country.code})
+                    </div>
+                </div>
+              </ComboboxItem>
+            )}
+          </ComboboxList>
+        </ComboboxContent>
+      </Combobox>
+    </Example>
+  )
+}
+
+function ComboboxWithCustomItemsAndTrigger() {
+  return (
+    <Example title="With Custom Item & Trigger">
+      <Combobox
+        items={countries.filter((country) => country.code !== "")}
+        itemToStringValue={(country: (typeof countries)[number]) =>
+          country.label
+        }
+      >
+        <ComboboxTrigger
+          render={
+            <Button
+              variant="outline"
+              className="w-64 !px-3 justify-between font-normal h-auto rounded-xl"
+            />
+          }
+        >
+          <ComboboxValue>
+            {(country: (typeof countries)[number]) =>
+              country ? (
+                <div className="flex flex-col items-start">
+                  <div className="text-sm font-medium">
+                    {country.label}
+                  </div>
+                  <div className="text-xs opacity-60">
+                    {country.continent} ({country.code})
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col items-start">
+                  <div className="text-sm font-regular opacity-70">
+                    Select country
+                  </div>
+                  <div className="text-xs opacity-50">
+                    And code area
+                  </div>
+                </div>
+              )
+            }
+          </ComboboxValue>
+        </ComboboxTrigger>
+        <ComboboxContent>
+          <ComboboxInput showTrigger={false} placeholder="Search countries..." />
           <ComboboxEmpty>No countries found.</ComboboxEmpty>
           <ComboboxList>
             {(country) => (
