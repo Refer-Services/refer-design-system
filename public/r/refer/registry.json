@@ -3,6 +3,69 @@
   "homepage": "https://ds.tryrefer.com",
   "items": [
     {
+      "name": "count-badge",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/count-badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "counted-collapsible",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/collapsible.json",
+        "https://ds.tryrefer.com/r/refer/count-badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/counted-collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "search-panel",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/input.json",
+        "https://ds.tryrefer.com/r/refer/count-badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/search-panel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "selectable-avatar",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/selectable-avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "accordion",
       "dependencies": [
         "@radix-ui/react-accordion"
@@ -748,6 +811,10 @@
       "title": "Refer Design System",
       "description": "Comprehensive styling system for Refer with dark mode support",
       "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/count-badge.json",
+        "https://ds.tryrefer.com/r/refer/counted-collapsible.json",
+        "https://ds.tryrefer.com/r/refer/search-panel.json",
+        "https://ds.tryrefer.com/r/refer/selectable-avatar.json",
         "https://ds.tryrefer.com/r/refer/accordion.json",
         "https://ds.tryrefer.com/r/refer/alert.json",
         "https://ds.tryrefer.com/r/refer/alert-dialog.json",

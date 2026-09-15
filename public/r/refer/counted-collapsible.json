@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "counted-collapsible",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ds.tryrefer.com/r/refer/collapsible.json",
+    "https://ds.tryrefer.com/r/refer/count-badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/refer/ui/counted-collapsible.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { ChevronRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/registry/refer/ui/collapsible\"\nimport { CountBadge } from \"@/registry/refer/ui/count-badge\"\n\nconst countedCollapsibleVariants = cva(\"\", {\n  variants: {\n    tone: {\n      neutral: \"rounded-2xl bg-muted text-muted-foreground\",\n      info: \"rounded-3xl bg-info-subtle text-info-content\",\n      primary: \"rounded-3xl bg-primary-subtle text-primary-content\",\n    },\n  },\n  defaultVariants: { tone: \"neutral\" },\n})\n\nconst badgeVariants = {\n  neutral: \"secondary\",\n  info: \"info\",\n  primary: \"primary\",\n} as const\n\ntype CountedCollapsibleProps = Omit<\n  React.ComponentProps<typeof Collapsible>,\n  \"defaultOpen\" | \"open\" | \"onOpenChange\" | \"title\"\n> &\n  VariantProps<typeof countedCollapsibleVariants> & {\n    title: string\n    titleSuffix?: React.ReactNode\n    count: number\n    countLabel?: string\n    open: boolean\n    onOpenChange: (open: boolean) => void\n  }\n\nfunction CountedCollapsible({\n  title,\n  titleSuffix,\n  count,\n  countLabel,\n  open,\n  onOpenChange,\n  tone = \"neutral\",\n  disabled,\n  className,\n  children,\n  ...props\n}: CountedCollapsibleProps) {\n  const hasItems = count > 0\n  const resolvedTone = tone ?? \"neutral\"\n\n  return (\n    <Collapsible\n      {...props}\n      data-slot=\"counted-collapsible\"\n      open={hasItems && open}\n      onOpenChange={onOpenChange}\n      disabled={disabled || !hasItems}\n      className={cn(\n        countedCollapsibleVariants({ tone: resolvedTone }),\n        className\n      )}\n    >\n      <CollapsibleTrigger className=\"group focus-visible:outline-ring flex min-h-11 w-full items-center gap-2 rounded-[inherit] px-4 py-3 text-left text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-default\">\n        <ChevronRight\n          aria-hidden=\"true\"\n          className=\"size-3.5 shrink-0 transition-transform group-data-[state=open]:rotate-90\"\n        />\n        <span>{title}</span>\n        {titleSuffix}\n        <CountBadge\n          count={count}\n          countLabel={countLabel}\n          variant={badgeVariants[resolvedTone]}\n          className={cn(\n            \"ml-auto\",\n            resolvedTone === \"primary\" && \"bg-primary/80\"\n          )}\n        />\n      </CollapsibleTrigger>\n      <CollapsibleContent className=\"space-y-0.5 px-1.5 pb-1.5\">\n        {children}\n      </CollapsibleContent>\n    </Collapsible>\n  )\n}\n\nexport { CountedCollapsible }\nexport type { CountedCollapsibleProps }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

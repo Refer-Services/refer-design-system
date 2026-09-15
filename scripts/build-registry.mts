@@ -13,6 +13,59 @@ const registry = {
   homepage: BASE_URL,
   items: z.array(registryItemSchema).parse([
     {
+      name: "count-badge",
+      type: "registry:ui",
+      registryDependencies: [`${BASE_URL}/r/refer/badge.json`],
+      files: [
+        {
+          path: "ui/count-badge.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "counted-collapsible",
+      type: "registry:ui",
+      dependencies: ["lucide-react"],
+      registryDependencies: [
+        `${BASE_URL}/r/refer/collapsible.json`,
+        `${BASE_URL}/r/refer/count-badge.json`,
+      ],
+      files: [
+        {
+          path: "ui/counted-collapsible.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "search-panel",
+      type: "registry:ui",
+      dependencies: ["lucide-react"],
+      registryDependencies: [
+        `${BASE_URL}/r/refer/input.json`,
+        `${BASE_URL}/r/refer/count-badge.json`,
+      ],
+      files: [
+        {
+          path: "ui/search-panel.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "selectable-avatar",
+      type: "registry:ui",
+      dependencies: ["lucide-react"],
+      registryDependencies: [`${BASE_URL}/r/refer/avatar.json`],
+      files: [
+        {
+          path: "ui/selectable-avatar.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "accordion",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-accordion"],
