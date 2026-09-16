@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "count-badge",
+  "registryDependencies": [
+    "https://ds.tryrefer.com/r/refer/badge.json"
+  ],
+  "files": [
+    {
+      "path": "registry/refer/ui/count-badge.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Badge } from \"@/registry/refer/ui/badge\"\n\ntype CountBadgeProps = Omit<\n  React.ComponentProps<typeof Badge>,\n  \"children\" | \"asChild\"\n> & {\n  count: number\n  countLabel?: string\n}\n\nfunction CountBadge({\n  count,\n  countLabel,\n  variant = \"secondary\",\n  className,\n  ...props\n}: CountBadgeProps) {\n  return (\n    <Badge\n      {...props}\n      data-slot=\"count-badge\"\n      variant={variant}\n      className={cn(\n        \"h-[18px] min-w-[18px] shrink-0 rounded-md border-0 px-1 py-0 text-xs leading-none tabular-nums\",\n        className\n      )}\n    >\n      {count}\n      {countLabel && <span className=\"sr-only\"> {countLabel}</span>}\n    </Badge>\n  )\n}\n\nexport { CountBadge }\nexport type { CountBadgeProps }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

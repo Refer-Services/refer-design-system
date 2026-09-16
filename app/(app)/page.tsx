@@ -1,3 +1,9 @@
+import {
+  SelectableAvatarDemo,
+  CountBadgeDemo,
+  CountedCollapsibleDemo,
+  SearchPanelDemo,
+} from "@/components/pipeline-primitives-demo"
 import { AccordionDemo } from "@/components/accordion-demo"
 import { AlertDemo } from "@/components/alert-demo"
 import { AlertDialogDemo } from "@/components/alert-dialog-demo"
@@ -56,6 +62,18 @@ import { TypographyDemo } from "@/components/typography-demo"
 export default function SinkPage() {
   return (
     <div className="@container grid flex-1 gap-5 p-6">
+      <ComponentWrapper name="selectable-avatar">
+        <SelectableAvatarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="count-badge">
+        <CountBadgeDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="counted-collapsible">
+        <CountedCollapsibleDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="search-panel">
+        <SearchPanelDemo />
+      </ComponentWrapper>
       {/* <ComponentWrapper name="chart" className="w-full">
         <ChartDemo />
       </ComponentWrapper> */}

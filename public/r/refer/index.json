@@ -4,6 +4,10 @@
   "title": "Refer Design System",
   "description": "Comprehensive styling system for Refer with dark mode support",
   "registryDependencies": [
+    "https://ds.tryrefer.com/r/refer/count-badge.json",
+    "https://ds.tryrefer.com/r/refer/counted-collapsible.json",
+    "https://ds.tryrefer.com/r/refer/search-panel.json",
+    "https://ds.tryrefer.com/r/refer/selectable-avatar.json",
     "https://ds.tryrefer.com/r/refer/accordion.json",
     "https://ds.tryrefer.com/r/refer/alert.json",
     "https://ds.tryrefer.com/r/refer/alert-dialog.json",
