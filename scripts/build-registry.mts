@@ -13,6 +13,100 @@ const registry = {
   homepage: BASE_URL,
   items: z.array(registryItemSchema).parse([
     {
+      name: "candidate-match-badge",
+      type: "registry:ui",
+      dependencies: ["lucide-react"],
+      registryDependencies: [`${BASE_URL}/r/refer/badge.json`],
+      files: [
+        {
+          path: "ui/candidate-match-badge.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "thumbs-up-icon",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/thumbs-up-icon.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "two-thumbs-up-icon",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/two-thumbs-up-icon.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "thumbs-down-icon",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/thumbs-down-icon.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "two-thumbs-down-icon",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/two-thumbs-down-icon.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "candidate-rating-badge",
+      type: "registry:ui",
+      registryDependencies: [
+        `${BASE_URL}/r/refer/badge.json`,
+        `${BASE_URL}/r/refer/thumbs-up-icon.json`,
+        `${BASE_URL}/r/refer/two-thumbs-up-icon.json`,
+        `${BASE_URL}/r/refer/thumbs-down-icon.json`,
+        `${BASE_URL}/r/refer/two-thumbs-down-icon.json`,
+      ],
+      files: [
+        {
+          path: "ui/candidate-rating-badge.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "lia-contact-icon",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/lia-contact-icon.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "candidate-source-badge",
+      type: "registry:ui",
+      dependencies: ["lucide-react"],
+      registryDependencies: [
+        `${BASE_URL}/r/refer/badge.json`,
+        `${BASE_URL}/r/refer/lia-contact-icon.json`,
+      ],
+      files: [
+        {
+          path: "ui/candidate-source-badge.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "count-badge",
       type: "registry:ui",
       registryDependencies: [`${BASE_URL}/r/refer/badge.json`],
