@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "candidate-source-badge",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://ds.tryrefer.com/r/refer/badge.json",
+    "https://ds.tryrefer.com/r/refer/lia-contact-icon.json"
+  ],
+  "files": [
+    {
+      "path": "registry/refer/ui/candidate-source-badge.tsx",
+      "content": "import * as React from \"react\"\nimport { Globe, Import } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Badge } from \"@/registry/refer/ui/badge\"\nimport { LiaContactIcon } from \"@/registry/refer/ui/lia-contact-icon\"\n\nconst SOURCE_CONFIG = {\n  lia: {\n    label: \"Lia's contact\",\n    icon: LiaContactIcon,\n    variant: \"primary_subtle\",\n  },\n  applicant: {\n    label: \"Applicant\",\n    icon: Globe,\n    variant: \"secondary_subtle\",\n  },\n  manual: {\n    label: \"Manually added\",\n    icon: Import,\n    variant: \"secondary_subtle\",\n  },\n} as const\n\ntype CandidateSource = keyof typeof SOURCE_CONFIG\n\ntype CandidateSourceBadgeProps = Omit<\n  React.ComponentProps<typeof Badge>,\n  \"children\" | \"variant\" | \"asChild\"\n> & {\n  source: CandidateSource\n}\n\nfunction CandidateSourceBadge({\n  source,\n  className,\n  ...props\n}: CandidateSourceBadgeProps) {\n  const { label, icon: Icon, variant } = SOURCE_CONFIG[source]\n\n  return (\n    <Badge\n      {...props}\n      data-slot=\"candidate-source-badge\"\n      data-source={source}\n      variant={variant}\n      className={cn(\n        \"h-5 rounded-md border-0 px-1.5 py-0 text-xs font-normal has-[>svg]:pl-1.5\",\n        className\n      )}\n    >\n      <Icon aria-hidden=\"true\" className=\"size-3 shrink-0\" />\n      {label}\n    </Badge>\n  )\n}\n\nexport { CandidateSourceBadge }\nexport type { CandidateSource, CandidateSourceBadgeProps }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
