@@ -5,7 +5,7 @@
     "@radix-ui/react-toggle-group"
   ],
   "registryDependencies": [
-    "toggle"
+    "https://ds.tryrefer.com/r/refer/toggle.json"
   ],
   "files": [
     {

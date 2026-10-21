@@ -1,6 +1,7 @@
 import { exec } from "child_process"
 import { promises as fs, readFileSync } from "fs"
 import path from "path"
+import postcss from "postcss"
 import { rimraf } from "rimraf"
 import { registryItemSchema, type Registry } from "shadcn/schema"
 import { z } from "zod"
@@ -183,6 +184,7 @@ const registry = {
       name: "combobox",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
+      registryDependencies: ["button", "input-group"],
       files: [
         {
           path: "ui/combobox.tsx",
@@ -439,6 +441,17 @@ const registry = {
       ],
     },
     {
+      name: "responsive-dialog",
+      type: "registry:ui",
+      registryDependencies: ["dialog", "drawer", "use-mobile"],
+      files: [
+        {
+          path: "ui/responsive-dialog.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "separator",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-separator"],
@@ -645,8 +658,123 @@ const registry = {
         },
       ],
     },
+    {
+      name: "refer-utils",
+      type: "registry:file",
+      title: "Refer utilities",
+      description: "Tailwind v4 utilities: scroll-fade, shimmer, squircle.",
+      files: [
+        {
+          path: "styles/refer-utils.css",
+          type: "registry:file",
+          // "~/" anchors the target at the consumer's project root.
+          target: "~/app/refer-utils.css",
+        },
+      ],
+    },
   ]),
 } satisfies Registry
+
+// Imports every consumer already has from `shadcn init`; the CLI can't place them reliably.
+const CONSUMER_IMPORTS = new Set(['"tailwindcss"', '"tw-animate-css"'])
+
+/** Converts a CSS container into the CSS-in-JSON shape the shadcn CLI expects for `css`. */
+function cssToJson(container: postcss.Container, nested = false): Record<string, unknown> {
+  const out: Record<string, unknown> = {}
+  container.each((node) => {
+    if (node.type === "decl") {
+      out[node.prop] = node.value
+    } else if (node.type === "rule") {
+      out[node.selector] = cssToJson(node, true)
+    } else if (node.type === "atrule") {
+      const key = `@${node.name} ${node.params}`.trim()
+      // The CLI appends nested at-rule blocks on every install instead of replacing them.
+      if (nested && node.nodes) {
+        throw new Error(`app/globals.css: nested "${key}" would duplicate on each install; flatten it.`)
+      }
+      // Body-less at-rules (e.g. `@apply ...`) become `"@apply ...": {}`, not a property.
+      out[key] = node.nodes ? cssToJson(node, true) : {}
+    }
+  })
+  return out
+}
+
+/** cssVars keys are written without the leading `--`; the CLI adds it back. */
+function varsOf(container: postcss.Container): Record<string, string> {
+  const vars: Record<string, string> = {}
+  container.each((node) => {
+    if (node.type === "decl" && node.prop.startsWith("--")) {
+      vars[node.prop.slice(2)] = node.value.replace(/\s+/g, " ")
+    }
+  })
+  return vars
+}
+
+/** Splits app/globals.css into the style item's `cssVars` (light/dark/theme) and `css`. */
+function styleFromGlobals(globalsPath: string) {
+  const root = postcss.parse(readFileSync(globalsPath, "utf-8"))
+  const cssVars = { light: {}, dark: {}, theme: {} }
+  const rest = postcss.root()
+
+  root.each((node) => {
+    if (node.type === "comment") return
+    if (node.type === "rule" && node.selector === ":root") {
+      cssVars.light = varsOf(node)
+    } else if (node.type === "rule" && node.selector === ".dark") {
+      cssVars.dark = varsOf(node)
+    } else if (node.type === "atrule" && node.name === "theme" && node.params === "inline") {
+      cssVars.theme = varsOf(node)
+    } else if (node.type === "atrule" && node.name === "import" && CONSUMER_IMPORTS.has(node.params)) {
+      return
+    } else if (node.type === "atrule" && node.name === "import" && node.params.includes("registry/refer/styles/")) {
+      // Registry CSS files land next to the consumer's globals.css (target ~/app/<file>).
+      rest.append(node.clone({ params: `"./${path.basename(node.params.replace(/["']/g, ""))}"` }))
+    } else {
+      rest.append(node.clone())
+    }
+  })
+
+  return { cssVars, css: cssToJson(rest) }
+}
+
+/**
+ * Items list their registry dependencies by bare name ("button"), but the
+ * shadcn CLI resolves a bare name against shadcn's own registry: installing a
+ * Refer item would pull in stock shadcn components over the Refer ones. Point
+ * every bare name at the Refer item instead, and fail the build on a name that
+ * isn't one, or on a Refer import an item doesn't declare.
+ */
+function resolveRegistryDependencies() {
+  const names = new Set(registry.items.map((item) => item.name))
+
+  for (const item of registry.items) {
+    const deps = item.registryDependencies ?? []
+    for (const dep of deps) {
+      if (!dep.startsWith("http") && !names.has(dep)) {
+        throw new Error(
+          `${item.name}: registry dependency "${dep}" isn't a Refer item; use a full URL for an external one.`
+        )
+      }
+    }
+
+    const declared = new Set(deps.map((dep) => path.basename(dep, ".json")))
+    for (const file of item.files ?? []) {
+      const filePath = typeof file === "string" ? file : file.path
+      const source = readFileSync(path.join(ROOT, "registry/refer", filePath), "utf-8")
+      for (const [, used] of source.matchAll(/@\/registry\/refer\/(?:ui|hooks)\/([\w-]+)/g)) {
+        if (used !== item.name && !declared.has(used)) {
+          throw new Error(`${item.name}: imports "${used}" without listing it in registryDependencies.`)
+        }
+      }
+    }
+
+    if (deps.length) {
+      item.registryDependencies = deps.map((dep) =>
+        dep.startsWith("http") ? dep : `${BASE_URL}/r/refer/${dep}.json`
+      )
+    }
+  }
+}
 
 async function addStyleItem() {
   // 2. Add global style witch is in registry/refer/styles/refer-stylel.json
@@ -656,6 +784,17 @@ async function addStyleItem() {
   /** Atualiza o index item */
   const stylePath = path.join(REG_DIR, "refer/styles/refer-style.json")
   const style = JSON.parse(readFileSync(stylePath, "utf-8"))
+
+  // Global CSS ships as its own item, generated from app/globals.css (the single source of truth),
+  // so apps can sync it without reinstalling every component: `shadcn add .../globals.json`.
+  registry.items.push({
+    name: "globals",
+    type: "registry:style",
+    title: "Refer global CSS",
+    description: "Design tokens, base styles and utilities from app/globals.css.",
+    files: [],
+    ...styleFromGlobals(path.join(ROOT, "app/globals.css")),
+  })
 
   // adiciona todos os items
   style.registryDependencies = []
@@ -684,8 +823,9 @@ export const Index: Record<string, any> = {`
     //   continue
     // }
 
-    const componentPath = item.files?.[0]?.path
-      ? `@/registry/refer/${item.files[0].path}`
+    // Only React modules get a lazy preview component; CSS and other files don't.
+    const componentPath = /\.tsx?$/.test(item.files?.[0]?.path ?? "")
+      ? `@/registry/refer/${item.files![0].path}`
       : ""
 
     index += `
@@ -772,6 +912,9 @@ async function buildRegistry() {
 }
 
 try {
+  console.log("🔗 Resolving registry dependencies to Refer URLs...")
+  resolveRegistryDependencies()
+
   console.log("📝 Adding style item to registry...")
   await addStyleItem()
 

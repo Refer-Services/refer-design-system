@@ -1,17 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox"
-import { ChevronDown, X, Check } from "lucide-react"
-
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/refer/ui/button"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
 } from "@/registry/refer/ui/input-group"
+import { Button } from "@/registry/refer/ui/button"
+import { ChevronDown, X, Check } from "lucide-react"
+import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox"
 
 const Combobox = ComboboxPrimitive.Root
 
@@ -41,7 +40,7 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
     <ComboboxPrimitive.Clear
       data-slot="combobox-clear"
       render={<InputGroupButton variant="ghost" size="icon-xs" />}
-      className={cn("cn-combobox-clear", className)}
+      className={cn("", className)}
       {...props}
     >
       <X />
@@ -55,13 +54,16 @@ function ComboboxInput({
   disabled = false,
   showTrigger = true,
   showClear = false,
+  groupRef,
   ...props
 }: ComboboxPrimitive.Input.Props & {
   showTrigger?: boolean
   showClear?: boolean
+  /** Reaches the field box, e.g. to anchor ComboboxContent to it. */
+  groupRef?: React.Ref<HTMLDivElement>
 }) {
   return (
-    <InputGroup className={cn("cn-combobox-input w-auto", className)}>
+    <InputGroup ref={groupRef} className={cn("w-auto", className)}>
       <ComboboxPrimitive.Input
         render={<InputGroupInput disabled={disabled} />}
         {...props}
@@ -99,8 +101,37 @@ function ComboboxContent({
     ComboboxPrimitive.Positioner.Props,
     "side" | "align" | "sideOffset" | "alignOffset" | "anchor"
   >) {
+  // Inside a modal Radix Dialog / vaul Drawer, the body-level popup sits
+  // outside the scroll-locked content, so react-remove-scroll blocks wheel
+  // scrolling on it. Portal into the modal content instead — derived from the
+  // anchor, which lives inside it — so scrolling and pointer events work.
+  //
+  // Resolve it into state (not a ref): the underlying FloatingPortal only
+  // re-reads `container` when its identity changes, and the anchor ref isn't
+  // populated yet on the first render. `undefined` (never `null`) falls back to
+  // <body> when not inside a modal — `null` makes the portal wait, not default.
+  const [portalContainer, setPortalContainer] =
+    React.useState<HTMLElement | null>(null)
+  React.useEffect(() => {
+    const anchorEl =
+      anchor && typeof anchor === "object" && "current" in anchor
+        ? (anchor.current as Element | null)
+        : null
+    setPortalContainer(
+      (anchorEl?.closest(
+        "[data-slot=dialog-content],[data-slot=drawer-content]"
+      ) as HTMLElement | null) ?? null
+    )
+  }, [anchor])
+
+  // `contents`: inside the flex/grid modal content the portal box would take a
+  // `gap` row and shift the footer. Its children are all out-of-flow (the
+  // absolute positioner and fixed focus guards), so dropping the box is safe.
   return (
-    <ComboboxPrimitive.Portal>
+    <ComboboxPrimitive.Portal
+      container={portalContainer ?? undefined}
+      className="contents"
+    >
       <ComboboxPrimitive.Positioner
         side={side}
         sideOffset={sideOffset}
@@ -114,7 +145,7 @@ function ComboboxContent({
           data-chips={!!anchor}
           className={cn(
             "bg-popover text-popover-foreground data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ring-foreground/10 *:data-[slot=input-group]:bg-input/30 *:data-[slot=input-group]:border-input/30 rounded-card shadow-popover max-h-72 min-w-36 overflow-hidden ring-1 backdrop-blur-xl duration-100 *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 *:data-[slot=input-group]:shadow-none",
-            "cn-menu-target group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) data-[chips=true]:min-w-(--anchor-width)",
+            "group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) data-[chips=true]:min-w-(--anchor-width)",
             className
           )}
           {...props}
@@ -169,7 +200,7 @@ function ComboboxGroup({ className, ...props }: ComboboxPrimitive.Group.Props) {
   return (
     <ComboboxPrimitive.Group
       data-slot="combobox-group"
-      className={cn("cn-combobox-group", className)}
+      className={cn("", className)}
       {...props}
     />
   )
@@ -249,7 +280,7 @@ function ComboboxChip({
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
       className={cn(
-        "bg-secondary/10 text-foreground flex h-6 w-fit items-center justify-center gap-1 rounded-md cursor-default px-[7px] text-xs font-medium whitespace-nowrap has-data-[slot=combobox-chip-remove]:hover:shadow-avatar has-data-[slot=combobox-chip-remove]:hover:bg-secondary/12 has-data-[slot=combobox-chip-remove]:rounded-r-xl has-data-[slot=combobox-chip-remove]:pr-0 transition-all duration-150",
+        "bg-secondary/10 text-foreground has-data-[slot=combobox-chip-remove]:hover:shadow-avatar has-data-[slot=combobox-chip-remove]:hover:bg-secondary/12 flex h-6 w-fit cursor-default items-center justify-center gap-1 rounded-md px-[7px] text-xs font-medium whitespace-nowrap transition-all duration-150 has-data-[slot=combobox-chip-remove]:rounded-r-xl has-data-[slot=combobox-chip-remove]:pr-0",
         "has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
         className
       )}
@@ -278,10 +309,7 @@ function ComboboxChipsInput({
   return (
     <ComboboxPrimitive.Input
       data-slot="combobox-chip-input"
-      className={cn(
-        "cn-combobox-chip-input min-w-16 flex-1 outline-none",
-        className
-      )}
+      className={cn("min-w-16 flex-1 outline-none", className)}
       {...props}
     />
   )

@@ -9,8 +9,8 @@
     "react-hook-form"
   ],
   "registryDependencies": [
-    "button",
-    "label"
+    "https://ds.tryrefer.com/r/refer/button.json",
+    "https://ds.tryrefer.com/r/refer/label.json"
   ],
   "files": [
     {

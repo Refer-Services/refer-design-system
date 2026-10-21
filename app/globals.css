@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import "tw-animate-css";
+@import "../registry/refer/styles/refer-utils.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -220,6 +221,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  /* Pinned to Tailwind's defaults: without them the shadcn CLI injects radius-based
+     values (e.g. 2xl = 0.9rem) into consumers' globals.css on install. */
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
 
   --radius-input: var(--radius-input);
   --radius-card: var(--radius-card);
@@ -251,8 +257,13 @@
   }
 }
 
-.squircle {
-  @supports (corner-shape: superellipse(1.125)) {
-    corner-shape: superellipse(1.15);
-  }
+/* Browsers without corner-shape ignore it and keep the plain border-radius. */
+@utility squircle {
+  corner-shape: superellipse(1.15);
+}
+
+/* Thin, low-contrast scrollbar that keeps the element scrollable (Combobox list). */
+@utility no-scrollbar {
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  scrollbar-width: thin;
 }
