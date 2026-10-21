@@ -5,7 +5,7 @@
     "@radix-ui/react-alert-dialog"
   ],
   "registryDependencies": [
-    "button"
+    "https://ds.tryrefer.com/r/refer/button.json"
   ],
   "files": [
     {

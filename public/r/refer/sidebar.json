@@ -7,13 +7,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "separator",
-    "sheet",
-    "tooltip",
-    "input",
-    "use-mobile",
-    "skeleton"
+    "https://ds.tryrefer.com/r/refer/button.json",
+    "https://ds.tryrefer.com/r/refer/separator.json",
+    "https://ds.tryrefer.com/r/refer/sheet.json",
+    "https://ds.tryrefer.com/r/refer/tooltip.json",
+    "https://ds.tryrefer.com/r/refer/input.json",
+    "https://ds.tryrefer.com/r/refer/use-mobile.json",
+    "https://ds.tryrefer.com/r/refer/skeleton.json"
   ],
   "files": [
     {

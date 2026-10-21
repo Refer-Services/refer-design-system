@@ -46,7 +46,7 @@ It explains **what this project is**, **where to make changes**, and **how not t
   - **`registry/refer/charts/`**: Components backed by `recharts`.
   - **`registry/refer/hooks/`**: Shared React hooks (e.g. `use-mobile`).
   - **`registry/refer/lib/`**: Utilities including the registry’s `cn()` helper.
-  - **`registry/refer/styles/`**: Tokens and theme (`refer-style.json`).
+  - **`registry/refer/styles/`**: The `index` style item's metadata (`refer-style.json`) and shipped CSS files (`refer-utils.css`). Tokens live in `app/globals.css`.
 - **Docs / examples only (not published)**:
   - **`components/`**: Demo/showcase components, almost always named `*-demo.tsx`.
   - These import from `@/registry/refer/ui/...` and are safe to change without affecting consumers, as long as you do not break imports.
@@ -93,9 +93,10 @@ It explains **what this project is**, **where to make changes**, and **how not t
 
 ### Design tokens and theming
 
-- **Token sources**:
-  - `app/globals.css`
-  - `registry/refer/styles/refer-style.json`
+- **Token source**: `app/globals.css` is the single source of truth. `npm run registry:build` generates the `index`
+  style item's `cssVars` (from `:root`, `.dark`, `@theme inline`) and `css` (everything else) from it, so consumers get
+  it via `shadcn add`. Don't add `cssVars`/`css` to `refer-style.json`, and don't nest at-rules inside other blocks
+  (the CLI duplicates them on every install; the build fails if you do).
 - **Brand palette**:
   - `--color-refer-50` → `--color-refer-950` (warm red scale).
 - **Semantic color tokens (beyond stock shadcn)**:

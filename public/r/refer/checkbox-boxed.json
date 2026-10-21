@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "checkbox-boxed",
   "registryDependencies": [
-    "checkbox",
-    "label"
+    "https://ds.tryrefer.com/r/refer/checkbox.json",
+    "https://ds.tryrefer.com/r/refer/label.json"
   ],
   "files": [
     {

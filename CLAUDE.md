@@ -39,7 +39,9 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 ## Adding a new registry component
 
 1. Implement it under `registry/refer/ui/` (or `blocks/`, `charts/`, `hooks/`, `lib/` as appropriate).
-2. Add or update its entry in `scripts/build-registry.mts`.
+2. Add or update its entry in `scripts/build-registry.mts`. List every Refer component or hook it imports in
+   `registryDependencies` by bare name (`"button"`): the build turns them into Refer URLs (a bare name would
+   otherwise install shadcn's own component) and fails on an undeclared import or an unknown name.
 3. Run `npm run registry:build`.
 4. Optionally add a `*-demo.tsx` in `components/` and wire it into the relevant `app/(app)/` route.
 
@@ -62,7 +64,9 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 
 ## Design tokens
 
-Token sources: `app/globals.css` and `registry/refer/styles/refer-style.json`.
+Token source: `app/globals.css` only. `npm run registry:build` generates the `index` style item's `cssVars` and `css`
+from it (`refer-style.json` holds just the item's metadata). Don't nest at-rules inside other blocks there: the CLI
+duplicates them on every install, so the build rejects them.
 
 **Prefer semantic tokens over raw Tailwind color utilities:**
 

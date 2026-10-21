@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { Label } from "@/registry/refer/ui/label"
 import { RadioGroupItem } from "@/registry/refer/ui/radio-group"
+import { Label } from "@/registry/refer/ui/label"
 
 interface RadioGroupItemBoxedProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   className?: string
@@ -31,7 +31,7 @@ function RadioGroupItemBoxed({
       {...props}
     >
       <RadioGroupItem value={id} id={name} />
-      <div className="grid gap-1.5 font-normal">{children}</div>
+      <div className="grid gap-0.5 font-normal">{children}</div>
     </Label>
   )
 }

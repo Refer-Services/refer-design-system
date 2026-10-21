@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group",
   "registryDependencies": [
-    "button",
-    "input",
-    "textarea"
+    "https://ds.tryrefer.com/r/refer/button.json",
+    "https://ds.tryrefer.com/r/refer/input.json",
+    "https://ds.tryrefer.com/r/refer/textarea.json"
   ],
   "files": [
     {

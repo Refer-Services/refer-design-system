@@ -5,7 +5,7 @@
     "cmdk"
   ],
   "registryDependencies": [
-    "dialog"
+    "https://ds.tryrefer.com/r/refer/dialog.json"
   ],
   "files": [
     {

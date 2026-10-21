@@ -48,7 +48,7 @@ export const Index: Record<string, any> = {
     name: "alert-dialog",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
       path: "registry/ui/alert-dialog.tsx",
       type: "registry:ui",
@@ -162,7 +162,7 @@ export const Index: Record<string, any> = {
     name: "calendar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
       path: "registry/ui/calendar.tsx",
       type: "registry:ui",
@@ -200,7 +200,7 @@ export const Index: Record<string, any> = {
     name: "carousel",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
       path: "registry/ui/carousel.tsx",
       type: "registry:ui",
@@ -219,7 +219,7 @@ export const Index: Record<string, any> = {
     name: "chart",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["card"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/card.json"],
     files: [{
       path: "registry/ui/chart.tsx",
       type: "registry:ui",
@@ -257,7 +257,7 @@ export const Index: Record<string, any> = {
     name: "checkbox-boxed",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["checkbox","label"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
       path: "registry/ui/checkbox-boxed.tsx",
       type: "registry:ui",
@@ -295,7 +295,7 @@ export const Index: Record<string, any> = {
     name: "combobox",
     description: "",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/input-group.json"],
     files: [{
       path: "registry/ui/combobox.tsx",
       type: "registry:ui",
@@ -314,7 +314,7 @@ export const Index: Record<string, any> = {
     name: "command",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["dialog"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json"],
     files: [{
       path: "registry/ui/command.tsx",
       type: "registry:ui",
@@ -428,7 +428,7 @@ export const Index: Record<string, any> = {
     name: "form",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button","label"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
       path: "registry/ui/form.tsx",
       type: "registry:ui",
@@ -485,7 +485,7 @@ export const Index: Record<string, any> = {
     name: "input-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button","input","textarea"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/textarea.json"],
     files: [{
       path: "registry/ui/input-group.tsx",
       type: "registry:ui",
@@ -580,7 +580,7 @@ export const Index: Record<string, any> = {
     name: "pagination",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
       path: "registry/ui/pagination.tsx",
       type: "registry:ui",
@@ -656,7 +656,7 @@ export const Index: Record<string, any> = {
     name: "radio-group-boxed",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["radio-group","label"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
       path: "registry/ui/radio-group-boxed.tsx",
       type: "registry:ui",
@@ -728,6 +728,25 @@ export const Index: Record<string, any> = {
     tailwind: {},
     cssVars: {},
   },
+  "responsive-dialog": {
+    name: "responsive-dialog",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/use-mobile.json"],
+    files: [{
+      path: "registry/ui/responsive-dialog.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/responsive-dialog.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
   "separator": {
     name: "separator",
     description: "",
@@ -770,7 +789,7 @@ export const Index: Record<string, any> = {
     name: "sidebar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button","separator","sheet","tooltip","input","use-mobile","skeleton"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/skeleton.json"],
     files: [{
       path: "registry/ui/sidebar.tsx",
       type: "registry:ui",
@@ -941,7 +960,7 @@ export const Index: Record<string, any> = {
     name: "toggle-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["toggle"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/toggle.json"],
     files: [{
       path: "registry/ui/toggle-group.tsx",
       type: "registry:ui",
@@ -994,15 +1013,41 @@ export const Index: Record<string, any> = {
     tailwind: {},
     cssVars: {},
   },
-  "index": {
-    name: "index",
-    description: "Comprehensive styling system for Refer with dark mode support",
+  "refer-utils": {
+    name: "refer-utils",
+    description: "Tailwind v4 utilities: scroll-fade, shimmer, squircle.",
+    type: "registry:file",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/styles/refer-utils.css",
+      type: "registry:file",
+      target: "~/app/refer-utils.css"
+    }],
+    component: null,
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
+  "globals": {
+    name: "globals",
+    description: "Design tokens, base styles and utilities from app/globals.css.",
     type: "registry:style",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/accordion.json","https://ds.tryrefer.com/r/refer/alert.json","https://ds.tryrefer.com/r/refer/alert-dialog.json","https://ds.tryrefer.com/r/refer/aspect-ratio.json","https://ds.tryrefer.com/r/refer/avatar.json","https://ds.tryrefer.com/r/refer/badge.json","https://ds.tryrefer.com/r/refer/breadcrumb.json","https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/calendar.json","https://ds.tryrefer.com/r/refer/card.json","https://ds.tryrefer.com/r/refer/carousel.json","https://ds.tryrefer.com/r/refer/chart.json","https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/checkbox-boxed.json","https://ds.tryrefer.com/r/refer/collapsible.json","https://ds.tryrefer.com/r/refer/combobox.json","https://ds.tryrefer.com/r/refer/command.json","https://ds.tryrefer.com/r/refer/context-menu.json","https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/dropdown-menu.json","https://ds.tryrefer.com/r/refer/empty.json","https://ds.tryrefer.com/r/refer/form.json","https://ds.tryrefer.com/r/refer/hover-card.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/input-group.json","https://ds.tryrefer.com/r/refer/input-otp.json","https://ds.tryrefer.com/r/refer/label.json","https://ds.tryrefer.com/r/refer/menubar.json","https://ds.tryrefer.com/r/refer/navigation-menu.json","https://ds.tryrefer.com/r/refer/pagination.json","https://ds.tryrefer.com/r/refer/popover.json","https://ds.tryrefer.com/r/refer/progress.json","https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/radio-group-boxed.json","https://ds.tryrefer.com/r/refer/resizable.json","https://ds.tryrefer.com/r/refer/scroll-area.json","https://ds.tryrefer.com/r/refer/select.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/sidebar.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/slider.json","https://ds.tryrefer.com/r/refer/sonner.json","https://ds.tryrefer.com/r/refer/switch.json","https://ds.tryrefer.com/r/refer/table.json","https://ds.tryrefer.com/r/refer/tabs.json","https://ds.tryrefer.com/r/refer/textarea.json","https://ds.tryrefer.com/r/refer/toggle.json","https://ds.tryrefer.com/r/refer/toggle-group.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/use-mobile.json"],
+    registryDependencies: undefined,
     files: [],
     component: null,
     meta: undefined,
     tailwind: {},
-    cssVars: {"light":{"--background":"var(--color-stone-50)","--foreground":"var(--color-stone-700)","--card":"var(--color-white)","--card-foreground":"var(--foreground)","--popover":"--alpha(var(--color-stone-200) / 50%)","--popover-foreground":"var(--foreground)","--primary":"var(--color-refer-600)","--primary-content":"var(--color-refer-700);","--primary-subtle":"--alpha(var(--primary) / 5%)","--primary-border":"--alpha(var(--primary) / 10%)","--primary-foreground":"var(--color-stone-50)","--secondary":"var(--color-stone-500)","--secondary-foreground":"var(--color-stone-100)","--muted":"--alpha(var(--color-stone-700) / 6%)","--muted-foreground":"var(--color-stone-500)","--accent":"--alpha(var(--color-stone-700) / 5%)","--accent-foreground":"var(--foreground)","--destructive":"var(--color-amber-600)","--destructive-subtle":"--alpha(var(--color-orange-400) / 12%)","--destructive-content":"var(--color-amber-700)","--destructive-foreground":"var(--color-white)","--positive":"var(--color-emerald-600)","--positive-subtle":"--alpha(var(--color-emerald-400) / 12%)","--positive-content":"var(--color-emerald-700)","--positive-foreground":"var(--color-white)","--info":"var(--color-sky-600)","--info-subtle":"--alpha(var(--color-sky-400) / 12%)","--info-content":"var(--color-sky-700)","--info-foreground":"var(--color-white)","--border-high":"--alpha(var(--color-stone-900) / 20%)","--border":"--alpha(var(--color-stone-900) / 10%)","--border-low":"--alpha(var(--color-stone-900) / 5%)","--input":"--alpha(var(--color-stone-300) / 70%)","--ring":"--alpha(var(--primary) / 80%)","--chart-1":"#b05730","--chart-2":"#9c87f5","--chart-3":"#ded8c4","--chart-4":"#dbd3f0","--chart-5":"#b4552d","--sidebar":"--alpha(var(--primary) / 1%)","--sidebar-foreground":"var(--foreground)","--sidebar-primary":"var(--primary)","--sidebar-primary-foreground":"var(--primary-foreground)","--sidebar-accent":"var(--accent)","--sidebar-accent-foreground":"var(--accent-foreground)","--sidebar-border":"var(--border)","--sidebar-ring":"var(--ring)","--font-sans":"Geist, sans-serif","--font-serif":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","--font-mono":"\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","--radius":"0.5rem","--input-radius":"0.5rem","--shadow-2xs":"0 1px --alpha(var(--color-refer-950) / 5%)","--shadow-xs":"0 1px 2px 0 --alpha(var(--color-refer-950) / 5%)","--shadow-sm":"0 1px 3px 0 --alpha(var(--color-refer-950) / 10%), 0 1px 2px -1px --alpha(var(--color-refer-950) / 10%)","--shadow-md":"0 4px 6px -1px --alpha(var(--color-refer-950) / 10%), 0 2px 4px -2px --alpha(var(--color-refer-950) / 10%)","--shadow-lg":"0 10px 15px -3px --alpha(var(--color-refer-950) / 10%), 0 4px 6px -4px --alpha(var(--color-refer-950) / 10%)","--shadow-xl":"0 20px 25px -5px --alpha(var(--color-refer-950) / 10%), 0 8px 10px -6px --alpha(var(--color-refer-950) / 10%)","--shadow-2xl":"0 25px 50px -12px --alpha(var(--color-refer-950) / 25%)","--shadow-card":"0px 0px 0px 0.5px --alpha(var(--color-refer-950) / 6%), 0px 2px 0px 0px --alpha(var(--color-refer-950) / 4%), 0px 8px 20px -4px --alpha(var(--color-refer-950) / 3%)"},"dark":{"--color-neutral-800":"#1f1f1f","--background":"var(--color-neutral-900)","--foreground":"var(--color-neutral-200)","--card":"var(--color-neutral-800)","--card-foreground":"var(--foreground)","--popover":"--alpha(var(--color-neutral-700) / 50%)","--popover-foreground":"var(--foreground)","--primary":"var(--color-refer-500)","--primary-content":"var(--color-refer-400)","--primary-subtle":"--alpha(var(--color-primary) / 10%)","--primary-border":"--alpha(var(--color-primary) / 15%)","--primary-foreground":"var(--color-neutral-50)","--secondary":"var(--color-neutral-500)","--secondary-foreground":"var(--foreground)","--muted":"--alpha(var(--color-neutral-200) / 8%)","--muted-foreground":"var(--color-neutral-400)","--accent":"--alpha(var(--color-neutral-200) / 7%)","--accent-foreground":"var(--foreground)","--destructive":"var(--color-orange-500)","--destructive-subtle":"--alpha(var(--color-orange-300) / 12%)","--destructive-content":"var(--color-orange-400)","--destructive-foreground":"var(--color-orange-950)","--positive":"var(--color-emerald-500)","--positive-subtle":"--alpha(var(--color-emerald-300) / 12%)","--positive-content":"var(--color-emerald-400)","--positive-foreground":"var(--color-emerald-950)","--info":"var(--color-sky-500)","--info-subtle":"--alpha(var(--color-sky-300) / 12%)","--info-content":"var(--color-sky-400)","--info-foreground":"var(--color-sky-950)","--border-high":"--alpha(var(--foreground) / 10%)","--border":"--alpha(var(--foreground) / 10%)","--border-low":"--alpha(var(--foreground) / 4%)","--input":"var(--color-neutral-600)","--ring":"var(--color-refer-400)","--chart-1":"#b05730","--chart-2":"#9c87f5","--chart-3":"#1a1915","--chart-4":"#2f2b48","--chart-5":"#b4552d","--sidebar":"--alpha(var(--primary) / 1%)","--sidebar-foreground":"var(--foreground)","--sidebar-primary":"var(--primary)","--sidebar-primary-foreground":"var(--primary-foreground)","--sidebar-accent":"var(--accent)","--sidebar-accent-foreground":"var(--accent-foreground)","--sidebar-border":"var(--border)","--sidebar-ring":"var(--ring)","--shadow-2xs":"0 1px --alpha(var(--color-zinc-950) / 25%)","--shadow-xs":"0 1px 2px 0 --alpha(var(--color-zinc-950) / 25%)","--shadow-sm":"0 1px 3px 0 --alpha(var(--color-zinc-950) / 25%), 0 1px 2px -1px --alpha(var(--color-zinc-950) / 25%)","--shadow-md":"0 4px 6px -1px --alpha(var(--color-zinc-950) / 25%), 0 2px 4px -2px --alpha(var(--color-zinc-950) / 25%)","--shadow-lg":"0 10px 15px -3px --alpha(var(--color-zinc-950) / 40%), 0 4px 6px -4px --alpha(var(--color-zinc-950) / 40%)","--shadow-xl":"0 25px 25px -5px --alpha(var(--color-zinc-950) / 40%), 0 8px 10px -6px --alpha(var(--color-zinc-950) / 40%)","--shadow-2xl":"0 30px 50px -12px --alpha(var(--color-zinc-950) / 60%)","--shadow-card":"0px 0px 0px 0.5px --alpha(var(--color-white) / 8%), 0px 2px 0px 0px --alpha(var(--color-white) / 5%), 0px 8px 20px -4px --alpha(var(--color-black) / 10%)"},"theme":{"--color-background":"var(--background)","--color-foreground":"var(--foreground)","--color-card":"var(--card)","--color-card-foreground":"var(--card-foreground)","--color-popover":"var(--popover)","--color-popover-foreground":"var(--popover-foreground)","--color-primary":"var(--primary)","--color-primary-content":"var(--primary-content)","--color-primary-subtle":"var(--primary-subtle)","--color-primary-border":"var(--primary-border)","--color-primary-foreground":"var(--primary-foreground)","--color-secondary":"var(--secondary)","--color-secondary-foreground":"var(--secondary-foreground)","--color-muted":"var(--muted)","--color-muted-foreground":"var(--muted-foreground)","--color-accent":"var(--accent)","--color-accent-foreground":"var(--accent-foreground)","--color-destructive":"var(--destructive)","--color-destructive-subtle":"var(--destructive-subtle)","--color-destructive-content":"var(--destructive-content)","--color-destructive-foreground":"var(--destructive-foreground)","--color-positive":"var(--positive)","--color-positive-subtle":"var(--positive-subtle)","--color-positive-content":"var(--positive-content)","--color-positive-foreground":"var(--positive-foreground)","--color-info":"var(--info)","--color-info-subtle":"var(--info-subtle)","--color-info-content":"var(--info-content)","--color-info-foreground":"var(--info-foreground)","--color-border-high":"var(--border-high)","--color-border":"var(--border)","--color-border-low":"var(--border-low)","--color-input":"var(--input)","--color-ring":"var(--ring)","--color-chart-1":"var(--chart-1)","--color-chart-2":"var(--chart-2)","--color-chart-3":"var(--chart-3)","--color-chart-4":"var(--chart-4)","--color-chart-5":"var(--chart-5)","--color-sidebar":"var(--sidebar)","--color-sidebar-foreground":"var(--sidebar-foreground)","--color-sidebar-primary":"var(--sidebar-primary)","--color-sidebar-primary-foreground":"var(--sidebar-primary-foreground)","--color-sidebar-accent":"var(--sidebar-accent)","--color-sidebar-accent-foreground":"var(--sidebar-accent-foreground)","--color-sidebar-border":"var(--sidebar-border)","--color-sidebar-ring":"var(--sidebar-ring)","--color-refer-50":"#fcf4f4","--color-refer-100":"#fae7e6","--color-refer-200":"#f7d3d1","--color-refer-300":"#f0b4b1","--color-refer-400":"#e68883","--color-refer-500":"#d8625b","--color-refer-600":"#bf423b","--color-refer-700":"#a43731","--color-refer-800":"#88312c","--color-refer-900":"#722e2a","--color-refer-950":"#3d1412","--font-sans":"var(--font-sans)","--font-mono":"var(--font-mono)","--font-serif":"var(--font-serif)","--font-weight-semibold":"550","--radius-sm":"calc(var(--radius) - 4px)","--radius-md":"calc(var(--radius) - 2px)","--radius-lg":"var(--radius)","--radius-xl":"calc(var(--radius) + 4px)","--radius-input":"var(--input-radius)","--shadow-2xs":"var(--shadow-2xs)","--shadow-xs":"var(--shadow-xs)","--shadow-sm":"var(--shadow-sm)","--shadow":"var(--shadow)","--shadow-md":"var(--shadow-md)","--shadow-lg":"var(--shadow-lg)","--shadow-xl":"var(--shadow-xl)","--shadow-2xl":"var(--shadow-2xl)","--shadow-card":"var(--shadow-card)","--scale-pressed":".97"}},
+    cssVars: {"light":{"background":"var(--color-stone-50)","foreground":"var(--color-stone-700)","card":"var(--color-white)","card-foreground":"var(--foreground)","popover":"--alpha(var(--color-stone-200) / 50%)","popover-foreground":"var(--foreground)","primary":"var(--color-refer-600)","primary-content":"var(--color-refer-700)","primary-subtle":"--alpha(var(--primary) / 5%)","primary-border":"--alpha(var(--primary) / 10%)","primary-foreground":"var(--color-stone-50)","secondary":"var(--color-stone-500)","secondary-foreground":"var(--color-stone-100)","muted":"--alpha(var(--color-stone-700) / 5%)","muted-foreground":"var(--color-stone-500)","accent":"--alpha(var(--color-stone-400) / 6%)","accent-foreground":"var(--foreground)","destructive":"var(--color-amber-600)","destructive-subtle":"--alpha(var(--color-orange-400) / 12%)","destructive-content":"var(--color-amber-700)","destructive-foreground":"var(--color-white)","positive":"var(--color-emerald-600)","positive-subtle":"--alpha(var(--color-emerald-400) / 12%)","positive-content":"var(--color-emerald-700)","positive-foreground":"var(--color-white)","info":"var(--color-sky-600)","info-subtle":"--alpha(var(--color-sky-400) / 12%)","info-content":"var(--color-sky-700)","info-foreground":"var(--color-white)","border-high":"--alpha(var(--color-stone-900) / 20%)","border":"--alpha(var(--color-stone-900) / 10%)","border-low":"--alpha(var(--color-stone-900) / 5%)","input":"--alpha(var(--color-stone-300) / 70%)","ring":"--alpha(var(--info) / 80%)","chart-1":"#b05730","chart-2":"#9c87f5","chart-3":"#ded8c4","chart-4":"#dbd3f0","chart-5":"#b4552d","sidebar":"--alpha(var(--primary) / 1%)","sidebar-foreground":"var(--foreground)","sidebar-primary":"var(--primary)","sidebar-primary-foreground":"var(--primary-foreground)","sidebar-accent":"var(--color-stone-200)","sidebar-accent-foreground":"var(--accent-foreground)","sidebar-border":"var(--border)","sidebar-ring":"var(--ring)","font-sans":"Geist, sans-serif","font-serif":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","font-mono":"\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","radius":"0.5rem","radius-input":"0.625rem","radius-card":"1rem","shadow-2xs":"0 1px --alpha(var(--color-refer-950) / 5%)","shadow-xs":"0 1px 2px 0 --alpha(var(--color-refer-950) / 5%)","shadow-sm":"0 1px 3px 0 --alpha(var(--color-refer-950) / 10%), 0 1px 2px -1px --alpha(var(--color-refer-950) / 10%)","shadow-md":"0 4px 6px -1px --alpha(var(--color-refer-950) / 10%), 0 2px 4px -2px --alpha(var(--color-refer-950) / 10%)","shadow-lg":"0 10px 15px -3px --alpha(var(--color-refer-950) / 10%), 0 4px 6px -4px --alpha(var(--color-refer-950) / 10%)","shadow-xl":"0 20px 25px -5px --alpha(var(--color-refer-950) / 10%), 0 8px 10px -6px --alpha(var(--color-refer-950) / 10%)","shadow-2xl":"0 25px 50px -12px --alpha(var(--color-refer-950) / 25%)","shadow-card":"0px 0px 0px 0.5px --alpha(var(--color-refer-950) / 8%), 0px 2px 0px 0px --alpha(var(--color-refer-950) / 4%), 0px 8px 20px -4px --alpha(var(--color-refer-950) / 3%)","shadow-popover":"inset 0px 0px 0px 1px --alpha(var(--color-white) / 25%), 0px 0px 1px 0px --alpha(var(--color-stone-950) / 50%), 0px 2px 4px 0px --alpha(var(--color-stone-950) / 6%), 0px 12px 40px -8px --alpha(var(--color-stone-950) / 20%)","shadow-avatar":"inset 0px 0px 0 1px --alpha(var(--color-stone-950) / 7%), 0px 4px 6px -2px --alpha(var(--color-stone-950) / 5%)"},"dark":{"color-neutral-800":"#1f1f1f","background":"var(--color-neutral-900)","foreground":"var(--color-neutral-200)","card":"var(--color-neutral-800)","card-foreground":"var(--foreground)","popover":"--alpha(var(--color-neutral-700) / 50%)","popover-foreground":"var(--foreground)","primary":"var(--color-refer-500)","primary-content":"var(--color-refer-400)","primary-subtle":"--alpha(var(--color-primary) / 10%)","primary-border":"--alpha(var(--color-primary) / 15%)","primary-foreground":"var(--color-neutral-50)","secondary":"var(--color-neutral-500)","secondary-foreground":"var(--foreground)","muted":"--alpha(var(--color-neutral-200) / 8%)","muted-foreground":"var(--color-neutral-400)","accent":"--alpha(var(--color-neutral-200) / 7%)","accent-foreground":"var(--foreground)","destructive":"var(--color-orange-500)","destructive-subtle":"--alpha(var(--color-orange-300) / 12%)","destructive-content":"var(--color-orange-400)","destructive-foreground":"var(--color-orange-950)","positive":"var(--color-emerald-500)","positive-subtle":"--alpha(var(--color-emerald-300) / 12%)","positive-content":"var(--color-emerald-400)","positive-foreground":"var(--color-emerald-950)","info":"var(--color-sky-500)","info-subtle":"--alpha(var(--color-sky-300) / 12%)","info-content":"var(--color-sky-400)","info-foreground":"var(--color-sky-950)","border-high":"--alpha(var(--foreground) / 20%)","border":"--alpha(var(--foreground) / 10%)","border-low":"--alpha(var(--foreground) / 4%)","input":"var(--color-neutral-600)","ring":"var(--color-refer-400)","chart-1":"#b05730","chart-2":"#9c87f5","chart-3":"#1a1915","chart-4":"#2f2b48","chart-5":"#b4552d","sidebar":"--alpha(var(--primary) / 1%)","sidebar-foreground":"var(--foreground)","sidebar-primary":"var(--primary)","sidebar-primary-foreground":"var(--primary-foreground)","sidebar-accent":"var(--accent)","sidebar-accent-foreground":"var(--accent-foreground)","sidebar-border":"var(--border)","sidebar-ring":"var(--ring)","radius":"0.5rem","shadow-2xs":"0 1px --alpha(var(--color-zinc-950) / 25%)","shadow-xs":"0 1px 2px 0 --alpha(var(--color-zinc-950) / 25%)","shadow-sm":"0 1px 3px 0 --alpha(var(--color-zinc-950) / 25%), 0 1px 2px -1px --alpha(var(--color-zinc-950) / 25%)","shadow-md":"0 4px 6px -1px --alpha(var(--color-zinc-950) / 25%), 0 2px 4px -2px --alpha(var(--color-zinc-950) / 25%)","shadow-lg":"0 10px 15px -3px --alpha(var(--color-zinc-950) / 40%), 0 4px 6px -4px --alpha(var(--color-zinc-950) / 40%)","shadow-xl":"0 25px 25px -5px --alpha(var(--color-zinc-950) / 40%), 0 8px 10px -6px --alpha(var(--color-zinc-950) / 40%)","shadow-2xl":"0 30px 50px -12px --alpha(var(--color-zinc-950) / 60%)","shadow-card":"0px 0px 0px 0.5px --alpha(var(--color-white) / 8%), 0px 2px 0px 0px --alpha(var(--color-white) / 5%), 0px 8px 20px -4px --alpha(var(--color-black) / 10%)","shadow-popover":"inset 0px 0px 0px 1px --alpha(var(--color-white) / 8%), 0px 2px 0px 0px --alpha(var(--color-zinc-950) / 25%), 0px 16px 40px -8px --alpha(var(--color-zinc-950) / 60%)","shadow-avatar":"inset 0px 0px 0 1px --alpha(var(--color-white) / 5%), 0px 4px 6px -2px --alpha(var(--color-stone-950) / 60%)"},"theme":{"color-background":"var(--background)","color-foreground":"var(--foreground)","color-card":"var(--card)","color-card-foreground":"var(--card-foreground)","color-popover":"var(--popover)","color-popover-foreground":"var(--popover-foreground)","color-primary":"var(--primary)","color-primary-content":"var(--primary-content)","color-primary-subtle":"var(--primary-subtle)","color-primary-border":"var(--primary-border)","color-primary-foreground":"var(--primary-foreground)","color-secondary":"var(--secondary)","color-secondary-foreground":"var(--secondary-foreground)","color-muted":"var(--muted)","color-muted-foreground":"var(--muted-foreground)","color-accent":"var(--accent)","color-accent-foreground":"var(--accent-foreground)","color-destructive":"var(--destructive)","color-destructive-subtle":"var(--destructive-subtle)","color-destructive-content":"var(--destructive-content)","color-destructive-foreground":"var(--destructive-foreground)","color-positive":"var(--positive)","color-positive-subtle":"var(--positive-subtle)","color-positive-content":"var(--positive-content)","color-positive-foreground":"var(--positive-foreground)","color-info":"var(--info)","color-info-subtle":"var(--info-subtle)","color-info-content":"var(--info-content)","color-info-foreground":"var(--info-foreground)","color-border-high":"var(--border-high)","color-border":"var(--border)","color-border-low":"var(--border-low)","color-input":"var(--input)","color-ring":"var(--ring)","color-chart-1":"var(--chart-1)","color-chart-2":"var(--chart-2)","color-chart-3":"var(--chart-3)","color-chart-4":"var(--chart-4)","color-chart-5":"var(--chart-5)","color-sidebar":"var(--sidebar)","color-sidebar-foreground":"var(--sidebar-foreground)","color-sidebar-primary":"var(--sidebar-primary)","color-sidebar-primary-foreground":"var(--sidebar-primary-foreground)","color-sidebar-accent":"var(--sidebar-accent)","color-sidebar-accent-foreground":"var(--sidebar-accent-foreground)","color-sidebar-border":"var(--sidebar-border)","color-sidebar-ring":"var(--sidebar-ring)","color-refer-50":"#fcf4f4","color-refer-100":"#fae7e6","color-refer-200":"#f7d3d1","color-refer-300":"#f0b4b1","color-refer-400":"#e68883","color-refer-500":"#d8625b","color-refer-600":"#bf423b","color-refer-700":"#a43731","color-refer-800":"#88312c","color-refer-900":"#722e2a","color-refer-950":"#3d1412","font-sans":"var(--font-sans)","font-mono":"var(--font-mono)","font-serif":"var(--font-serif)","font-weight-semibold":"550","radius-sm":"calc(var(--radius) - 4px)","radius-md":"calc(var(--radius) - 2px)","radius-lg":"var(--radius)","radius-xl":"calc(var(--radius) + 4px)","radius-2xl":"1rem","radius-3xl":"1.5rem","radius-4xl":"2rem","radius-input":"var(--radius-input)","radius-card":"var(--radius-card)","shadow-2xs":"var(--shadow-2xs)","shadow-xs":"var(--shadow-xs)","shadow-sm":"var(--shadow-sm)","shadow":"var(--shadow)","shadow-md":"var(--shadow-md)","shadow-lg":"var(--shadow-lg)","shadow-xl":"var(--shadow-xl)","shadow-2xl":"var(--shadow-2xl)","shadow-card":"var(--shadow-card)","shadow-popover":"var(--shadow-popover)","shadow-avatar":"var(--shadow-avatar)","scale-pressed":".98","ease-smooth":"linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1)"}},
+  },
+  "index": {
+    name: "index",
+    description: "Comprehensive styling system for Refer with dark mode support",
+    type: "registry:style",
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/accordion.json","https://ds.tryrefer.com/r/refer/alert.json","https://ds.tryrefer.com/r/refer/alert-dialog.json","https://ds.tryrefer.com/r/refer/aspect-ratio.json","https://ds.tryrefer.com/r/refer/avatar.json","https://ds.tryrefer.com/r/refer/badge.json","https://ds.tryrefer.com/r/refer/breadcrumb.json","https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/calendar.json","https://ds.tryrefer.com/r/refer/card.json","https://ds.tryrefer.com/r/refer/carousel.json","https://ds.tryrefer.com/r/refer/chart.json","https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/checkbox-boxed.json","https://ds.tryrefer.com/r/refer/collapsible.json","https://ds.tryrefer.com/r/refer/combobox.json","https://ds.tryrefer.com/r/refer/command.json","https://ds.tryrefer.com/r/refer/context-menu.json","https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/dropdown-menu.json","https://ds.tryrefer.com/r/refer/empty.json","https://ds.tryrefer.com/r/refer/form.json","https://ds.tryrefer.com/r/refer/hover-card.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/input-group.json","https://ds.tryrefer.com/r/refer/input-otp.json","https://ds.tryrefer.com/r/refer/label.json","https://ds.tryrefer.com/r/refer/menubar.json","https://ds.tryrefer.com/r/refer/navigation-menu.json","https://ds.tryrefer.com/r/refer/pagination.json","https://ds.tryrefer.com/r/refer/popover.json","https://ds.tryrefer.com/r/refer/progress.json","https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/radio-group-boxed.json","https://ds.tryrefer.com/r/refer/resizable.json","https://ds.tryrefer.com/r/refer/scroll-area.json","https://ds.tryrefer.com/r/refer/select.json","https://ds.tryrefer.com/r/refer/responsive-dialog.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/sidebar.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/slider.json","https://ds.tryrefer.com/r/refer/sonner.json","https://ds.tryrefer.com/r/refer/switch.json","https://ds.tryrefer.com/r/refer/table.json","https://ds.tryrefer.com/r/refer/tabs.json","https://ds.tryrefer.com/r/refer/textarea.json","https://ds.tryrefer.com/r/refer/toggle.json","https://ds.tryrefer.com/r/refer/toggle-group.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/refer-utils.json","https://ds.tryrefer.com/r/refer/globals.json"],
+    files: [],
+    component: null,
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
   },
   }
