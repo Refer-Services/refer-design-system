@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { hasExample } from "@/components/examples/names"
 import { cn } from "@/registry/refer/lib/utils"
 
 export function ComponentWrapper({
@@ -16,13 +17,21 @@ export function ComponentWrapper({
         id={name}
         data-name={name.toLowerCase()}
         className={cn(
-          "shadow-card bg-card flex max-w-6xl mx-auto w-full scroll-mt-16 flex-col rounded-2xl",
+          "shadow-card bg-card mx-auto flex w-full max-w-6xl scroll-mt-16 flex-col rounded-2xl",
           className
         )}
         {...props}
       >
-        <div className="border-b px-4 py-3">
+        <div className="flex items-center border-b px-4 py-3">
           <div className="text-sm font-medium">{getComponentName(name)}</div>
+          {hasExample(name) && (
+            <a
+              href={`/examples/${name}`}
+              className="text-muted-foreground hover:text-foreground ml-auto text-xs font-medium"
+            >
+              All variations →
+            </a>
+          )}
         </div>
         <div className="flex flex-1 items-center gap-2 p-6">{children}</div>
       </div>

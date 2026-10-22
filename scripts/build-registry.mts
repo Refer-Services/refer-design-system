@@ -62,6 +62,19 @@ const registry = {
       ],
     },
     {
+      name: "attachment",
+      description: "File or image card with media, metadata, upload state and actions.",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-slot"],
+      registryDependencies: ["button"],
+      files: [
+        {
+          path: "ui/attachment.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "avatar",
       description: "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
       type: "registry:ui",
@@ -81,6 +94,18 @@ const registry = {
       files: [
         {
           path: "ui/badge.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "bubble",
+      description: "Chat message surface with variants, alignment, reactions and collapsible content.",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-slot"],
+      files: [
+        {
+          path: "ui/bubble.tsx",
           type: "registry:ui",
         },
       ],
@@ -197,6 +222,18 @@ const registry = {
       ],
     },
     {
+      name: "code-block",
+      description: "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
+      type: "registry:ui",
+      registryDependencies: ["button", "use-highlighted-code"],
+      files: [
+        {
+          path: "ui/code-block.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "collapsible",
       description: "Shows and hides a single section of content.",
       type: "registry:ui",
@@ -255,6 +292,18 @@ const registry = {
       files: [
         {
           path: "ui/dialog.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "direction",
+      description: "DirectionProvider and useDirection for right-to-left layouts.",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-direction"],
+      files: [
+        {
+          path: "ui/direction.tsx",
           type: "registry:ui",
         },
       ],
@@ -409,6 +458,42 @@ const registry = {
       ],
     },
     {
+      name: "marker",
+      description: "Status row or labeled separator in a conversation or timeline (date breaks, a thinking indicator).",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-slot"],
+      files: [
+        {
+          path: "ui/marker.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "message",
+      description: "One conversation row: avatar, alignment, header, content and footer.",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/message.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "message-scroller",
+      description: "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
+      type: "registry:ui",
+      dependencies: ["@shadcn/react@^0.3.1"],
+      registryDependencies: ["button"],
+      files: [
+        {
+          path: "ui/message-scroller.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "menubar",
       description: "Desktop-style horizontal menu bar.",
       type: "registry:ui",
@@ -475,6 +560,19 @@ const registry = {
       files: [
         {
           path: "ui/progress.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "questionnaire",
+      description: "Multi-step question flow with single, multiple, free-form and skippable questions.",
+      type: "registry:ui",
+      dependencies: ["@shadcn/react@^0.3.1"],
+      registryDependencies: ["button"],
+      files: [
+        {
+          path: "ui/questionnaire.tsx",
           type: "registry:ui",
         },
       ],
@@ -695,6 +793,19 @@ const registry = {
       ],
     },
     {
+      name: "toast",
+      description: "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
+      type: "registry:ui",
+      dependencies: ["@base-ui/react"],
+      registryDependencies: ["button"],
+      files: [
+        {
+          path: "ui/toast.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "toggle",
       description: "Two-state button.",
       type: "registry:ui",
@@ -720,6 +831,18 @@ const registry = {
       ],
     },
     {
+      name: "trace",
+      description: "List of agent steps (reasoning, tool calls, sources) with running, error and pending states.",
+      type: "registry:ui",
+      registryDependencies: ["collapsible"],
+      files: [
+        {
+          path: "ui/trace.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "tooltip",
       description: "Short label shown on hover or focus.",
       type: "registry:ui",
@@ -739,6 +862,22 @@ const registry = {
         {
           path: "hooks/use-mobile.ts",
           type: "registry:hook",
+        },
+      ],
+    },
+    {
+      name: "use-highlighted-code",
+      description: "Hook that highlights code with shiki, used by code-block.",
+      type: "registry:hook",
+      dependencies: ["shiki"],
+      files: [
+        {
+          path: "hooks/use-highlighted-code.ts",
+          type: "registry:hook",
+        },
+        {
+          path: "lib/highlighter.tsx",
+          type: "registry:lib",
         },
       ],
     },

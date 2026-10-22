@@ -89,7 +89,8 @@ What consuming apps (portal, landing, argus, partners) install, and the rules th
   overwrite the app's tokens with them on install.
 - Don't pin exact versions in an item's `dependencies` (`date-fns@3.6.0`): the CLI installs that exact version in
   every app on each sync. A major range the component's code needs is fine (`react-resizable-panels@^4` once the
-  component is written for v4), since an unversioned name installs whatever major is latest.
+  component is written for v4), since an unversioned name installs whatever major is latest. For a 0.x package,
+  pin the minor series (`@shadcn/react@^0.3.1`): in 0.x any minor can break.
 
 **Prefer semantic tokens over raw Tailwind color utilities:**
 

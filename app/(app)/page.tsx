@@ -2,8 +2,10 @@ import { AccordionDemo } from "@/components/accordion-demo"
 import { AlertDemo } from "@/components/alert-demo"
 import { AlertDialogDemo } from "@/components/alert-dialog-demo"
 import { AspectRatioDemo } from "@/components/aspect-ratio-demo"
+import { AttachmentDemo } from "@/components/attachment-demo"
 import { AvatarDemo } from "@/components/avatar-demo"
 import { BadgeDemo } from "@/components/badge-demo"
+import { BubbleDemo } from "@/components/bubble-demo"
 import { BreadcrumbDemo } from "@/components/breadcrumb-demo"
 import { ButtonDemo } from "@/components/button-demo"
 import { ButtonGroupDemo } from "@/components/button-group-demo"
@@ -12,6 +14,7 @@ import { CardDemo } from "@/components/card-demo"
 import { CarouselDemo } from "@/components/carousel-demo"
 // import { ChartDemo } from "@/components/chart-demo"
 import { CheckboxDemo } from "@/components/checkbox-demo"
+import { CodeBlockDemo } from "@/components/code-block-demo"
 import { CollapsibleDemo } from "@/components/collapsible-demo"
 import { ComboboxDemo } from "@/components/combobox-demo"
 import { ComboboxExample } from "@/components/combobox2-demo"
@@ -20,6 +23,7 @@ import { ComponentWrapper } from "@/components/component-wrapper"
 import { ContextMenuDemo } from "@/components/context-menu-demo"
 import { DatePickerDemo } from "@/components/date-picker-demo"
 import { DialogDemo } from "@/components/dialog-demo"
+import { DirectionDemo } from "@/components/direction-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
 import { EmptyExample } from "@/components/empty-demo"
@@ -31,12 +35,16 @@ import { InputOTPDemo } from "@/components/input-otp-demo"
 import { ItemDemo } from "@/components/item-demo"
 import { KbdDemo } from "@/components/kbd-demo"
 import { LabelDemo } from "@/components/label-demo"
+import { MarkerDemo } from "@/components/marker-demo"
+import { MessageDemo } from "@/components/message-demo"
+import { MessageScrollerDemo } from "@/components/message-scroller-demo"
 import { MenubarDemo } from "@/components/menubar-demo"
 import { NativeSelectDemo } from "@/components/native-select-demo"
 import { NavigationMenuDemo } from "@/components/navigation-menu-demo"
 import { PaginationDemo } from "@/components/pagination-demo"
 import { PopoverDemo } from "@/components/popover-demo"
 import { ProgressDemo } from "@/components/progress-demo"
+import { QuestionnaireDemo } from "@/components/questionnaire-demo"
 import { RadioGroupDemo } from "@/components/radio-group-demo"
 import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
@@ -53,9 +61,11 @@ import { SwitchDemo } from "@/components/switch-demo"
 import { TableDemo } from "@/components/table-demo"
 import { TabsDemo } from "@/components/tabs-demo"
 import { TextareaDemo } from "@/components/textarea-demo"
+import { ToastDemo } from "@/components/toast-demo"
 import { ToggleDemo } from "@/components/toggle-demo"
 import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
+import { TraceDemo } from "@/components/trace-demo"
 import { TypographyDemo } from "@/components/typography-demo"
 
 export default function SinkPage() {
@@ -82,11 +92,17 @@ export default function SinkPage() {
       <ComponentWrapper name="aspect-ratio">
         <AspectRatioDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="attachment">
+        <AttachmentDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="avatar">
         <AvatarDemo />
       </ComponentWrapper>
       <ComponentWrapper name="badge">
         <BadgeDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="bubble">
+        <BubbleDemo />
       </ComponentWrapper>
       <ComponentWrapper name="breadcrumb">
         <BreadcrumbDemo />
@@ -112,6 +128,9 @@ export default function SinkPage() {
       <ComponentWrapper name="checkbox">
         <CheckboxDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="code-block">
+        <CodeBlockDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="collapsible">
         <CollapsibleDemo />
       </ComponentWrapper>
@@ -132,6 +151,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="dialog">
         <DialogDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="direction">
+        <DirectionDemo />
       </ComponentWrapper>
       <ComponentWrapper name="drawer">
         <DrawerDemo />
@@ -166,6 +188,15 @@ export default function SinkPage() {
       <ComponentWrapper name="label">
         <LabelDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="marker">
+        <MarkerDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="message">
+        <MessageDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="message-scroller">
+        <MessageScrollerDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="menubar">
         <MenubarDemo />
       </ComponentWrapper>
@@ -183,6 +214,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="progress">
         <ProgressDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="questionnaire">
+        <QuestionnaireDemo />
       </ComponentWrapper>
       <ComponentWrapper name="radio-group">
         <RadioGroupDemo />
@@ -229,6 +263,9 @@ export default function SinkPage() {
       <ComponentWrapper name="textarea">
         <TextareaDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="toast">
+        <ToastDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="toggle">
         <ToggleDemo />
       </ComponentWrapper>
@@ -237,6 +274,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="tooltip">
         <TooltipDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="trace">
+        <TraceDemo />
       </ComponentWrapper>
     </div>
   )

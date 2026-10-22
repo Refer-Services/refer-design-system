@@ -59,6 +59,23 @@
       "type": "registry:ui"
     },
     {
+      "name": "attachment",
+      "description": "File or image card with media, metadata, upload state and actions.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "avatar",
       "description": "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
       "dependencies": [
@@ -81,6 +98,20 @@
       "files": [
         {
           "path": "registry/refer/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "bubble",
+      "description": "Chat message surface with variants, alignment, reactions and collapsible content.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/bubble.tsx",
           "type": "registry:ui"
         }
       ],
@@ -224,6 +255,21 @@
       "type": "registry:ui"
     },
     {
+      "name": "code-block",
+      "description": "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/use-highlighted-code.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "collapsible",
       "description": "Shows and hides a single section of content.",
       "dependencies": [
@@ -298,6 +344,20 @@
       "files": [
         {
           "path": "registry/refer/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "direction",
+      "description": "DirectionProvider and useDirection for right-to-left layouts.",
+      "dependencies": [
+        "@radix-ui/react-direction"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/direction.tsx",
           "type": "registry:ui"
         }
       ],
@@ -478,6 +538,48 @@
       "type": "registry:ui"
     },
     {
+      "name": "marker",
+      "description": "Status row or labeled separator in a conversation or timeline (date breaks, a thinking indicator).",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "message",
+      "description": "One conversation row: avatar, alignment, header, content and footer.",
+      "files": [
+        {
+          "path": "registry/refer/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "message-scroller",
+      "description": "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
+      "dependencies": [
+        "@shadcn/react@^0.3.1"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "menubar",
       "description": "Desktop-style horizontal menu bar.",
       "dependencies": [
@@ -553,6 +655,23 @@
       "files": [
         {
           "path": "registry/refer/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "questionnaire",
+      "description": "Multi-step question flow with single, multiple, free-form and skippable questions.",
+      "dependencies": [
+        "@shadcn/react@^0.3.1"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/questionnaire.tsx",
           "type": "registry:ui"
         }
       ],
@@ -800,6 +919,23 @@
       "type": "registry:ui"
     },
     {
+      "name": "toast",
+      "description": "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "toggle",
       "description": "Two-state button.",
       "dependencies": [
@@ -831,6 +967,20 @@
       "type": "registry:ui"
     },
     {
+      "name": "trace",
+      "description": "List of agent steps (reasoning, tool calls, sources) with running, error and pending states.",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/collapsible.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "tooltip",
       "description": "Short label shown on hover or focus.",
       "dependencies": [
@@ -851,6 +1001,24 @@
         {
           "path": "registry/refer/hooks/use-mobile.ts",
           "type": "registry:hook"
+        }
+      ],
+      "type": "registry:hook"
+    },
+    {
+      "name": "use-highlighted-code",
+      "description": "Hook that highlights code with shiki, used by code-block.",
+      "dependencies": [
+        "shiki"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/hooks/use-highlighted-code.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/refer/lib/highlighter.tsx",
+          "type": "registry:lib"
         }
       ],
       "type": "registry:hook"
@@ -1104,10 +1272,6 @@
         },
         "@utility squircle": {
           "corner-shape": "superellipse(1.15)"
-        },
-        "@utility no-scrollbar": {
-          "scrollbar-color": "rgba(0, 0, 0, 0.2) transparent",
-          "scrollbar-width": "thin"
         }
       }
     },
@@ -1122,8 +1286,10 @@
         "https://ds.tryrefer.com/r/refer/alert.json",
         "https://ds.tryrefer.com/r/refer/alert-dialog.json",
         "https://ds.tryrefer.com/r/refer/aspect-ratio.json",
+        "https://ds.tryrefer.com/r/refer/attachment.json",
         "https://ds.tryrefer.com/r/refer/avatar.json",
         "https://ds.tryrefer.com/r/refer/badge.json",
+        "https://ds.tryrefer.com/r/refer/bubble.json",
         "https://ds.tryrefer.com/r/refer/breadcrumb.json",
         "https://ds.tryrefer.com/r/refer/button.json",
         "https://ds.tryrefer.com/r/refer/button-group.json",
@@ -1133,11 +1299,13 @@
         "https://ds.tryrefer.com/r/refer/chart.json",
         "https://ds.tryrefer.com/r/refer/checkbox.json",
         "https://ds.tryrefer.com/r/refer/checkbox-boxed.json",
+        "https://ds.tryrefer.com/r/refer/code-block.json",
         "https://ds.tryrefer.com/r/refer/collapsible.json",
         "https://ds.tryrefer.com/r/refer/combobox.json",
         "https://ds.tryrefer.com/r/refer/command.json",
         "https://ds.tryrefer.com/r/refer/context-menu.json",
         "https://ds.tryrefer.com/r/refer/dialog.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/drawer.json",
         "https://ds.tryrefer.com/r/refer/dropdown-menu.json",
         "https://ds.tryrefer.com/r/refer/empty.json",
@@ -1150,12 +1318,16 @@
         "https://ds.tryrefer.com/r/refer/item.json",
         "https://ds.tryrefer.com/r/refer/kbd.json",
         "https://ds.tryrefer.com/r/refer/label.json",
+        "https://ds.tryrefer.com/r/refer/marker.json",
+        "https://ds.tryrefer.com/r/refer/message.json",
+        "https://ds.tryrefer.com/r/refer/message-scroller.json",
         "https://ds.tryrefer.com/r/refer/menubar.json",
         "https://ds.tryrefer.com/r/refer/native-select.json",
         "https://ds.tryrefer.com/r/refer/navigation-menu.json",
         "https://ds.tryrefer.com/r/refer/pagination.json",
         "https://ds.tryrefer.com/r/refer/popover.json",
         "https://ds.tryrefer.com/r/refer/progress.json",
+        "https://ds.tryrefer.com/r/refer/questionnaire.json",
         "https://ds.tryrefer.com/r/refer/radio-group.json",
         "https://ds.tryrefer.com/r/refer/radio-group-boxed.json",
         "https://ds.tryrefer.com/r/refer/resizable.json",
@@ -1173,10 +1345,13 @@
         "https://ds.tryrefer.com/r/refer/table.json",
         "https://ds.tryrefer.com/r/refer/tabs.json",
         "https://ds.tryrefer.com/r/refer/textarea.json",
+        "https://ds.tryrefer.com/r/refer/toast.json",
         "https://ds.tryrefer.com/r/refer/toggle.json",
         "https://ds.tryrefer.com/r/refer/toggle-group.json",
+        "https://ds.tryrefer.com/r/refer/trace.json",
         "https://ds.tryrefer.com/r/refer/tooltip.json",
         "https://ds.tryrefer.com/r/refer/use-mobile.json",
+        "https://ds.tryrefer.com/r/refer/use-highlighted-code.json",
         "https://ds.tryrefer.com/r/refer/refer-utils.json",
         "https://ds.tryrefer.com/r/refer/globals.json"
       ],
