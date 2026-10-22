@@ -87,6 +87,12 @@ State on 2026-10-22.
   first, or sync with `npm_config_legacy_peer_deps=true`. Portal syncs without the flag.
 - **`@base-ui/react`:** portal declares `^1.5.0` and runs 1.7.0 in production (combobox portal inside modals
   included). The `combobox` item doesn't pin a version, so a fresh install gets the latest.
+- **Tailwind 4.3:** wave 3's components use utilities that only exist natively in Tailwind ≥ 4.3 (`scrollbar-none`,
+  `scrollbar-thin`, `scrollbar-gutter-stable`, `inset-s-*`). Without them, attachment groups, code-block and
+  message-scroller show the browser's scrollbar and some positioning is off. The DS moved to `tailwindcss@^4.3.3` in
+  wave 3 (a compiled-CSS diff against 4.1.17 showed no visible change to existing classes: only equivalent
+  rewrites such as `calc(var(--spacing) * 0)` → `0`, logical → physical properties with RTL fallbacks, and the new
+  utilities). The monorepo apps are on 4.2.4: upgrade an app to 4.3 before installing any wave 3 component.
 - **No app imports** `calendar` or `resizable`. Apps have `react-resizable-panels` 3.x installed.
 - **Open issue: unversioned item dependencies install the latest major in an app that doesn't have them yet.** A
   fresh install (seen in the throwaway copy, 2026-10-22) got `react-day-picker` 10, `recharts` 3,
@@ -157,7 +163,7 @@ message-scroller's gallery is ours, with static stand-ins for upstream's AI SDK 
 | message-scroller | `new-york-v4/ui` | `@shadcn/react@^0.3.1`, `button` | Headless core in `@shadcn/react/message-scroller`. The item pins the 0.3 series: in a 0.x package any minor can break |
 | questionnaire | `r/styles/radix-vega/questionnaire.json` | `@shadcn/react@^0.3.1`, `button` | Button defaults mapped to ours (`primary`, `md`); `cn-font-heading` removed |
 | trace | `r/styles/radix-vega/trace.json` | `collapsible` | `data-open:`/`data-closed:` rewritten to `data-[state=open\|closed]:` (Radix Collapsible) |
-| code-block, use-highlighted-code (+ `lib/highlighter.tsx`) | `r/styles/radix-vega/*.json` | `shiki`, `button` | Uses `scrollbar-thin`/`scrollbar-none`, native only in Tailwind ≥ 4.3 (the DS and portal are older; they fall back to the default scrollbar) |
+| code-block, use-highlighted-code (+ `lib/highlighter.tsx`) | `r/styles/radix-vega/*.json` | `shiki`, `button` | — |
 | toast | `r/styles/base-vega/toast.json` | `@base-ui/react`, `button` | Base UI toast; coexists with `sonner`, which the apps use. Needs its own `<Toaster>` |
 
 How these were ported (repeat it for future upstream components):
@@ -186,7 +192,7 @@ How these were ported (repeat it for future upstream components):
   to hide the bar (e.g. wave 3's new components) will show a thin bar instead. Only `combobox` uses the class today.
   Plan (wave 5): don't rename ours to `scrollbar-thin`, because Tailwind 4.3 ships `scrollbar-thin`, `scrollbar-none`
   and `scrollbar-auto` natively and a custom `@utility` with the same name would clash. Instead: upgrade Tailwind to
-  4.3 in the DS and the apps (the monorepo is on 4.2.4); in `combobox`, replace `no-scrollbar` with the native
+  4.3 in the apps (the DS is on 4.3 since wave 3; the monorepo is on 4.2.4); in `combobox`, replace `no-scrollbar` with the native
   `scrollbar-thin` plus the bar color (`[scrollbar-color:rgba(0,0,0,0.2)_transparent]`); then drop our
   `no-scrollbar` from `globals.css` so the name keeps upstream's meaning (hide the bar). That also makes `code-block`'s
   `scrollbar-thin`/`scrollbar-none` work as upstream intends.
