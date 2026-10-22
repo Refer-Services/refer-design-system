@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group-boxed",
+  "description": "Radio options rendered as selectable bordered cards.",
   "registryDependencies": [
     "https://ds.tryrefer.com/r/refer/radio-group.json",
     "https://ds.tryrefer.com/r/refer/label.json"

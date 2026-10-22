@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "label",
+  "description": "Accessible form label.",
   "dependencies": [
     "@radix-ui/react-label"
   ],

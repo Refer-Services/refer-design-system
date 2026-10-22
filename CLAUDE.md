@@ -64,9 +64,27 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 
 ## Design tokens
 
-Token source: `app/globals.css` only. `npm run registry:build` generates the `index` style item's `cssVars` and `css`
-from it (`refer-style.json` holds just the item's metadata). Don't nest at-rules inside other blocks there: the CLI
-duplicates them on every install, so the build rejects them.
+Token source: `app/globals.css` only. `npm run registry:build` generates the `globals` item from it (`cssVars` from
+`:root`, `.dark` and `@theme inline`; `css` from everything else, e.g. `@utility squircle`, `@utility no-scrollbar`).
+`index` (metadata in `refer-style.json`) installs every item, `globals` included. Don't nest at-rules inside other
+blocks in `globals.css`: the CLI duplicates them on every install, so the build rejects them.
+
+What consuming apps (portal, landing, argus, partners) install, and the rules that keep them in sync:
+
+- They sync CSS with `npx shadcn@latest add https://ds.tryrefer.com/r/refer/globals.json`, never `index.json` (that
+  reinstalls every component), and components with `.../<name>.json --overwrite`.
+- With `"registries": { "@refer": "https://ds.tryrefer.com/r/refer/{name}.json" }` in an app's `components.json`,
+  the same items install as `@refer/<name>`, and the shadcn MCP server (`npx shadcn@latest mcp init --client claude`)
+  can list and search them. It reads `public/r/refer/registry.json`, so keep every item's `description` in
+  `scripts/build-registry.mts` accurate.
+- `registry/refer/styles/refer-utils.css` (shadcn's scroll-fade and shimmer, copied as-is) installs as
+  `~/app/refer-utils.css`; `globals` imports it and lists it in `registryDependencies`, so syncing `globals.json`
+  brings it. Re-copy it from shadcn rather than editing it.
+- Tokens live only in `app/globals.css`: never give a component item its own `cssVars`/`tailwind`, the CLI would
+  overwrite the app's tokens with them on install.
+- Don't pin exact versions in an item's `dependencies` (`date-fns@3.6.0`): the CLI installs that exact version in
+  every app on each sync. A major range the component's code needs is fine (`react-resizable-panels@^4` once the
+  component is written for v4), since an unversioned name installs whatever major is latest.
 
 **Prefer semantic tokens over raw Tailwind color utilities:**
 

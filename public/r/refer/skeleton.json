@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "skeleton",
+  "description": "Loading placeholder.",
   "files": [
     {
       "path": "registry/refer/ui/skeleton.tsx",

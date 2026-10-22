@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "menubar",
+  "description": "Desktop-style horizontal menu bar.",
   "dependencies": [
     "@radix-ui/react-menubar"
   ],

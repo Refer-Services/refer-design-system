@@ -1,9 +1,10 @@
 {
-  "name": "shadcn/ui",
+  "name": "refer",
   "homepage": "https://ds.tryrefer.com",
   "items": [
     {
       "name": "accordion",
+      "description": "Vertically stacked sections that expand and collapse.",
       "dependencies": [
         "@radix-ui/react-accordion"
       ],
@@ -17,6 +18,7 @@
     },
     {
       "name": "alert",
+      "description": "Callout for important messages, with title and description.",
       "files": [
         {
           "path": "registry/refer/ui/alert.tsx",
@@ -27,6 +29,7 @@
     },
     {
       "name": "alert-dialog",
+      "description": "Modal confirmation dialog that interrupts the user.",
       "dependencies": [
         "@radix-ui/react-alert-dialog"
       ],
@@ -43,6 +46,7 @@
     },
     {
       "name": "aspect-ratio",
+      "description": "Displays content within a fixed aspect ratio.",
       "dependencies": [
         "@radix-ui/react-aspect-ratio"
       ],
@@ -56,6 +60,7 @@
     },
     {
       "name": "avatar",
+      "description": "User image with fallback initials.",
       "dependencies": [
         "@radix-ui/react-avatar"
       ],
@@ -69,6 +74,7 @@
     },
     {
       "name": "badge",
+      "description": "Pill label for status and metadata, with semantic variants.",
       "dependencies": [
         "@radix-ui/react-slot"
       ],
@@ -82,6 +88,7 @@
     },
     {
       "name": "breadcrumb",
+      "description": "Path navigation using Next.js Link.",
       "dependencies": [
         "@radix-ui/react-slot"
       ],
@@ -95,6 +102,7 @@
     },
     {
       "name": "button",
+      "description": "Refer button (rounded-full) with primary, subtle, ghost, outline, destructive and link variants; sizes xs-lg and icon.",
       "dependencies": [
         "@radix-ui/react-slot"
       ],
@@ -108,6 +116,7 @@
     },
     {
       "name": "calendar",
+      "description": "Date grid for single, multiple or range selection (react-day-picker v9).",
       "dependencies": [
         "react-day-picker"
       ],
@@ -124,6 +133,7 @@
     },
     {
       "name": "card",
+      "description": "Squircle container with header, content and footer slots.",
       "files": [
         {
           "path": "registry/refer/ui/card.tsx",
@@ -134,6 +144,7 @@
     },
     {
       "name": "carousel",
+      "description": "Embla-based carousel with previous/next controls.",
       "dependencies": [
         "embla-carousel-react"
       ],
@@ -150,6 +161,7 @@
     },
     {
       "name": "chart",
+      "description": "Recharts wrapper with theme-aware config, tooltip and legend.",
       "dependencies": [
         "recharts",
         "lucide-react"
@@ -167,6 +179,7 @@
     },
     {
       "name": "checkbox",
+      "description": "Checkbox with indeterminate state.",
       "dependencies": [
         "@radix-ui/react-checkbox"
       ],
@@ -180,6 +193,7 @@
     },
     {
       "name": "checkbox-boxed",
+      "description": "Checkbox rendered as a selectable bordered card.",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/checkbox.json",
         "https://ds.tryrefer.com/r/refer/label.json"
@@ -194,6 +208,7 @@
     },
     {
       "name": "collapsible",
+      "description": "Shows and hides a single section of content.",
       "dependencies": [
         "@radix-ui/react-collapsible"
       ],
@@ -207,6 +222,7 @@
     },
     {
       "name": "combobox",
+      "description": "Searchable select (Base UI) with single/multiple selection and chips; works inside dialogs and drawers.",
       "dependencies": [
         "@base-ui/react"
       ],
@@ -224,6 +240,7 @@
     },
     {
       "name": "command",
+      "description": "Command palette and searchable list (cmdk), also as CommandDialog.",
       "dependencies": [
         "cmdk"
       ],
@@ -240,6 +257,7 @@
     },
     {
       "name": "context-menu",
+      "description": "Right-click menu with items, submenus, checkboxes and radios.",
       "dependencies": [
         "@radix-ui/react-context-menu"
       ],
@@ -253,6 +271,7 @@
     },
     {
       "name": "dialog",
+      "description": "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       "dependencies": [
         "@radix-ui/react-dialog"
       ],
@@ -266,6 +285,7 @@
     },
     {
       "name": "drawer",
+      "description": "Bottom sheet for mobile (vaul).",
       "dependencies": [
         "vaul",
         "@radix-ui/react-dialog"
@@ -280,6 +300,7 @@
     },
     {
       "name": "dropdown-menu",
+      "description": "Menu opened from a trigger, with items, submenus, checkboxes and radios.",
       "dependencies": [
         "@radix-ui/react-dropdown-menu"
       ],
@@ -293,6 +314,7 @@
     },
     {
       "name": "empty",
+      "description": "Empty state with icon, title, description and actions.",
       "files": [
         {
           "path": "registry/refer/ui/empty.tsx",
@@ -303,6 +325,7 @@
     },
     {
       "name": "form",
+      "description": "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
       "dependencies": [
         "@radix-ui/react-label",
         "@radix-ui/react-slot",
@@ -324,6 +347,7 @@
     },
     {
       "name": "hover-card",
+      "description": "Preview card shown on hover.",
       "dependencies": [
         "@radix-ui/react-hover-card"
       ],
@@ -337,6 +361,7 @@
     },
     {
       "name": "input",
+      "description": "Text input (rounded-input) with Refer focus and invalid states.",
       "files": [
         {
           "path": "registry/refer/ui/input.tsx",
@@ -347,6 +372,7 @@
     },
     {
       "name": "input-group",
+      "description": "Input or textarea with inline/block addons, buttons and text.",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
         "https://ds.tryrefer.com/r/refer/input.json",
@@ -362,6 +388,7 @@
     },
     {
       "name": "input-otp",
+      "description": "One-time password input with slots.",
       "dependencies": [
         "input-otp"
       ],
@@ -375,6 +402,7 @@
     },
     {
       "name": "label",
+      "description": "Accessible form label.",
       "dependencies": [
         "@radix-ui/react-label"
       ],
@@ -388,6 +416,7 @@
     },
     {
       "name": "menubar",
+      "description": "Desktop-style horizontal menu bar.",
       "dependencies": [
         "@radix-ui/react-menubar"
       ],
@@ -401,6 +430,7 @@
     },
     {
       "name": "navigation-menu",
+      "description": "Site navigation with dropdown panels.",
       "dependencies": [
         "@radix-ui/react-navigation-menu"
       ],
@@ -414,6 +444,7 @@
     },
     {
       "name": "pagination",
+      "description": "Page navigation with previous/next and page links.",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json"
       ],
@@ -427,6 +458,7 @@
     },
     {
       "name": "popover",
+      "description": "Floating panel anchored to a trigger.",
       "dependencies": [
         "@radix-ui/react-popover"
       ],
@@ -440,6 +472,7 @@
     },
     {
       "name": "progress",
+      "description": "Horizontal progress bar.",
       "dependencies": [
         "@radix-ui/react-progress"
       ],
@@ -453,6 +486,7 @@
     },
     {
       "name": "radio-group",
+      "description": "Radio buttons for picking one option.",
       "dependencies": [
         "@radix-ui/react-radio-group"
       ],
@@ -466,6 +500,7 @@
     },
     {
       "name": "radio-group-boxed",
+      "description": "Radio options rendered as selectable bordered cards.",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/radio-group.json",
         "https://ds.tryrefer.com/r/refer/label.json"
@@ -480,6 +515,7 @@
     },
     {
       "name": "resizable",
+      "description": "Resizable panel groups (react-resizable-panels).",
       "dependencies": [
         "react-resizable-panels"
       ],
@@ -493,6 +529,7 @@
     },
     {
       "name": "scroll-area",
+      "description": "Scrollable area with custom scrollbars.",
       "dependencies": [
         "@radix-ui/react-scroll-area"
       ],
@@ -506,6 +543,7 @@
     },
     {
       "name": "select",
+      "description": "Select dropdown (Radix) with sizes xs-lg.",
       "dependencies": [
         "@radix-ui/react-select"
       ],
@@ -519,6 +557,7 @@
     },
     {
       "name": "responsive-dialog",
+      "description": "Dialog on desktop, bottom drawer below 768px.",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/dialog.json",
         "https://ds.tryrefer.com/r/refer/drawer.json",
@@ -534,6 +573,7 @@
     },
     {
       "name": "separator",
+      "description": "Horizontal or vertical divider.",
       "dependencies": [
         "@radix-ui/react-separator"
       ],
@@ -547,6 +587,7 @@
     },
     {
       "name": "sheet",
+      "description": "Side panel that slides in from an edge.",
       "dependencies": [
         "@radix-ui/react-dialog"
       ],
@@ -560,6 +601,7 @@
     },
     {
       "name": "sidebar",
+      "description": "Composable, collapsible app sidebar.",
       "dependencies": [
         "@radix-ui/react-slot",
         "class-variance-authority",
@@ -584,6 +626,7 @@
     },
     {
       "name": "skeleton",
+      "description": "Loading placeholder.",
       "files": [
         {
           "path": "registry/refer/ui/skeleton.tsx",
@@ -594,6 +637,7 @@
     },
     {
       "name": "slider",
+      "description": "Range input with one or more thumbs.",
       "dependencies": [
         "@radix-ui/react-slider"
       ],
@@ -607,6 +651,7 @@
     },
     {
       "name": "sonner",
+      "description": "Toast notifications (sonner) themed for Refer.",
       "dependencies": [
         "sonner",
         "next-themes"
@@ -621,6 +666,7 @@
     },
     {
       "name": "switch",
+      "description": "On/off toggle switch.",
       "dependencies": [
         "@radix-ui/react-switch"
       ],
@@ -634,6 +680,7 @@
     },
     {
       "name": "table",
+      "description": "Styled table primitives.",
       "files": [
         {
           "path": "registry/refer/ui/table.tsx",
@@ -644,6 +691,7 @@
     },
     {
       "name": "tabs",
+      "description": "Tabbed panels.",
       "dependencies": [
         "@radix-ui/react-tabs"
       ],
@@ -657,6 +705,7 @@
     },
     {
       "name": "textarea",
+      "description": "Multi-line text input.",
       "files": [
         {
           "path": "registry/refer/ui/textarea.tsx",
@@ -667,6 +716,7 @@
     },
     {
       "name": "toggle",
+      "description": "Two-state button.",
       "dependencies": [
         "@radix-ui/react-toggle"
       ],
@@ -680,6 +730,7 @@
     },
     {
       "name": "toggle-group",
+      "description": "Set of joined toggles with single or multiple selection.",
       "dependencies": [
         "@radix-ui/react-toggle-group"
       ],
@@ -696,6 +747,7 @@
     },
     {
       "name": "tooltip",
+      "description": "Short label shown on hover or focus.",
       "dependencies": [
         "@radix-ui/react-tooltip"
       ],
@@ -709,6 +761,7 @@
     },
     {
       "name": "use-mobile",
+      "description": "Hook that returns true below the mobile breakpoint (768px).",
       "files": [
         {
           "path": "registry/refer/hooks/use-mobile.ts",
@@ -720,7 +773,7 @@
     {
       "name": "refer-utils",
       "title": "Refer utilities",
-      "description": "Tailwind v4 utilities: scroll-fade, shimmer, squircle.",
+      "description": "Tailwind v4 utilities from shadcn: scroll-fade, shimmer. Installed with globals.",
       "files": [
         {
           "path": "registry/refer/styles/refer-utils.css",
@@ -735,6 +788,9 @@
       "type": "registry:style",
       "title": "Refer global CSS",
       "description": "Design tokens, base styles and utilities from app/globals.css.",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/refer-utils.json"
+      ],
       "files": [],
       "cssVars": {
         "light": {

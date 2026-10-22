@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "carousel",
+  "description": "Embla-based carousel with previous/next controls.",
   "dependencies": [
     "embla-carousel-react"
   ],

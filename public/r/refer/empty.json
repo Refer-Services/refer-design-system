@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "empty",
+  "description": "Empty state with icon, title, description and actions.",
   "files": [
     {
       "path": "registry/refer/ui/empty.tsx",

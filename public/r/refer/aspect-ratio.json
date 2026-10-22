@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "aspect-ratio",
+  "description": "Displays content within a fixed aspect ratio.",
   "dependencies": [
     "@radix-ui/react-aspect-ratio"
   ],

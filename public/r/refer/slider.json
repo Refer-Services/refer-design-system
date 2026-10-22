@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "slider",
+  "description": "Range input with one or more thumbs.",
   "dependencies": [
     "@radix-ui/react-slider"
   ],

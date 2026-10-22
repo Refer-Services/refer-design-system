@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hover-card",
+  "description": "Preview card shown on hover.",
   "dependencies": [
     "@radix-ui/react-hover-card"
   ],

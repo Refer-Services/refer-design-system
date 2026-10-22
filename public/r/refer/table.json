@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "table",
+  "description": "Styled table primitives.",
   "files": [
     {
       "path": "registry/refer/ui/table.tsx",

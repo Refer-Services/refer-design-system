@@ -54,6 +54,7 @@ function SelectContent({
   className,
   children,
   position = "item-aligned",
+  align = "center",
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Content>) {
   return (
@@ -67,6 +68,7 @@ function SelectContent({
           className
         )}
         position={position}
+        align={align}
         {...props}
       >
         <SelectScrollUpButton />
@@ -114,7 +116,7 @@ function SelectItem({
       {...props}
     >
       <span className="absolute right-2 flex size-3.5 items-center justify-center">
-        <SelectPrimitive.ItemIndicator>
+        <SelectPrimitive.ItemIndicator data-slot="select-item-indicator">
           <CheckIcon className="-mr-px size-[13px] stroke-3" />
         </SelectPrimitive.ItemIndicator>
       </span>

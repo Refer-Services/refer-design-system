@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-mobile",
+  "description": "Hook that returns true below the mobile breakpoint (768px).",
   "files": [
     {
       "path": "registry/refer/hooks/use-mobile.ts",

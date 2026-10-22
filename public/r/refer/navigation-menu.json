@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "navigation-menu",
+  "description": "Site navigation with dropdown panels.",
   "dependencies": [
     "@radix-ui/react-navigation-menu"
   ],

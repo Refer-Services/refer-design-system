@@ -10,11 +10,12 @@ const ROOT = process.cwd()
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ds.tryrefer.com"
 
 const registry = {
-  name: "shadcn/ui",
+  name: "refer",
   homepage: BASE_URL,
   items: z.array(registryItemSchema).parse([
     {
       name: "accordion",
+      description: "Vertically stacked sections that expand and collapse.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-accordion"],
       files: [
@@ -26,6 +27,7 @@ const registry = {
     },
     {
       name: "alert",
+      description: "Callout for important messages, with title and description.",
       type: "registry:ui",
       files: [
         {
@@ -36,6 +38,7 @@ const registry = {
     },
     {
       name: "alert-dialog",
+      description: "Modal confirmation dialog that interrupts the user.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-alert-dialog"],
       registryDependencies: ["button"],
@@ -48,6 +51,7 @@ const registry = {
     },
     {
       name: "aspect-ratio",
+      description: "Displays content within a fixed aspect ratio.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-aspect-ratio"],
       files: [
@@ -59,6 +63,7 @@ const registry = {
     },
     {
       name: "avatar",
+      description: "User image with fallback initials.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-avatar"],
       files: [
@@ -70,6 +75,7 @@ const registry = {
     },
     {
       name: "badge",
+      description: "Pill label for status and metadata, with semantic variants.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -81,6 +87,7 @@ const registry = {
     },
     {
       name: "breadcrumb",
+      description: "Path navigation using Next.js Link.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -92,6 +99,7 @@ const registry = {
     },
     {
       name: "button",
+      description: "Refer button (rounded-full) with primary, subtle, ghost, outline, destructive and link variants; sizes xs-lg and icon.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -103,6 +111,7 @@ const registry = {
     },
     {
       name: "calendar",
+      description: "Date grid for single, multiple or range selection (react-day-picker v9).",
       type: "registry:ui",
       dependencies: ["react-day-picker"],
       registryDependencies: ["button"],
@@ -115,6 +124,7 @@ const registry = {
     },
     {
       name: "card",
+      description: "Squircle container with header, content and footer slots.",
       type: "registry:ui",
       files: [
         {
@@ -125,6 +135,7 @@ const registry = {
     },
     {
       name: "carousel",
+      description: "Embla-based carousel with previous/next controls.",
       type: "registry:ui",
       dependencies: ["embla-carousel-react"],
       registryDependencies: ["button"],
@@ -137,6 +148,7 @@ const registry = {
     },
     {
       name: "chart",
+      description: "Recharts wrapper with theme-aware config, tooltip and legend.",
       type: "registry:ui",
       dependencies: ["recharts", "lucide-react"],
       registryDependencies: ["card"],
@@ -149,6 +161,7 @@ const registry = {
     },
     {
       name: "checkbox",
+      description: "Checkbox with indeterminate state.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-checkbox"],
       files: [
@@ -160,6 +173,7 @@ const registry = {
     },
     {
       name: "checkbox-boxed",
+      description: "Checkbox rendered as a selectable bordered card.",
       type: "registry:ui",
       registryDependencies: ["checkbox", "label"],
       files: [
@@ -171,6 +185,7 @@ const registry = {
     },
     {
       name: "collapsible",
+      description: "Shows and hides a single section of content.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-collapsible"],
       files: [
@@ -182,6 +197,7 @@ const registry = {
     },
     {
       name: "combobox",
+      description: "Searchable select (Base UI) with single/multiple selection and chips; works inside dialogs and drawers.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
       registryDependencies: ["button", "input-group"],
@@ -194,6 +210,7 @@ const registry = {
     },
     {
       name: "command",
+      description: "Command palette and searchable list (cmdk), also as CommandDialog.",
       type: "registry:ui",
       dependencies: ["cmdk"],
       registryDependencies: ["dialog"],
@@ -206,6 +223,7 @@ const registry = {
     },
     {
       name: "context-menu",
+      description: "Right-click menu with items, submenus, checkboxes and radios.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-context-menu"],
       files: [
@@ -217,6 +235,7 @@ const registry = {
     },
     {
       name: "dialog",
+      description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
       files: [
@@ -228,6 +247,7 @@ const registry = {
     },
     {
       name: "drawer",
+      description: "Bottom sheet for mobile (vaul).",
       type: "registry:ui",
       dependencies: ["vaul", "@radix-ui/react-dialog"],
       files: [
@@ -239,6 +259,7 @@ const registry = {
     },
     {
       name: "dropdown-menu",
+      description: "Menu opened from a trigger, with items, submenus, checkboxes and radios.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dropdown-menu"],
       files: [
@@ -250,6 +271,7 @@ const registry = {
     },
     {
       name: "empty",
+      description: "Empty state with icon, title, description and actions.",
       type: "registry:ui",
       files: [
         {
@@ -260,6 +282,7 @@ const registry = {
     },
     {
       name: "form",
+      description: "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-label",
@@ -278,6 +301,7 @@ const registry = {
     },
     {
       name: "hover-card",
+      description: "Preview card shown on hover.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-hover-card"],
       files: [
@@ -289,6 +313,7 @@ const registry = {
     },
     {
       name: "input",
+      description: "Text input (rounded-input) with Refer focus and invalid states.",
       type: "registry:ui",
       files: [
         {
@@ -299,6 +324,7 @@ const registry = {
     },
     {
       name: "input-group",
+      description: "Input or textarea with inline/block addons, buttons and text.",
       type: "registry:ui",
       registryDependencies: ["button", "input", "textarea"],
       files: [
@@ -310,6 +336,7 @@ const registry = {
     },
     {
       name: "input-otp",
+      description: "One-time password input with slots.",
       type: "registry:ui",
       dependencies: ["input-otp"],
       files: [
@@ -321,6 +348,7 @@ const registry = {
     },
     {
       name: "label",
+      description: "Accessible form label.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-label"],
       files: [
@@ -332,6 +360,7 @@ const registry = {
     },
     {
       name: "menubar",
+      description: "Desktop-style horizontal menu bar.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-menubar"],
       files: [
@@ -343,6 +372,7 @@ const registry = {
     },
     {
       name: "navigation-menu",
+      description: "Site navigation with dropdown panels.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-navigation-menu"],
       files: [
@@ -354,6 +384,7 @@ const registry = {
     },
     {
       name: "pagination",
+      description: "Page navigation with previous/next and page links.",
       type: "registry:ui",
       registryDependencies: ["button"],
       files: [
@@ -365,6 +396,7 @@ const registry = {
     },
     {
       name: "popover",
+      description: "Floating panel anchored to a trigger.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-popover"],
       files: [
@@ -376,6 +408,7 @@ const registry = {
     },
     {
       name: "progress",
+      description: "Horizontal progress bar.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-progress"],
       files: [
@@ -387,6 +420,7 @@ const registry = {
     },
     {
       name: "radio-group",
+      description: "Radio buttons for picking one option.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-radio-group"],
       files: [
@@ -398,6 +432,7 @@ const registry = {
     },
     {
       name: "radio-group-boxed",
+      description: "Radio options rendered as selectable bordered cards.",
       type: "registry:ui",
       registryDependencies: ["radio-group", "label"],
       files: [
@@ -409,6 +444,7 @@ const registry = {
     },
     {
       name: "resizable",
+      description: "Resizable panel groups (react-resizable-panels).",
       type: "registry:ui",
       dependencies: ["react-resizable-panels"],
       files: [
@@ -420,6 +456,7 @@ const registry = {
     },
     {
       name: "scroll-area",
+      description: "Scrollable area with custom scrollbars.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-scroll-area"],
       files: [
@@ -431,6 +468,7 @@ const registry = {
     },
     {
       name: "select",
+      description: "Select dropdown (Radix) with sizes xs-lg.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-select"],
       files: [
@@ -442,6 +480,7 @@ const registry = {
     },
     {
       name: "responsive-dialog",
+      description: "Dialog on desktop, bottom drawer below 768px.",
       type: "registry:ui",
       registryDependencies: ["dialog", "drawer", "use-mobile"],
       files: [
@@ -453,6 +492,7 @@ const registry = {
     },
     {
       name: "separator",
+      description: "Horizontal or vertical divider.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-separator"],
       files: [
@@ -464,6 +504,7 @@ const registry = {
     },
     {
       name: "sheet",
+      description: "Side panel that slides in from an edge.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
       files: [
@@ -475,6 +516,7 @@ const registry = {
     },
     {
       name: "sidebar",
+      description: "Composable, collapsible app sidebar.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-slot",
@@ -501,6 +543,7 @@ const registry = {
     },
     {
       name: "skeleton",
+      description: "Loading placeholder.",
       type: "registry:ui",
       files: [
         {
@@ -511,6 +554,7 @@ const registry = {
     },
     {
       name: "slider",
+      description: "Range input with one or more thumbs.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slider"],
       files: [
@@ -522,6 +566,7 @@ const registry = {
     },
     {
       name: "sonner",
+      description: "Toast notifications (sonner) themed for Refer.",
       type: "registry:ui",
       dependencies: ["sonner", "next-themes"],
       files: [
@@ -533,6 +578,7 @@ const registry = {
     },
     {
       name: "switch",
+      description: "On/off toggle switch.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-switch"],
       files: [
@@ -544,6 +590,7 @@ const registry = {
     },
     {
       name: "table",
+      description: "Styled table primitives.",
       type: "registry:ui",
       files: [
         {
@@ -554,6 +601,7 @@ const registry = {
     },
     {
       name: "tabs",
+      description: "Tabbed panels.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-tabs"],
       files: [
@@ -565,6 +613,7 @@ const registry = {
     },
     {
       name: "textarea",
+      description: "Multi-line text input.",
       type: "registry:ui",
       files: [
         {
@@ -575,6 +624,7 @@ const registry = {
     },
     {
       name: "toggle",
+      description: "Two-state button.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-toggle"],
       files: [
@@ -586,6 +636,7 @@ const registry = {
     },
     {
       name: "toggle-group",
+      description: "Set of joined toggles with single or multiple selection.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-toggle-group"],
       registryDependencies: ["toggle"],
@@ -598,6 +649,7 @@ const registry = {
     },
     {
       name: "tooltip",
+      description: "Short label shown on hover or focus.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-tooltip"],
       files: [
@@ -609,6 +661,7 @@ const registry = {
     },
     {
       name: "use-mobile",
+      description: "Hook that returns true below the mobile breakpoint (768px).",
       type: "registry:hook",
       files: [
         {
@@ -621,7 +674,7 @@ const registry = {
       name: "refer-utils",
       type: "registry:file",
       title: "Refer utilities",
-      description: "Tailwind v4 utilities: scroll-fade, shimmer, squircle.",
+      description: "Tailwind v4 utilities from shadcn: scroll-fade, shimmer. Installed with globals.",
       files: [
         {
           path: "styles/refer-utils.css",
@@ -751,6 +804,8 @@ async function addStyleItem() {
     type: "registry:style",
     title: "Refer global CSS",
     description: "Design tokens, base styles and utilities from app/globals.css.",
+    // globals.css imports ./refer-utils.css, so installing globals must bring that file too.
+    registryDependencies: [`${REGISTRY_PATH}/refer-utils.json`],
     files: [],
     ...styleFromGlobals(path.join(ROOT, "app/globals.css")),
   })

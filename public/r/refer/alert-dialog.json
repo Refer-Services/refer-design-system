@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog",
+  "description": "Modal confirmation dialog that interrupts the user.",
   "dependencies": [
     "@radix-ui/react-alert-dialog"
   ],

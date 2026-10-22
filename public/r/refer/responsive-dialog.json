@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "responsive-dialog",
+  "description": "Dialog on desktop, bottom drawer below 768px.",
   "registryDependencies": [
     "https://ds.tryrefer.com/r/refer/dialog.json",
     "https://ds.tryrefer.com/r/refer/drawer.json",

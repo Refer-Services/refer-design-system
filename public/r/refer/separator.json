@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "separator",
+  "description": "Horizontal or vertical divider.",
   "dependencies": [
     "@radix-ui/react-separator"
   ],

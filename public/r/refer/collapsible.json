@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "collapsible",
+  "description": "Shows and hides a single section of content.",
   "dependencies": [
     "@radix-ui/react-collapsible"
   ],
