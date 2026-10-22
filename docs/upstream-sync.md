@@ -11,21 +11,22 @@ The general registry and sync rules live in `CLAUDE.md`; this file is the histor
   results are in the ledger below.
 - **`registry/refer/styles/refer-utils.css`:** byte-identical to `dist/tailwind.css` of `shadcn@4.22.1` from
   `/* scroll-fade */` to the end. We leave out upstream's first 95 lines (accordion keyframes, `data-*` custom variants,
-  `no-scrollbar`, which we define in `app/globals.css`).
+  `no-scrollbar`). Our own `no-scrollbar` in `app/globals.css` is a different utility; see
+  [Infra decisions](#infra-decisions).
 
 ### Waves
 
 Upstream changes go in by risk, one wave per PR → deploy → app sync, so each app's diff stays small and a regression
-points at one wave.
+points at one wave. A wave is done when the apps are synced, not when the PR merges.
 
-| Wave | Content | Status |
-|---|---|---|
-| 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) |
-| 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner`, delete `refer-menu-item` (and `components/menu-item-demo.tsx`) | Pending |
-| 3 | All new upstream components, with docs demos (see [New upstream components](#new-upstream-components)) | Pending |
-| 4 | Design decisions that change app visuals | Pending |
-| 5 | Breaking migrations, one at a time, coordinated with apps | Pending |
-| 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending |
+| Wave | Content | DS | Apps synced |
+|---|---|---|---|
+| 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
+| 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner`, delete `refer-menu-item` (and `components/menu-item-demo.tsx`), bump `@base-ui/react` | Pending | — |
+| 3 | All new upstream components, with docs demos (see [New upstream components](#new-upstream-components)) | Pending | — |
+| 4 | Design decisions that change app visuals | Pending | — |
+| 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
+| 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
 ## How to run a sync
 
@@ -54,11 +55,17 @@ points at one wave.
      `NEXT_PUBLIC_BASE_URL=http://127.0.0.1:4790`, serve `public/` with `python3 -m http.server 4790`, add
      `"registries": {"@refer": "http://127.0.0.1:4790/r/refer/{name}.json"}` to the copy, and run
      `npm_config_legacy_peer_deps=true npx shadcn@latest add @refer/globals @refer/<each component> --overwrite --yes`.
-     Only the components in the wave may change; `globals.css` values must stay the same. (`legacy-peer-deps` only
-     works around the trimmed `package.json`; the real apps pin their versions.)
+     Only the components in the wave may change; `globals.css` values must stay the same. (`legacy-peer-deps` is
+     needed because the trimmed `package.json` lets npm pick the newest versions of everything, which then conflict on
+     peer dependencies; the real apps use `^` ranges with a lockfile.)
    - Look at the changed components in the browser (`npm run dev`), in light and dark mode.
    - Rebuild without `NEXT_PUBLIC_BASE_URL` before committing, so no `127.0.0.1` URL is left in `public/r/refer`.
-6. **Update this file:** the triage commit, the ledger rows you touched, and the waves table.
+6. **After the deploy, sync each app for real** and check its `package.json` and lockfile diff: no major version may
+   change. The throwaway copy doesn't catch this (the calendar's pinned `date-fns@3.6.0` reverting portal to
+   date-fns 3 only showed up in the real portal sync). Never run `shadcn init` in an existing app: it regenerates
+   `globals.css` and drops local imports such as portal's `./styles/index.css`.
+7. **Update this file:** the triage commit, the ledger rows you touched, and the waves table (including which apps
+   were synced).
 
 ## What the apps depend on
 
@@ -75,6 +82,11 @@ State on 2026-10-22.
   there overwrites 7 files and changes the app's look, so pair argus first, the way portal was paired.
   `TooltipProvider` is used in 5 files.
 - **landing-frontend, partners-frontend:** not compared yet. Both have an unused `components/ui/sidebar.tsx`.
+- **`date-fns`:** portal is on 4.4; argus, landing and partners are on 3.6. `@base-ui/react` (used by `combobox`) has
+  an optional peer `date-fns ^4`, so syncing `combobox` into those three gives `ERESOLVE`: upgrade them to date-fns 4
+  first, or sync with `npm_config_legacy_peer_deps=true`. Portal syncs without the flag.
+- **`@base-ui/react`:** portal declares `^1.5.0` and runs 1.7.0 in production (combobox portal inside modals
+  included). The `combobox` item doesn't pin a version, so a fresh install gets the latest.
 - **No app imports** `calendar` or `resizable`. Apps have `react-resizable-panels` 3.x installed.
 
 ## Component ledger
@@ -142,8 +154,13 @@ None of these exist in Refer yet. Wave 3 brings all of them, with demos, so they
   `@/lib/utils` to each app's alias but leaves a bare `"cn"` alone, which would force the package into every app.
 - **`radix-ui` monopackage:** not yet (wave 5). The CLI doesn't rewrite Radix imports on install. If we migrate, do it in
   one sweep (`npx shadcn migrate radix`, every item's `dependencies` → `["radix-ui"]`), not per component.
-- **`@base-ui/react`:** we're on 1.0.0, upstream pins 1.6.0. Bump in wave 5 and re-test the combobox portal inside
-  dialogs and drawers.
+- **`@base-ui/react`:** the DS declares `^1.0.0` and has 1.0.0 installed, older than the apps (portal runs 1.7.0)
+  and upstream (1.6.0), so the docs site tests combobox on an older version than production. Bump to the apps' version
+  in wave 2 and re-check the combobox inside dialogs and drawers on the docs site.
+- **`no-scrollbar` is ours, not upstream's.** Upstream's `no-scrollbar` (in `shadcn/tailwind.css`) hides the
+  scrollbar; ours (`app/globals.css`) shows a thin, low-contrast one. A ported component that uses `no-scrollbar`
+  to hide the bar (e.g. wave 3's new components) will show a thin bar instead. Only `combobox` uses the class today.
+  Open design decision: rename ours (e.g. `scrollbar-thin`) and adopt upstream's `no-scrollbar`.
 - **shadcn CLI devDependency:** `^3.6.2`, latest 4.22.1. Wave 5.
 - **Upstream `shadcn/tailwind.css`:** also defines `data-open`/`data-closed`/… custom variants that map Radix
   `data-state` and Base UI attributes. Ported components that use them need those `@custom-variant`s in
