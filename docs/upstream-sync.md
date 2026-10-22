@@ -11,8 +11,8 @@ The general registry and sync rules live in `CLAUDE.md`; this file is the histor
   results are in the ledger below.
 - **`registry/refer/styles/refer-utils.css`:** byte-identical to `dist/tailwind.css` of `shadcn@4.22.1` from
   `/* scroll-fade */` to the end. We leave out upstream's first 95 lines (accordion keyframes, `data-*` custom variants,
-  `no-scrollbar`). Our own `no-scrollbar` in `app/globals.css` is a different utility; see
-  [Infra decisions](#infra-decisions).
+  `no-scrollbar`). We don't define `no-scrollbar` either: use Tailwind 4.3's native `scrollbar-none` /
+  `scrollbar-thin` (see [Infra decisions](#infra-decisions)).
 
 ### Waves
 
@@ -117,7 +117,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | card | `squircle`, header `gap-1.5` | Header `gap-2` (spacing tweak) | — |
 | chart | — | — | Done in W1 (zero values, `type: "none"`, index keys). W5: Recharts v3 (`initialDimension`, new tooltip/legend types; 82 files import recharts) |
 | checkbox | `indeterminate` prop, custom SVGs with `currentColor` stroke, focus from the global outline | Upstream focus ring classes (covered globally) | Done in W1 (grid indicator) |
-| combobox (Base UI) | Portal into the enclosing `[data-slot=dialog-content\|drawer-content]` (wheel scroll inside modals), `groupRef` on `ComboboxInput`, `className="contents"` on the Portal, Refer styling, `no-scrollbar` list, no `cn-*` tokens (the CLI strips them) | — | Done in W1 (trigger-icon and item-indicator slots). Open question: upstream's `pointer-coarse:` touch sizing was removed in ours |
+| combobox (Base UI) | Portal into the enclosing `[data-slot=dialog-content\|drawer-content]` (wheel scroll inside modals), `groupRef` on `ComboboxInput`, `className="contents"` on the Portal, Refer styling, thin low-contrast list scrollbar (`scrollbar-thin scrollbar-thumb-black/20 scrollbar-track-transparent`), no `cn-*` tokens (the CLI strips them) | — | Done in W1 (trigger-icon and item-indicator slots). Open question: upstream's `pointer-coarse:` touch sizing was removed in ours |
 | command | — | — | Done in W2: `CommandDialog` `className` and `showCloseButton` |
 | context-menu, dropdown-menu | dropdown: primary highlight, `rounded-input` items, `rounded-card shadow-popover` content | — | Done in W1 (SubTrigger icons) |
 | dialog | `title` (sr-only) and `showCloseButton` props on content, custom close button, overlay `backdrop-blur-[1px]`, `DialogContentWithNavigation`, `NavigationArrow` with `loading`, `useDialogNavigation`, `rounded-3xl bg-card shadow-xl` | Upstream content styles | Done in W1 (close slot, `outline-none`). Done in W2: `DialogFooter showCloseButton` (adds `button` to the item's `registryDependencies`) |
@@ -187,15 +187,12 @@ How these were ported (repeat it for future upstream components):
 - **`@base-ui/react`:** bumped in wave 2 to `^1.9.0`, the version a fresh `combobox` install gets (portal runs 1.7.0).
   It needs `date-fns` 4 as a peer, so the DS moved to `date-fns ^4.4.0` (it's only used in demos). Re-check the
   combobox inside dialogs and drawers on the docs site after each bump.
-- **`no-scrollbar` is ours, not upstream's.** Upstream's `no-scrollbar` (in `shadcn/tailwind.css`) hides the
-  scrollbar; ours (`app/globals.css`) shows a thin, low-contrast one. A ported component that uses `no-scrollbar`
-  to hide the bar (e.g. wave 3's new components) will show a thin bar instead. Only `combobox` uses the class today.
-  Plan (wave 5): don't rename ours to `scrollbar-thin`, because Tailwind 4.3 ships `scrollbar-thin`, `scrollbar-none`
-  and `scrollbar-auto` natively and a custom `@utility` with the same name would clash. Instead: upgrade Tailwind to
-  4.3 in the apps (the DS is on 4.3 since wave 3; the monorepo is on 4.2.4); in `combobox`, replace `no-scrollbar` with the native
-  `scrollbar-thin` plus the bar color (`[scrollbar-color:rgba(0,0,0,0.2)_transparent]`); then drop our
-  `no-scrollbar` from `globals.css` so the name keeps upstream's meaning (hide the bar). That also makes `code-block`'s
-  `scrollbar-thin`/`scrollbar-none` work as upstream intends.
+- **No custom `no-scrollbar` (removed in wave 3).** Upstream's `no-scrollbar` (in `shadcn/tailwind.css`) hides the
+  bar; ours showed a thin one, so the same name meant two things. With Tailwind 4.3 (DS and monorepo), `combobox` uses
+  the native `scrollbar-thin scrollbar-thumb-black/20 scrollbar-track-transparent` (same CSS as before) and the
+  utility is gone from `globals.css`. Use `scrollbar-none` to hide a bar and `scrollbar-thin` for a thin one; don't
+  define a custom `@utility` with those names. Apps keep the old rule after a `globals` sync (the CLI doesn't delete
+  rules), so delete `@utility no-scrollbar` from each app's `globals.css` by hand when syncing.
 - **shadcn CLI devDependency:** `^3.6.2`, latest 4.22.1. Wave 5.
 - **Upstream `shadcn/tailwind.css`:** also defines `data-open`/`data-closed`/… custom variants that map Radix
   `data-state` and Base UI attributes. We don't adopt them (they'd change the meaning of Tailwind's built-in

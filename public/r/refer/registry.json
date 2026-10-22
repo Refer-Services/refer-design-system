@@ -1272,10 +1272,6 @@
         },
         "@utility squircle": {
           "corner-shape": "superellipse(1.15)"
-        },
-        "@utility no-scrollbar": {
-          "scrollbar-color": "rgba(0, 0, 0, 0.2) transparent",
-          "scrollbar-width": "thin"
         }
       }
     },

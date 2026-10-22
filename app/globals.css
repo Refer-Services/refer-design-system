@@ -261,9 +261,3 @@
 @utility squircle {
   corner-shape: superellipse(1.15);
 }
-
-/* Thin, low-contrast scrollbar that keeps the element scrollable (Combobox list). */
-@utility no-scrollbar {
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-  scrollbar-width: thin;
-}
