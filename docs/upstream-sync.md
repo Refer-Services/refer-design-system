@@ -24,7 +24,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
-| 4 | Design decisions that change app visuals | Pending | — |
+| 4 | Design decisions that change app visuals. First pass (Refer look for wave 3 components and the remaining stock ones, see [Wave 4 visual pass](#wave-4-visual-pass)) | PR `feat/shadcn-wave-4`; the rest of W4 in the ledger is still pending | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
@@ -181,6 +181,26 @@ How these were ported (repeat it for future upstream components):
   `[data-selected="true"]`, which would break our combobox (Base UI sets `data-selected=""`). Instead, rewrite each
   variant in the ported file to match what its primitive emits: Radix → `data-[state=open]:`; `@shadcn/react` sets
   `data-checked=""`, which the built-in `data-checked:` already matches.
+
+## Wave 4 visual pass
+
+Brings components that still had shadcn's look in line with the Refer components they sit next to, reusing existing
+patterns only (approved from a side-by-side preview, 2026-10-22):
+
+| Component | Now matches | Change |
+|---|---|---|
+| questionnaire | radio-group-boxed, checkbox, kbd, input | Checked choice in `bg-primary-subtle` with `border-primary-border` and the 2px top border; Refer radio/checkbox indicator; `kbd` shortcut; `QuestionnaireInput` with the `Input` classes; error in `destructive-content` |
+| bubble, message | card, semantic tokens | Content `rounded-2xl` with a `rounded-md` "tail" corner on the speaker's side; `tinted` → `primary-subtle`, `outline` → `bg-card shadow-card`, `destructive` → `destructive-subtle`; reactions pill solid (`bg-card shadow-card`); buttons inside reactions and `MessageFooter` compact (`h-6 px-2 text-xs`) |
+| context-menu, menubar, navigation-menu | dropdown-menu | Content/sub-content/viewport in `bg-popover rounded-card shadow-popover backdrop-blur-xl`; items `rounded-input` with the primary highlight (context-menu, menubar); menubar bar and triggers as pills; navigation links `rounded-input`, active in `primary-subtle` |
+| calendar | button outline, primary tint | Nav arrows `outline` circles (`size-7`); today = `text-primary-content` + primary dot; range middle `primary-subtle`; uppercase weekday labels |
+| toast | sonner | `rounded-[12px] shadow-popover backdrop-blur-[24px]`, no border; semantic icon colors |
+| attachment | card | `rounded-2xl` (concentric with the `rounded-input` media and `p-2`), `shadow-card squircle`, icon media in `primary-subtle`, error with `destructive-*` tokens; hover `bg-background` (solid: `bg-accent` is translucent and would show through) |
+| item | card | `rounded-xl squircle`; `outline` → `bg-card shadow-card`; `muted` → `bg-muted`; icon media `rounded-input bg-card shadow-xs` |
+| code-block | card | `rounded-xl squircle bg-muted`, no border; `destructive` → `destructive-subtle` / `destructive-content` |
+
+Focus styles in these components now come from the global `focus-visible:outline-2 outline-ring` in `globals.css`
+instead of upstream's `ring-ring/50` rings. Apps: portal has context-menu, menubar, navigation-menu and calendar installed
+but imports none of them, so syncing wave 4 changes no portal screen.
 
 ## Infra decisions
 
