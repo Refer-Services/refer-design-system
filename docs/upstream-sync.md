@@ -23,7 +23,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 |---|---|---|---|
 | 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
-| 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | PR `feat/shadcn-wave-3` | — |
+| 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
 | 4 | Design decisions that change app visuals | Pending | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
@@ -92,7 +92,10 @@ State on 2026-10-22.
   message-scroller show the browser's scrollbar and some positioning is off. The DS moved to `tailwindcss@^4.3.3` in
   wave 3 (a compiled-CSS diff against 4.1.17 showed no visible change to existing classes: only equivalent
   rewrites such as `calc(var(--spacing) * 0)` → `0`, logical → physical properties with RTL fallbacks, and the new
-  utilities). The monorepo apps are on 4.2.4: upgrade an app to 4.3 before installing any wave 3 component.
+  utilities). The monorepo moved to 4.3.3 on 2026-10-22 (portal's `package.json` requires `^4.3.3`; the other 6 Tailwind apps
+  resolve to the same shared install). The same compiled-CSS diff on all 7 apps showed no visible change: besides the
+  equivalent rewrites, only `.start`/`.end` stopped generating (they came from `align="start"` props, not classes)
+  and preflight's fallback font stack changed (every app sets `--default-font-family`, so it's never used).
 - **No app imports** `calendar` or `resizable`. Apps have `react-resizable-panels` 3.x installed.
 - **Open issue: unversioned item dependencies install the latest major in an app that doesn't have them yet.** A
   fresh install (seen in the throwaway copy, 2026-10-22) got `react-day-picker` 10, `recharts` 3,
