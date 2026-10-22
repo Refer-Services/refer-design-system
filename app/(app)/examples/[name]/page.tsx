@@ -5,27 +5,39 @@ import { ArrowLeftIcon } from "lucide-react"
 
 import { AttachmentExample } from "@/components/examples/attachment-example"
 import { BubbleExample } from "@/components/examples/bubble-example"
+import { ButtonGroupExample } from "@/components/examples/button-group-example"
 import { CodeBlockExample } from "@/components/examples/code-block-example"
+import { FieldExample } from "@/components/examples/field-example"
+import { ItemExample } from "@/components/examples/item-example"
+import { KbdExample } from "@/components/examples/kbd-example"
 import { MarkerExample } from "@/components/examples/marker-example"
 import { MessageExample } from "@/components/examples/message-example"
 import { MessageScrollerExample } from "@/components/examples/message-scroller-example"
+import { NativeSelectExample } from "@/components/examples/native-select-example"
 import {
   exampleNames,
   hasExample,
   type ExampleName,
 } from "@/components/examples/names"
 import { QuestionnaireExample } from "@/components/examples/questionnaire-example"
+import { SpinnerExample } from "@/components/examples/spinner-example"
 import { ToastExample } from "@/components/examples/toast-example"
 import { TraceExample } from "@/components/examples/trace-example"
 
 const examples: Record<ExampleName, React.ComponentType> = {
   attachment: AttachmentExample,
   bubble: BubbleExample,
+  "button-group": ButtonGroupExample,
   "code-block": CodeBlockExample,
+  field: FieldExample,
+  item: ItemExample,
+  kbd: KbdExample,
   marker: MarkerExample,
   message: MessageExample,
   "message-scroller": MessageScrollerExample,
+  "native-select": NativeSelectExample,
   questionnaire: QuestionnaireExample,
+  spinner: SpinnerExample,
   toast: ToastExample,
   trace: TraceExample,
 }

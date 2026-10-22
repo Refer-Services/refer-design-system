@@ -2,11 +2,17 @@
 export const exampleNames = [
   "attachment",
   "bubble",
+  "button-group",
   "code-block",
+  "field",
+  "item",
+  "kbd",
   "marker",
   "message",
   "message-scroller",
+  "native-select",
   "questionnaire",
+  "spinner",
   "toast",
   "trace",
 ] as const
