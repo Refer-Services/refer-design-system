@@ -33,6 +33,9 @@ const buttonVariants = cva(
         md: "h-10 px-4 py-2 has-[>svg]:pl-3.5",
         lg: "h-11 px-5 has-[>svg]:pl-4",
         icon: "size-10",
+        "icon-xs": "size-8",
+        "icon-sm": "size-9",
+        "icon-lg": "size-11",
       },
     },
     defaultVariants: {
@@ -44,8 +47,8 @@ const buttonVariants = cva(
 
 function Button({
   className,
-  variant,
-  size,
+  variant = "primary",
+  size = "md",
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &
@@ -57,6 +60,8 @@ function Button({
   return (
     <Comp
       data-slot="button"
+      data-variant={variant}
+      data-size={size}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />

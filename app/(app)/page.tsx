@@ -6,6 +6,7 @@ import { AvatarDemo } from "@/components/avatar-demo"
 import { BadgeDemo } from "@/components/badge-demo"
 import { BreadcrumbDemo } from "@/components/breadcrumb-demo"
 import { ButtonDemo } from "@/components/button-demo"
+import { ButtonGroupDemo } from "@/components/button-group-demo"
 import { CalendarDemo } from "@/components/calendar-demo"
 import { CardDemo } from "@/components/card-demo"
 import { CarouselDemo } from "@/components/carousel-demo"
@@ -22,13 +23,16 @@ import { DialogDemo } from "@/components/dialog-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
 import { EmptyExample } from "@/components/empty-demo"
+import { FieldDemo } from "@/components/field-demo"
 import { FormDemo } from "@/components/form-demo"
 import { HoverCardDemo } from "@/components/hover-card-demo"
 import { InputDemo } from "@/components/input-demo"
 import { InputOTPDemo } from "@/components/input-otp-demo"
+import { ItemDemo } from "@/components/item-demo"
+import { KbdDemo } from "@/components/kbd-demo"
 import { LabelDemo } from "@/components/label-demo"
-import { MenuItemDemo } from "@/components/menu-item-demo"
 import { MenubarDemo } from "@/components/menubar-demo"
+import { NativeSelectDemo } from "@/components/native-select-demo"
 import { NavigationMenuDemo } from "@/components/navigation-menu-demo"
 import { PaginationDemo } from "@/components/pagination-demo"
 import { PopoverDemo } from "@/components/popover-demo"
@@ -44,6 +48,7 @@ import { SheetDemo } from "@/components/sheet-demo"
 import { SkeletonDemo } from "@/components/skeleton-demo"
 import { SliderDemo } from "@/components/slider-demo"
 import { SonnerDemo } from "@/components/sonner-demo"
+import { SpinnerDemo } from "@/components/spinner-demo"
 import { SwitchDemo } from "@/components/switch-demo"
 import { TableDemo } from "@/components/table-demo"
 import { TabsDemo } from "@/components/tabs-demo"
@@ -88,6 +93,9 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="button">
         <ButtonDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="button-group">
+        <ButtonGroupDemo />
       </ComponentWrapper>
       <ComponentWrapper name="calendar">
         <CalendarDemo />
@@ -134,6 +142,9 @@ export default function SinkPage() {
       <ComponentWrapper name="empty">
         <EmptyExample />
       </ComponentWrapper>
+      <ComponentWrapper name="field">
+        <FieldDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="form">
         <FormDemo />
       </ComponentWrapper>
@@ -146,11 +157,20 @@ export default function SinkPage() {
       <ComponentWrapper name="input-otp">
         <InputOTPDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="item">
+        <ItemDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="kbd">
+        <KbdDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="label">
         <LabelDemo />
       </ComponentWrapper>
       <ComponentWrapper name="menubar">
         <MenubarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="native-select">
+        <NativeSelectDemo />
       </ComponentWrapper>
       <ComponentWrapper name="navigation-menu">
         <NavigationMenuDemo />
@@ -194,6 +214,9 @@ export default function SinkPage() {
       <ComponentWrapper name="sonner">
         <SonnerDemo />
       </ComponentWrapper>
+      <ComponentWrapper name="spinner">
+        <SpinnerDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="switch">
         <SwitchDemo />
       </ComponentWrapper>
@@ -214,9 +237,6 @@ export default function SinkPage() {
       </ComponentWrapper>
       <ComponentWrapper name="tooltip">
         <TooltipDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="Refer Menu Item" className="bg-background">
-        <MenuItemDemo />
       </ComponentWrapper>
     </div>
   )

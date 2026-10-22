@@ -29,7 +29,7 @@
     },
     {
       "name": "alert-dialog",
-      "description": "Modal confirmation dialog that interrupts the user.",
+      "description": "Modal confirmation dialog that interrupts the user; size sm for compact confirms.",
       "dependencies": [
         "@radix-ui/react-alert-dialog"
       ],
@@ -60,7 +60,7 @@
     },
     {
       "name": "avatar",
-      "description": "User image with fallback initials.",
+      "description": "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
       "dependencies": [
         "@radix-ui/react-avatar"
       ],
@@ -109,6 +109,23 @@
       "files": [
         {
           "path": "registry/refer/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "button-group",
+      "description": "Groups buttons (and inputs, selects, dropdowns) into one joined control, horizontal or vertical.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/button-group.tsx",
           "type": "registry:ui"
         }
       ],
@@ -275,6 +292,9 @@
       "dependencies": [
         "@radix-ui/react-dialog"
       ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/button.json"
+      ],
       "files": [
         {
           "path": "registry/refer/ui/dialog.tsx",
@@ -318,6 +338,21 @@
       "files": [
         {
           "path": "registry/refer/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "field",
+      "description": "Accessible form field layout: FieldSet, FieldLegend, FieldGroup, Field, FieldLabel, FieldDescription, FieldError.",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/label.json",
+        "https://ds.tryrefer.com/r/refer/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/field.tsx",
           "type": "registry:ui"
         }
       ],
@@ -401,6 +436,34 @@
       "type": "registry:ui"
     },
     {
+      "name": "item",
+      "description": "Flexible row for lists and cards: media, title, description and actions.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/refer/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "kbd",
+      "description": "Keyboard key and shortcut display (Kbd, KbdGroup).",
+      "files": [
+        {
+          "path": "registry/refer/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "label",
       "description": "Accessible form label.",
       "dependencies": [
@@ -423,6 +486,17 @@
       "files": [
         {
           "path": "registry/refer/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "native-select",
+      "description": "Styled native HTML select with options and option groups.",
+      "files": [
+        {
+          "path": "registry/refer/ui/native-select.tsx",
           "type": "registry:ui"
         }
       ],
@@ -458,7 +532,7 @@
     },
     {
       "name": "popover",
-      "description": "Floating panel anchored to a trigger.",
+      "description": "Floating panel anchored to a trigger, with header, title and description slots.",
       "dependencies": [
         "@radix-ui/react-popover"
       ],
@@ -665,6 +739,17 @@
       "type": "registry:ui"
     },
     {
+      "name": "spinner",
+      "description": "Loading spinner icon.",
+      "files": [
+        {
+          "path": "registry/refer/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "switch",
       "description": "On/off toggle switch.",
       "dependencies": [
@@ -730,7 +815,7 @@
     },
     {
       "name": "toggle-group",
-      "description": "Set of joined toggles with single or multiple selection.",
+      "description": "Set of toggles, joined or spaced, single or multiple selection.",
       "dependencies": [
         "@radix-ui/react-toggle-group"
       ],
@@ -1041,6 +1126,7 @@
         "https://ds.tryrefer.com/r/refer/badge.json",
         "https://ds.tryrefer.com/r/refer/breadcrumb.json",
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/button-group.json",
         "https://ds.tryrefer.com/r/refer/calendar.json",
         "https://ds.tryrefer.com/r/refer/card.json",
         "https://ds.tryrefer.com/r/refer/carousel.json",
@@ -1055,13 +1141,17 @@
         "https://ds.tryrefer.com/r/refer/drawer.json",
         "https://ds.tryrefer.com/r/refer/dropdown-menu.json",
         "https://ds.tryrefer.com/r/refer/empty.json",
+        "https://ds.tryrefer.com/r/refer/field.json",
         "https://ds.tryrefer.com/r/refer/form.json",
         "https://ds.tryrefer.com/r/refer/hover-card.json",
         "https://ds.tryrefer.com/r/refer/input.json",
         "https://ds.tryrefer.com/r/refer/input-group.json",
         "https://ds.tryrefer.com/r/refer/input-otp.json",
+        "https://ds.tryrefer.com/r/refer/item.json",
+        "https://ds.tryrefer.com/r/refer/kbd.json",
         "https://ds.tryrefer.com/r/refer/label.json",
         "https://ds.tryrefer.com/r/refer/menubar.json",
+        "https://ds.tryrefer.com/r/refer/native-select.json",
         "https://ds.tryrefer.com/r/refer/navigation-menu.json",
         "https://ds.tryrefer.com/r/refer/pagination.json",
         "https://ds.tryrefer.com/r/refer/popover.json",
@@ -1078,6 +1168,7 @@
         "https://ds.tryrefer.com/r/refer/skeleton.json",
         "https://ds.tryrefer.com/r/refer/slider.json",
         "https://ds.tryrefer.com/r/refer/sonner.json",
+        "https://ds.tryrefer.com/r/refer/spinner.json",
         "https://ds.tryrefer.com/r/refer/switch.json",
         "https://ds.tryrefer.com/r/refer/table.json",
         "https://ds.tryrefer.com/r/refer/tabs.json",
