@@ -22,7 +22,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | Wave | Content | DS | Apps synced |
 |---|---|---|---|
 | 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
-| 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | — |
+| 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | PR `feat/shadcn-wave-3` | — |
 | 4 | Design decisions that change app visuals | Pending | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
