@@ -23,7 +23,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 |---|---|---|---|
 | 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | PR `feat/shadcn-wave-2` | — |
-| 3 | All new upstream components, with docs demos (see [New upstream components](#new-upstream-components)) | Pending | — |
+| 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | PR `feat/shadcn-wave-3` (on top of wave 2) | — |
 | 4 | Design decisions that change app visuals | Pending | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
@@ -88,6 +88,11 @@ State on 2026-10-22.
 - **`@base-ui/react`:** portal declares `^1.5.0` and runs 1.7.0 in production (combobox portal inside modals
   included). The `combobox` item doesn't pin a version, so a fresh install gets the latest.
 - **No app imports** `calendar` or `resizable`. Apps have `react-resizable-panels` 3.x installed.
+- **Open issue: unversioned item dependencies install the latest major in an app that doesn't have them yet.** A
+  fresh install (seen in the throwaway copy, 2026-10-22) got `react-day-picker` 10, `recharts` 3,
+  `react-resizable-panels` 4 and `lucide-react` 1.x, while our calendar, chart and resizable are written for older
+  majors. Existing apps aren't affected (the CLI skips dependencies already installed). Fix by giving those items a
+  major range (`react-day-picker@^9`, `recharts@^2`, …) or by migrating the components (wave 5).
 
 ## Component ledger
 
@@ -131,22 +136,32 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | toggle-group | `rounded-lg`, items `flex-1` | — | Done in W2: `spacing` prop (joined styles only when `spacing=0`). Those styles are now `data-[spacing=0]:` variants, so a plain item `className` like `rounded-full` no longer overrides them; use `data-[spacing=0]:rounded-full`. No app uses toggle-group yet |
 | tooltip | `rounded-[10px]`, `ease-smooth`, built-in `TooltipProvider` | — | Done in W1 (`text-background`). W5: drop the built-in Provider once every app has one at its root |
 
-## New upstream components
+## Components added from upstream in wave 3
 
-None of these exist in Refer yet. Wave 3 brings all of them, with demos, so they're available to customize.
+Added in wave 3 with upstream styling and no Refer design pass yet, so they're available to customize. Each has a
+short demo in `components/<name>-demo.tsx` written for Refer (upstream's examples are large galleries tied to their
+docs harness and the AI SDK, so they weren't ported).
 
-| Component | What it is | Deps | Notes |
+| Component | Source | Deps | Notes |
 |---|---|---|---|
-| message | One conversation row: avatar, alignment, header, content, footer | — | new-york-v4 source |
-| bubble | Message surface with variants, reactions, collapsible content | radix Slot | new-york-v4 source |
-| message-scroller | Chat scroll container: streaming follow, history prepend, jump-to | `@shadcn/react`, `button` | new-york-v4 source |
-| attachment | File/image card with upload state and actions | `button` | new-york-v4 source; useful for CV uploads |
-| marker | Status row / labeled separator (date breaks, "Thinking…") | — | new-york-v4 source |
-| direction | `DirectionProvider` for RTL | — | new-york-v4 source |
-| questionnaire | Multi-step question flow (screening, intake, onboarding) | `@shadcn/react`, `button` | Only in `registry/bases/*`; port from a built style JSON, e.g. `ui.shadcn.com/r/styles/radix-nova/questionnaire.json` |
-| trace | Agent steps list (reasoning, tool calls) | `collapsible` | Same as questionnaire |
-| code-block | Code/terminal/diff display | `shiki` (heavy), `button` | Same as questionnaire |
-| toast | Base UI toast | `@base-ui/react` | Base UI only; we already ship `@base-ui/react` for combobox. For Radix, upstream still says to use `sonner` |
+| message, bubble, marker, attachment, direction | `new-york-v4/ui` | `@radix-ui/react-slot`; direction: `@radix-ui/react-direction`; attachment: `button` | — |
+| message-scroller | `new-york-v4/ui` | `@shadcn/react`, `button` | Headless core in `@shadcn/react/message-scroller` |
+| questionnaire | `r/styles/radix-vega/questionnaire.json` | `@shadcn/react`, `button` | Button defaults mapped to ours (`primary`, `md`); `cn-font-heading` removed |
+| trace | `r/styles/radix-vega/trace.json` | `collapsible` | `data-open:`/`data-closed:` rewritten to `data-[state=open\|closed]:` (Radix Collapsible) |
+| code-block, use-highlighted-code (+ `lib/highlighter.tsx`) | `r/styles/radix-vega/*.json` | `shiki`, `button` | Uses `scrollbar-thin`/`scrollbar-none`, native only in Tailwind ≥ 4.3 (the DS and portal are older; they fall back to the default scrollbar) |
+| toast | `r/styles/base-vega/toast.json` | `@base-ui/react`, `button` | Base UI toast; coexists with `sonner`, which the apps use. Needs its own `<Toaster>` |
+
+How these were ported (repeat it for future upstream components):
+- Sources only in `registry/bases/*` use `cn-*` placeholders and `IconPlaceholder`; take them from a built style JSON
+  (`ui.shadcn.com/r/styles/radix-vega/<name>.json`; vega is the classic look). Built JSONs still contain
+  `IconPlaceholder`: replace it with the `lucide="…"` icon.
+- `from "cn"` → `@/lib/utils`; `radix-ui` → `@radix-ui/react-*` (`Slot.Root` → `Slot`); registry paths →
+  `@/registry/refer/...`; our Button names for `variant`/`size` defaults; drop `cn-*` classes.
+- **Don't copy upstream's `@custom-variant`s** (`data-open`, `data-checked`, `data-selected`, …) from
+  `shadcn/tailwind.css`. They redefine Tailwind's built-in variants, and `data-selected` only matches
+  `[data-selected="true"]`, which would break our combobox (Base UI sets `data-selected=""`). Instead, rewrite each
+  variant in the ported file to match what its primitive emits: Radix → `data-[state=open]:`; `@shadcn/react` sets
+  `data-checked=""`, which the built-in `data-checked:` already matches.
 
 ## Infra decisions
 
@@ -163,8 +178,9 @@ None of these exist in Refer yet. Wave 3 brings all of them, with demos, so they
   Open design decision: rename ours (e.g. `scrollbar-thin`) and adopt upstream's `no-scrollbar`.
 - **shadcn CLI devDependency:** `^3.6.2`, latest 4.22.1. Wave 5.
 - **Upstream `shadcn/tailwind.css`:** also defines `data-open`/`data-closed`/… custom variants that map Radix
-  `data-state` and Base UI attributes. Ported components that use them need those `@custom-variant`s in
-  `globals.css`; the new-york-v4 chat components don't.
+  `data-state` and Base UI attributes. We don't adopt them (they'd change the meaning of Tailwind's built-in
+  `data-selected:` and others in our existing components); rewrite them per component when porting, as described in
+  [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3).
 - **Upstream tokens we don't have:** `--surface*`, `--code*`, `--selection*`, `--font-heading`,
   `--destructive-foreground`, and radius `2xl`–`4xl` as multiples of `--radius` (ours pin Tailwind's defaults). Check
   ported components for them.
