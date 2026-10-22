@@ -140,9 +140,16 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 Added in wave 3 with upstream styling and no Refer design pass yet, so they're available to customize. Before an app
 uses one (e.g. `attachment` for CV uploads), do a Refer design pass first: they still have upstream styles
-(`rounded-md`, `ring-ring/50`, …). No app has any of them, so syncing an app after wave 3 changes nothing. Each has a
-short demo in `components/<name>-demo.tsx` written for Refer (upstream's examples are large galleries tied to their
-docs harness and the AI SDK, so they weren't ported).
+(`rounded-md`, `ring-ring/50`, …). No app has any of them, so syncing an app after wave 3 changes nothing.
+
+Each has a short demo on the main docs page (`components/<name>-demo.tsx`) and, except `direction` (upstream has no
+gallery for it), a full variations gallery at `/examples/<name>`: upstream's example gallery from
+`ui.shadcn.com/create?item=<name>-example`, ported with `scripts/port-shadcn-example.py` into
+`components/examples/<name>-example.tsx` on a copy of their `Example`/`ExampleWrapper` harness
+(`components/examples/example.tsx`). The list of galleries is `components/examples/names.ts`; the route, the sidebar
+"Examples" group and the "All variations" link on each demo read from it. Sections that need the AI SDK were dropped:
+code-block's Markdown section (`streamdown`), trace's Chat and Reasoning, and message's chat helpers;
+message-scroller's gallery is ours, with static stand-ins for upstream's AI SDK chat.
 
 | Component | Source | Deps | Notes |
 |---|---|---|---|

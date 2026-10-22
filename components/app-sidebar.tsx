@@ -12,6 +12,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
+import { exampleNames } from "@/components/examples/names"
 import { NavUser } from "@/registry/refer/blocks/sidebar-07/components/nav-user"
 import { TeamSwitcher } from "@/registry/refer/blocks/sidebar-07/components/team-switcher"
 import {
@@ -214,6 +215,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenuButton asChild>
                   <a href={`/#${item.name}`}>
                     <span>{getComponentName(item.name)}</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel>Examples</SidebarGroupLabel>
+          <SidebarMenu>
+            {exampleNames.map((name) => (
+              <SidebarMenuItem key={name}>
+                <SidebarMenuButton asChild>
+                  <a href={`/examples/${name}`}>
+                    <span>{getComponentName(name)}</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
