@@ -45,6 +45,11 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 3. Run `npm run registry:build`.
 4. Optionally add a `*-demo.tsx` in `components/` and wire it into the relevant `app/(app)/` route.
 
+## Updating from shadcn upstream
+
+Read `docs/upstream-sync.md` first: the upstream commit we last triaged, the procedure, which Refer customizations
+each component must keep, which `data-slot`s the apps target, and what was skipped on purpose. Update it when you finish.
+
 ## App router structure (docs site)
 
 - `app/(app)/` — main gallery/kitchen-sink with navigation

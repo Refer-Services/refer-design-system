@@ -77,6 +77,8 @@ It explains **what this project is**, **where to make changes**, and **how not t
   - Implement it under `registry/refer/ui/` (or `blocks/`, `charts/` as appropriate).
   - Add or update its entry in `scripts/build-registry.mts`.
   - Run or recommend **`npm run registry:build`**.
+- **Updating from shadcn upstream**: read `docs/upstream-sync.md` first (last triaged upstream commit, procedure,
+  per-component customizations to keep, `data-slot`s the apps target, skipped changes) and update it when you finish.
 
 ---
 
