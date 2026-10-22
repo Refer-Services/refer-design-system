@@ -46,7 +46,7 @@ export const Index: Record<string, any> = {
   },
   "alert-dialog": {
     name: "alert-dialog",
-    description: "Modal confirmation dialog that interrupts the user.",
+    description: "Modal confirmation dialog that interrupts the user; size sm for compact confirms.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
@@ -84,7 +84,7 @@ export const Index: Record<string, any> = {
   },
   "avatar": {
     name: "avatar",
-    description: "User image with fallback initials.",
+    description: "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -151,6 +151,25 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/refer/ui/button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
+  "button-group": {
+    name: "button-group",
+    description: "Groups buttons (and inputs, selects, dropdowns) into one joined control, horizontal or vertical.",
+    type: "registry:ui",
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/separator.json"],
+    files: [{
+      path: "registry/ui/button-group.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/button-group.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -352,7 +371,7 @@ export const Index: Record<string, any> = {
     name: "dialog",
     description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
       path: "registry/ui/dialog.tsx",
       type: "registry:ui",
@@ -417,6 +436,25 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/refer/ui/empty.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
+  "field": {
+    name: "field",
+    description: "Accessible form field layout: FieldSet, FieldLegend, FieldGroup, Field, FieldLabel, FieldDescription, FieldError.",
+    type: "registry:ui",
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/label.json","https://ds.tryrefer.com/r/refer/separator.json"],
+    files: [{
+      path: "registry/ui/field.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/field.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -519,6 +557,44 @@ export const Index: Record<string, any> = {
     tailwind: {},
     cssVars: {},
   },
+  "item": {
+    name: "item",
+    description: "Flexible row for lists and cards: media, title, description and actions.",
+    type: "registry:ui",
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/separator.json"],
+    files: [{
+      path: "registry/ui/item.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/item.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
+  "kbd": {
+    name: "kbd",
+    description: "Keyboard key and shortcut display (Kbd, KbdGroup).",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/ui/kbd.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/kbd.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
   "label": {
     name: "label",
     description: "Accessible form label.",
@@ -550,6 +626,25 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/refer/ui/menubar.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
+  "native-select": {
+    name: "native-select",
+    description: "Styled native HTML select with options and option groups.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/ui/native-select.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/native-select.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -597,7 +692,7 @@ export const Index: Record<string, any> = {
   },
   "popover": {
     name: "popover",
-    description: "Floating panel anchored to a trigger.",
+    description: "Floating panel anchored to a trigger, with header, title and description slots.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -861,6 +956,25 @@ export const Index: Record<string, any> = {
     tailwind: {},
     cssVars: {},
   },
+  "spinner": {
+    name: "spinner",
+    description: "Loading spinner icon.",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/ui/spinner.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/refer/ui/spinner.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+    tailwind: {},
+    cssVars: {},
+  },
   "switch": {
     name: "switch",
     description: "On/off toggle switch.",
@@ -958,7 +1072,7 @@ export const Index: Record<string, any> = {
   },
   "toggle-group": {
     name: "toggle-group",
-    description: "Set of joined toggles with single or multiple selection.",
+    description: "Set of toggles, joined or spaced, single or multiple selection.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/toggle.json"],
     files: [{
@@ -1043,7 +1157,7 @@ export const Index: Record<string, any> = {
     name: "index",
     description: "Comprehensive styling system for Refer with dark mode support",
     type: "registry:style",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/accordion.json","https://ds.tryrefer.com/r/refer/alert.json","https://ds.tryrefer.com/r/refer/alert-dialog.json","https://ds.tryrefer.com/r/refer/aspect-ratio.json","https://ds.tryrefer.com/r/refer/avatar.json","https://ds.tryrefer.com/r/refer/badge.json","https://ds.tryrefer.com/r/refer/breadcrumb.json","https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/calendar.json","https://ds.tryrefer.com/r/refer/card.json","https://ds.tryrefer.com/r/refer/carousel.json","https://ds.tryrefer.com/r/refer/chart.json","https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/checkbox-boxed.json","https://ds.tryrefer.com/r/refer/collapsible.json","https://ds.tryrefer.com/r/refer/combobox.json","https://ds.tryrefer.com/r/refer/command.json","https://ds.tryrefer.com/r/refer/context-menu.json","https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/dropdown-menu.json","https://ds.tryrefer.com/r/refer/empty.json","https://ds.tryrefer.com/r/refer/form.json","https://ds.tryrefer.com/r/refer/hover-card.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/input-group.json","https://ds.tryrefer.com/r/refer/input-otp.json","https://ds.tryrefer.com/r/refer/label.json","https://ds.tryrefer.com/r/refer/menubar.json","https://ds.tryrefer.com/r/refer/navigation-menu.json","https://ds.tryrefer.com/r/refer/pagination.json","https://ds.tryrefer.com/r/refer/popover.json","https://ds.tryrefer.com/r/refer/progress.json","https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/radio-group-boxed.json","https://ds.tryrefer.com/r/refer/resizable.json","https://ds.tryrefer.com/r/refer/scroll-area.json","https://ds.tryrefer.com/r/refer/select.json","https://ds.tryrefer.com/r/refer/responsive-dialog.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/sidebar.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/slider.json","https://ds.tryrefer.com/r/refer/sonner.json","https://ds.tryrefer.com/r/refer/switch.json","https://ds.tryrefer.com/r/refer/table.json","https://ds.tryrefer.com/r/refer/tabs.json","https://ds.tryrefer.com/r/refer/textarea.json","https://ds.tryrefer.com/r/refer/toggle.json","https://ds.tryrefer.com/r/refer/toggle-group.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/refer-utils.json","https://ds.tryrefer.com/r/refer/globals.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/accordion.json","https://ds.tryrefer.com/r/refer/alert.json","https://ds.tryrefer.com/r/refer/alert-dialog.json","https://ds.tryrefer.com/r/refer/aspect-ratio.json","https://ds.tryrefer.com/r/refer/avatar.json","https://ds.tryrefer.com/r/refer/badge.json","https://ds.tryrefer.com/r/refer/breadcrumb.json","https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/button-group.json","https://ds.tryrefer.com/r/refer/calendar.json","https://ds.tryrefer.com/r/refer/card.json","https://ds.tryrefer.com/r/refer/carousel.json","https://ds.tryrefer.com/r/refer/chart.json","https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/checkbox-boxed.json","https://ds.tryrefer.com/r/refer/collapsible.json","https://ds.tryrefer.com/r/refer/combobox.json","https://ds.tryrefer.com/r/refer/command.json","https://ds.tryrefer.com/r/refer/context-menu.json","https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/dropdown-menu.json","https://ds.tryrefer.com/r/refer/empty.json","https://ds.tryrefer.com/r/refer/field.json","https://ds.tryrefer.com/r/refer/form.json","https://ds.tryrefer.com/r/refer/hover-card.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/input-group.json","https://ds.tryrefer.com/r/refer/input-otp.json","https://ds.tryrefer.com/r/refer/item.json","https://ds.tryrefer.com/r/refer/kbd.json","https://ds.tryrefer.com/r/refer/label.json","https://ds.tryrefer.com/r/refer/menubar.json","https://ds.tryrefer.com/r/refer/native-select.json","https://ds.tryrefer.com/r/refer/navigation-menu.json","https://ds.tryrefer.com/r/refer/pagination.json","https://ds.tryrefer.com/r/refer/popover.json","https://ds.tryrefer.com/r/refer/progress.json","https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/radio-group-boxed.json","https://ds.tryrefer.com/r/refer/resizable.json","https://ds.tryrefer.com/r/refer/scroll-area.json","https://ds.tryrefer.com/r/refer/select.json","https://ds.tryrefer.com/r/refer/responsive-dialog.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/sidebar.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/slider.json","https://ds.tryrefer.com/r/refer/sonner.json","https://ds.tryrefer.com/r/refer/spinner.json","https://ds.tryrefer.com/r/refer/switch.json","https://ds.tryrefer.com/r/refer/table.json","https://ds.tryrefer.com/r/refer/tabs.json","https://ds.tryrefer.com/r/refer/textarea.json","https://ds.tryrefer.com/r/refer/toggle.json","https://ds.tryrefer.com/r/refer/toggle-group.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/refer-utils.json","https://ds.tryrefer.com/r/refer/globals.json"],
     files: [],
     component: null,
     meta: undefined,

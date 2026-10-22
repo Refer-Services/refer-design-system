@@ -38,7 +38,7 @@ const registry = {
     },
     {
       name: "alert-dialog",
-      description: "Modal confirmation dialog that interrupts the user.",
+      description: "Modal confirmation dialog that interrupts the user; size sm for compact confirms.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-alert-dialog"],
       registryDependencies: ["button"],
@@ -63,7 +63,7 @@ const registry = {
     },
     {
       name: "avatar",
-      description: "User image with fallback initials.",
+      description: "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-avatar"],
       files: [
@@ -105,6 +105,19 @@ const registry = {
       files: [
         {
           path: "ui/button.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "button-group",
+      description: "Groups buttons (and inputs, selects, dropdowns) into one joined control, horizontal or vertical.",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-slot"],
+      registryDependencies: ["separator"],
+      files: [
+        {
+          path: "ui/button-group.tsx",
           type: "registry:ui",
         },
       ],
@@ -238,6 +251,7 @@ const registry = {
       description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
+      registryDependencies: ["button"],
       files: [
         {
           path: "ui/dialog.tsx",
@@ -276,6 +290,18 @@ const registry = {
       files: [
         {
           path: "ui/empty.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "field",
+      description: "Accessible form field layout: FieldSet, FieldLegend, FieldGroup, Field, FieldLabel, FieldDescription, FieldError.",
+      type: "registry:ui",
+      registryDependencies: ["label", "separator"],
+      files: [
+        {
+          path: "ui/field.tsx",
           type: "registry:ui",
         },
       ],
@@ -347,6 +373,30 @@ const registry = {
       ],
     },
     {
+      name: "item",
+      description: "Flexible row for lists and cards: media, title, description and actions.",
+      type: "registry:ui",
+      dependencies: ["@radix-ui/react-slot"],
+      registryDependencies: ["separator"],
+      files: [
+        {
+          path: "ui/item.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "kbd",
+      description: "Keyboard key and shortcut display (Kbd, KbdGroup).",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/kbd.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "label",
       description: "Accessible form label.",
       type: "registry:ui",
@@ -366,6 +416,17 @@ const registry = {
       files: [
         {
           path: "ui/menubar.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "native-select",
+      description: "Styled native HTML select with options and option groups.",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/native-select.tsx",
           type: "registry:ui",
         },
       ],
@@ -396,7 +457,7 @@ const registry = {
     },
     {
       name: "popover",
-      description: "Floating panel anchored to a trigger.",
+      description: "Floating panel anchored to a trigger, with header, title and description slots.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-popover"],
       files: [
@@ -577,6 +638,17 @@ const registry = {
       ],
     },
     {
+      name: "spinner",
+      description: "Loading spinner icon.",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/spinner.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
       name: "switch",
       description: "On/off toggle switch.",
       type: "registry:ui",
@@ -636,7 +708,7 @@ const registry = {
     },
     {
       name: "toggle-group",
-      description: "Set of joined toggles with single or multiple selection.",
+      description: "Set of toggles, joined or spaced, single or multiple selection.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-toggle-group"],
       registryDependencies: ["toggle"],

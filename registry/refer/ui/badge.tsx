@@ -40,7 +40,7 @@ const badgeVariants = cva(
 
 function Badge({
   className,
-  variant,
+  variant = "primary",
   asChild = false,
   ...props
 }: React.ComponentProps<"span"> &
@@ -50,6 +50,7 @@ function Badge({
   return (
     <Comp
       data-slot="badge"
+      data-variant={variant}
       className={cn(badgeVariants({ variant }), className)}
       {...props}
     />
