@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch",
+  "description": "On/off toggle switch.",
   "dependencies": [
     "@radix-ui/react-switch"
   ],

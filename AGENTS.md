@@ -46,7 +46,7 @@ It explains **what this project is**, **where to make changes**, and **how not t
   - **`registry/refer/charts/`**: Components backed by `recharts`.
   - **`registry/refer/hooks/`**: Shared React hooks (e.g. `use-mobile`).
   - **`registry/refer/lib/`**: Utilities including the registry’s `cn()` helper.
-  - **`registry/refer/styles/`**: The `index` style item's metadata (`refer-style.json`) and shipped CSS files (`refer-utils.css`). Tokens live in `app/globals.css`.
+  - **`registry/refer/styles/`**: The `index` item's metadata (`refer-style.json`) and shipped CSS files (`refer-utils.css`: shadcn's scroll-fade and shimmer, copied as-is). Tokens live in `app/globals.css`.
 - **Docs / examples only (not published)**:
   - **`components/`**: Demo/showcase components, almost always named `*-demo.tsx`.
   - These import from `@/registry/refer/ui/...` and are safe to change without affecting consumers, as long as you do not break imports.
@@ -63,9 +63,12 @@ It explains **what this project is**, **where to make changes**, and **how not t
 - **Source of truth**: `scripts/build-registry.mts`.
 - It:
   1. Declares every registry item (name, type, dependencies, file paths).
-  2. Reads implementation files from `registry/refer/**`.
-  3. Generates `__registry__/index.tsx` (lazy-loaded component map; **do not edit**).
-  4. Generates JSON data consumed by the `shadcn` CLI for remote install.
+  2. Turns bare `registryDependencies` (`"button"`) into Refer URLs, and fails on an unknown name or on a Refer import
+     an item doesn't declare (a bare name would install shadcn's own component).
+  3. Generates the `globals` item from `app/globals.css`, and the `index` item that installs every item.
+  4. Reads implementation files from `registry/refer/**`.
+  5. Generates `__registry__/index.tsx` (lazy-loaded component map; **do not edit**).
+  6. Generates JSON data consumed by the `shadcn` CLI for remote install (`public/r/refer/`).
 
 **Agent rules**:
 
@@ -93,10 +96,15 @@ It explains **what this project is**, **where to make changes**, and **how not t
 
 ### Design tokens and theming
 
-- **Token source**: `app/globals.css` is the single source of truth. `npm run registry:build` generates the `index`
-  style item's `cssVars` (from `:root`, `.dark`, `@theme inline`) and `css` (everything else) from it, so consumers get
-  it via `shadcn add`. Don't add `cssVars`/`css` to `refer-style.json`, and don't nest at-rules inside other blocks
-  (the CLI duplicates them on every install; the build fails if you do).
+- **Token source**: `app/globals.css` is the single source of truth. `npm run registry:build` generates the `globals`
+  item's `cssVars` (from `:root`, `.dark`, `@theme inline`) and `css` (everything else) from it; apps sync it with
+  `shadcn add https://ds.tryrefer.com/r/refer/globals.json` (not `index.json`, which reinstalls every component).
+  With `"registries": { "@refer": "https://ds.tryrefer.com/r/refer/{name}.json" }` in an app's `components.json`,
+  items install as `@refer/<name>` and the shadcn MCP server can list and search them (it reads
+  `public/r/refer/registry.json`, so keep each item's `description` in `scripts/build-registry.mts` accurate).
+  Don't add `cssVars`/`css` to `refer-style.json` or `cssVars`/`tailwind` to a component item (the CLI would overwrite
+  the app's tokens with them), and don't nest at-rules inside other blocks (the CLI duplicates them on every install;
+  the build fails if you do).
 - **Brand palette**:
   - `--color-refer-50` → `--color-refer-950` (warm red scale).
 - **Semantic color tokens (beyond stock shadcn)**:
@@ -178,6 +186,8 @@ Before finalizing changes, especially those touching the registry:
   - [ ] If you changed anything under `registry/refer/**`, did you also update `scripts/build-registry.mts` as needed?
   - [ ] Did you avoid editing `__registry__/**` by hand?
   - [ ] Have you run or recommended `npm run registry:build`?
+  - [ ] Does each item list the Refer components/hooks it imports in `registryDependencies`, with no exact versions in `dependencies` (a major range like `@^4` is fine when the code needs it)?
+  - [ ] Are tokens only in `app/globals.css` (no `cssVars`/`tailwind` on component items)?
 - **API and imports**
   - [ ] Did you keep exports as **named function declarations**?
   - [ ] Are you importing UI components from `@/registry/refer/ui/...`?

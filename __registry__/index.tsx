@@ -8,7 +8,7 @@ import * as React from "react"
 export const Index: Record<string, any> = {
   "accordion": {
     name: "accordion",
-    description: "",
+    description: "Vertically stacked sections that expand and collapse.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -27,7 +27,7 @@ export const Index: Record<string, any> = {
   },
   "alert": {
     name: "alert",
-    description: "",
+    description: "Callout for important messages, with title and description.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -46,7 +46,7 @@ export const Index: Record<string, any> = {
   },
   "alert-dialog": {
     name: "alert-dialog",
-    description: "",
+    description: "Modal confirmation dialog that interrupts the user.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
@@ -65,7 +65,7 @@ export const Index: Record<string, any> = {
   },
   "aspect-ratio": {
     name: "aspect-ratio",
-    description: "",
+    description: "Displays content within a fixed aspect ratio.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -84,7 +84,7 @@ export const Index: Record<string, any> = {
   },
   "avatar": {
     name: "avatar",
-    description: "",
+    description: "User image with fallback initials.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -103,7 +103,7 @@ export const Index: Record<string, any> = {
   },
   "badge": {
     name: "badge",
-    description: "",
+    description: "Pill label for status and metadata, with semantic variants.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -122,7 +122,7 @@ export const Index: Record<string, any> = {
   },
   "breadcrumb": {
     name: "breadcrumb",
-    description: "",
+    description: "Path navigation using Next.js Link.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -141,7 +141,7 @@ export const Index: Record<string, any> = {
   },
   "button": {
     name: "button",
-    description: "",
+    description: "Refer button (rounded-full) with primary, subtle, ghost, outline, destructive and link variants; sizes xs-lg and icon.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -160,7 +160,7 @@ export const Index: Record<string, any> = {
   },
   "calendar": {
     name: "calendar",
-    description: "",
+    description: "Date grid for single, multiple or range selection (react-day-picker v9).",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
@@ -179,7 +179,7 @@ export const Index: Record<string, any> = {
   },
   "card": {
     name: "card",
-    description: "",
+    description: "Squircle container with header, content and footer slots.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -198,7 +198,7 @@ export const Index: Record<string, any> = {
   },
   "carousel": {
     name: "carousel",
-    description: "",
+    description: "Embla-based carousel with previous/next controls.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
@@ -217,7 +217,7 @@ export const Index: Record<string, any> = {
   },
   "chart": {
     name: "chart",
-    description: "",
+    description: "Recharts wrapper with theme-aware config, tooltip and legend.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/card.json"],
     files: [{
@@ -236,7 +236,7 @@ export const Index: Record<string, any> = {
   },
   "checkbox": {
     name: "checkbox",
-    description: "",
+    description: "Checkbox with indeterminate state.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -255,7 +255,7 @@ export const Index: Record<string, any> = {
   },
   "checkbox-boxed": {
     name: "checkbox-boxed",
-    description: "",
+    description: "Checkbox rendered as a selectable bordered card.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/checkbox.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
@@ -274,7 +274,7 @@ export const Index: Record<string, any> = {
   },
   "collapsible": {
     name: "collapsible",
-    description: "",
+    description: "Shows and hides a single section of content.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -293,7 +293,7 @@ export const Index: Record<string, any> = {
   },
   "combobox": {
     name: "combobox",
-    description: "",
+    description: "Searchable select (Base UI) with single/multiple selection and chips; works inside dialogs and drawers.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/input-group.json"],
     files: [{
@@ -312,7 +312,7 @@ export const Index: Record<string, any> = {
   },
   "command": {
     name: "command",
-    description: "",
+    description: "Command palette and searchable list (cmdk), also as CommandDialog.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json"],
     files: [{
@@ -331,7 +331,7 @@ export const Index: Record<string, any> = {
   },
   "context-menu": {
     name: "context-menu",
-    description: "",
+    description: "Right-click menu with items, submenus, checkboxes and radios.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -350,7 +350,7 @@ export const Index: Record<string, any> = {
   },
   "dialog": {
     name: "dialog",
-    description: "",
+    description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -369,7 +369,7 @@ export const Index: Record<string, any> = {
   },
   "drawer": {
     name: "drawer",
-    description: "",
+    description: "Bottom sheet for mobile (vaul).",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -388,7 +388,7 @@ export const Index: Record<string, any> = {
   },
   "dropdown-menu": {
     name: "dropdown-menu",
-    description: "",
+    description: "Menu opened from a trigger, with items, submenus, checkboxes and radios.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -407,7 +407,7 @@ export const Index: Record<string, any> = {
   },
   "empty": {
     name: "empty",
-    description: "",
+    description: "Empty state with icon, title, description and actions.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -426,7 +426,7 @@ export const Index: Record<string, any> = {
   },
   "form": {
     name: "form",
-    description: "",
+    description: "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
@@ -445,7 +445,7 @@ export const Index: Record<string, any> = {
   },
   "hover-card": {
     name: "hover-card",
-    description: "",
+    description: "Preview card shown on hover.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -464,7 +464,7 @@ export const Index: Record<string, any> = {
   },
   "input": {
     name: "input",
-    description: "",
+    description: "Text input (rounded-input) with Refer focus and invalid states.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -483,7 +483,7 @@ export const Index: Record<string, any> = {
   },
   "input-group": {
     name: "input-group",
-    description: "",
+    description: "Input or textarea with inline/block addons, buttons and text.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/textarea.json"],
     files: [{
@@ -502,7 +502,7 @@ export const Index: Record<string, any> = {
   },
   "input-otp": {
     name: "input-otp",
-    description: "",
+    description: "One-time password input with slots.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -521,7 +521,7 @@ export const Index: Record<string, any> = {
   },
   "label": {
     name: "label",
-    description: "",
+    description: "Accessible form label.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -540,7 +540,7 @@ export const Index: Record<string, any> = {
   },
   "menubar": {
     name: "menubar",
-    description: "",
+    description: "Desktop-style horizontal menu bar.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -559,7 +559,7 @@ export const Index: Record<string, any> = {
   },
   "navigation-menu": {
     name: "navigation-menu",
-    description: "",
+    description: "Site navigation with dropdown panels.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -578,7 +578,7 @@ export const Index: Record<string, any> = {
   },
   "pagination": {
     name: "pagination",
-    description: "",
+    description: "Page navigation with previous/next and page links.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
     files: [{
@@ -597,7 +597,7 @@ export const Index: Record<string, any> = {
   },
   "popover": {
     name: "popover",
-    description: "",
+    description: "Floating panel anchored to a trigger.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -616,7 +616,7 @@ export const Index: Record<string, any> = {
   },
   "progress": {
     name: "progress",
-    description: "",
+    description: "Horizontal progress bar.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -635,7 +635,7 @@ export const Index: Record<string, any> = {
   },
   "radio-group": {
     name: "radio-group",
-    description: "",
+    description: "Radio buttons for picking one option.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -654,7 +654,7 @@ export const Index: Record<string, any> = {
   },
   "radio-group-boxed": {
     name: "radio-group-boxed",
-    description: "",
+    description: "Radio options rendered as selectable bordered cards.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/radio-group.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
@@ -673,7 +673,7 @@ export const Index: Record<string, any> = {
   },
   "resizable": {
     name: "resizable",
-    description: "",
+    description: "Resizable panel groups (react-resizable-panels).",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -692,7 +692,7 @@ export const Index: Record<string, any> = {
   },
   "scroll-area": {
     name: "scroll-area",
-    description: "",
+    description: "Scrollable area with custom scrollbars.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -711,7 +711,7 @@ export const Index: Record<string, any> = {
   },
   "select": {
     name: "select",
-    description: "",
+    description: "Select dropdown (Radix) with sizes xs-lg.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -730,7 +730,7 @@ export const Index: Record<string, any> = {
   },
   "responsive-dialog": {
     name: "responsive-dialog",
-    description: "",
+    description: "Dialog on desktop, bottom drawer below 768px.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/drawer.json","https://ds.tryrefer.com/r/refer/use-mobile.json"],
     files: [{
@@ -749,7 +749,7 @@ export const Index: Record<string, any> = {
   },
   "separator": {
     name: "separator",
-    description: "",
+    description: "Horizontal or vertical divider.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -768,7 +768,7 @@ export const Index: Record<string, any> = {
   },
   "sheet": {
     name: "sheet",
-    description: "",
+    description: "Side panel that slides in from an edge.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -787,7 +787,7 @@ export const Index: Record<string, any> = {
   },
   "sidebar": {
     name: "sidebar",
-    description: "",
+    description: "Composable, collapsible app sidebar.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/skeleton.json"],
     files: [{
@@ -806,7 +806,7 @@ export const Index: Record<string, any> = {
   },
   "skeleton": {
     name: "skeleton",
-    description: "",
+    description: "Loading placeholder.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -825,7 +825,7 @@ export const Index: Record<string, any> = {
   },
   "slider": {
     name: "slider",
-    description: "",
+    description: "Range input with one or more thumbs.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -844,7 +844,7 @@ export const Index: Record<string, any> = {
   },
   "sonner": {
     name: "sonner",
-    description: "",
+    description: "Toast notifications (sonner) themed for Refer.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -863,7 +863,7 @@ export const Index: Record<string, any> = {
   },
   "switch": {
     name: "switch",
-    description: "",
+    description: "On/off toggle switch.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -882,7 +882,7 @@ export const Index: Record<string, any> = {
   },
   "table": {
     name: "table",
-    description: "",
+    description: "Styled table primitives.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -901,7 +901,7 @@ export const Index: Record<string, any> = {
   },
   "tabs": {
     name: "tabs",
-    description: "",
+    description: "Tabbed panels.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -920,7 +920,7 @@ export const Index: Record<string, any> = {
   },
   "textarea": {
     name: "textarea",
-    description: "",
+    description: "Multi-line text input.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -939,7 +939,7 @@ export const Index: Record<string, any> = {
   },
   "toggle": {
     name: "toggle",
-    description: "",
+    description: "Two-state button.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -958,7 +958,7 @@ export const Index: Record<string, any> = {
   },
   "toggle-group": {
     name: "toggle-group",
-    description: "",
+    description: "Set of joined toggles with single or multiple selection.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/toggle.json"],
     files: [{
@@ -977,7 +977,7 @@ export const Index: Record<string, any> = {
   },
   "tooltip": {
     name: "tooltip",
-    description: "",
+    description: "Short label shown on hover or focus.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
@@ -996,7 +996,7 @@ export const Index: Record<string, any> = {
   },
   "use-mobile": {
     name: "use-mobile",
-    description: "",
+    description: "Hook that returns true below the mobile breakpoint (768px).",
     type: "registry:hook",
     registryDependencies: undefined,
     files: [{
@@ -1015,7 +1015,7 @@ export const Index: Record<string, any> = {
   },
   "refer-utils": {
     name: "refer-utils",
-    description: "Tailwind v4 utilities: scroll-fade, shimmer, squircle.",
+    description: "Tailwind v4 utilities from shadcn: scroll-fade, shimmer. Installed with globals.",
     type: "registry:file",
     registryDependencies: undefined,
     files: [{
@@ -1032,7 +1032,7 @@ export const Index: Record<string, any> = {
     name: "globals",
     description: "Design tokens, base styles and utilities from app/globals.css.",
     type: "registry:style",
-    registryDependencies: undefined,
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/refer-utils.json"],
     files: [],
     component: null,
     meta: undefined,

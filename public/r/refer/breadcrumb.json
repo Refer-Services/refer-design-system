@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "breadcrumb",
+  "description": "Path navigation using Next.js Link.",
   "dependencies": [
     "@radix-ui/react-slot"
   ],

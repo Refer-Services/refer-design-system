@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "progress",
+  "description": "Horizontal progress bar.",
   "dependencies": [
     "@radix-ui/react-progress"
   ],

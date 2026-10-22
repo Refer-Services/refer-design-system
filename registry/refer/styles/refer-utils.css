@@ -4,8 +4,8 @@
  * Copied as-is from shadcn@4.22.1 (dist/tailwind.css); keep in sync with upstream, don't edit.
  * Docs: https://ui.shadcn.com/docs/utils/scroll-fade, https://ui.shadcn.com/docs/utils/shimmer
  *
- * Installed into consumers at app/refer-utils.css by the registry (imported from globals.css):
- *   npx shadcn@latest add https://ds.tryrefer.com/r/refer/refer-utils.json --overwrite
+ * Installed into consumers at app/refer-utils.css as a dependency of `globals` (which imports it):
+ *   npx shadcn@latest add https://ds.tryrefer.com/r/refer/globals.json
  */
 
 /* scroll-fade */

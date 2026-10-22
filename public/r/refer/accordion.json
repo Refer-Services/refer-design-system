@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "accordion",
+  "description": "Vertically stacked sections that expand and collapse.",
   "dependencies": [
     "@radix-ui/react-accordion"
   ],

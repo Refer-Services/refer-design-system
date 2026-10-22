@@ -3,6 +3,9 @@
   "name": "globals",
   "title": "Refer global CSS",
   "description": "Design tokens, base styles and utilities from app/globals.css.",
+  "registryDependencies": [
+    "https://ds.tryrefer.com/r/refer/refer-utils.json"
+  ],
   "files": [],
   "cssVars": {
     "theme": {

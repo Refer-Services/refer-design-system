@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "badge",
+  "description": "Pill label for status and metadata, with semantic variants.",
   "dependencies": [
     "@radix-ui/react-slot"
   ],

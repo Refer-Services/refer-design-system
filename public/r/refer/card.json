@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card",
+  "description": "Squircle container with header, content and footer slots.",
   "files": [
     {
       "path": "registry/refer/ui/card.tsx",

@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command",
+  "description": "Command palette and searchable list (cmdk), also as CommandDialog.",
   "dependencies": [
     "cmdk"
   ],

@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "resizable",
+  "description": "Resizable panel groups (react-resizable-panels).",
   "dependencies": [
     "react-resizable-panels"
   ],

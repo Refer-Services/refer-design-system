@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sonner",
+  "description": "Toast notifications (sonner) themed for Refer.",
   "dependencies": [
     "sonner",
     "next-themes"

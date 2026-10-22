@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radio-group",
+  "description": "Radio buttons for picking one option.",
   "dependencies": [
     "@radix-ui/react-radio-group"
   ],
