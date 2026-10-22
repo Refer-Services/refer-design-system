@@ -566,7 +566,7 @@
       "name": "message-scroller",
       "description": "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
       "dependencies": [
-        "@shadcn/react"
+        "@shadcn/react@^0.3.1"
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json"
@@ -664,7 +664,7 @@
       "name": "questionnaire",
       "description": "Multi-step question flow with single, multiple, free-form and skippable questions.",
       "dependencies": [
-        "@shadcn/react"
+        "@shadcn/react@^0.3.1"
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json"

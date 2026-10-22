@@ -138,15 +138,17 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 ## Components added from upstream in wave 3
 
-Added in wave 3 with upstream styling and no Refer design pass yet, so they're available to customize. Each has a
+Added in wave 3 with upstream styling and no Refer design pass yet, so they're available to customize. Before an app
+uses one (e.g. `attachment` for CV uploads), do a Refer design pass first: they still have upstream styles
+(`rounded-md`, `ring-ring/50`, …). No app has any of them, so syncing an app after wave 3 changes nothing. Each has a
 short demo in `components/<name>-demo.tsx` written for Refer (upstream's examples are large galleries tied to their
 docs harness and the AI SDK, so they weren't ported).
 
 | Component | Source | Deps | Notes |
 |---|---|---|---|
 | message, bubble, marker, attachment, direction | `new-york-v4/ui` | `@radix-ui/react-slot`; direction: `@radix-ui/react-direction`; attachment: `button` | — |
-| message-scroller | `new-york-v4/ui` | `@shadcn/react`, `button` | Headless core in `@shadcn/react/message-scroller` |
-| questionnaire | `r/styles/radix-vega/questionnaire.json` | `@shadcn/react`, `button` | Button defaults mapped to ours (`primary`, `md`); `cn-font-heading` removed |
+| message-scroller | `new-york-v4/ui` | `@shadcn/react@^0.3.1`, `button` | Headless core in `@shadcn/react/message-scroller`. The item pins the 0.3 series: in a 0.x package any minor can break |
+| questionnaire | `r/styles/radix-vega/questionnaire.json` | `@shadcn/react@^0.3.1`, `button` | Button defaults mapped to ours (`primary`, `md`); `cn-font-heading` removed |
 | trace | `r/styles/radix-vega/trace.json` | `collapsible` | `data-open:`/`data-closed:` rewritten to `data-[state=open\|closed]:` (Radix Collapsible) |
 | code-block, use-highlighted-code (+ `lib/highlighter.tsx`) | `r/styles/radix-vega/*.json` | `shiki`, `button` | Uses `scrollbar-thin`/`scrollbar-none`, native only in Tailwind ≥ 4.3 (the DS and portal are older; they fall back to the default scrollbar) |
 | toast | `r/styles/base-vega/toast.json` | `@base-ui/react`, `button` | Base UI toast; coexists with `sonner`, which the apps use. Needs its own `<Toaster>` |
@@ -175,7 +177,12 @@ How these were ported (repeat it for future upstream components):
 - **`no-scrollbar` is ours, not upstream's.** Upstream's `no-scrollbar` (in `shadcn/tailwind.css`) hides the
   scrollbar; ours (`app/globals.css`) shows a thin, low-contrast one. A ported component that uses `no-scrollbar`
   to hide the bar (e.g. wave 3's new components) will show a thin bar instead. Only `combobox` uses the class today.
-  Open design decision: rename ours (e.g. `scrollbar-thin`) and adopt upstream's `no-scrollbar`.
+  Plan (wave 5): don't rename ours to `scrollbar-thin`, because Tailwind 4.3 ships `scrollbar-thin`, `scrollbar-none`
+  and `scrollbar-auto` natively and a custom `@utility` with the same name would clash. Instead: upgrade Tailwind to
+  4.3 in the DS and the apps (the monorepo is on 4.2.4); in `combobox`, replace `no-scrollbar` with the native
+  `scrollbar-thin` plus the bar color (`[scrollbar-color:rgba(0,0,0,0.2)_transparent]`); then drop our
+  `no-scrollbar` from `globals.css` so the name keeps upstream's meaning (hide the bar). That also makes `code-block`'s
+  `scrollbar-thin`/`scrollbar-none` work as upstream intends.
 - **shadcn CLI devDependency:** `^3.6.2`, latest 4.22.1. Wave 5.
 - **Upstream `shadcn/tailwind.css`:** also defines `data-open`/`data-closed`/… custom variants that map Radix
   `data-state` and Base UI attributes. We don't adopt them (they'd change the meaning of Tailwind's built-in

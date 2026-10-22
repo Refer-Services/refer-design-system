@@ -484,7 +484,7 @@ const registry = {
       name: "message-scroller",
       description: "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
       type: "registry:ui",
-      dependencies: ["@shadcn/react"],
+      dependencies: ["@shadcn/react@^0.3.1"],
       registryDependencies: ["button"],
       files: [
         {
@@ -568,7 +568,7 @@ const registry = {
       name: "questionnaire",
       description: "Multi-step question flow with single, multiple, free-form and skippable questions.",
       type: "registry:ui",
-      dependencies: ["@shadcn/react"],
+      dependencies: ["@shadcn/react@^0.3.1"],
       registryDependencies: ["button"],
       files: [
         {

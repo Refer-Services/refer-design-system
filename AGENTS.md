@@ -188,7 +188,7 @@ Before finalizing changes, especially those touching the registry:
   - [ ] If you changed anything under `registry/refer/**`, did you also update `scripts/build-registry.mts` as needed?
   - [ ] Did you avoid editing `__registry__/**` by hand?
   - [ ] Have you run or recommended `npm run registry:build`?
-  - [ ] Does each item list the Refer components/hooks it imports in `registryDependencies`, with no exact versions in `dependencies` (a major range like `@^4` is fine when the code needs it)?
+  - [ ] Does each item list the Refer components/hooks it imports in `registryDependencies`, with no exact versions in `dependencies` (a major range like `@^4` is fine when the code needs it; for a 0.x package pin the minor series, e.g. `@^0.3.1`)?
   - [ ] Are tokens only in `app/globals.css` (no `cssVars`/`tailwind` on component items)?
 - **API and imports**
   - [ ] Did you keep exports as **named function declarations**?
