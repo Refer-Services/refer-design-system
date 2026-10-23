@@ -152,7 +152,7 @@ function AttachmentAction({
       data-slot="attachment-action"
       variant={variant ?? "ghost"}
       size={size}
-      className={cn(className)}
+      className={cn("rounded-lg", className)}
       {...props}
     />
   )
