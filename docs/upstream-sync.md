@@ -194,7 +194,7 @@ patterns only (approved from a side-by-side preview, 2026-10-22):
 | context-menu, menubar, navigation-menu | dropdown-menu | Content/sub-content/viewport in `bg-popover rounded-card shadow-popover backdrop-blur-xl`; items `rounded-input` with the primary highlight (context-menu, menubar); menubar bar and triggers as pills; navigation links `rounded-input`, active in `primary-subtle` |
 | calendar | button outline, primary tint | Nav arrows `outline` circles (`size-7`); today = `text-primary-content` + primary dot; range middle `primary-subtle`; uppercase weekday labels |
 | toast | sonner | `rounded-[12px] shadow-popover backdrop-blur-[24px]`, no border; semantic icon colors |
-| attachment | card | `rounded-2xl` (concentric with the `rounded-input` media and `p-2`), `shadow-card squircle`, icon media in `primary-subtle`, error with `destructive-*` tokens; hover `bg-background` (solid: `bg-accent` is translucent and would show through) |
+| attachment | card radius | Upstream look kept (border, `bg-muted` media, `rounded-lg` media); only `rounded-2xl` + `squircle` on the root (16px outer, 8px padding, 8px media: concentric) and error colors from the `destructive-*` tokens |
 | item | card | `rounded-xl squircle`; `outline` → `bg-card shadow-card`; `muted` → `bg-muted`; icon media `rounded-input bg-card shadow-xs` |
 | code-block | card | `rounded-xl squircle bg-muted`, no border; `destructive` → `destructive-subtle` / `destructive-content` |
 

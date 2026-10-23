@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot"
 import { Button } from "@/registry/refer/ui/button"
 
 const attachmentVariants = cva(
-  "group/attachment bg-card text-card-foreground shadow-card squircle focus-within:outline-ring relative flex w-fit max-w-full min-w-0 shrink-0 flex-wrap rounded-2xl transition-colors focus-within:outline-2 focus-within:outline-offset-2 has-[>a,>button]:hover:bg-background data-[state=error]:ring-destructive/25 data-[state=error]:ring-1 data-[state=idle]:border data-[state=idle]:border-dashed data-[state=idle]:shadow-none",
+  "group/attachment relative flex w-fit max-w-full min-w-0 shrink-0 flex-wrap squircle rounded-2xl border bg-card text-card-foreground transition-colors focus-within:ring-1 focus-within:ring-ring/50 has-[>a,>button]:hover:bg-muted/50 data-[state=error]:border-destructive/30 data-[state=idle]:border-dashed",
   {
     variants: {
       size: {
@@ -46,11 +46,11 @@ function Attachment({
 }
 
 const attachmentMediaVariants = cva(
-  "relative flex aspect-square w-10 shrink-0 items-center justify-center overflow-hidden rounded-input bg-muted text-foreground group-data-[orientation=vertical]/attachment:w-full group-data-[size=sm]/attachment:w-8 group-data-[size=xs]/attachment:w-7 group-data-[size=xs]/attachment:rounded-md group-data-[state=error]/attachment:bg-destructive-subtle group-data-[state=error]/attachment:text-destructive-content group-data-[orientation=vertical]/attachment:*:data-[slot=spinner]:size-6! [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 group-data-[orientation=vertical]/attachment:[&_svg:not([class*='size-'])]:size-6 group-data-[size=xs]/attachment:[&_svg:not([class*='size-'])]:size-3.5",
+  "relative flex aspect-square w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-muted text-foreground group-data-[orientation=vertical]/attachment:w-full group-data-[size=sm]/attachment:w-8 group-data-[size=xs]/attachment:w-7 group-data-[size=xs]/attachment:rounded-md group-data-[state=error]/attachment:bg-destructive-subtle group-data-[state=error]/attachment:text-destructive-content group-data-[orientation=vertical]/attachment:*:data-[slot=spinner]:size-6! [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 group-data-[orientation=vertical]/attachment:[&_svg:not([class*='size-'])]:size-6 group-data-[size=xs]/attachment:[&_svg:not([class*='size-'])]:size-3.5",
   {
     variants: {
       variant: {
-        icon: "bg-primary-subtle text-primary-content",
+        icon: "",
         image:
           "opacity-60 group-data-[state=done]/attachment:opacity-100 group-data-[state=idle]/attachment:opacity-100 *:[img]:aspect-square *:[img]:w-full *:[img]:object-cover",
       },
