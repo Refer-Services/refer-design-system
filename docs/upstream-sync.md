@@ -202,6 +202,26 @@ Focus styles in these components now come from the global `focus-visible:outline
 instead of upstream's `ring-ring/50` rings. Apps: portal has context-menu, menubar, navigation-menu and calendar installed
 but imports none of them, so syncing wave 4 changes no portal screen.
 
+### Wave 4, part 2
+
+Approved from a second side-by-side preview (2026-10-23). Branch `feat/shadcn-wave-4b`, on top of part 1.
+
+| Component | Change | Portal impact |
+|---|---|---|
+| switch | `size="sm"` (track 32×18, thumb 14px, same press stretch) | Additive |
+| tabs | `TabsList` `variant`: `default` (segmented, unchanged), `line` (primary underline), `subtle` (portal's `PipelineCandidateDialog` card-bar tabs: `squircle`, `rounded-(--radius-input)`, selected `bg-muted`); `orientation="vertical"` via Radix's `data-orientation` on list and triggers; exports `tabsListVariants` | Additive; portal can replace its `cardTabList`/`cardTab` classes with `variant="subtle"` |
+| avatar | `size` sm/default/lg = 32/40/48px with fallback text to match; `AvatarBadge` (`bg-positive ring-2 ring-card`); fallback initials `text-muted-foreground`; image and fallback `rounded-[inherit]` | Muted initials change 6 portal screens. `overflow-hidden` stays on the root and opens only with a badge (`has-data-[slot=avatar-badge]:overflow-visible`), because portal's `UserDisplay` hover overlay relies on the clip |
+| alert-dialog | `AlertDialogMedia` (`size-11 rounded-full bg-primary-subtle text-primary-content`); header becomes a grid only when media is present | Additive |
+| sonner | Lucide icons for typed toasts, no color (they follow the toast text) | Changes the ~270 typed toasts' icons |
+| table | `TableRow` `has-aria-expanded:bg-muted/50` | Rows with an open menu stay highlighted (10 files) |
+| native-select | `SelectTrigger` classes (`rounded-input bg-card h-10`, `sm` `h-9`, primary focus) | Not used |
+| drawer | `DrawerHeader` `gap-0.5`, centered text on mobile for bottom/top drawers (`max-md:` so `md` stays left) | 6 files |
+| item | `size="xs"` (`gap-2 px-2.5 py-2`, icon media `size-6 rounded-lg`); the item gallery shows its 4 extra-small sections again | Additive |
+
+The missing focus ring noted for switch and tabs was not a gap: `globals.css` applies `focus-visible:outline-2
+outline-ring` to every element and neither component sets `outline-none`. Still pending in W4: separator `data-slot`
+rename together with the portal fix.
+
 **Overriding a Button's radius or shadow:** `tailwind-merge` doesn't know the Refer theme names (`rounded-input`,
 `rounded-card`, `shadow-card`, `shadow-popover`), so `cn("rounded-full …", "rounded-input")` keeps both classes and the
 winner depends on CSS order. Inside registry components, override with the CSS-variable form, which it does merge:

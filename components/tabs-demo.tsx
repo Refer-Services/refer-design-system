@@ -82,16 +82,22 @@ export function TabsDemo() {
           <TabsTrigger value="settings">Settings</TabsTrigger>
           <TabsTrigger value="profile">
             Profile
-            <Badge variant="secondary" className="h-[18px] min-w-[18px] px-1 py-0.5 -mr-0.5 rounded-md opacity-50 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">
+            <Badge
+              variant="secondary"
+              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -mr-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
+            >
               1
             </Badge>
-          </TabsTrigger>  
+          </TabsTrigger>
           <TabsTrigger value="account">
             Account
-            <Badge variant="secondary" className="h-[18px] min-w-[18px] px-1 py-0.5 -mr-0.5 rounded-md opacity-50 group-data-[state=active]:opacity-80 group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground">
+            <Badge
+              variant="secondary"
+              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -mr-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
+            >
               27
             </Badge>
-          </TabsTrigger>  
+          </TabsTrigger>
         </TabsList>
       </Tabs>
       <Tabs defaultValue="home">
@@ -114,6 +120,36 @@ export function TabsDemo() {
           </TabsTrigger>
         </TabsList>
       </Tabs>
+      <Tabs defaultValue="overview">
+        <TabsList variant="line">
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="candidates">Candidates</TabsTrigger>
+          <TabsTrigger value="referrals">Referrals</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      <Tabs defaultValue="profile">
+        <TabsList variant="subtle">
+          <TabsTrigger value="profile">Profile</TabsTrigger>
+          <TabsTrigger value="resume">Resume</TabsTrigger>
+          <TabsTrigger value="activity">Activity</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      <div className="flex flex-wrap gap-8">
+        <Tabs defaultValue="profile" orientation="vertical">
+          <TabsList className="w-40">
+            <TabsTrigger value="profile">Profile</TabsTrigger>
+            <TabsTrigger value="notifications">Notifications</TabsTrigger>
+            <TabsTrigger value="billing">Billing</TabsTrigger>
+          </TabsList>
+        </Tabs>
+        <Tabs defaultValue="profile" orientation="vertical">
+          <TabsList variant="line">
+            <TabsTrigger value="profile">Profile</TabsTrigger>
+            <TabsTrigger value="notifications">Notifications</TabsTrigger>
+            <TabsTrigger value="billing">Billing</TabsTrigger>
+          </TabsList>
+        </Tabs>
+      </div>
     </div>
   )
 }

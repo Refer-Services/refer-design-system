@@ -35,6 +35,9 @@ export function ItemExample() {
       <DefaultVariantItemsSmall />
       <OutlineVariantItemsSmall />
       <MutedVariantItemsSmall />
+      <DefaultVariantItemsExtraSmall />
+      <OutlineVariantItemsExtraSmall />
+      <MutedVariantItemsExtraSmall />
       <DefaultLinkItems />
       <OutlineLinkItems />
       <MutedLinkItems />
@@ -49,6 +52,7 @@ export function ItemExample() {
       <DefaultVariantItemsWithImage />
       <OutlineVariantItemsWithImage />
       <OutlineVariantItemsWithImageSmall />
+      <OutlineVariantItemsWithImageExtraSmall />
       <MutedVariantItemsWithImage />
     </ExampleWrapper>
   )
@@ -642,6 +646,264 @@ function MutedVariantItemsSmall() {
           <ItemDescription>
             Item with multiple action buttons in the actions area.
           </ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Cancel
+          </Button>
+          <Button size="sm">Confirm</Button>
+        </ItemActions>
+      </Item>
+    </Example>
+  )
+}
+
+function DefaultVariantItemsExtraSmall() {
+  return (
+    <Example title="Extra Small">
+      <Item size="xs">
+        <ItemContent>
+          <ItemTitle>Title Only</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item size="xs">
+        <ItemContent>
+          <ItemTitle>Multiple Actions</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Cancel
+          </Button>
+          <Button size="sm">Confirm</Button>
+        </ItemActions>
+      </Item>
+    </Example>
+  )
+}
+
+function OutlineVariantItemsExtraSmall() {
+  return (
+    <Example title="Outline - Extra Small">
+      <Item variant="outline" size="xs">
+        <ItemContent>
+          <ItemTitle>Title Only</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemContent>
+          <ItemTitle>Multiple Actions</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Cancel
+          </Button>
+          <Button size="sm">Confirm</Button>
+        </ItemActions>
+      </Item>
+    </Example>
+  )
+}
+
+function MutedVariantItemsExtraSmall() {
+  return (
+    <Example title="Muted - Extra Small">
+      <Item variant="muted" size="xs">
+        <ItemContent>
+          <ItemTitle>Title Only</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemContent>
+          <ItemTitle>Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            Action
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemMedia variant="icon">
+          <InboxIcon />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Media + Title + Description + Button</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Action</Button>
+        </ItemActions>
+      </Item>
+      <Item variant="muted" size="xs">
+        <ItemContent>
+          <ItemTitle>Multiple Actions</ItemTitle>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
@@ -1377,6 +1639,63 @@ function OutlineVariantItemsWithImageSmall() {
           <ItemDescription>
             Complete file with image, title, description, and action button.
           </ItemDescription>
+        </ItemContent>
+        <ItemActions>
+          <Button size="sm">Download</Button>
+        </ItemActions>
+      </Item>
+    </Example>
+  )
+}
+
+function OutlineVariantItemsWithImageExtraSmall() {
+  return (
+    <Example title="Outline - ItemMedia image - Extra Small">
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="image">
+          <Image
+            src="https://avatar.vercel.sh/Project"
+            alt="Project"
+            width={40}
+            height={40}
+            className="object-cover grayscale"
+          />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Project Dashboard</ItemTitle>
+        </ItemContent>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="image">
+          <Image
+            src="https://avatar.vercel.sh/Document"
+            alt="Document"
+            width={40}
+            height={40}
+            className="object-cover grayscale"
+          />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>Document</ItemTitle>
+        </ItemContent>
+        <ItemActions>
+          <Button variant="outline" size="sm">
+            View
+          </Button>
+        </ItemActions>
+      </Item>
+      <Item variant="outline" size="xs">
+        <ItemMedia variant="image">
+          <Image
+            src="https://avatar.vercel.sh/File"
+            alt="File"
+            width={40}
+            height={40}
+            className="object-cover grayscale"
+          />
+        </ItemMedia>
+        <ItemContent>
+          <ItemTitle>File Attachment</ItemTitle>
         </ItemContent>
         <ItemActions>
           <Button size="sm">Download</Button>

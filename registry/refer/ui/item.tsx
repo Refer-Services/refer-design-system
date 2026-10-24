@@ -42,6 +42,7 @@ const itemVariants = cva(
       size: {
         default: "p-4 gap-4 ",
         sm: "py-3 px-4 gap-2.5",
+        xs: "gap-2 px-2.5 py-2",
       },
     },
     defaultVariants: {
@@ -77,7 +78,7 @@ const itemMediaVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        icon: "rounded-input bg-card size-8 shadow-xs [&_svg:not([class*='size-'])]:size-4",
+        icon: "rounded-input bg-card size-8 shadow-xs group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-lg [&_svg:not([class*='size-'])]:size-4 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-3.5",
         image:
           "size-10 rounded-sm overflow-hidden [&_img]:size-full [&_img]:object-cover",
       },
