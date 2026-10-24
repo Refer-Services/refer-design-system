@@ -18,6 +18,7 @@ export function DrawerExample() {
     <ExampleWrapper>
       <DrawerScrollableContent />
       <DrawerWithSides />
+      <DrawerMobileHeader />
     </ExampleWrapper>
   )
 }
@@ -117,6 +118,59 @@ function DrawerScrollableContent() {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
+    </Example>
+  )
+}
+
+// Refer: DrawerHeader centers its text on bottom/top drawers below md (768px).
+function DrawerMobileHeader() {
+  return (
+    <Example title="Mobile header (bottom drawer)">
+      <p className="text-muted-foreground text-sm">
+        Below 768px, the title and description of a bottom or top drawer are
+        centered; from md up they align left. Open it with a narrow window or on
+        a phone, or see the frame below.
+      </p>
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button variant="outline">Open bottom drawer</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Move to interview</DrawerTitle>
+            <DrawerDescription>
+              Ana will get the scheduling link.
+            </DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter>
+            <Button>Move</Button>
+            <DrawerClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+      <div
+        aria-hidden="true"
+        className="bg-muted flex w-full justify-center rounded-2xl px-4 pt-10"
+      >
+        <div className="bg-background w-[320px] rounded-t-[20px] border border-b-0 shadow-xl">
+          <div className="bg-border mx-auto mt-2 h-1 w-10 rounded-full" />
+          {/* Static frame: forces the mobile layout so it shows on a wide window. */}
+          <DrawerHeader className="text-center">
+            <div className="text-foreground font-semibold">
+              Move to interview
+            </div>
+            <div className="text-muted-foreground text-sm">
+              Ana will get the scheduling link.
+            </div>
+          </DrawerHeader>
+          <div className="flex flex-col gap-2 p-4 pt-0">
+            <Button>Move</Button>
+            <Button variant="outline">Cancel</Button>
+          </div>
+        </div>
+      </div>
     </Example>
   )
 }
