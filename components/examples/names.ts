@@ -1,9 +1,12 @@
 // Components with a full variations gallery at /examples/<name> (galleries live in components/examples/).
 export const exampleNames = [
+  "alert-dialog",
   "attachment",
+  "avatar",
   "bubble",
   "button-group",
   "code-block",
+  "drawer",
   "field",
   "item",
   "kbd",
@@ -12,7 +15,11 @@ export const exampleNames = [
   "message-scroller",
   "native-select",
   "questionnaire",
+  "sonner",
   "spinner",
+  "switch",
+  "table",
+  "tabs",
   "toast",
   "trace",
 ] as const

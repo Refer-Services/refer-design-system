@@ -218,6 +218,9 @@ Approved from a second side-by-side preview (2026-10-23). Branch `feat/shadcn-wa
 | drawer | `DrawerHeader` `gap-0.5`, centered text on mobile for bottom/top drawers (`max-md:` so `md` stays left) | 6 files |
 | item | `size="xs"` (`gap-2 px-2.5 py-2`, icon media `size-6 rounded-lg`); the item gallery shows its 4 extra-small sections again | Additive |
 
+Variations galleries (ported from shadcn with `scripts/port-shadcn-example.py`) for switch, tabs, avatar, alert-dialog,
+sonner, table and drawer at `/examples/<name>`; the tabs gallery adds a Refer-only "Subtle" section.
+
 The missing focus ring noted for switch and tabs was not a gap: `globals.css` applies `focus-visible:outline-2
 outline-ring` to every element and neither component sets `outline-none`. Still pending in W4: separator `data-slot`
 rename together with the portal fix.
