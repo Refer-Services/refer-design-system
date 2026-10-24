@@ -24,7 +24,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 1 | Bug fixes, no API changes | Merged (PR #7, `95081ac`) | portal 2026-10-22 (the 13 wave components and the `refer-utils.css` comment; `globals.css`, `package.json` and lockfile untouched; all 52 components identical again). argus, landing, partners: not synced |
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
-| 4 | Design decisions that change app visuals | Pending | — |
+| 4 | Design decisions that change app visuals. First pass (Refer look for wave 3 components and the remaining stock ones, see [Wave 4 visual pass](#wave-4-visual-pass)) | PR `feat/shadcn-wave-4`; the rest of W4 in the ledger is still pending | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
@@ -181,6 +181,56 @@ How these were ported (repeat it for future upstream components):
   `[data-selected="true"]`, which would break our combobox (Base UI sets `data-selected=""`). Instead, rewrite each
   variant in the ported file to match what its primitive emits: Radix → `data-[state=open]:`; `@shadcn/react` sets
   `data-checked=""`, which the built-in `data-checked:` already matches.
+
+## Wave 4 visual pass
+
+Brings components that still had shadcn's look in line with the Refer components they sit next to, reusing existing
+patterns only (approved from a side-by-side preview, 2026-10-22):
+
+| Component | Now matches | Change |
+|---|---|---|
+| questionnaire | radio-group-boxed, checkbox, kbd, input | Checked choice in `bg-primary-subtle` with `border-primary-border` and the 2px top border; Refer radio/checkbox indicator; `kbd` shortcut; `QuestionnaireInput` with the `Input` classes; error in `destructive-content` |
+| bubble, message | card, semantic tokens | Content `rounded-2xl` with a `rounded-md` "tail" corner on the speaker's side; `tinted` → `primary-subtle`, `outline` → `bg-card shadow-card`, `destructive` → `destructive-subtle`; reactions pill solid (`bg-card shadow-card`); buttons inside reactions and `MessageFooter` compact (`h-6 px-2 text-xs`) |
+| context-menu, menubar, navigation-menu | dropdown-menu | Content/sub-content/viewport in `bg-popover rounded-card shadow-popover backdrop-blur-xl`; items `rounded-input` with the primary highlight (context-menu, menubar); menubar bar and triggers as pills; navigation links `rounded-input`, active in `primary-subtle` |
+| calendar | popover, dropdown-menu | Standalone surface `bg-popover rounded-card shadow-popover backdrop-blur-xl` (transparent and shadowless inside `popover-content` / `card-content`); days and range ends `rounded-input` with the dropdown item hover (`bg-primary/85`); nav arrows `ghost` icon buttons, `size-7`, `rounded-input`; today = `text-primary-content` + primary dot; range middle `primary-subtle`; uppercase weekday labels |
+| toast | sonner | `rounded-[12px] shadow-popover backdrop-blur-[24px]`, no border; semantic icon colors |
+| attachment | card radius | Upstream look kept (border, `bg-muted` media, `rounded-lg` media); only `rounded-2xl` + `squircle` on the root (16px outer, 8px padding, 8px media: concentric) and error colors from the `destructive-*` tokens |
+| item | card | `rounded-xl squircle`; `outline` → `bg-card shadow-card`; `muted` → `bg-muted`; icon media `rounded-input bg-card shadow-xs` |
+| code-block | card | `rounded-xl squircle bg-muted`, no border; `destructive` → `destructive-subtle` / `destructive-content` |
+
+Focus styles in these components now come from the global `focus-visible:outline-2 outline-ring` in `globals.css`
+instead of upstream's `ring-ring/50` rings. Apps: portal has context-menu, menubar, navigation-menu and calendar installed
+but imports none of them, so syncing wave 4 changes no portal screen.
+
+### Wave 4, part 2
+
+Approved from a second side-by-side preview (2026-10-23). Branch `feat/shadcn-wave-4b`, on top of part 1.
+
+| Component | Change | Portal impact |
+|---|---|---|
+| switch | `size="sm"` (track 32×18, thumb 14px, same press stretch) | Additive |
+| tabs | `TabsList` `variant`: `default` (segmented, unchanged), `line` (primary underline), `subtle` (portal's `PipelineCandidateDialog` card-bar tabs: `squircle`, `rounded-(--radius-input)`, selected `bg-muted`); `orientation="vertical"` via Radix's `data-orientation` on list and triggers; exports `tabsListVariants` | Additive; portal can replace its `cardTabList`/`cardTab` classes with `variant="subtle"` |
+| avatar | `size` sm/default/lg = 32/40/48px with fallback text to match; `AvatarBadge` (`bg-positive ring-2 ring-card`); fallback initials `text-muted-foreground`; image and fallback `rounded-[inherit]` | Muted initials change 6 portal screens. `overflow-hidden` stays on the root and opens only with a badge (`has-data-[slot=avatar-badge]:overflow-visible`), because portal's `UserDisplay` hover overlay relies on the clip |
+| alert-dialog | `AlertDialogMedia` (`size-11 rounded-full bg-primary-subtle text-primary-content`); header becomes a grid only when media is present | Additive |
+| sonner | Lucide icons for typed toasts, no color (they follow the toast text) | Changes the ~270 typed toasts' icons |
+| table | `TableRow` `has-aria-expanded:bg-muted/50` | Rows with an open menu stay highlighted (10 files) |
+| native-select | `SelectTrigger` classes (`rounded-input bg-card h-10`, `sm` `h-9`, primary focus) | Not used |
+| drawer | `DrawerHeader` `gap-0.5`, centered text on mobile for bottom/top drawers (`max-md:` so `md` stays left) | 6 files |
+| item | `size="xs"` (`gap-2 px-2.5 py-2`, icon media `size-6 rounded-lg`); the item gallery shows its 4 extra-small sections again | Additive |
+
+Variations galleries (ported from shadcn with `scripts/port-shadcn-example.py`) for switch, tabs, avatar, alert-dialog,
+sonner, table and drawer at `/examples/<name>`; the tabs gallery adds a Refer-only "Subtle" section.
+
+The missing focus ring noted for switch and tabs was not a gap: `globals.css` applies `focus-visible:outline-2
+outline-ring` to every element and neither component sets `outline-none`. Still pending in W4: separator `data-slot`
+rename together with the portal fix.
+
+**Overriding a Button's radius or shadow:** `tailwind-merge` doesn't know the Refer theme names (`rounded-input`,
+`rounded-card`, `shadow-card`, `shadow-popover`), so `cn("rounded-full …", "rounded-input")` keeps both classes and the
+winner depends on CSS order. Inside registry components, override with the CSS-variable form, which it does merge:
+`rounded-(--radius-input)`, `rounded-(--radius-card)`, `shadow-(--shadow-card)`. (The docs' `button-demo` still passes
+`className="rounded-input"` to icon buttons and works only by CSS order.) Apps use their own `cn`, so a
+`extendTailwindMerge` config in the DS alone wouldn't fix it for them.
 
 ## Infra decisions
 

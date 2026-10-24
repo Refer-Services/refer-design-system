@@ -7,13 +7,18 @@ import { cn } from "@/lib/utils"
 
 function Avatar({
   className,
+  size = "default",
   ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+}: React.ComponentProps<typeof AvatarPrimitive.Root> & {
+  size?: "sm" | "default" | "lg"
+}) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
+      data-size={size}
       className={cn(
-        "relative flex size-10 shrink-0 overflow-hidden rounded-full select-none",
+        // A badge sits on the edge, so overflow opens only when there is one; image and fallback keep the radius.
+        "group/avatar relative flex size-10 shrink-0 overflow-hidden rounded-full select-none has-data-[slot=avatar-badge]:overflow-visible data-[size=lg]:size-12 data-[size=sm]:size-8",
         className
       )}
       {...props}
@@ -28,7 +33,7 @@ function AvatarImage({
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
-      className={cn("aspect-square size-full", className)}
+      className={cn("aspect-square size-full rounded-[inherit]", className)}
       {...props}
     />
   )
@@ -42,7 +47,20 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "bg-muted flex size-full items-center justify-center rounded-full text-sm",
+        "bg-muted text-muted-foreground flex size-full items-center justify-center rounded-[inherit] text-sm group-data-[size=lg]/avatar:text-base group-data-[size=sm]/avatar:text-xs",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarBadge({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="avatar-badge"
+      className={cn(
+        "bg-positive ring-card absolute right-0 bottom-0 z-10 inline-flex size-2.5 items-center justify-center rounded-full text-white ring-2 select-none group-data-[size=lg]/avatar:size-3 group-data-[size=sm]/avatar:size-2 [&>svg]:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden",
         className
       )}
       {...props}
@@ -71,7 +89,7 @@ function AvatarGroupCount({
     <div
       data-slot="avatar-group-count"
       className={cn(
-        "bg-muted text-muted-foreground ring-background relative flex size-10 shrink-0 items-center justify-center rounded-full text-sm ring-2 [&>svg]:size-4",
+        "bg-muted text-muted-foreground ring-background relative flex size-10 shrink-0 items-center justify-center rounded-full text-sm ring-2 group-has-data-[size=lg]/avatar-group:size-12 group-has-data-[size=sm]/avatar-group:size-8 group-has-data-[size=sm]/avatar-group:text-xs [&>svg]:size-4",
         className
       )}
       {...props}
@@ -79,4 +97,11 @@ function AvatarGroupCount({
   )
 }
 
-export { Avatar, AvatarImage, AvatarFallback, AvatarGroup, AvatarGroupCount }
+export {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarBadge,
+  AvatarGroup,
+  AvatarGroupCount,
+}

@@ -1,4 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/refer/ui/avatar"
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/refer/ui/avatar"
 
 export function AvatarDemo() {
   return (
@@ -70,6 +75,21 @@ export function AvatarDemo() {
             alt="@evilrabbit"
           />
           <AvatarFallback>ER</AvatarFallback>
+        </Avatar>
+      </div>
+      <div className="flex items-end gap-4">
+        <Avatar size="sm">
+          <AvatarFallback>AS</AvatarFallback>
+          <AvatarBadge />
+        </Avatar>
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+          <AvatarBadge />
+        </Avatar>
+        <Avatar size="lg">
+          <AvatarFallback>AS</AvatarFallback>
+          <AvatarBadge className="bg-muted-foreground" />
         </Avatar>
       </div>
     </div>

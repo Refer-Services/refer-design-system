@@ -29,6 +29,10 @@ export function SwitchDemo() {
           className="data-[state=checked]:bg-blue-500 dark:data-[state=checked]:bg-blue-600"
         />
       </Label>
+      <div className="flex items-center gap-2">
+        <Switch id="switch-demo-small" size="sm" defaultChecked />
+        <Label htmlFor="switch-demo-small">Notify me by email (sm)</Label>
+      </div>
     </div>
   )
 }
