@@ -192,7 +192,7 @@ patterns only (approved from a side-by-side preview, 2026-10-22):
 | questionnaire | radio-group-boxed, checkbox, kbd, input | Checked choice in `bg-primary-subtle` with `border-primary-border` and the 2px top border; Refer radio/checkbox indicator; `kbd` shortcut; `QuestionnaireInput` with the `Input` classes; error in `destructive-content` |
 | bubble, message | card, semantic tokens | Content `rounded-2xl` with a `rounded-md` "tail" corner on the speaker's side; `tinted` → `primary-subtle`, `outline` → `bg-card shadow-card`, `destructive` → `destructive-subtle`; reactions pill solid (`bg-card shadow-card`); buttons inside reactions and `MessageFooter` compact (`h-6 px-2 text-xs`) |
 | context-menu, menubar, navigation-menu | dropdown-menu | Content/sub-content/viewport in `bg-popover rounded-card shadow-popover backdrop-blur-xl`; items `rounded-input` with the primary highlight (context-menu, menubar); menubar bar and triggers as pills; navigation links `rounded-input`, active in `primary-subtle` |
-| calendar | button outline, primary tint | Nav arrows `outline` circles (`size-7`); today = `text-primary-content` + primary dot; range middle `primary-subtle`; uppercase weekday labels |
+| calendar | popover, dropdown-menu | Standalone surface `bg-popover rounded-card shadow-popover backdrop-blur-xl` (transparent and shadowless inside `popover-content` / `card-content`); days and range ends `rounded-input` with the dropdown item hover (`bg-primary/85`); nav arrows `ghost` icon buttons, `size-7`, `rounded-input`; today = `text-primary-content` + primary dot; range middle `primary-subtle`; uppercase weekday labels |
 | toast | sonner | `rounded-[12px] shadow-popover backdrop-blur-[24px]`, no border; semantic icon colors |
 | attachment | card radius | Upstream look kept (border, `bg-muted` media, `rounded-lg` media); only `rounded-2xl` + `squircle` on the root (16px outer, 8px padding, 8px media: concentric) and error colors from the `destructive-*` tokens |
 | item | card | `rounded-xl squircle`; `outline` → `bg-card shadow-card`; `muted` → `bg-muted`; icon media `rounded-input bg-card shadow-xs` |
@@ -201,6 +201,13 @@ patterns only (approved from a side-by-side preview, 2026-10-22):
 Focus styles in these components now come from the global `focus-visible:outline-2 outline-ring` in `globals.css`
 instead of upstream's `ring-ring/50` rings. Apps: portal has context-menu, menubar, navigation-menu and calendar installed
 but imports none of them, so syncing wave 4 changes no portal screen.
+
+**Overriding a Button's radius or shadow:** `tailwind-merge` doesn't know the Refer theme names (`rounded-input`,
+`rounded-card`, `shadow-card`, `shadow-popover`), so `cn("rounded-full …", "rounded-input")` keeps both classes and the
+winner depends on CSS order. Inside registry components, override with the CSS-variable form, which it does merge:
+`rounded-(--radius-input)`, `rounded-(--radius-card)`, `shadow-(--shadow-card)`. (The docs' `button-demo` still passes
+`className="rounded-input"` to icon buttons and works only by CSS order.) Apps use their own `cn`, so a
+`extendTailwindMerge` config in the DS alone wouldn't fix it for them.
 
 ## Infra decisions
 

@@ -23,7 +23,6 @@ export function CalendarDemo() {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="rounded-md border shadow-sm"
       />
       <Calendar
         mode="range"
@@ -32,7 +31,6 @@ export function CalendarDemo() {
         onSelect={setDateRange}
         numberOfMonths={2}
         disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
-        className="rounded-md border shadow-sm"
       />
       <Calendar
         mode="range"
@@ -40,7 +38,7 @@ export function CalendarDemo() {
         selected={range}
         onSelect={setRange}
         numberOfMonths={3}
-        className="hidden rounded-md border shadow-sm @4xl:flex [&>div]:gap-5"
+        className="hidden @4xl:flex [&>div]:gap-5"
       />
     </div>
   )
