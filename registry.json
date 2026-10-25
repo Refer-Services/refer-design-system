@@ -166,7 +166,7 @@
       "name": "calendar",
       "description": "Date grid for single, multiple or range selection (react-day-picker v9).",
       "dependencies": [
-        "react-day-picker"
+        "react-day-picker@^9"
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json"
@@ -211,7 +211,7 @@
       "name": "chart",
       "description": "Recharts wrapper with theme-aware config, tooltip and legend.",
       "dependencies": [
-        "recharts",
+        "recharts@^2",
         "lucide-react"
       ],
       "registryDependencies": [
@@ -710,7 +710,7 @@
       "name": "resizable",
       "description": "Resizable panel groups (react-resizable-panels).",
       "dependencies": [
-        "react-resizable-panels"
+        "react-resizable-panels@^3"
       ],
       "files": [
         {

@@ -3,7 +3,7 @@
   "name": "calendar",
   "description": "Date grid for single, multiple or range selection (react-day-picker v9).",
   "dependencies": [
-    "react-day-picker"
+    "react-day-picker@^9"
   ],
   "registryDependencies": [
     "https://ds.tryrefer.com/r/refer/button.json"
