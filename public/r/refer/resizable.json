@@ -3,7 +3,7 @@
   "name": "resizable",
   "description": "Resizable panel groups (react-resizable-panels).",
   "dependencies": [
-    "react-resizable-panels"
+    "react-resizable-panels@^3"
   ],
   "files": [
     {

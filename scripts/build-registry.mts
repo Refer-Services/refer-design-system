@@ -151,7 +151,7 @@ const registry = {
       name: "calendar",
       description: "Date grid for single, multiple or range selection (react-day-picker v9).",
       type: "registry:ui",
-      dependencies: ["react-day-picker"],
+      dependencies: ["react-day-picker@^9"],
       registryDependencies: ["button"],
       files: [
         {
@@ -188,7 +188,7 @@ const registry = {
       name: "chart",
       description: "Recharts wrapper with theme-aware config, tooltip and legend.",
       type: "registry:ui",
-      dependencies: ["recharts", "lucide-react"],
+      dependencies: ["recharts@^2", "lucide-react"],
       registryDependencies: ["card"],
       files: [
         {
@@ -605,7 +605,7 @@ const registry = {
       name: "resizable",
       description: "Resizable panel groups (react-resizable-panels).",
       type: "registry:ui",
-      dependencies: ["react-resizable-panels"],
+      dependencies: ["react-resizable-panels@^3"],
       files: [
         {
           path: "ui/resizable.tsx",

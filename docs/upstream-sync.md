@@ -76,7 +76,7 @@ State on 2026-10-22.
   keep their names: `avatar`, `avatar-fallback`, `avatar-image`, `button`, `card`, `card-content`,
   `combobox-content`, `combobox-group`, `combobox-inline-content`, `combobox-separator`, `dialog-content`,
   `dialog-description`, `dialog-overlay`, `dropdown-menu-content`, `input-group-control`, `popover-content`,
-  `progress-indicator`, `scroll-area-viewport`, `separator-root`, `skeleton`. `TooltipProvider` is used in 1 file.
+  `progress-indicator`, `scroll-area-viewport`, `separator` (renamed from `separator-root`; `PublicJobDescription.tsx` targets both until the sync, then drop the old one), `skeleton`. `TooltipProvider` is used in 1 file.
 - **argus-frontend:** not paired. Its button, input, separator, sheet, skeleton, tooltip and sidebar are older stock
   shadcn (e.g. `rounded-md` buttons) with local edits, and it's the only app that imports `sidebar`. Syncing `sidebar`
   there overwrites 7 files and changes the app's look, so pair argus first, the way portal was paired.
@@ -97,11 +97,14 @@ State on 2026-10-22.
   equivalent rewrites, only `.start`/`.end` stopped generating (they came from `align="start"` props, not classes)
   and preflight's fallback font stack changed (every app sets `--default-font-family`, so it's never used).
 - **No app imports** `calendar` or `resizable`. Apps have `react-resizable-panels` 3.x installed.
-- **Open issue: unversioned item dependencies install the latest major in an app that doesn't have them yet.** A
-  fresh install (seen in the throwaway copy, 2026-10-22) got `react-day-picker` 10, `recharts` 3,
-  `react-resizable-panels` 4 and `lucide-react` 1.x, while our calendar, chart and resizable are written for older
-  majors. Existing apps aren't affected (the CLI skips dependencies already installed). Fix by giving those items a
-  major range (`react-day-picker@^9`, `recharts@^2`, …) or by migrating the components (wave 5).
+- **Major ranges on items whose code targets an older major:** `calendar` declares `react-day-picker@^9`, `chart`
+  `recharts@^2`, `resizable` `react-resizable-panels@^3` (2026-10-24). Before that, a fresh install got the latest
+  majors (react-day-picker 10, recharts 3, react-resizable-panels 4). Update the range when the component migrates (W5).
+  With a range, the CLI runs `npm install <pkg>@<range>` on every sync even when the app has the package: it moves
+  the app to the newest version inside that major (e.g. `^9.7.0` → `^9.14.0`), never across majors (checked in a
+  copy, 2026-10-24).
+  landing-frontend is on recharts 3 with its own upstream v3 `chart.tsx` (unused): don't sync `chart` there before the
+  recharts 3 migration, or it would downgrade recharts.
 
 ## Component ledger
 
@@ -132,9 +135,9 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | popover | `rounded-card shadow-popover backdrop-blur-xl`, no border | Upstream content styles | Done in W2: `PopoverHeader`, `PopoverTitle`, `PopoverDescription` |
 | radio-group-boxed, checkbox-boxed, responsive-dialog | Refer-only components | — | — |
 | refer-menu-item | — | — | Done in W2: delete (only the docs demo uses it) |
-| resizable | — | — | W5: react-resizable-panels v4 (`Group`/`Separator`, `orientation`, sizes as `"50%"` strings, `onLayoutChange`). Pin `react-resizable-panels@^4` in the item when done |
+| resizable | — | — | Item pins `react-resizable-panels@^3` (the v2-era component works on v3: same `PanelGroup`/`Panel`/`PanelResizeHandle`, `direction` and `data-panel-group-direction`; apps are on 3.x). W5: v4 (`Group`/`Separator`, `orientation`, sizes as `"50%"` strings, `onLayoutChange`), then pin `^4` |
 | select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover` | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
-| separator | `data-slot="separator-root"` (portal targets it) | — | W4: rename to `separator` only together with a portal fix |
+| separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
 | sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
 | slider | — | — | Optional: thumb `bg-white` (check in visual QA) |

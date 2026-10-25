@@ -3,7 +3,7 @@
   "name": "chart",
   "description": "Recharts wrapper with theme-aware config, tooltip and legend.",
   "dependencies": [
-    "recharts",
+    "recharts@^2",
     "lucide-react"
   ],
   "registryDependencies": [
