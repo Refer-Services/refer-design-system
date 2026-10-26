@@ -658,7 +658,7 @@ export function ColorsDemo() {
             <h4 className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
               {group.title}
             </h4>
-            <div className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-1 @xl:grid-cols-2 @4xl:grid-cols-3">
               {group.tokens.map((swatch) => (
                 <SemanticSwatch key={swatch.name} swatch={swatch} />
               ))}

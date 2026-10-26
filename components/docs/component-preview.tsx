@@ -30,12 +30,12 @@ export function ComponentPreview({
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview">
-        {/* Scrolls instead of clipping when a demo is wider than the page; the padding stays inside the scroll area
-            so shadows and focus rings aren't cut at the edges. */}
-        <ScrollArea className="bg-background rounded-card @container w-full">
+        {/* Demos fit the stage width (w-full children wrap or truncate). A demo wider than the stage scrolls from its
+            start instead of being cut (justify-center-safe); padding stays inside so shadows aren't clipped. */}
+        <ScrollArea className="bg-background rounded-card @container w-full [&_[data-slot=scroll-area-viewport]>div]:block!">
           <div
             className={cn(
-              "flex min-h-[320px] w-max min-w-full items-center justify-center p-6 sm:p-10",
+              "flex min-h-[320px] w-full items-center justify-center-safe p-6 sm:p-10",
               className
             )}
           >

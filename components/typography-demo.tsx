@@ -115,7 +115,7 @@ export function TypographyDemo() {
         title="Typefaces"
         description="Two families, loaded with next/font and exposed as CSS variables."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 @2xl:grid-cols-2">
           {typefaces.map((face) => (
             <button
               key={face.name}
@@ -179,7 +179,7 @@ export function TypographyDemo() {
         title="Weights"
         description="The four weights in use. Refer sets font-semibold to 550 in the theme."
       >
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 @xl:grid-cols-4">
           {weights.map((weight) => (
             <button
               key={weight.className}
@@ -213,7 +213,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(style.className)}
               title={`Copy ${style.className}`}
-              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors sm:grid-cols-[11rem_1fr] sm:items-baseline sm:gap-6"
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
             >
               <span className="flex flex-col gap-0.5">
                 <span className="text-sm font-medium">{style.name}</span>

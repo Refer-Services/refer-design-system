@@ -88,7 +88,7 @@ export function ShadowDemo() {
             The shadows Refer components use. Prefer these; click to copy.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 @lg:grid-cols-3">
           {referShadows.map((shadow) => (
             <ShadowTile key={shadow.className} {...shadow} />
           ))}
@@ -102,7 +102,7 @@ export function ShadowDemo() {
             light mode.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 lg:grid-cols-7">
+        <div className="grid grid-cols-2 gap-10 @xl:grid-cols-4 @4xl:grid-cols-7">
           {scale.map((className) => (
             <ShadowTile key={className} className={className} />
           ))}
