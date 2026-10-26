@@ -27,7 +27,8 @@ const registry = {
     },
     {
       name: "alert",
-      description: "Callout for important messages, with title and description.",
+      description:
+        "Callout for important messages, with title and description.",
       type: "registry:ui",
       files: [
         {
@@ -38,7 +39,8 @@ const registry = {
     },
     {
       name: "alert-dialog",
-      description: "Modal confirmation dialog that interrupts the user; size sm for compact confirms.",
+      description:
+        "Modal confirmation dialog that interrupts the user; size sm for compact confirms.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-alert-dialog"],
       registryDependencies: ["button"],
@@ -63,7 +65,8 @@ const registry = {
     },
     {
       name: "attachment",
-      description: "File or image card with media, metadata, upload state and actions.",
+      description:
+        "File or image card with media, metadata, upload state and actions.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       registryDependencies: ["button"],
@@ -76,7 +79,8 @@ const registry = {
     },
     {
       name: "avatar",
-      description: "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
+      description:
+        "User image with fallback initials; AvatarGroup and AvatarGroupCount for stacks.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-avatar"],
       files: [
@@ -88,7 +92,8 @@ const registry = {
     },
     {
       name: "badge",
-      description: "Pill label for status and metadata, with semantic variants.",
+      description:
+        "Pill label for status and metadata, with semantic variants.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -100,7 +105,8 @@ const registry = {
     },
     {
       name: "bubble",
-      description: "Chat message surface with variants, alignment, reactions and collapsible content.",
+      description:
+        "Chat message surface with variants, alignment, reactions and collapsible content.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -124,7 +130,8 @@ const registry = {
     },
     {
       name: "button",
-      description: "Refer button (rounded-full) with primary, subtle, ghost, outline, destructive and link variants; sizes xs-lg and icon.",
+      description:
+        "Refer button (rounded-full). Primary, destructive, positive and info in solid, _subtle and _ghost variants; secondary, outline, subtle, ghost and link; sizes xs-lg and icon.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -136,7 +143,8 @@ const registry = {
     },
     {
       name: "button-group",
-      description: "Groups buttons (and inputs, selects, dropdowns) into one joined control, horizontal or vertical.",
+      description:
+        "Groups buttons (and inputs, selects, dropdowns) into one joined control, horizontal or vertical.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       registryDependencies: ["separator"],
@@ -149,7 +157,8 @@ const registry = {
     },
     {
       name: "calendar",
-      description: "Date grid for single, multiple or range selection (react-day-picker v9).",
+      description:
+        "Date grid for single, multiple or range selection (react-day-picker v9).",
       type: "registry:ui",
       dependencies: ["react-day-picker@^9"],
       registryDependencies: ["button"],
@@ -186,7 +195,8 @@ const registry = {
     },
     {
       name: "chart",
-      description: "Recharts wrapper with theme-aware config, tooltip and legend.",
+      description:
+        "Recharts wrapper with theme-aware config, tooltip and legend.",
       type: "registry:ui",
       dependencies: ["recharts@^2", "lucide-react"],
       registryDependencies: ["card"],
@@ -223,7 +233,8 @@ const registry = {
     },
     {
       name: "code-block",
-      description: "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
+      description:
+        "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
       type: "registry:ui",
       registryDependencies: ["button", "use-highlighted-code"],
       files: [
@@ -247,7 +258,8 @@ const registry = {
     },
     {
       name: "combobox",
-      description: "Searchable select (Base UI) with single/multiple selection and chips; works inside dialogs and drawers.",
+      description:
+        "Searchable select (Base UI) with single/multiple selection and chips; works inside dialogs and drawers.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
       registryDependencies: ["button", "input-group"],
@@ -260,7 +272,8 @@ const registry = {
     },
     {
       name: "command",
-      description: "Command palette and searchable list (cmdk), also as CommandDialog.",
+      description:
+        "Command palette and searchable list (cmdk), also as CommandDialog.",
       type: "registry:ui",
       dependencies: ["cmdk"],
       registryDependencies: ["dialog"],
@@ -273,7 +286,8 @@ const registry = {
     },
     {
       name: "context-menu",
-      description: "Right-click menu with items, submenus, checkboxes and radios.",
+      description:
+        "Right-click menu with items, submenus, checkboxes and radios.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-context-menu"],
       files: [
@@ -285,7 +299,8 @@ const registry = {
     },
     {
       name: "dialog",
-      description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
+      description:
+        "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
       registryDependencies: ["button"],
@@ -298,7 +313,8 @@ const registry = {
     },
     {
       name: "direction",
-      description: "DirectionProvider and useDirection for right-to-left layouts.",
+      description:
+        "DirectionProvider and useDirection for right-to-left layouts.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-direction"],
       files: [
@@ -322,7 +338,8 @@ const registry = {
     },
     {
       name: "dropdown-menu",
-      description: "Menu opened from a trigger, with items, submenus, checkboxes and radios.",
+      description:
+        "Menu opened from a trigger, with items, submenus, checkboxes and radios.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dropdown-menu"],
       files: [
@@ -345,7 +362,8 @@ const registry = {
     },
     {
       name: "field",
-      description: "Accessible form field layout: FieldSet, FieldLegend, FieldGroup, Field, FieldLabel, FieldDescription, FieldError.",
+      description:
+        "Accessible form field layout: FieldSet, FieldLegend, FieldGroup, Field, FieldLabel, FieldDescription, FieldError.",
       type: "registry:ui",
       registryDependencies: ["label", "separator"],
       files: [
@@ -357,7 +375,8 @@ const registry = {
     },
     {
       name: "form",
-      description: "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
+      description:
+        "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-label",
@@ -388,7 +407,8 @@ const registry = {
     },
     {
       name: "input",
-      description: "Text input (rounded-input) with Refer focus and invalid states.",
+      description:
+        "Text input (rounded-input) with Refer focus and invalid states.",
       type: "registry:ui",
       files: [
         {
@@ -399,7 +419,8 @@ const registry = {
     },
     {
       name: "input-group",
-      description: "Input or textarea with inline/block addons, buttons and text.",
+      description:
+        "Input or textarea with inline/block addons, buttons and text.",
       type: "registry:ui",
       registryDependencies: ["button", "input", "textarea"],
       files: [
@@ -423,7 +444,8 @@ const registry = {
     },
     {
       name: "item",
-      description: "Flexible row for lists and cards: media, title, description and actions.",
+      description:
+        "Flexible row for lists and cards: media, title, description and actions.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       registryDependencies: ["separator"],
@@ -459,7 +481,8 @@ const registry = {
     },
     {
       name: "marker",
-      description: "Status row or labeled separator in a conversation or timeline (date breaks, a thinking indicator).",
+      description:
+        "Status row or labeled separator in a conversation or timeline (date breaks, a thinking indicator).",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
       files: [
@@ -471,7 +494,8 @@ const registry = {
     },
     {
       name: "message",
-      description: "One conversation row: avatar, alignment, header, content and footer.",
+      description:
+        "One conversation row: avatar, alignment, header, content and footer.",
       type: "registry:ui",
       files: [
         {
@@ -482,7 +506,8 @@ const registry = {
     },
     {
       name: "message-scroller",
-      description: "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
+      description:
+        "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
       type: "registry:ui",
       dependencies: ["@shadcn/react@^0.3.1"],
       registryDependencies: ["button"],
@@ -542,7 +567,8 @@ const registry = {
     },
     {
       name: "popover",
-      description: "Floating panel anchored to a trigger, with header, title and description slots.",
+      description:
+        "Floating panel anchored to a trigger, with header, title and description slots.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-popover"],
       files: [
@@ -566,7 +592,8 @@ const registry = {
     },
     {
       name: "questionnaire",
-      description: "Multi-step question flow with single, multiple, free-form and skippable questions.",
+      description:
+        "Multi-step question flow with single, multiple, free-form and skippable questions.",
       type: "registry:ui",
       dependencies: ["@shadcn/react@^0.3.1"],
       registryDependencies: ["button"],
@@ -794,7 +821,8 @@ const registry = {
     },
     {
       name: "toast",
-      description: "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
+      description:
+        "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
       registryDependencies: ["button"],
@@ -819,7 +847,8 @@ const registry = {
     },
     {
       name: "toggle-group",
-      description: "Set of toggles, joined or spaced, single or multiple selection.",
+      description:
+        "Set of toggles, joined or spaced, single or multiple selection.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-toggle-group"],
       registryDependencies: ["toggle"],
@@ -832,7 +861,8 @@ const registry = {
     },
     {
       name: "trace",
-      description: "List of agent steps (reasoning, tool calls, sources) with running, error and pending states.",
+      description:
+        "List of agent steps (reasoning, tool calls, sources) with running, error and pending states.",
       type: "registry:ui",
       registryDependencies: ["collapsible"],
       files: [
@@ -856,7 +886,8 @@ const registry = {
     },
     {
       name: "use-mobile",
-      description: "Hook that returns true below the mobile breakpoint (768px).",
+      description:
+        "Hook that returns true below the mobile breakpoint (768px).",
       type: "registry:hook",
       files: [
         {
@@ -885,7 +916,8 @@ const registry = {
       name: "refer-utils",
       type: "registry:file",
       title: "Refer utilities",
-      description: "Tailwind v4 utilities from shadcn: scroll-fade, shimmer. Installed with globals.",
+      description:
+        "Tailwind v4 utilities from shadcn: scroll-fade, shimmer. Installed with globals.",
       files: [
         {
           path: "styles/refer-utils.css",
@@ -902,7 +934,10 @@ const registry = {
 const CONSUMER_IMPORTS = new Set(['"tailwindcss"', '"tw-animate-css"'])
 
 /** Converts a CSS container into the CSS-in-JSON shape the shadcn CLI expects for `css`. */
-function cssToJson(container: postcss.Container, nested = false): Record<string, unknown> {
+function cssToJson(
+  container: postcss.Container,
+  nested = false
+): Record<string, unknown> {
   const out: Record<string, unknown> = {}
   container.each((node) => {
     if (node.type === "decl") {
@@ -913,7 +948,9 @@ function cssToJson(container: postcss.Container, nested = false): Record<string,
       const key = `@${node.name} ${node.params}`.trim()
       // The CLI appends nested at-rule blocks on every install instead of replacing them.
       if (nested && node.nodes) {
-        throw new Error(`app/globals.css: nested "${key}" would duplicate on each install; flatten it.`)
+        throw new Error(
+          `app/globals.css: nested "${key}" would duplicate on each install; flatten it.`
+        )
       }
       // Body-less at-rules (e.g. `@apply ...`) become `"@apply ...": {}`, not a property.
       out[key] = node.nodes ? cssToJson(node, true) : {}
@@ -945,13 +982,29 @@ function styleFromGlobals(globalsPath: string) {
       cssVars.light = varsOf(node)
     } else if (node.type === "rule" && node.selector === ".dark") {
       cssVars.dark = varsOf(node)
-    } else if (node.type === "atrule" && node.name === "theme" && node.params === "inline") {
+    } else if (
+      node.type === "atrule" &&
+      node.name === "theme" &&
+      node.params === "inline"
+    ) {
       cssVars.theme = varsOf(node)
-    } else if (node.type === "atrule" && node.name === "import" && CONSUMER_IMPORTS.has(node.params)) {
+    } else if (
+      node.type === "atrule" &&
+      node.name === "import" &&
+      CONSUMER_IMPORTS.has(node.params)
+    ) {
       return
-    } else if (node.type === "atrule" && node.name === "import" && node.params.includes("registry/refer/styles/")) {
+    } else if (
+      node.type === "atrule" &&
+      node.name === "import" &&
+      node.params.includes("registry/refer/styles/")
+    ) {
       // Registry CSS files land next to the consumer's globals.css (target ~/app/<file>).
-      rest.append(node.clone({ params: `"./${path.basename(node.params.replace(/["']/g, ""))}"` }))
+      rest.append(
+        node.clone({
+          params: `"./${path.basename(node.params.replace(/["']/g, ""))}"`,
+        })
+      )
     } else {
       rest.append(node.clone())
     }
@@ -983,10 +1036,17 @@ function resolveRegistryDependencies() {
     const declared = new Set(deps.map((dep) => path.basename(dep, ".json")))
     for (const file of item.files ?? []) {
       const filePath = typeof file === "string" ? file : file.path
-      const source = readFileSync(path.join(ROOT, "registry/refer", filePath), "utf-8")
-      for (const [, used] of source.matchAll(/@\/registry\/refer\/(?:ui|hooks)\/([\w-]+)/g)) {
+      const source = readFileSync(
+        path.join(ROOT, "registry/refer", filePath),
+        "utf-8"
+      )
+      for (const [, used] of source.matchAll(
+        /@\/registry\/refer\/(?:ui|hooks)\/([\w-]+)/g
+      )) {
         if (used !== item.name && !declared.has(used)) {
-          throw new Error(`${item.name}: imports "${used}" without listing it in registryDependencies.`)
+          throw new Error(
+            `${item.name}: imports "${used}" without listing it in registryDependencies.`
+          )
         }
       }
     }
@@ -1014,7 +1074,8 @@ async function addStyleItem() {
     name: "globals",
     type: "registry:style",
     title: "Refer global CSS",
-    description: "Design tokens, base styles and utilities from app/globals.css.",
+    description:
+      "Design tokens, base styles and utilities from app/globals.css.",
     // globals.css imports ./refer-utils.css, so installing globals must bring that file too.
     registryDependencies: [`${REGISTRY_PATH}/refer-utils.json`],
     files: [],
