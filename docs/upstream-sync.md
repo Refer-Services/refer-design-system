@@ -25,6 +25,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
 | 4 | Design decisions that change app visuals: Refer look for the wave 3 components and the remaining stock ones, then the rest of the W4 ledger items (see [Wave 4 visual pass](#wave-4-visual-pass) and its part 2). The separator `data-slot` rename and the dependency ranges followed in PR #12 | Merged (PR #11, both parts; PR #12) | Pending: portal sync after the deploy (expected to change alert-dialog, avatar, bubble, calendar, context-menu, drawer, menubar, message, navigation-menu, separator, sonner, switch, table, tabs; minor bumps inside the major for react-day-picker, recharts, react-resizable-panels; visible in toasts, avatar initials, tables, mobile drawers and the candidate dialog Notes tab) |
+| 4.5 | Additive gaps against upstream's `bases` registry (see [Gaps against upstream's bases registry](#gaps-against-upstreams-bases-registry)): calendar `locale`, pagination `text`, `AlertAction`, menu item `inset`, card `size="sm"`, toggle-group `orientation`, `useCarousel` export, missing slots. Then decide sheet close button and badge `ghost`/`link` from a preview | Pending (next) | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
@@ -147,6 +148,33 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | tabs | Refer list/trigger styles; default list `rounded-[14px] squircle` around `squircle rounded-[10px]` triggers (concentric, docs-site PR) | — | W4: `orientation`, `variant="line"`, focus-visible ring (missing today) |
 | toggle-group | `rounded-lg`, items `flex-1` | — | Done in W2: `spacing` prop (joined styles only when `spacing=0`). Those styles are now `data-[spacing=0]:` variants, so a plain item `className` like `rounded-full` no longer overrides them; use `data-[spacing=0]:rounded-full`. No app uses toggle-group yet |
 | tooltip | `rounded-[10px]`, `ease-smooth`, built-in `TooltipProvider` | — | Done in W1 (`text-background`). W5: drop the built-in Provider once every app has one at its root |
+
+## Gaps against upstream's bases registry
+
+The ledger above was triaged against `new-york-v4`, which upstream now keeps as legacy. The current docs
+(ui.shadcn.com) show the `bases` registry (`apps/v4/registry/bases/radix/ui/`, styled through `cn-*` classes in
+`apps/v4/registry/styles/style-<name>.css`). Compared on 2026-10-26 at upstream `8f041387` (exports, props, data-slots,
+variants, subcomponents, defaults; class-only differences ignored). From the next sync on, triage against `bases/radix`.
+
+| Component | Gap | Kind |
+|---|---|---|
+| command | InputGroup search, dialog at `top-1/3`, `<Command>` child, `data-checked` indicator | Done (branch `feat/command-update`) |
+| calendar | `locale` passed to `CalendarDayButton` and the month dropdown (months show in English today) | Additive |
+| pagination | `text` prop on Previous/Next (Portuguese labels) | Additive |
+| alert | `AlertAction`, `data-slot="alert-action"` | Additive |
+| dropdown-menu, context-menu, menubar | `inset` on checkbox/radio items; `data-slot` on their indicators | Additive |
+| card | `size="sm"` (`data-size`) | Additive |
+| toggle-group | `orientation` (`horizontal`/`vertical`, `data-orientation`) | Additive |
+| carousel | export `useCarousel` (already in the file) | Additive |
+| spinner, accordion | `data-slot="spinner"`; `data-slot="accordion-trigger-icon"` | Additive (new slots) |
+| sheet | Close button is a `Button` `ghost` `icon-sm` | Visual: decide from a preview |
+| dropdown-menu | `DropdownMenuContent` default `align="start"` (was center) | Behavior: moves every app dropdown; don't take as default |
+| badge | `ghost`, `link` variants | Skipped before (no use case) |
+| resizable, chart | react-resizable-panels v4, Recharts v3 | Wave 5 |
+| sidebar | `dir` (RTL) | Skip |
+
+Upstream `bases` has no `form` (it points to `field`). Ours only: `form`, `toast`, `checkbox-boxed`,
+`radio-group-boxed`, `responsive-dialog`.
 
 ## Components added from upstream in wave 3
 
