@@ -13,6 +13,8 @@ const referShadows = [
   {
     className: "shadow-popover",
     use: "Menus, popovers, selects, toasts: anything floating",
+    // Shown on the popover surface it's paired with.
+    surface: "bg-popover backdrop-blur-xl",
   },
   {
     className: "shadow-avatar",
@@ -42,10 +44,12 @@ function ShadowTile({
   className,
   use,
   round,
+  surface,
 }: {
   className: string
   use?: string
   round?: boolean
+  surface?: string
 }) {
   return (
     <button
@@ -58,6 +62,7 @@ function ShadowTile({
         className={cn(
           "bg-card squircle flex h-28 w-full items-center justify-center rounded-2xl transition-transform group-hover:-translate-y-0.5",
           round && "size-28 rounded-full",
+          surface,
           className
         )}
       />
