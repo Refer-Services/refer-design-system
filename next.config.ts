@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   },
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*"],
+    // Component pages read demo and gallery sources with fs at request time (the (app) layout reads cookies, so
+    // they render per request), so the function has to ship those files.
+    "/components/*": ["./components/**/*.tsx"],
   },
   images: {
     remotePatterns: [
