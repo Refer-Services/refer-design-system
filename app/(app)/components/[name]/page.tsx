@@ -89,10 +89,7 @@ export default async function ComponentPage({
         pageDemos.map((demo, index) => {
           const Demo = demo.component
           return (
-            <Section
-              key={demo.file}
-              title={demo.title ?? (index === 0 ? "Demo" : undefined)}
-            >
+            <Section key={demo.file} title={demo.title}>
               <ComponentPreview
                 name={item.title}
                 preview={<Demo />}
@@ -102,7 +99,7 @@ export default async function ComponentPage({
           )
         })
       ) : (
-        <Section title="Demo">
+        <Section>
           <p className="bg-background rounded-card text-muted-foreground p-6 text-sm">
             No demo yet. The source is in{" "}
             <code className="font-mono">registry/refer/ui/{name}.tsx</code>.
