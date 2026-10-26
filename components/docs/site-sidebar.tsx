@@ -37,12 +37,12 @@ export function SiteSidebar({
                 <Image
                   src="/apple-touch-icon.png"
                   alt=""
-                  width={32}
-                  height={32}
-                  className="squircle size-8 rounded-lg shadow-xs"
+                  width={28}
+                  height={28}
+                  className="squircle size-7 rounded-lg shadow-xs"
                   priority
                 />
-                <span className="text-sm font-semibold">Refer DS</span>
+                <span className="text-sm font-semibold">Refer Design System</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
