@@ -137,6 +137,8 @@ It explains **what this project is**, **where to make changes**, and **how not t
   - Components use `data-slot="component-name"` as a styling hook.
   - Buttons default to **`rounded-full`**.
   - Inputs use **`rounded-input`**.
+  - **Concentric radii**: a nested surface's radius = outer radius minus the padding between them (tabs list
+    `rounded-[14px]` + `p-1` around `rounded-[10px]` triggers).
   - Icons come from `lucide-react`, and components rely on:
     - `[&_svg:not([class*='size-'])]:size-4` for a default icon size.
 - **Imports**

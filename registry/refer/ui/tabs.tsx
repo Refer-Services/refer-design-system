@@ -32,7 +32,7 @@ const tabsListVariants = cva(
       variant: {
         // Refer's segmented control.
         default:
-          "bg-muted h-10 gap-x-0.5 gap-y-0.5 rounded-xl squircle p-1 shadow-[0px_1px_0px_0px_--alpha(var(--color-foreground)_/_6%)_inset]",
+          "bg-muted h-10 gap-x-0.5 gap-y-0.5 rounded-[14px] squircle p-1 shadow-[0px_1px_0px_0px_--alpha(var(--color-foreground)_/_6%)_inset]",
         // Underlined tabs for page-level navigation.
         line: "h-auto gap-5 border-b bg-transparent p-0 data-[orientation=vertical]:gap-1 data-[orientation=vertical]:border-b-0 data-[orientation=vertical]:border-l",
         // Tabs in a card's top bar: the selected one looks like a subtle button, the rest like ghost buttons.

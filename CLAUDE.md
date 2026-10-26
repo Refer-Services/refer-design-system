@@ -69,6 +69,9 @@ each component must keep, which `data-slot`s the apps target, and what was skipp
 - Use `cn()` from `@/lib/utils` for class merging.
 - Add `data-slot="component-name"` as a styling hook.
 - Buttons default to `rounded-full`; inputs use `rounded-input`.
+- **Concentric radii:** a nested surface's radius is the outer radius minus the padding between them (e.g. tabs list
+  `rounded-[14px]` with `p-1` around `rounded-[10px]` triggers; attachment `rounded-2xl` with `p-2` around
+  `rounded-lg` media). Check it whenever a rounded element sits inside another.
 - Icons from `lucide-react`; rely on `[&_svg:not([class*='size-'])]:size-4` for default icon sizing.
 - Import registry primitives from `@/registry/refer/ui/...`, **not** `@/components/ui`.
 
