@@ -303,12 +303,13 @@
     },
     {
       "name": "command",
-      "description": "Command palette and searchable list (cmdk), also as CommandDialog.",
+      "description": "Command palette and searchable list (cmdk): search field, groups, shortcuts, checkable items (data-checked); CommandDialog opens it in a dialog.",
       "dependencies": [
         "cmdk"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/dialog.json"
+        "https://ds.tryrefer.com/r/refer/dialog.json",
+        "https://ds.tryrefer.com/r/refer/input-group.json"
       ],
       "files": [
         {

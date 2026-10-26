@@ -273,10 +273,10 @@ const registry = {
     {
       name: "command",
       description:
-        "Command palette and searchable list (cmdk), also as CommandDialog.",
+        "Command palette and searchable list (cmdk): search field, groups, shortcuts, checkable items (data-checked); CommandDialog opens it in a dialog.",
       type: "registry:ui",
       dependencies: ["cmdk"],
-      registryDependencies: ["dialog"],
+      registryDependencies: ["dialog", "input-group"],
       files: [
         {
           path: "ui/command.tsx",
