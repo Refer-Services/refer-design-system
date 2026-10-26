@@ -208,6 +208,70 @@ const tailwind: { name: string; shades: Swatch[] }[] = [
     ],
   },
   {
+    name: "mauve",
+    shades: [
+      { name: "mauve-50", className: "bg-mauve-50" },
+      { name: "mauve-100", className: "bg-mauve-100" },
+      { name: "mauve-200", className: "bg-mauve-200" },
+      { name: "mauve-300", className: "bg-mauve-300" },
+      { name: "mauve-400", className: "bg-mauve-400" },
+      { name: "mauve-500", className: "bg-mauve-500" },
+      { name: "mauve-600", className: "bg-mauve-600" },
+      { name: "mauve-700", className: "bg-mauve-700" },
+      { name: "mauve-800", className: "bg-mauve-800" },
+      { name: "mauve-900", className: "bg-mauve-900" },
+      { name: "mauve-950", className: "bg-mauve-950" },
+    ],
+  },
+  {
+    name: "olive",
+    shades: [
+      { name: "olive-50", className: "bg-olive-50" },
+      { name: "olive-100", className: "bg-olive-100" },
+      { name: "olive-200", className: "bg-olive-200" },
+      { name: "olive-300", className: "bg-olive-300" },
+      { name: "olive-400", className: "bg-olive-400" },
+      { name: "olive-500", className: "bg-olive-500" },
+      { name: "olive-600", className: "bg-olive-600" },
+      { name: "olive-700", className: "bg-olive-700" },
+      { name: "olive-800", className: "bg-olive-800" },
+      { name: "olive-900", className: "bg-olive-900" },
+      { name: "olive-950", className: "bg-olive-950" },
+    ],
+  },
+  {
+    name: "mist",
+    shades: [
+      { name: "mist-50", className: "bg-mist-50" },
+      { name: "mist-100", className: "bg-mist-100" },
+      { name: "mist-200", className: "bg-mist-200" },
+      { name: "mist-300", className: "bg-mist-300" },
+      { name: "mist-400", className: "bg-mist-400" },
+      { name: "mist-500", className: "bg-mist-500" },
+      { name: "mist-600", className: "bg-mist-600" },
+      { name: "mist-700", className: "bg-mist-700" },
+      { name: "mist-800", className: "bg-mist-800" },
+      { name: "mist-900", className: "bg-mist-900" },
+      { name: "mist-950", className: "bg-mist-950" },
+    ],
+  },
+  {
+    name: "taupe",
+    shades: [
+      { name: "taupe-50", className: "bg-taupe-50" },
+      { name: "taupe-100", className: "bg-taupe-100" },
+      { name: "taupe-200", className: "bg-taupe-200" },
+      { name: "taupe-300", className: "bg-taupe-300" },
+      { name: "taupe-400", className: "bg-taupe-400" },
+      { name: "taupe-500", className: "bg-taupe-500" },
+      { name: "taupe-600", className: "bg-taupe-600" },
+      { name: "taupe-700", className: "bg-taupe-700" },
+      { name: "taupe-800", className: "bg-taupe-800" },
+      { name: "taupe-900", className: "bg-taupe-900" },
+      { name: "taupe-950", className: "bg-taupe-950" },
+    ],
+  },
+  {
     name: "red",
     shades: [
       { name: "red-50", className: "bg-red-50" },
@@ -595,8 +659,9 @@ export function ColorsDemo() {
         <div className="flex flex-col gap-1">
           <h3 className="text-base font-semibold">Tailwind palette</h3>
           <p className="text-muted-foreground text-sm">
-            Tailwind&apos;s default colors, all available as utilities. Stone
-            and neutral are the theme&apos;s light and dark neutrals.
+            Tailwind&apos;s default colors (v4.3), all available as utilities.
+            Stone and neutral are the theme&apos;s light and dark neutrals;
+            mauve, olive, mist and taupe are the neutrals added in v4.2.
           </p>
         </div>
         <div className="flex flex-col gap-3">
