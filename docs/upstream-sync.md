@@ -231,8 +231,8 @@ rename together with the portal fix.
 **Overriding a Button's radius or shadow:** `tailwind-merge` doesn't know the Refer theme names (`rounded-input`,
 `rounded-card`, `shadow-card`, `shadow-popover`), so `cn("rounded-full …", "rounded-input")` keeps both classes and the
 winner depends on CSS order. Inside registry components, override with the CSS-variable form, which it does merge:
-`rounded-(--radius-input)`, `rounded-(--radius-card)`, `shadow-(--shadow-card)`. (The docs' `button-demo` still passes
-`className="rounded-input"` to icon buttons and works only by CSS order.) Apps use their own `cn`, so a
+`rounded-(--radius-input)`, `rounded-(--radius-card)`, `shadow-(--shadow-card)`. (The docs' `button-icon-demo` shows the
+square icon button this way.) Apps use their own `cn`, so a
 `extendTailwindMerge` config in the DS alone wouldn't fix it for them.
 
 ## Infra decisions

@@ -11,6 +11,9 @@ import { BreadcrumbDemo } from "@/components/breadcrumb-demo"
 import { BubbleDemo } from "@/components/bubble-demo"
 import { ButtonDemo } from "@/components/button-demo"
 import { ButtonGroupDemo } from "@/components/button-group-demo"
+import { ButtonIconDemo } from "@/components/button-icon-demo"
+import { ButtonIconsDemo } from "@/components/button-icons-demo"
+import { ButtonSizesDemo } from "@/components/button-sizes-demo"
 import { CalendarDemo } from "@/components/calendar-demo"
 import { CardDemo } from "@/components/card-demo"
 import { CarouselDemo } from "@/components/carousel-demo"
@@ -96,7 +99,12 @@ export const demos: Record<string, Demo[]> = {
   badge: [demo(BadgeDemo, "badge-demo")],
   breadcrumb: [demo(BreadcrumbDemo, "breadcrumb-demo")],
   bubble: [demo(BubbleDemo, "bubble-demo")],
-  button: [demo(ButtonDemo, "button-demo")],
+  button: [
+    demo(ButtonDemo, "button-demo", "Variants"),
+    demo(ButtonSizesDemo, "button-sizes-demo", "Sizes"),
+    demo(ButtonIconsDemo, "button-icons-demo", "With icons"),
+    demo(ButtonIconDemo, "button-icon-demo", "Icon buttons"),
+  ],
   "button-group": [demo(ButtonGroupDemo, "button-group-demo")],
   calendar: [
     demo(CalendarDemo, "calendar-demo"),
