@@ -16,6 +16,7 @@ export const newComponents = [
 
 // Pages about tokens rather than registry items: no install command, no usage stats.
 export const foundations = [
+  { name: "colors", title: "Colors" },
   { name: "typography", title: "Typography" },
   { name: "shadows", title: "Shadows" },
 ]

@@ -18,6 +18,7 @@ import { ChartDemo } from "@/components/chart-demo"
 import { CheckboxDemo } from "@/components/checkbox-demo"
 import { CodeBlockDemo } from "@/components/code-block-demo"
 import { CollapsibleDemo } from "@/components/collapsible-demo"
+import { ColorsDemo } from "@/components/colors-demo"
 import { ComboboxDemo } from "@/components/combobox-demo"
 import { ComboboxExample } from "@/components/combobox2-demo"
 import { CommandDemo } from "@/components/command-demo"
@@ -160,4 +161,5 @@ export const demos: Record<string, Demo[]> = {
   trace: [demo(TraceDemo, "trace-demo")],
   typography: [demo(TypographyDemo, "typography-demo")],
   shadows: [demo(ShadowDemo, "shadow-demo")],
+  colors: [demo(ColorsDemo, "colors-demo")],
 }
