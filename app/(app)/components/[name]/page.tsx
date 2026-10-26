@@ -75,16 +75,6 @@ export default async function ComponentPage({
         )}
       </header>
 
-      {item.kind === "component" && (
-        <Section title="Installation">
-          <DocsCode
-            code={`npx shadcn@latest add ${siteConfig.registryNamespace}/${name}`}
-            language="bash"
-            lineNumbers={false}
-          />
-        </Section>
-      )}
-
       {pageDemos.length > 0 ? (
         pageDemos.map((demo, index) => {
           const Demo = demo.component
@@ -104,6 +94,16 @@ export default async function ComponentPage({
             No demo yet. The source is in{" "}
             <code className="font-mono">registry/refer/ui/{name}.tsx</code>.
           </p>
+        </Section>
+      )}
+
+      {item.kind === "component" && (
+        <Section title="Installation">
+          <DocsCode
+            code={`npx shadcn@latest add ${siteConfig.registryNamespace}/${name}`}
+            language="bash"
+            lineNumbers={false}
+          />
         </Section>
       )}
 
