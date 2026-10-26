@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { ScrollArea, ScrollBar } from "@/registry/refer/ui/scroll-area"
 import {
   Tabs,
   TabsContent,
@@ -29,14 +30,19 @@ export function ComponentPreview({
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>
       <TabsContent value="preview">
-        <div
-          className={cn(
-            "bg-background rounded-card @container flex min-h-[320px] w-full items-center justify-center overflow-x-auto p-6 sm:p-10",
-            className
-          )}
-        >
-          <PreviewErrorBoundary name={name}>{preview}</PreviewErrorBoundary>
-        </div>
+        {/* Scrolls instead of clipping when a demo is wider than the page; the padding stays inside the scroll area
+            so shadows and focus rings aren't cut at the edges. */}
+        <ScrollArea className="bg-background rounded-card @container w-full">
+          <div
+            className={cn(
+              "flex min-h-[320px] w-max min-w-full items-center justify-center p-6 sm:p-10",
+              className
+            )}
+          >
+            <PreviewErrorBoundary name={name}>{preview}</PreviewErrorBoundary>
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </TabsContent>
       <TabsContent value="code">{code}</TabsContent>
     </Tabs>
