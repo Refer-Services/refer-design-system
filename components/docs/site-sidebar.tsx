@@ -121,7 +121,7 @@ function NavLink({
 }) {
   return (
     <SidebarMenuItem>
-      <SidebarMenuButton asChild isActive={active} size="sm">
+      <SidebarMenuButton asChild isActive={active} size="sm" className="text-sm">
         <Link href={href}>
           <span>{children}</span>
           {isNew && (
