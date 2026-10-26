@@ -388,9 +388,9 @@ export const Index: Record<string, any> = {
   },
   "command": {
     name: "command",
-    description: "Command palette and searchable list (cmdk), also as CommandDialog.",
+    description: "Command palette and searchable list (cmdk): search field, groups, shortcuts, checkable items (data-checked); CommandDialog opens it in a dialog.",
     type: "registry:ui",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json","https://ds.tryrefer.com/r/refer/input-group.json"],
     files: [{
       path: "registry/ui/command.tsx",
       type: "registry:ui",

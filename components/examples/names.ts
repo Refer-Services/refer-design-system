@@ -6,6 +6,7 @@ export const exampleNames = [
   "bubble",
   "button-group",
   "code-block",
+  "command",
   "drawer",
   "field",
   "item",
