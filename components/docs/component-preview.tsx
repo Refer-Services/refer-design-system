@@ -24,7 +24,7 @@ export function ComponentPreview({
 }) {
   return (
     <Tabs defaultValue="preview" className="gap-3">
-      <TabsList variant="line">
+      <TabsList>
         <TabsTrigger value="preview">Preview</TabsTrigger>
         <TabsTrigger value="code">Code</TabsTrigger>
       </TabsList>

@@ -6,6 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import type { DocsItem } from "@/lib/docs"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 import {
   Sidebar,
   SidebarContent,
@@ -47,44 +48,46 @@ export function SiteSidebar({
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className="no-scrollbar">
-        <NavGroup label="Overview">
-          <NavLink href="/" active={pathname === "/"}>
-            All components
-          </NavLink>
-          {foundations.map((item) => (
-            <NavLink
-              key={item.name}
-              href={`/components/${item.name}`}
-              active={pathname === `/components/${item.name}`}
-            >
-              {item.title}
+      <SidebarContent className="gap-0 overflow-hidden">
+        <ScrollArea className="[&_[data-slot=scroll-area-viewport]]:scroll-fade-y min-h-0 flex-1 [&_[data-slot=scroll-area-viewport]>div]:block!">
+          <NavGroup label="Overview">
+            <NavLink href="/" active={pathname === "/"}>
+              All components
             </NavLink>
-          ))}
-        </NavGroup>
-        <NavGroup label="New">
-          {fresh.map((item) => (
-            <NavLink
-              key={item.name}
-              href={`/components/${item.name}`}
-              active={pathname === `/components/${item.name}`}
-            >
-              {item.title}
-            </NavLink>
-          ))}
-        </NavGroup>
-        <NavGroup label="Components">
-          {components.map((item) => (
-            <NavLink
-              key={item.name}
-              href={`/components/${item.name}`}
-              active={pathname === `/components/${item.name}`}
-              isNew={item.isNew}
-            >
-              {item.title}
-            </NavLink>
-          ))}
-        </NavGroup>
+            {foundations.map((item) => (
+              <NavLink
+                key={item.name}
+                href={`/components/${item.name}`}
+                active={pathname === `/components/${item.name}`}
+              >
+                {item.title}
+              </NavLink>
+            ))}
+          </NavGroup>
+          <NavGroup label="New">
+            {fresh.map((item) => (
+              <NavLink
+                key={item.name}
+                href={`/components/${item.name}`}
+                active={pathname === `/components/${item.name}`}
+              >
+                {item.title}
+              </NavLink>
+            ))}
+          </NavGroup>
+          <NavGroup label="Components">
+            {components.map((item) => (
+              <NavLink
+                key={item.name}
+                href={`/components/${item.name}`}
+                active={pathname === `/components/${item.name}`}
+                isNew={item.isNew}
+              >
+                {item.title}
+              </NavLink>
+            ))}
+          </NavGroup>
+        </ScrollArea>
       </SidebarContent>
     </Sidebar>
   )

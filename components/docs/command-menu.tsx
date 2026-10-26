@@ -71,7 +71,7 @@ export function CommandMenu({ items }: { items: DocsItem[] }) {
         description="Find a component by name"
       >
         <CommandInput placeholder="Search components…" />
-        <CommandList>
+        <CommandList className="scroll-fade-y">
           <CommandEmpty>No component found.</CommandEmpty>
           <CommandGroup heading="Overview">
             <CommandItem value="all components" onSelect={() => go("")}>

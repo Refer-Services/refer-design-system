@@ -7,6 +7,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/refer/ui/collapsible"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 
 export function UsageFiles({ files }: { files: string[] }) {
   return (
@@ -16,13 +17,15 @@ export function UsageFiles({ files }: { files: string[] }) {
         Show files
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <ul className="text-muted-foreground mt-2 flex flex-col gap-1 font-mono text-xs">
-          {files.map((file) => (
-            <li key={file} className="truncate">
-              {file}
-            </li>
-          ))}
-        </ul>
+        <ScrollArea className="[&_[data-slot=scroll-area-viewport]]:scroll-fade-y mt-2 max-h-56 [&_[data-slot=scroll-area-viewport]]:max-h-56 [&_[data-slot=scroll-area-viewport]>div]:block!">
+          <ul className="text-muted-foreground flex flex-col gap-1 pr-3 font-mono text-xs">
+            {files.map((file) => (
+              <li key={file} className="truncate">
+                {file}
+              </li>
+            ))}
+          </ul>
+        </ScrollArea>
       </CollapsibleContent>
     </Collapsible>
   )
