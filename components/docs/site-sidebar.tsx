@@ -41,7 +41,9 @@ export function SiteSidebar({
                   className="squircle size-7 rounded-lg shadow-xs"
                   priority
                 />
-                <span className="text-sm font-semibold">Refer Design System</span>
+                <span className="text-sm font-semibold">
+                  Refer Design System
+                </span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -109,7 +111,12 @@ function NavLink({
 }) {
   return (
     <SidebarMenuItem>
-      <SidebarMenuButton asChild isActive={active} size="sm" className="text-sm font-medium">
+      <SidebarMenuButton
+        asChild
+        isActive={active}
+        size="sm"
+        className="text-sm font-medium"
+      >
         <Link href={href}>
           <span>{children}</span>
           {isNew && (

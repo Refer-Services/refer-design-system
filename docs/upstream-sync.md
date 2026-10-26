@@ -118,7 +118,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | alert-dialog | `rounded-2xl shadow-xl` content | Upstream `rounded-lg shadow-lg` | Done in W2: `size` (`sm`) on content, actions as `<Button asChild>` with `variant`/`size` (defaults `primary`/`outline`, `md`), `data-slot`s on actions. Refer difference from upstream: the actions pass `className` to `Button` (tailwind-merge), not to the Slot child, which only concatenates; so an app's `className="bg-destructive"` still wins over `bg-primary`. Prefer `variant="destructive"` in apps. W4: `AlertDialogMedia` (needs Refer styling) |
 | avatar | `size-10` default; `overflow-hidden` on root (crops square logos passed via `className`) | — | Done in W2: `select-none`, `AvatarGroup`, `AvatarGroupCount`. W4: upstream's muted fallback text (`text-muted-foreground`) changes initials to gray in 6 portal and 7 argus fallbacks that don't set a color; `size` prop on a Refer scale and `AvatarBadge` (needs design: the root's `overflow-hidden` would clip a corner badge) |
 | badge | Per-variant borders, semantic variant set, no `cursor-default` | Border moved to base; `ghost`/`link` variants (no use case yet) | Done in W2: default `variant="primary"`, `data-variant` |
-| button | `rounded-full`, 3D look (`shadow-xs` + `border-b-[2px]`), variants `primary`, `primary_subtle`, `primary_ghost`, `destructive`, `outline`, `secondary`, `ghost`, `subtle`, `link`; sizes `xs`–`lg` (h-8…h-11), `icon` (size-10) | Shadows removed upstream; upstream `xs` (h-6) | Done in W2: `icon-xs`/`icon-sm`/`icon-lg` (8/9/11), default params, `data-variant`/`data-size` |
+| button | `rounded-full`, 3D look (`shadow-xs` + `border-b-[2px]`), variants `primary`, `primary_subtle`, `primary_ghost`, `destructive`, `destructive_subtle`, `destructive_ghost`, `positive`, `positive_subtle`, `positive_ghost`, `info`, `info_subtle`, `info_ghost` (Refer-only, docs-site PR), `outline`, `secondary`, `ghost`, `subtle`, `link`; sizes `xs`–`lg` (h-8…h-11), `icon` (size-10) | Shadows removed upstream; upstream `xs` (h-6) | Done in W2: `icon-xs`/`icon-sm`/`icon-lg` (8/9/11), default params, `data-variant`/`data-size` |
 | calendar | Pill-shaped selection and range ends, `rounded-input` dropdowns, primary focus ring | — | Done in W1 (v9 rewrite) |
 | card | `squircle`, header `gap-1.5` | Header `gap-2` (spacing tweak) | — |
 | chart | — | — | Done in W1 (zero values, `type: "none"`, index keys). W5: Recharts v3 (`initialDimension`, new tooltip/legend types; 82 files import recharts) |
@@ -144,7 +144,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | sonner | `borderRadius: 12px`, `backdropFilter: blur(24px)` | — | W4: default lucide icons on every toast (changes app visuals) |
 | switch | Custom geometry (22×40 track, press stretch) | — | W4: `size="sm"` on a Refer scale; add a focus-visible ring (missing today) |
 | table | — | — | W4: `has-aria-expanded:bg-muted/50` row highlight (changes app visuals) |
-| tabs | Refer list/trigger styles | — | W4: `orientation`, `variant="line"`, focus-visible ring (missing today) |
+| tabs | Refer list/trigger styles; default list `rounded-[14px] squircle` around `squircle rounded-[10px]` triggers (concentric, docs-site PR) | — | W4: `orientation`, `variant="line"`, focus-visible ring (missing today) |
 | toggle-group | `rounded-lg`, items `flex-1` | — | Done in W2: `spacing` prop (joined styles only when `spacing=0`). Those styles are now `data-[spacing=0]:` variants, so a plain item `className` like `rounded-full` no longer overrides them; use `data-[spacing=0]:rounded-full`. No app uses toggle-group yet |
 | tooltip | `rounded-[10px]`, `ease-smooth`, built-in `TooltipProvider` | — | Done in W1 (`text-background`). W5: drop the built-in Provider once every app has one at its root |
 
@@ -234,6 +234,16 @@ winner depends on CSS order. Inside registry components, override with the CSS-v
 `rounded-(--radius-input)`, `rounded-(--radius-card)`, `shadow-(--shadow-card)`. (The docs' `button-icon-demo` shows the
 square icon button this way.) Apps use their own `cn`, so a
 `extendTailwindMerge` config in the DS alone wouldn't fix it for them.
+
+## Component changes in the docs-site redesign
+
+Not from upstream; they ship with the docs-site PR (branch `feat/docs-site-redesign`) and reach the apps on their next
+sync of these items.
+
+| Component | Change | App impact |
+|---|---|---|
+| tabs | Default `TabsList` `rounded-[14px] squircle`, `TabsTrigger` `squircle rounded-[10px]` (inner radius = outer − `p-1`) | Visible: every default tabs in the portal (22 files) gets the new corners. `line` and `subtle` unchanged |
+| button | `destructive_subtle`, `destructive_ghost`, `positive`, `positive_subtle`, `positive_ghost`, `info`, `info_subtle`, `info_ghost`, mirroring the primary trio with the existing `-subtle`/`-content` tokens. The subtle borders use the color at 10% (15% dark) inline, what `primary-border` resolves to, so no new token and no `globals` sync is needed | Additive; existing variants unchanged |
 
 ## Infra decisions
 
