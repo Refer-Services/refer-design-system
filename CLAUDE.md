@@ -21,6 +21,7 @@ npm run typecheck        # tsc --noEmit
 npm run format:write     # Prettier write
 npm run format:check     # Prettier check
 npm run registry:build   # Regenerate __registry__/index.tsx and registry JSON
+npm run usage:build      # Refresh data/usage.json from the apps (REFER_APPS_DIR, default ../olympus-backend/apps)
 ```
 
 **No test framework is configured.** Use lint, typecheck, and manual preview for validation.
@@ -52,8 +53,12 @@ each component must keep, which `data-slot`s the apps target, and what was skipp
 
 ## App router structure (docs site)
 
-- `app/(app)/` — main gallery/kitchen-sink with navigation
-- `app/(examples)/` — full-page layouts (dashboards, login flows)
+- `app/(app)/` — the docs site: inset sidebar, header search (⌘K), `/` component index, `/components/[name]` per
+  component (install command, demos with Preview/Code, variations gallery with per-section code, usage in the apps).
+  `/examples/[name]` redirects to the component page.
+- Data: `lib/docs.ts` (pages from `registry.json` + `config/docs.ts`), `components/docs/demos.tsx` (demo per page),
+  `components/examples/` (galleries; list in `names.ts`), `data/usage.json` (from `npm run usage:build`).
+- Adding a demo: create `components/<name>-demo.tsx` and add it to `components/docs/demos.tsx`.
 - `app/(view)/view/[name]/` — individual component viewer
 - `app/preview/[base]/[name]/` — isolated preview routes
 
@@ -64,6 +69,9 @@ each component must keep, which `data-slot`s the apps target, and what was skipp
 - Use `cn()` from `@/lib/utils` for class merging.
 - Add `data-slot="component-name"` as a styling hook.
 - Buttons default to `rounded-full`; inputs use `rounded-input`.
+- **Concentric radii:** a nested surface's radius is the outer radius minus the padding between them (e.g. tabs list
+  `rounded-[14px]` with `p-1` around `rounded-[10px]` triggers; attachment `rounded-2xl` with `p-2` around
+  `rounded-lg` media). Check it whenever a rounded element sits inside another.
 - Icons from `lucide-react`; rely on `[&_svg:not([class*='size-'])]:size-4` for default icon sizing.
 - Import registry primitives from `@/registry/refer/ui/...`, **not** `@/components/ui`.
 

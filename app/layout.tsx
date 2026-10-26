@@ -1,86 +1,40 @@
 import type { Metadata, Viewport } from "next"
-import { cookies } from "next/headers"
 
-import { siteConfig } from "@/config/site"
+import { META_THEME_COLORS, siteConfig } from "@/config/site"
 import { fontVariables } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/registry/refer/ui/sonner"
 
 import "./globals.css"
-import { cn } from "@/lib/utils"
-import { ActiveThemeProvider } from "@/components/active-theme"
-
-const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#09090b",
-}
 
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s · ${siteConfig.name}`,
   },
-  metadataBase: new URL("https://v4.shadcn.com"),
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "Radix UI",
-  ],
-  authors: [
-    {
-      name: "shadcn",
-      url: "https://shadcn.com",
-    },
-  ],
-  creator: "shadcn",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://v4.shadcn.com",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: "https://v4.shadcn.com/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: ["https://v4.shadcn.com/opengraph-image.png"],
-    creator: "@shadcn",
-  },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 export const viewport: Viewport = {
   themeColor: META_THEME_COLORS.light,
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const cookieStore = await cookies()
-  const activeThemeValue = cookieStore.get("active_theme")?.value
-  const isScaled = activeThemeValue?.endsWith("-scaled")
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -99,8 +53,6 @@ export default async function RootLayout({
       <body
         className={cn(
           "bg-background overscroll-none font-sans antialiased",
-          activeThemeValue ? `theme-${activeThemeValue}` : "",
-          isScaled ? "theme-scaled" : "",
           fontVariables
         )}
       >
@@ -111,11 +63,9 @@ export default async function RootLayout({
           disableTransitionOnChange
           enableColorScheme
         >
-          <ActiveThemeProvider initialTheme={activeThemeValue}>
-            {children}
-            <Toaster />
-            <Analytics />
-          </ActiveThemeProvider>
+          {children}
+          <Toaster />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

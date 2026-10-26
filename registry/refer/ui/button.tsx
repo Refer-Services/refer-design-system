@@ -17,6 +17,21 @@ const buttonVariants = cva(
           "text-primary-content border border-transparent hover:border-primary-border/25 hover:bg-primary-subtle active:bg-primary/8",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 active:bg-destructive dark:bg-destructive/80 dark:hover:bg-destructive/70 border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        destructive_subtle:
+          "bg-destructive-subtle text-destructive-content hover:shadow-xs hover:bg-destructive/15 active:bg-destructive/20 border-destructive/10 dark:border-destructive/15 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        destructive_ghost:
+          "text-destructive-content border border-transparent hover:border-destructive/5 hover:bg-destructive-subtle active:bg-destructive/15",
+        positive:
+          "bg-positive text-white shadow-xs hover:bg-positive/90 active:bg-positive dark:bg-positive/80 dark:hover:bg-positive/70 border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        positive_subtle:
+          "bg-positive-subtle text-positive-content hover:shadow-xs hover:bg-positive/15 active:bg-positive/20 border-positive/10 dark:border-positive/15 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        positive_ghost:
+          "text-positive-content border border-transparent hover:border-positive/5 hover:bg-positive-subtle active:bg-positive/15",
+        info: "bg-info text-white shadow-xs hover:bg-info/90 active:bg-info dark:bg-info/80 dark:hover:bg-info/70 border-black/20 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        info_subtle:
+          "bg-info-subtle text-info-content hover:shadow-xs hover:bg-info/15 active:bg-info/20 border-info/10 dark:border-info/15 border-[0.5px] border-b-[2px] active:border-b-[0.5px]",
+        info_ghost:
+          "text-info-content border border-transparent hover:border-info/5 hover:bg-info-subtle active:bg-info/15",
         outline:
           "border border-input bg-card shadow-xs hover:bg-background active:bg-stone-100  dark:hover:bg-accent dark:active:bg-accent/60 hover:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground",
         secondary:

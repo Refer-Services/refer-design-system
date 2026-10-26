@@ -1,289 +1,231 @@
-import { Separator } from "@/registry/refer/ui/separator"
+"use client"
+
+import * as React from "react"
+import { toast } from "sonner"
+
+import { cn } from "@/lib/utils"
+
+// Class names are written out in full so Tailwind generates them.
+
+const typefaces = [
+  {
+    name: "Geist",
+    className: "font-sans",
+    variable: "--font-sans",
+    use: "Everything: UI, headings and body text.",
+  },
+  {
+    name: "Geist Mono",
+    className: "font-mono",
+    variable: "--font-mono",
+    use: "Code, keyboard shortcuts, IDs and tabular data.",
+  },
+]
+
+const scale = [
+  { className: "text-5xl", size: "48px", leading: "48px" },
+  { className: "text-4xl", size: "36px", leading: "40px" },
+  { className: "text-3xl", size: "30px", leading: "36px" },
+  { className: "text-2xl", size: "24px", leading: "32px" },
+  { className: "text-xl", size: "20px", leading: "28px" },
+  { className: "text-lg", size: "18px", leading: "28px" },
+  { className: "text-base", size: "16px", leading: "24px" },
+  { className: "text-sm", size: "14px", leading: "20px" },
+  { className: "text-xs", size: "12px", leading: "16px" },
+]
+
+const weights = [
+  { className: "font-normal", value: "400" },
+  { className: "font-medium", value: "500" },
+  { className: "font-semibold", value: "550", note: "Refer: 550, not 600" },
+  { className: "font-bold", value: "700" },
+]
+
+const styles = [
+  {
+    name: "Page title",
+    className: "text-3xl font-semibold tracking-tight",
+    sample: "Candidates",
+  },
+  {
+    name: "Section title",
+    className: "text-lg font-semibold",
+    sample: "Referral details",
+  },
+  {
+    name: "Body",
+    className: "text-sm",
+    sample: "Ana worked with Marina for three years on the design team.",
+  },
+  {
+    name: "Secondary text",
+    className: "text-muted-foreground text-sm",
+    sample: "Moved to Interview two days ago.",
+  },
+  {
+    name: "Label",
+    className:
+      "text-muted-foreground text-xs font-medium tracking-wide uppercase",
+    sample: "Open roles",
+  },
+  {
+    name: "Mono caption",
+    className: "text-muted-foreground font-mono text-xs",
+    sample: "job_8f2c41 · updated 12:04",
+  },
+]
+
+function copy(className: string) {
+  navigator.clipboard
+    .writeText(className)
+    .then(() => toast(`Copied ${className}`))
+    .catch(() => toast.error("Couldn't copy to the clipboard"))
+}
+
+function Section({
+  title,
+  description,
+  children,
+}: {
+  title: string
+  description: string
+  children: React.ReactNode
+}) {
+  return (
+    <section className="flex flex-col gap-5">
+      <div className="flex flex-col gap-1">
+        <h3 className="text-base font-semibold">{title}</h3>
+        <p className="text-muted-foreground text-sm">{description}</p>
+      </div>
+      {children}
+    </section>
+  )
+}
+
+function Meta({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="text-muted-foreground font-mono text-xs">{children}</span>
+  )
+}
 
 export function TypographyDemo() {
   return (
-    <div>
-      <p className="text-muted-foreground mb-2 text-xs tracking-widest uppercase">
-        Sizes
-      </p>
-      <p className="text-5xl font-medium">
-        The quick brown fox jumps over...{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          5xl - 48px
-        </span>
-      </p>
-      <p className="text-4xl">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          4xl - 36px
-        </span>
-      </p>
-      <p className="text-3xl">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          3xl - 30px
-        </span>
-      </p>
-      <p className="text-2xl">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          2xl - 24px
-        </span>
-      </p>
-      <p className="text-xl">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          xl - 20px
-        </span>
-      </p>
-      <p className="text-lg">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          lg - 18px
-        </span>
-      </p>
-      <p className="text-base">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          md - 16px
-        </span>
-      </p>
-      <p className="text-sm">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          sm - 14px
-        </span>
-      </p>
-      <p className="text-xs">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs">
-          xs - 12px
-        </span>
-      </p>
+    <div className="flex w-full flex-col gap-14">
+      <Section
+        title="Typefaces"
+        description="Two families, loaded with next/font and exposed as CSS variables."
+      >
+        <div className="grid gap-4 @2xl:grid-cols-2">
+          {typefaces.map((face) => (
+            <button
+              key={face.name}
+              type="button"
+              onClick={() => copy(face.className)}
+              title={`Copy ${face.className}`}
+              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-6 rounded-2xl p-6 text-left transition-colors"
+            >
+              <span className={cn("text-6xl leading-none", face.className)}>
+                Aa
+              </span>
+              <span className="flex flex-col gap-1">
+                <span className="font-semibold">{face.name}</span>
+                <span className="text-muted-foreground text-sm">
+                  {face.use}
+                </span>
+              </span>
+              <span
+                className={cn("text-muted-foreground text-sm", face.className)}
+              >
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+              </span>
+              <Meta>
+                {face.className} · var({face.variable})
+              </Meta>
+            </button>
+          ))}
+        </div>
+      </Section>
 
-      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
-        Font wheight
-      </p>
-      <p className="text-sm font-normal">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-normal - 400
-        </span>
-      </p>
-      <p className="text-sm font-medium">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-medium - 500
-        </span>
-      </p>
-      <p className="text-sm font-semibold">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-semibold - 550 (Edit to variable)
-        </span>
-      </p>
-      <p className="text-sm font-bold">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal">
-          font-bold - 700
-        </span>
-      </p>
+      <Section
+        title="Scale"
+        description="Tailwind's type scale with its default line heights."
+      >
+        <div className="divide-border-low flex flex-col divide-y">
+          {scale.map((step) => (
+            <button
+              key={step.className}
+              type="button"
+              onClick={() => copy(step.className)}
+              title={`Copy ${step.className}`}
+              className="hover:bg-background -mx-3 flex items-baseline gap-6 rounded-lg px-3 py-3 text-left transition-colors"
+            >
+              <span className="flex w-28 shrink-0 flex-col">
+                <span className="font-mono text-xs font-medium">
+                  {step.className}
+                </span>
+                <Meta>
+                  {step.size} / {step.leading}
+                </Meta>
+              </span>
+              <span className={cn("min-w-0 truncate", step.className)}>
+                Refer the people you&apos;d hire again
+              </span>
+            </button>
+          ))}
+        </div>
+      </Section>
 
-      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
-        Leading
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-none">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-none 1 - 100%
-        </span>
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-tight">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-tight 1.25 - 125%
-        </span>
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-snug">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-snug 1.375 - 137,5%
-        </span>
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-normal">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-normal 1.5 - 150%
-        </span>
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-relaxed">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-relaxed 1.625 - 162,5%
-        </span>
-      </p>
-      <p className="bg-positive-subtle mb-0.5 text-sm leading-loose">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-positive text-xs font-normal">
-          leading-loose 2 - 200%
-        </span>
-      </p>
+      <Section
+        title="Weights"
+        description="The four weights in use. Refer sets font-semibold to 550 in the theme."
+      >
+        <div className="grid grid-cols-2 gap-4 @xl:grid-cols-4">
+          {weights.map((weight) => (
+            <button
+              key={weight.className}
+              type="button"
+              onClick={() => copy(weight.className)}
+              title={`Copy ${weight.className}`}
+              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-4 rounded-2xl p-5 text-left transition-colors"
+            >
+              <span className={cn("text-4xl leading-none", weight.className)}>
+                Aa
+              </span>
+              <span className="flex flex-col gap-0.5">
+                <span className="font-mono text-xs font-medium">
+                  {weight.className}
+                </span>
+                <Meta>{weight.note ?? weight.value}</Meta>
+              </span>
+            </button>
+          ))}
+        </div>
+      </Section>
 
-      <p className="text-muted-foreground mt-6 mb-2 text-xs tracking-widest uppercase">
-        Tracking
-      </p>
-      <p className="text-sm tracking-tighter">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-tighter -5%
-        </span>
-      </p>
-      <p className="text-sm tracking-tight">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-tight -2,5%
-        </span>
-      </p>
-      <p className="text-sm tracking-normal">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-normal
-        </span>
-      </p>
-      <p className="text-sm tracking-wide">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-wide 2,5%
-        </span>
-      </p>
-      <p className="text-sm tracking-wider">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-wider 5%
-        </span>
-      </p>
-      <p className="text-sm tracking-widest">
-        The quick brown fox jumps over the lazy dog.{" "}
-        <span className="text-muted-foreground bg-muted rounded rounded-sm px-1 text-xs font-normal tracking-normal">
-          tracking-widest 10%
-        </span>
-      </p>
-
-      <Separator className="my-4" />
-
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        The Joke Tax Chronicles
-      </h1>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        Once upon a time, in a far-off land, there was a very lazy king who
-        spent all day lounging on his throne. One day, his advisors came to him
-        with a problem: the kingdom was running out of money.
-      </p>
-      <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-        The King's Plan
-      </h2>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        The king thought long and hard, and finally came up with{" "}
-        <a
-          href="#"
-          className="text-primary font-medium underline underline-offset-4"
-        >
-          a brilliant plan
-        </a>
-        : he would tax the jokes in the kingdom.
-      </p>
-      <blockquote className="mt-6 border-l-2 pl-6 italic">
-        "After all," he said, "everyone enjoys a good joke, so it's only fair
-        that they should pay for the privilege."
-      </blockquote>
-      <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-        The Joke Tax
-      </h3>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        The king's subjects were not amused. They grumbled and complained, but
-        the king was firm:
-      </p>
-      <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-        <li>1st level of puns: 5 gold coins</li>
-        <li>2nd level of jokes: 10 gold coins</li>
-        <li>3rd level of one-liners : 20 gold coins</li>
-      </ul>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        As a result, people stopped telling jokes, and the kingdom fell into a
-        gloom. But there was one person who refused to let the king's
-        foolishness get him down: a court jester named Jokester.
-      </p>
-      <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-        Jokester's Revolt
-      </h3>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        Jokester began sneaking into the castle in the middle of the night and
-        leaving jokes all over the place: under the king's pillow, in his soup,
-        even in the royal toilet. The king was furious, but he couldn't seem to
-        stop Jokester.
-      </p>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        And then, one day, the people of the kingdom discovered that the jokes
-        left by Jokester were so funny that they couldn't help but laugh. And
-        once they started laughing, they couldn't stop.
-      </p>
-      <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-        The People's Rebellion
-      </h3>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        The people of the kingdom, feeling uplifted by the laughter, started to
-        tell jokes and puns again, and soon the entire kingdom was in on the
-        joke.
-      </p>
-      <div className="my-6 w-full overflow-y-auto">
-        <table className="w-full">
-          <thead>
-            <tr className="even:bg-muted m-0 border-t p-0">
-              <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-                King's Treasury
-              </th>
-              <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-                People's happiness
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="even:bg-muted m-0 border-t p-0">
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Empty
-              </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Overflowing
-              </td>
-            </tr>
-            <tr className="even:bg-muted m-0 border-t p-0">
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Modest
-              </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Satisfied
-              </td>
-            </tr>
-            <tr className="even:bg-muted m-0 border-t p-0">
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Full
-              </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Ecstatic
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        The king, seeing how much happier his subjects were, realized the error
-        of his ways and repealed the joke tax. Jokester was declared a hero, and
-        the kingdom lived happily ever after.
-      </p>
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-        The moral of the story is: never underestimate the power of a good laugh
-        and always be careful of bad ideas.
-      </p>
+      <Section
+        title="Text styles in use"
+        description="Combinations the DS and its apps repeat. Click a row to copy its classes."
+      >
+        <div className="divide-border-low flex flex-col divide-y">
+          {styles.map((style) => (
+            <button
+              key={style.name}
+              type="button"
+              onClick={() => copy(style.className)}
+              title={`Copy ${style.className}`}
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
+            >
+              <span className="flex flex-col gap-0.5">
+                <span className="text-sm font-medium">{style.name}</span>
+                <Meta>{style.className}</Meta>
+              </span>
+              <span className={cn("min-w-0", style.className)}>
+                {style.sample}
+              </span>
+            </button>
+          ))}
+        </div>
+      </Section>
     </div>
   )
 }

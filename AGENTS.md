@@ -84,15 +84,16 @@ It explains **what this project is**, **where to make changes**, and **how not t
 
 ### App router structure (docs site)
 
-- **`app/(app)/`**: Main gallery / kitchen-sink app with navigation.
-- **`app/(examples)/`**: Full-page example layouts (e.g. dashboards).
+- **`app/(app)/`**: The docs site: `/` component index and `/components/[name]` pages (install, demos with
+  Preview/Code, variations, usage in the apps). Data in `lib/docs.ts`, `components/docs/demos.tsx`,
+  `components/examples/` and `data/usage.json` (`npm run usage:build`).
 - **`app/(view)/view/[name]/`**: Individual component viewer route.
 - **`app/preview/[base]/[name]/`**: Isolated preview routes.
 
 **Typical agent tasks**:
 
-- **Add a new example page**: Extend routes under `app/(examples)/`.
-- **Change how a component is presented**: Update demos in `components/*-demo.tsx` and relevant `app/(app)/` views.
+- **Add or change a demo**: Edit `components/<name>-demo.tsx` and register it in `components/docs/demos.tsx`.
+- **Refresh usage stats**: `npm run usage:build` with the apps checked out next to this repo.
 
 ---
 
@@ -136,6 +137,8 @@ It explains **what this project is**, **where to make changes**, and **how not t
   - Components use `data-slot="component-name"` as a styling hook.
   - Buttons default to **`rounded-full`**.
   - Inputs use **`rounded-input`**.
+  - **Concentric radii**: a nested surface's radius = outer radius minus the padding between them (tabs list
+    `rounded-[14px]` + `p-1` around `rounded-[10px]` triggers).
   - Icons come from `lucide-react`, and components rely on:
     - `[&_svg:not([class*='size-'])]:size-4` for a default icon size.
 - **Imports**

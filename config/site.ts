@@ -1,18 +1,14 @@
 export const siteConfig = {
-  name: "shadcn/ui",
+  name: "Refer DS",
   url: "https://ds.tryrefer.com",
-  ogImage: "https://ds.tryrefer.com/og.jpg",
   description:
-    "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
-  links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
-  },
+    "Refer's design system: the components the Refer apps install from this registry, with demos, code and where each one is used.",
+  registryNamespace: "@refer",
 }
 
 export type SiteConfig = typeof siteConfig
 
 export const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#09090b",
+  light: "#fafaf9",
+  dark: "#171717",
 }

@@ -179,7 +179,7 @@ export const Index: Record<string, any> = {
   },
   "button": {
     name: "button",
-    description: "Refer button (rounded-full) with primary, subtle, ghost, outline, destructive and link variants; sizes xs-lg and icon.",
+    description: "Refer button (rounded-full). Primary, destructive, positive and info in solid, _subtle and _ghost variants; secondary, outline, subtle, ghost and link; sizes xs-lg and icon.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{

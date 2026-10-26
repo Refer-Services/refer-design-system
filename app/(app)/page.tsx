@@ -1,283 +1,56 @@
-import { AccordionDemo } from "@/components/accordion-demo"
-import { AlertDemo } from "@/components/alert-demo"
-import { AlertDialogDemo } from "@/components/alert-dialog-demo"
-import { AspectRatioDemo } from "@/components/aspect-ratio-demo"
-import { AttachmentDemo } from "@/components/attachment-demo"
-import { AvatarDemo } from "@/components/avatar-demo"
-import { BadgeDemo } from "@/components/badge-demo"
-import { BubbleDemo } from "@/components/bubble-demo"
-import { BreadcrumbDemo } from "@/components/breadcrumb-demo"
-import { ButtonDemo } from "@/components/button-demo"
-import { ButtonGroupDemo } from "@/components/button-group-demo"
-import { CalendarDemo } from "@/components/calendar-demo"
-import { CardDemo } from "@/components/card-demo"
-import { CarouselDemo } from "@/components/carousel-demo"
-// import { ChartDemo } from "@/components/chart-demo"
-import { CheckboxDemo } from "@/components/checkbox-demo"
-import { CodeBlockDemo } from "@/components/code-block-demo"
-import { CollapsibleDemo } from "@/components/collapsible-demo"
-import { ComboboxDemo } from "@/components/combobox-demo"
-import { ComboboxExample } from "@/components/combobox2-demo"
-import { CommandDemo } from "@/components/command-demo"
-import { ComponentWrapper } from "@/components/component-wrapper"
-import { ContextMenuDemo } from "@/components/context-menu-demo"
-import { DatePickerDemo } from "@/components/date-picker-demo"
-import { DialogDemo } from "@/components/dialog-demo"
-import { DirectionDemo } from "@/components/direction-demo"
-import { DrawerDemo } from "@/components/drawer-demo"
-import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
-import { EmptyExample } from "@/components/empty-demo"
-import { FieldDemo } from "@/components/field-demo"
-import { FormDemo } from "@/components/form-demo"
-import { HoverCardDemo } from "@/components/hover-card-demo"
-import { InputDemo } from "@/components/input-demo"
-import { InputOTPDemo } from "@/components/input-otp-demo"
-import { ItemDemo } from "@/components/item-demo"
-import { KbdDemo } from "@/components/kbd-demo"
-import { LabelDemo } from "@/components/label-demo"
-import { MarkerDemo } from "@/components/marker-demo"
-import { MessageDemo } from "@/components/message-demo"
-import { MessageScrollerDemo } from "@/components/message-scroller-demo"
-import { MenubarDemo } from "@/components/menubar-demo"
-import { NativeSelectDemo } from "@/components/native-select-demo"
-import { NavigationMenuDemo } from "@/components/navigation-menu-demo"
-import { PaginationDemo } from "@/components/pagination-demo"
-import { PopoverDemo } from "@/components/popover-demo"
-import { ProgressDemo } from "@/components/progress-demo"
-import { QuestionnaireDemo } from "@/components/questionnaire-demo"
-import { RadioGroupDemo } from "@/components/radio-group-demo"
-import { ResizableDemo } from "@/components/resizable-demo"
-import { ScrollAreaDemo } from "@/components/scroll-area-demo"
-import { SelectDemo } from "@/components/select-demo"
-import { SelectExample } from "@/components/select2-demo"
-import { SeparatorDemo } from "@/components/separator-demo"
-import { ShadowDemo } from "@/components/shadow-demo"
-import { SheetDemo } from "@/components/sheet-demo"
-import { SkeletonDemo } from "@/components/skeleton-demo"
-import { SliderDemo } from "@/components/slider-demo"
-import { SonnerDemo } from "@/components/sonner-demo"
-import { SpinnerDemo } from "@/components/spinner-demo"
-import { SwitchDemo } from "@/components/switch-demo"
-import { TableDemo } from "@/components/table-demo"
-import { TabsDemo } from "@/components/tabs-demo"
-import { TextareaDemo } from "@/components/textarea-demo"
-import { ToastDemo } from "@/components/toast-demo"
-import { ToggleDemo } from "@/components/toggle-demo"
-import { ToggleGroupDemo } from "@/components/toggle-group-demo"
-import { TooltipDemo } from "@/components/tooltip-demo"
-import { TraceDemo } from "@/components/trace-demo"
-import { TypographyDemo } from "@/components/typography-demo"
+import Link from "next/link"
 
-export default function SinkPage() {
+import { getDocsItems, getUsageCount, getUsageMeta } from "@/lib/docs"
+import { ComponentIndex } from "@/components/docs/component-index"
+
+export default function ComponentsPage() {
+  const items = getDocsItems()
+  const foundations = items.filter((item) => item.kind === "foundation")
+  const components = items
+    .filter((item) => item.kind === "component")
+    .map((item) => ({ ...item, uses: getUsageCount(item.name) }))
+  const meta = getUsageMeta()
+
   return (
-    <div className="@container grid flex-1 gap-5 p-6">
-      {/* <ComponentWrapper name="chart" className="w-full">
-        <ChartDemo />
-      </ComponentWrapper> */}
-      <ComponentWrapper name="Typography">
-        <TypographyDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="Shadow">
-        <ShadowDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="accordion">
-        <AccordionDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="alert">
-        <AlertDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="alert-dialog">
-        <AlertDialogDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="aspect-ratio">
-        <AspectRatioDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="attachment">
-        <AttachmentDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="avatar">
-        <AvatarDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="badge">
-        <BadgeDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="bubble">
-        <BubbleDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="breadcrumb">
-        <BreadcrumbDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="button">
-        <ButtonDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="button-group">
-        <ButtonGroupDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="calendar">
-        <CalendarDemo />
-      </ComponentWrapper>
-      <ComponentWrapper
-        name="card"
-        className="bg-background border border-[.5px]"
-      >
-        <CardDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="carousel">
-        <CarouselDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="checkbox">
-        <CheckboxDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="code-block">
-        <CodeBlockDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="collapsible">
-        <CollapsibleDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="combobox">
-        <ComboboxDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="combobox-2">
-        <ComboboxExample />
-      </ComponentWrapper>
-      <ComponentWrapper name="command">
-        <CommandDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="context-menu">
-        <ContextMenuDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="date-picker">
-        <DatePickerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="dialog">
-        <DialogDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="direction">
-        <DirectionDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="drawer">
-        <DrawerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="dropdown-menu">
-        <DropdownMenuDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="empty">
-        <EmptyExample />
-      </ComponentWrapper>
-      <ComponentWrapper name="field">
-        <FieldDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="form">
-        <FormDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="hover-card">
-        <HoverCardDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="input">
-        <InputDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="input-otp">
-        <InputOTPDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="item">
-        <ItemDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="kbd">
-        <KbdDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="label">
-        <LabelDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="marker">
-        <MarkerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="message">
-        <MessageDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="message-scroller">
-        <MessageScrollerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="menubar">
-        <MenubarDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="native-select">
-        <NativeSelectDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="navigation-menu">
-        <NavigationMenuDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="pagination">
-        <PaginationDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="popover">
-        <PopoverDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="progress">
-        <ProgressDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="questionnaire">
-        <QuestionnaireDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="radio-group">
-        <RadioGroupDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="resizable">
-        <ResizableDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="scroll-area">
-        <ScrollAreaDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="select">
-        <SelectDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="select-2">
-        <SelectExample />
-      </ComponentWrapper>
-      <ComponentWrapper name="separator">
-        <SeparatorDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="sheet">
-        <SheetDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="skeleton">
-        <SkeletonDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="slider">
-        <SliderDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="sonner">
-        <SonnerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="spinner">
-        <SpinnerDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="switch">
-        <SwitchDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="table">
-        <TableDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="tabs">
-        <TabsDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="textarea">
-        <TextareaDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="toast">
-        <ToastDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="toggle">
-        <ToggleDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="toggle-group">
-        <ToggleGroupDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="tooltip">
-        <TooltipDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="trace">
-        <TraceDemo />
-      </ComponentWrapper>
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-10 md:px-10 md:py-14">
+      <header className="flex max-w-2xl flex-col gap-3">
+        <h1 className="text-3xl font-semibold tracking-tight text-balance">
+          Components
+        </h1>
+        <p className="text-muted-foreground text-pretty">
+          Everything the Refer apps can install from this registry. Open a
+          component for its demo, code and where it&apos;s used. Install any of
+          them with{" "}
+          <code className="bg-muted rounded-md px-1.5 py-0.5 font-mono text-sm">
+            npx shadcn@latest add @refer/&lt;name&gt;
+          </code>
+          .
+        </p>
+      </header>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
+          Foundations
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {foundations.map((item) => (
+            <Link
+              key={item.name}
+              href={`/components/${item.name}`}
+              className="bg-background hover:bg-accent rounded-input px-3.5 py-2 text-sm font-medium transition-colors"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <ComponentIndex items={components} />
+
+      <p className="text-muted-foreground text-xs">
+        Usage counts are files importing the component in {meta.apps.join(", ")}
+        , from {meta.source.repo}@{meta.source.commit}.
+      </p>
     </div>
   )
 }
