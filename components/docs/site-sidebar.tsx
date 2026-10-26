@@ -25,7 +25,6 @@ export function SiteSidebar({
   const pathname = usePathname()
   const foundations = items.filter((item) => item.kind === "foundation")
   const components = items.filter((item) => item.kind === "component")
-  const fresh = components.filter((item) => item.isNew)
 
   return (
     <Sidebar variant="inset" {...props}>
@@ -55,17 +54,6 @@ export function SiteSidebar({
               All components
             </NavLink>
             {foundations.map((item) => (
-              <NavLink
-                key={item.name}
-                href={`/components/${item.name}`}
-                active={pathname === `/components/${item.name}`}
-              >
-                {item.title}
-              </NavLink>
-            ))}
-          </NavGroup>
-          <NavGroup label="New">
-            {fresh.map((item) => (
               <NavLink
                 key={item.name}
                 href={`/components/${item.name}`}
