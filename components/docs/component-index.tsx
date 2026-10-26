@@ -19,7 +19,7 @@ export function ComponentIndex({ items }: { items: IndexItem[] }) {
 
   return (
     <Tabs defaultValue="all" className="gap-6">
-      <TabsList variant="line">
+      <TabsList>
         <TabsTrigger value="all">
           All <Count value={items.length} />
         </TabsTrigger>
