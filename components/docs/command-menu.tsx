@@ -94,9 +94,9 @@ export function CommandMenu({ items }: { items: DocsItem[] }) {
                 value={`${item.title} ${item.name} ${item.description ?? ""}`}
                 onSelect={() => go(item.name)}
               >
-                <span>{item.title}</span>
+                <span className="shrink-0">{item.title}</span>
                 {item.description && (
-                  <span className="text-muted-foreground ml-2 truncate text-xs">
+                  <span className="text-muted-foreground group-data-[selected=true]/command-item:text-primary-foreground/80 ml-2 truncate text-xs">
                     {item.description}
                   </span>
                 )}
