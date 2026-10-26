@@ -6,6 +6,7 @@ import { AvatarExample } from "@/components/examples/avatar-example"
 import { BubbleExample } from "@/components/examples/bubble-example"
 import { ButtonGroupExample } from "@/components/examples/button-group-example"
 import { CodeBlockExample } from "@/components/examples/code-block-example"
+import { CommandExample } from "@/components/examples/command-example"
 import { DrawerExample } from "@/components/examples/drawer-example"
 import { FieldExample } from "@/components/examples/field-example"
 import { ItemExample } from "@/components/examples/item-example"
@@ -32,6 +33,7 @@ export const examples: Record<ExampleName, React.ComponentType> = {
   bubble: BubbleExample,
   "button-group": ButtonGroupExample,
   "code-block": CodeBlockExample,
+  command: CommandExample,
   drawer: DrawerExample,
   field: FieldExample,
   item: ItemExample,
