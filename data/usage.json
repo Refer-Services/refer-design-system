@@ -1,0 +1,2654 @@
+{
+  "generatedAt": "2026-10-26T17:33:01.355Z",
+  "source": {
+    "repo": "olympus-backend",
+    "commit": "2ee40d05e"
+  },
+  "apps": [
+    "portal",
+    "argus",
+    "landing",
+    "partners"
+  ],
+  "components": {
+    "accordion": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/dashboard/faq-panel.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateHistoryTimeline.tsx",
+          "components/requests/company/applications/CandidateRequests.tsx",
+          "components/requests/company/applications/YourRequests.tsx",
+          "components/requests/company/pending/GeneralInterest.tsx",
+          "components/requests/company/pending/OldRequests.tsx",
+          "components/requests/company/shared/components/DeclinedApplicationsAccordion.tsx",
+          "components/requirements/JobRequirementAccordion.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/faq-panel.tsx"
+        ]
+      }
+    },
+    "alert": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "alert-dialog": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/integrations/slack/SlackConnection.tsx",
+          "components/positions/details/pipeline/JobPipeline.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/application-hire/ApplicationHirePanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CandidateEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-contact-editor/CompanyContactEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-editor/CompanyEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/extension-access/ExtensionAccessPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterLevelScoreEditor.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/team-panel.tsx"
+        ]
+      }
+    },
+    "aspect-ratio": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "attachment": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "avatar": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/ApplyJobHeader.tsx",
+          "components/apply/search/filters/CompanyFilter.tsx",
+          "components/apply/search/filters/WereOnItDialog.tsx",
+          "components/connections/company/shared/components/CandidateRow.tsx",
+          "components/header/Announcement.tsx",
+          "components/positions/details/lists/JobRequestsBoard.tsx",
+          "components/positions/details/pipeline/PipelineCandidateCard.tsx",
+          "components/positions/details/pipeline/PipelineDiscardedPanel.tsx",
+          "components/positions/details/shared/components/CandidateListCard.tsx",
+          "components/positions/details/shared/components/SelectableAvatar.tsx",
+          "components/profile/company/CompanyIdentity.tsx",
+          "components/profile/public-profile/PublicProfileView.tsx",
+          "components/requests/company/applications/YourRequests.tsx",
+          "components/requests/company/pending/GeneralInterest.tsx",
+          "components/requests/company/pending/OldRequests.tsx",
+          "components/requests/company/shared/components/CandidateRequestListItem.tsx",
+          "components/requests/company/shared/components/DeclinedApplicationsAccordion.tsx",
+          "components/search/candidate/JobCard.tsx",
+          "components/search/candidate/RecommendedJobCard.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/candidate/job-detail/JobHeaderCard.tsx",
+          "components/search/company/AllEngineersList.tsx",
+          "components/search/company/CandidateAvatar.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/shared/candidate/applications/components/CompanyAvatar.tsx",
+          "components/shared/candidate/company-request/CompanyRequestForm.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobDetailsHeader.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/AvatarPair.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/CandidateCard.tsx",
+          "components/sidebar/LiaHeader.tsx",
+          "components/sidebar/UserDisplay.tsx",
+          "components/sidebar/user-display/LogoutDialog.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx",
+          "components/who-you-are/sections/ProfileIdentitySection.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/hephaestus/_compoments/CompanyList.tsx",
+          "app/(pages)/hermes/_compoments/JobSeekerList.tsx",
+          "app/_components/navbar.tsx",
+          "app/_components/sidebar.tsx",
+          "components/form/profile-form.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "badge": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/account-status/CompanyReviewingScreen.tsx",
+          "components/account-status/RejectedScreen.tsx",
+          "components/account-status/WaitlistConfirmedScreen.tsx",
+          "components/apply/search/filters/WereOnItDialog.tsx",
+          "components/connections/company/general-interest/GeneralInterest.tsx",
+          "components/connections/company/jobs/CandidatesConnected.tsx",
+          "components/connections/company/shared/components/CandidateRow.tsx",
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/invitations/InvitationDashboard.tsx",
+          "components/jobs/add-jobs/steps/PickStep.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/jobs/home/AutoAddRow.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/select-jobs/JobMembersPopover.tsx",
+          "components/jobs/select-jobs/JobRow.tsx",
+          "components/jobs/your-jobs/YourJobsItem.tsx",
+          "components/positions/details/card/PositionDetailsCard.tsx",
+          "components/positions/details/pipeline/PipelineCandidateCard.tsx",
+          "components/positions/details/pipeline/PipelineCandidateFeedback.tsx",
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateProfileTab.tsx",
+          "components/positions/details/share/RoleBadge.tsx",
+          "components/positions/details/shared/components/CandidateMatchBadge.tsx",
+          "components/positions/details/shared/components/CandidateOriginBadge.tsx",
+          "components/positions/details/shared/components/CandidateRatingBadge.tsx",
+          "components/positions/details/shared/components/CandidateSourceBadge.tsx",
+          "components/positions/details/shared/components/CountBadge.tsx",
+          "components/profile/company/points-of-contact/ActiveContactRow.tsx",
+          "components/profile/company/points-of-contact/InvitedContactRow.tsx",
+          "components/requests/company/applications/CandidateRequests.tsx",
+          "components/requests/company/applications/YourRequests.tsx",
+          "components/requests/company/jobs/JobApplicationsList.tsx",
+          "components/requests/company/jobs/JobDeclinedApplicationsList.tsx",
+          "components/requests/company/pending/GeneralInterest.tsx",
+          "components/requests/company/shared/components/AppealBadge.tsx",
+          "components/requests/company/shared/components/DeclinedApplicationsAccordion.tsx",
+          "components/requirements/JobRequirementAccordion.tsx",
+          "components/search/candidate/companies/CompanyRequests.tsx",
+          "components/search/candidate/companies/Connections.tsx",
+          "components/search/candidate/companies/YourRequests.tsx",
+          "components/search/candidate/job-detail/ApplicationStatusBadge.tsx",
+          "components/search/company/candidate-detail/Requests.tsx",
+          "components/shared/candidate/applications/components/AppealBadge.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobStatusBadge.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/CreditsBanner.tsx",
+          "components/shared/company/dialogs/candidate-details/job-card/CandidateRequestJobCard.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/YourRequestJobCard.tsx",
+          "components/sidebar/DailyCreditsAlert.tsx",
+          "components/sidebar/NavigationLink.tsx",
+          "components/tracker/ManagedRow.tsx",
+          "components/tracker/TrackedJobRow.tsx",
+          "components/tracker/TrackerPill.tsx",
+          "utils/renderRoles.tsx",
+          "utils/renderWorkModels.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customizable-home.tsx",
+          "app/(main)/_components/customize-home-sheet.tsx",
+          "app/(pages)/(internal-tools)/birthdays/page.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/application-hire/ApplicationHirePanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CareersSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/extension-access/ExtensionAccessPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLinkSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLocationsSection.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/announcement-dialog.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/copilot-style-dialog.tsx",
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/team-panel.tsx",
+          "components/extension/connect-extension.tsx"
+        ]
+      }
+    },
+    "breadcrumb": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/header/Breadcrumbs.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "bubble": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/NotesTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/noteScore.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "button": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(auth)/magic-link/page.tsx",
+          "app/(ui-company)/(jobs)/Jobs.tsx",
+          "app/(unsafe-routes)/application-appeal/page.tsx",
+          "app/(unsafe-routes)/apply/confirm/ConfirmApplication.tsx",
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/ApplicationForm.tsx",
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/ApplyButton.tsx",
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/page.tsx",
+          "app/(unsafe-routes)/email-action/page.tsx",
+          "app/(unsafe-routes)/feedback/page.tsx",
+          "app/(unsafe-routes)/jobs/[publicId]/ApplySheet.tsx",
+          "app/error.tsx",
+          "app/not-found.tsx",
+          "components/account-status/RedeemCodeForm.tsx",
+          "components/account-status/ReferEarnPromo.tsx",
+          "components/account-status/ReviewingScreen.tsx",
+          "components/account/DeleteAccountDialog.tsx",
+          "components/apply/ApplyConfirmDialog.tsx",
+          "components/apply/ApplyExternallyButton.tsx",
+          "components/apply/ApplyJobsFeed.tsx",
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/apply/ApplyViaReferButton.tsx",
+          "components/apply/search/filters/WereOnItDialog.tsx",
+          "components/connections/company/general-interest/GeneralInterest.tsx",
+          "components/connections/company/jobs/JobApplicationsList.tsx",
+          "components/connections/company/shared/components/ConnectionsEmptyState.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/extension/connect-extension.tsx",
+          "components/extension/extension-install.tsx",
+          "components/extension/extension-launch-banner.tsx",
+          "components/form/login-form.tsx",
+          "components/header/AddContactButton.tsx",
+          "components/header/Announcement.tsx",
+          "components/header/Header.tsx",
+          "components/header/InviteFriendModal.tsx",
+          "components/header/ReportProblem.tsx",
+          "components/hire-lia/AskIntrosPitch.tsx",
+          "components/hire-lia/HireLiaButton.tsx",
+          "components/hire-lia/HireLiaDialog.tsx",
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/hire-lia/signup/HireLiaSignupForm.tsx",
+          "components/integrations/slack/OpenSlack.tsx",
+          "components/integrations/slack/SlackCallback.tsx",
+          "components/integrations/slack/SlackConnection.tsx",
+          "components/integrations/slack/SlackLink.tsx",
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/invitations/InvitationDashboard.tsx",
+          "components/jobs/add-jobs/AddJobsDialog.tsx",
+          "components/jobs/add-jobs/ImportStatus.tsx",
+          "components/jobs/add-jobs/WelcomeStep.tsx",
+          "components/jobs/add-jobs/steps/BriefStep.tsx",
+          "components/jobs/add-jobs/steps/ErrorStep.tsx",
+          "components/jobs/add-jobs/steps/PickStep.tsx",
+          "components/jobs/add-jobs/steps/ReadingStep.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/dialogs/edit-jobs/BulkTransferOrClosePrompt.tsx",
+          "components/jobs/dialogs/edit-jobs/EditJobsDialog.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/jobs/home/AutoAddRow.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/home/OthersTab.tsx",
+          "components/jobs/home/PastJobs.tsx",
+          "components/jobs/home/SelectJobsBar.tsx",
+          "components/jobs/job-board/HelpDialog.tsx",
+          "components/jobs/job-board/JobBoard.tsx",
+          "components/jobs/job-board/JobBoardForm.tsx",
+          "components/jobs/no-jobs/NoJobs.tsx",
+          "components/jobs/select-jobs/JobRow.tsx",
+          "components/jobs/select-jobs/RequestRoleMenu.tsx",
+          "components/jobs/select-jobs/SelectableJobsList.tsx",
+          "components/jobs/your-jobs/YourJobsHeader.tsx",
+          "components/positions/details/PositionDescriptionPanel.tsx",
+          "components/positions/details/PositionRequirements.tsx",
+          "components/positions/details/card/JobActionsMenu.tsx",
+          "components/positions/details/card/JobVisibilityButton.tsx",
+          "components/positions/details/card/PositionDetailsCard.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/details/edit/JobEditPanel.tsx",
+          "components/positions/details/lists/DiscardedCandidatesList.tsx",
+          "components/positions/details/lists/JobCandidatesList.tsx",
+          "components/positions/details/lists/JobRequestsBoard.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/EditCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/JobPipeline.tsx",
+          "components/positions/details/pipeline/ManageStageColumnsDialog.tsx",
+          "components/positions/details/pipeline/PipelineCandidateCard.tsx",
+          "components/positions/details/pipeline/PipelineConfirmationDialog.tsx",
+          "components/positions/details/pipeline/PipelineDiscardedPanel.tsx",
+          "components/positions/details/pipeline/PipelineLoadingState.tsx",
+          "components/positions/details/pipeline/PipelineNotesSheet.tsx",
+          "components/positions/details/pipeline/PipelineToolbar.tsx",
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/AddToAnotherJob.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateDocumentViewer.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateProfileTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/NoteComposer.tsx",
+          "components/positions/details/pipeline/candidate-dialog/NotesTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/share/JobSharePopover.tsx",
+          "components/positions/details/share/ShareAccessList.tsx",
+          "components/positions/details/share/ShareGeneralAccess.tsx",
+          "components/positions/details/share/ShareInviteView.tsx",
+          "components/positions/details/share/ShareLeaveView.tsx",
+          "components/positions/details/share/ShareMemberRow.tsx",
+          "components/positions/details/share/ShareOwnerPicker.tsx",
+          "components/positions/details/share/ShareRequestRow.tsx",
+          "components/positions/details/share/ShareTransferView.tsx",
+          "components/positions/details/share/ShareUnpublishView.tsx",
+          "components/positions/dialogs/BoostJobDialog.tsx",
+          "components/positions/dialogs/CloseJobsDialog.tsx",
+          "components/positions/dialogs/DeleteJobsDialog.tsx",
+          "components/positions/dialogs/RejectRequestDialog.tsx",
+          "components/positions/dialogs/ReopenJobsDialog.tsx",
+          "components/positions/dialogs/UnassignJobsDialog.tsx",
+          "components/profile/candidate/ProfilePage.tsx",
+          "components/profile/career/AddSectionDialog.tsx",
+          "components/profile/career/CareerElementDialog.tsx",
+          "components/profile/career/CareerImprove.tsx",
+          "components/profile/career/CareerLinks.tsx",
+          "components/profile/career/CareerSection.tsx",
+          "components/profile/career/CareerTab.tsx",
+          "components/profile/career/LiaCareerBox.tsx",
+          "components/profile/career/LinkedInSyncCard.tsx",
+          "components/profile/career/MonthYearPicker.tsx",
+          "components/profile/career/media/FileViewer.tsx",
+          "components/profile/career/media/MediaEditor.tsx",
+          "components/profile/career/media/MediaViewer.tsx",
+          "components/profile/company/AddOrEditContact.tsx",
+          "components/profile/company/CompanyLogoDialog.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/profile/company/points-of-contact/ConfirmContactDialog.tsx",
+          "components/profile/company/points-of-contact/ContactActionsCell.tsx",
+          "components/profile/company/points-of-contact/InvitedContactRow.tsx",
+          "components/profile/public-profile/PreviewBar.tsx",
+          "components/profile/public-profile/ShareProfileButton.tsx",
+          "components/refer/refer-signup-form.tsx",
+          "components/refer/share-link-card.tsx",
+          "components/requests/EmailErrorToast.tsx",
+          "components/requests/FeedbackRequestedDialog.tsx",
+          "components/requests/company/RequestsContainer.tsx",
+          "components/requests/company/dialogs/AppealDialog.tsx",
+          "components/requests/company/jobs/JobApplicationsList.tsx",
+          "components/requests/company/jobs/JobDeclinedApplicationsList.tsx",
+          "components/requests/company/shared/components/AppealBadge.tsx",
+          "components/requests/company/shared/components/CandidateRequestListItem.tsx",
+          "components/requests/company/shared/components/DeclinedApplicationsAccordion.tsx",
+          "components/requests/company/shared/components/GroupedJobList.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/requirements/CompanyRequirementItem.tsx",
+          "components/requirements/CompanyRequirementsList.tsx",
+          "components/requirements/ExcludeCompanyRequirement.tsx",
+          "components/requirements/JobRequirementAccordion.tsx",
+          "components/requirements/JobRequirementsList.tsx",
+          "components/search/candidate/ConfirmationDialog.tsx",
+          "components/search/candidate/FirstAccess.tsx",
+          "components/search/candidate/JobCard.tsx",
+          "components/search/candidate/JobsContainer.tsx",
+          "components/search/candidate/JobsList.tsx",
+          "components/search/candidate/RecommendedJobCard.tsx",
+          "components/search/candidate/companies/CompanyJobs.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/candidate/companies/CompanyRequests.tsx",
+          "components/search/candidate/companies/RecommendedJobs.tsx",
+          "components/search/candidate/job-detail/ApplicationMessages.tsx",
+          "components/search/candidate/job-detail/ApplicationStatusBadge.tsx",
+          "components/search/candidate/job-detail/JobHeaderCard.tsx",
+          "components/search/company/AllEngineersList.tsx",
+          "components/search/company/AllEngineersSearch.tsx",
+          "components/search/company/CandidatesLoading.tsx",
+          "components/search/company/candidate-detail/CandidateProfileCard.tsx",
+          "components/search/company/candidate-detail/MatchedJobs.tsx",
+          "components/search/company/candidate-detail/Requests.tsx",
+          "components/search/company/filters/ExperienceFilter.tsx",
+          "components/search/company/filters/controls.tsx",
+          "components/shared/ExpandingSearchInput.tsx",
+          "components/shared/candidate/applications/components/RequestsLoadMoreButton.tsx",
+          "components/shared/candidate/company-request/CompanyRequestForm.tsx",
+          "components/shared/candidate/dialogs/appeal/AppealDialog.tsx",
+          "components/shared/candidate/dialogs/discard-job/DiscardJobDialog.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/CloseButton.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobMessageBox.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobStatusActions.tsx",
+          "components/shared/candidate/dialogs/referme-job/DailyLimitReachedDialog.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/RefermeFooter.tsx",
+          "components/shared/candidate/experience/ExperienceProofPicker.tsx",
+          "components/shared/candidate/experience/ResumeHelpLink.tsx",
+          "components/shared/company/dialogs/CompanyConfirmationDialog.tsx",
+          "components/shared/company/dialogs/PdfViewer.tsx",
+          "components/shared/company/dialogs/candidate-details/job-card/CandidateRequestJobCard.tsx",
+          "components/shared/company/dialogs/candidate-details/job-card/RecommendedJobCard.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateDetailsShell.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateHeaderActions.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/ConfirmIntroFooter.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobPicker.tsx",
+          "components/shared/company/dialogs/discard-candidate/DiscardCandidateDialog.tsx",
+          "components/shared/error-boundaries/AppErrorBoundary.tsx",
+          "components/sidebar/BoostedJobsButton.tsx",
+          "components/sidebar/user-display/HelpDialog.tsx",
+          "components/sidebar/user-display/InstructionsDialog.tsx",
+          "components/sidebar/user-display/LogoutDialog.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/tracker/AddJobButton.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/tracker/ManagedRow.tsx",
+          "components/tracker/TrackJobsPitch.tsx",
+          "components/tracker/TrackedJobRow.tsx",
+          "components/tracker/TrackerContainer.tsx",
+          "components/what-you-want/AdditionalFeedback.tsx",
+          "components/what-you-want/sections/FeedbackRow.tsx",
+          "components/what-you-want/sections/UnsavedChangesBar.tsx",
+          "components/what-you-want/sections/WillingToRelocateField.tsx",
+          "components/who-you-are/DeleteAccountCard.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx",
+          "components/who-you-are/ProfilePhotoDialog.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx",
+          "components/who-you-are/dialogs/ResumeDialog.tsx",
+          "components/who-you-are/dialogs/UpdateResumeDialog.tsx",
+          "components/who-you-are/sections/ProfileIdentitySection.tsx",
+          "components/who-you-are/sections/ResumeSection.tsx",
+          "components/who-you-are/sections/UnsavedChangesBar.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customizable-home.tsx",
+          "app/(main)/_components/customize-home-sheet.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/application-hire/ApplicationHirePanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CandidateEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CareersSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-contact-editor/CompanyContactEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-editor/CompanyEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/extension-access/ExtensionAccessPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLinkSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLocationsSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterLevelScoreEditor.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/hephaestus/_compoments/CompanyContactForm.tsx",
+          "app/(pages)/hephaestus/_compoments/CompanyDetail.tsx",
+          "app/(pages)/hephaestus/_compoments/CompanyList.tsx",
+          "app/(pages)/hephaestus/_compoments/CompanySignUpList.tsx",
+          "app/(pages)/hephaestus/_compoments/JobDetail.tsx",
+          "app/(pages)/hephaestus/_compoments/JobList.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "app/_components/JobPublicPage.tsx",
+          "app/_components/TurnOnVPN.tsx",
+          "app/_components/navbar.tsx",
+          "app/error.tsx",
+          "components/announcement-dialog.tsx",
+          "components/auth/card-wrapper.tsx",
+          "components/auth/social.tsx",
+          "components/birthday-toast.tsx",
+          "components/form/profile-form.tsx",
+          "components/form/resend-form.tsx",
+          "components/login-form.tsx",
+          "components/theme-toggle.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/companies/signup/conclusion/page.tsx",
+          "app/companies/waitlist/conclusion/page.tsx",
+          "app/components/HowItWorks.tsx",
+          "app/components/InteractingWithLia.tsx",
+          "app/components/Navigation.tsx",
+          "app/components/TalkToUs.tsx",
+          "app/error.tsx",
+          "app/for-organizations/page.tsx",
+          "app/for-your-career/page.tsx",
+          "app/invite/conclusion/page.tsx",
+          "app/invite/page.tsx",
+          "app/page.tsx",
+          "app/thanks-waitlist/page.tsx",
+          "app/waitlist/conclusion/page.tsx",
+          "components/ExpertiseItem.tsx",
+          "components/FormNavigation.tsx",
+          "components/Navigation.tsx",
+          "components/QuickSignupForm.tsx",
+          "components/consent/CookieBanner.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "app/(auth)/magic-link/page.tsx",
+          "app/error.tsx",
+          "app/not-found.tsx",
+          "app/team/join/page.tsx",
+          "components/dashboard/copilot-style-dialog.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/extension-install-card.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/team-panel.tsx",
+          "components/extension/connect-extension.tsx",
+          "components/extension/install-extension.tsx",
+          "components/feature-announcement.tsx",
+          "components/form/login-form.tsx",
+          "components/refer/refer-signup-form.tsx",
+          "components/refer/share-link-card.tsx",
+          "components/team/extension-sign-in-choice.tsx",
+          "components/team/team-connect.tsx",
+          "components/team/team-sign-in.tsx"
+        ]
+      }
+    },
+    "button-group": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "calendar": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "card": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/account-status/ReferEarnPromo.tsx",
+          "components/apply/ApplyJobCard.tsx",
+          "components/apply/FeedLoadingSentence.tsx",
+          "components/auth/card-wrapper.tsx",
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/summary-cards.tsx",
+          "components/invitations/InvitationDashboard.tsx",
+          "components/jobs/add-jobs/WelcomeStep.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/jobs/dialogs/shared/SelectJobsSkeleton.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/home/OthersTab.tsx",
+          "components/jobs/job-board/JobBoard.tsx",
+          "components/jobs/job-board/SupportedAtsProviders.tsx",
+          "components/jobs/your-jobs/YourJobsItem.tsx",
+          "components/jobs/your-jobs/YourJobsItemSkeleton.tsx",
+          "components/positions/details/PositionRequirements.tsx",
+          "components/positions/details/card/PositionDetailsCard.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/details/edit/JobEditPanel.tsx",
+          "components/positions/details/pipeline/PipelineCandidateCard.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateHistoryTimeline.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/shared/components/CandidateListCard.tsx",
+          "components/positions/details/shared/components/CandidateListSkeleton.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/requests/company/pending/OldRequests.tsx",
+          "components/requirements/CompanyRequirementItem.tsx",
+          "components/search/candidate/FirstAccess.tsx",
+          "components/search/candidate/JobCard.tsx",
+          "components/search/candidate/JobCardSkeleton.tsx",
+          "components/search/candidate/RecommendedJobCard.tsx",
+          "components/search/candidate/companies/CompanyJobs.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/candidate/companies/CompanyRequests.tsx",
+          "components/search/candidate/companies/Connections.tsx",
+          "components/search/candidate/companies/RecommendedJobs.tsx",
+          "components/search/candidate/companies/YourRequests.tsx",
+          "components/search/candidate/job-detail/JobDescriptionCard.tsx",
+          "components/search/candidate/job-detail/JobHeaderCard.tsx",
+          "components/search/company/AllEngineersList.tsx",
+          "components/search/company/AllEngineersListSkeleton.tsx",
+          "components/search/company/candidate-detail/CandidateProfileCard.tsx",
+          "components/shared/candidate/applications/components/RequestCard.tsx",
+          "components/shared/candidate/applications/components/RequestCardItem.tsx",
+          "components/shared/candidate/applications/components/RequestCardItemSkeleton.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/JobTargetCard.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/CandidateCard.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobInlineCard.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobPicker.tsx",
+          "components/shared/error-boundaries/AppErrorBoundary.tsx",
+          "components/sidebar/UserDisplay.tsx",
+          "components/what-you-want/WhatYouWantHardPreferences.tsx",
+          "components/what-you-want/sections/UnsavedChangesBar.tsx",
+          "components/who-you-are/DeleteAccountCard.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx",
+          "components/who-you-are/WhoYouAreDetails.tsx",
+          "components/who-you-are/WhoYouAreLocation.tsx",
+          "components/who-you-are/sections/UnsavedChangesBar.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customizable-home.tsx",
+          "app/(pages)/(internal-tools)/birthdays/page.tsx",
+          "app/(pages)/(internal-tools)/operations/_components/HomeLauncher.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/auth/card-wrapper.tsx",
+          "components/chart-area-axes.tsx",
+          "components/chart-area-default.tsx",
+          "components/chart-area-gradient.tsx",
+          "components/chart-area-icons.tsx",
+          "components/chart-area-interactive.tsx",
+          "components/chart-area-legend.tsx",
+          "components/chart-area-linear.tsx",
+          "components/chart-area-stacked-expand.tsx",
+          "components/chart-area-stacked.tsx",
+          "components/chart-area-step.tsx",
+          "components/chart-bar-active.tsx",
+          "components/chart-bar-default.tsx",
+          "components/chart-bar-horizontal.tsx",
+          "components/chart-bar-interactive.tsx",
+          "components/chart-bar-label-custom.tsx",
+          "components/chart-bar-label.tsx",
+          "components/chart-bar-mixed.tsx",
+          "components/chart-bar-multiple.tsx",
+          "components/chart-bar-negative.tsx",
+          "components/chart-bar-stacked.tsx",
+          "components/chart-line-default.tsx",
+          "components/chart-line-dots-colors.tsx",
+          "components/chart-line-dots-custom.tsx",
+          "components/chart-line-dots.tsx",
+          "components/chart-line-interactive.tsx",
+          "components/chart-line-label-custom.tsx",
+          "components/chart-line-label.tsx",
+          "components/chart-line-linear.tsx",
+          "components/chart-line-multiple.tsx",
+          "components/chart-line-step.tsx",
+          "components/chart-pie-donut-active.tsx",
+          "components/chart-pie-donut-text.tsx",
+          "components/chart-pie-donut.tsx",
+          "components/chart-pie-interactive.tsx",
+          "components/chart-pie-label-custom.tsx",
+          "components/chart-pie-label-list.tsx",
+          "components/chart-pie-label.tsx",
+          "components/chart-pie-legend.tsx",
+          "components/chart-pie-separator-none.tsx",
+          "components/chart-pie-simple.tsx",
+          "components/chart-pie-stacked.tsx",
+          "components/chart-radar-default.tsx",
+          "components/chart-radar-dots.tsx",
+          "components/chart-radar-grid-circle-fill.tsx",
+          "components/chart-radar-grid-circle-no-lines.tsx",
+          "components/chart-radar-grid-circle.tsx",
+          "components/chart-radar-grid-custom.tsx",
+          "components/chart-radar-grid-fill.tsx",
+          "components/chart-radar-grid-none.tsx",
+          "components/chart-radar-icons.tsx",
+          "components/chart-radar-label-custom.tsx",
+          "components/chart-radar-legend.tsx",
+          "components/chart-radar-lines-only.tsx",
+          "components/chart-radar-multiple.tsx",
+          "components/chart-radar-radius.tsx",
+          "components/chart-radial-grid.tsx",
+          "components/chart-radial-label.tsx",
+          "components/chart-radial-shape.tsx",
+          "components/chart-radial-simple.tsx",
+          "components/chart-radial-stacked.tsx",
+          "components/chart-radial-text.tsx",
+          "components/chart-tooltip-advanced.tsx",
+          "components/chart-tooltip-default.tsx",
+          "components/chart-tooltip-formatter.tsx",
+          "components/chart-tooltip-icons.tsx",
+          "components/chart-tooltip-indicator-line.tsx",
+          "components/chart-tooltip-indicator-none.tsx",
+          "components/chart-tooltip-label-custom.tsx",
+          "components/chart-tooltip-label-formatter.tsx",
+          "components/chart-tooltip-label-none.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/error.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "app/error.tsx",
+          "app/team/join/page.tsx",
+          "components/auth/card-wrapper.tsx",
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/summary-cards.tsx",
+          "components/extension/connect-extension.tsx",
+          "components/extension/install-extension.tsx",
+          "components/team/extension-sign-in-choice.tsx",
+          "components/team/team-connect.tsx"
+        ]
+      }
+    },
+    "carousel": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "chart": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "components/chart-area-axes.tsx",
+          "components/chart-area-default.tsx",
+          "components/chart-area-gradient.tsx",
+          "components/chart-area-icons.tsx",
+          "components/chart-area-interactive.tsx",
+          "components/chart-area-legend.tsx",
+          "components/chart-area-linear.tsx",
+          "components/chart-area-stacked-expand.tsx",
+          "components/chart-area-stacked.tsx",
+          "components/chart-area-step.tsx",
+          "components/chart-bar-active.tsx",
+          "components/chart-bar-default.tsx",
+          "components/chart-bar-horizontal.tsx",
+          "components/chart-bar-interactive.tsx",
+          "components/chart-bar-label-custom.tsx",
+          "components/chart-bar-label.tsx",
+          "components/chart-bar-mixed.tsx",
+          "components/chart-bar-multiple.tsx",
+          "components/chart-bar-negative.tsx",
+          "components/chart-bar-stacked.tsx",
+          "components/chart-line-default.tsx",
+          "components/chart-line-dots-colors.tsx",
+          "components/chart-line-dots-custom.tsx",
+          "components/chart-line-dots.tsx",
+          "components/chart-line-interactive.tsx",
+          "components/chart-line-label-custom.tsx",
+          "components/chart-line-label.tsx",
+          "components/chart-line-linear.tsx",
+          "components/chart-line-multiple.tsx",
+          "components/chart-line-step.tsx",
+          "components/chart-pie-donut-active.tsx",
+          "components/chart-pie-donut-text.tsx",
+          "components/chart-pie-donut.tsx",
+          "components/chart-pie-interactive.tsx",
+          "components/chart-pie-label-custom.tsx",
+          "components/chart-pie-label-list.tsx",
+          "components/chart-pie-label.tsx",
+          "components/chart-pie-legend.tsx",
+          "components/chart-pie-separator-none.tsx",
+          "components/chart-pie-simple.tsx",
+          "components/chart-pie-stacked.tsx",
+          "components/chart-radar-default.tsx",
+          "components/chart-radar-dots.tsx",
+          "components/chart-radar-grid-circle-fill.tsx",
+          "components/chart-radar-grid-circle-no-lines.tsx",
+          "components/chart-radar-grid-circle.tsx",
+          "components/chart-radar-grid-custom.tsx",
+          "components/chart-radar-grid-fill.tsx",
+          "components/chart-radar-grid-none.tsx",
+          "components/chart-radar-icons.tsx",
+          "components/chart-radar-label-custom.tsx",
+          "components/chart-radar-legend.tsx",
+          "components/chart-radar-lines-only.tsx",
+          "components/chart-radar-multiple.tsx",
+          "components/chart-radar-radius.tsx",
+          "components/chart-radial-grid.tsx",
+          "components/chart-radial-label.tsx",
+          "components/chart-radial-shape.tsx",
+          "components/chart-radial-simple.tsx",
+          "components/chart-radial-stacked.tsx",
+          "components/chart-radial-text.tsx",
+          "components/chart-tooltip-advanced.tsx",
+          "components/chart-tooltip-default.tsx",
+          "components/chart-tooltip-formatter.tsx",
+          "components/chart-tooltip-icons.tsx",
+          "components/chart-tooltip-indicator-line.tsx",
+          "components/chart-tooltip-indicator-none.tsx",
+          "components/chart-tooltip-label-custom.tsx",
+          "components/chart-tooltip-label-formatter.tsx",
+          "components/chart-tooltip-label-none.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "checkbox": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/search/filters/LocationFilter.tsx",
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/jobs/add-jobs/steps/BoostStep.tsx",
+          "components/jobs/add-jobs/steps/PickStep.tsx",
+          "components/jobs/create-job/LocationFields.tsx",
+          "components/jobs/select-jobs/JobRow.tsx",
+          "components/jobs/select-jobs/SelectableJobsList.tsx",
+          "components/positions/details/pipeline/PipelineConfirmationDialog.tsx",
+          "components/positions/dialogs/BoostJobDialog.tsx",
+          "components/search/company/filters/LocationFilter.tsx",
+          "components/sidebar/BoostedJobsButton.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "components/QuickSignupForm.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "checkbox-boxed": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/what-you-want/sections/CompanySizeField.tsx",
+          "components/what-you-want/sections/WillingToRelocateField.tsx",
+          "components/what-you-want/sections/WorkArrangementsField.tsx",
+          "components/what-you-want/sections/WorkFormatsField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "code-block": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx"
+        ]
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "collapsible": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/shared/components/CountedCollapsible.tsx"
+        ]
+      },
+      "argus": {
+        "status": "identical",
+        "files": [
+          "app/_components/sidebar.tsx"
+        ]
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "combobox": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/search/filters/CompanyFilter.tsx",
+          "components/jobs/create-job/OptionChips.tsx",
+          "components/jobs/future-jobs/ConditionValueSelect.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx",
+          "components/who-you-are/sections/LanguagesField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/user-support/UserSupportPanel.tsx"
+        ]
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "command": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/jobs/dialogs/edit-jobs/BulkTransferOrClosePrompt.tsx",
+          "components/positions/details/share/ShareOwnerPicker.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobPicker.tsx",
+          "components/tracker/TrackedJobStatusMenu.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CareersSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLinkSection.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "context-menu": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "dialog": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/account/DeleteAccountDialog.tsx",
+          "components/apply/ApplyConfirmDialog.tsx",
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/apply/search/filters/WereOnItDialog.tsx",
+          "components/header/InviteFriendModal.tsx",
+          "components/header/ReportProblem.tsx",
+          "components/hire-lia/HireLiaDialog.tsx",
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/jobs/add-jobs/AddJobsDialog.tsx",
+          "components/jobs/dialogs/edit-jobs/BulkTransferOrClosePrompt.tsx",
+          "components/jobs/dialogs/edit-jobs/EditJobsDialog.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/jobs/home/AutoAddRow.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/home/SelectJobsBar.tsx",
+          "components/jobs/job-board/HelpDialog.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/EditCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/ManageStageColumnsDialog.tsx",
+          "components/positions/details/pipeline/PipelineConfirmationDialog.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/dialogs/BoostJobDialog.tsx",
+          "components/positions/dialogs/CloseJobsDialog.tsx",
+          "components/positions/dialogs/DeleteJobsDialog.tsx",
+          "components/positions/dialogs/RejectRequestDialog.tsx",
+          "components/positions/dialogs/ReopenJobsDialog.tsx",
+          "components/positions/dialogs/UnassignJobsDialog.tsx",
+          "components/profile/career/CareerDialog.tsx",
+          "components/profile/career/media/Lightbox.tsx",
+          "components/profile/company/AddOrEditContact.tsx",
+          "components/profile/company/CompanyLogoDialog.tsx",
+          "components/profile/company/points-of-contact/ConfirmContactDialog.tsx",
+          "components/requests/EmailErrorToast.tsx",
+          "components/requests/FeedbackRequestedDialog.tsx",
+          "components/requests/company/dialogs/AppealDialog.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/requirements/ExcludeCompanyRequirement.tsx",
+          "components/search/candidate/ConfirmationDialog.tsx",
+          "components/shared/candidate/dialogs/appeal/AppealDialog.tsx",
+          "components/shared/candidate/dialogs/discard-job/DiscardJobDialog.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/CloseButton.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobDetailsShell.tsx",
+          "components/shared/candidate/dialogs/referme-job/DailyLimitReachedDialog.tsx",
+          "components/shared/candidate/dialogs/referme-job/RefermeJobDialog.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/RefermeFooter.tsx",
+          "components/shared/candidate/experience/ResumeHelpLink.tsx",
+          "components/shared/company/dialogs/CompanyConfirmationDialog.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateDetailsShell.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/ConfirmIntroRequestDialog.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/ConfirmIntroFooter.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/utils/types.ts",
+          "components/shared/company/dialogs/discard-candidate/DiscardCandidateDialog.tsx",
+          "components/shared/company/dialogs/discard-candidate/types.ts",
+          "components/sidebar/BoostedJobsButton.tsx",
+          "components/sidebar/user-display/HelpDialog.tsx",
+          "components/sidebar/user-display/InstructionsDialog.tsx",
+          "components/sidebar/user-display/LogoutDialog.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/who-you-are/ProfilePhotoDialog.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx",
+          "components/who-you-are/dialogs/ResumeDialog.tsx",
+          "components/who-you-are/dialogs/UpdateResumeDialog.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/hephaestus/_compoments/CompanyDetail.tsx",
+          "app/(pages)/iris/_compoments/Modal.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/announcement-dialog.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/components/TalkToUs.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/copilot-style-dialog.tsx",
+          "components/dashboard/team-panel.tsx"
+        ]
+      }
+    },
+    "direction": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "drawer": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/jobs/add-jobs/AddJobsDialog.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/share/JobSharePopover.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobDetailsShell.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateDetailsShell.tsx",
+          "components/sidebar/SidebarDrawer.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "dropdown-menu": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/search/filters/FilterOptionsMenu.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/invitations/InvitationDashboard.tsx",
+          "components/jobs/home/OthersTab.tsx",
+          "components/jobs/select-jobs/RequestRoleMenu.tsx",
+          "components/positions/details/card/JobActionsMenu.tsx",
+          "components/positions/details/card/JobVisibilityButton.tsx",
+          "components/positions/details/pipeline/PipelineCandidateCard.tsx",
+          "components/positions/details/pipeline/PipelineDiscardedPanel.tsx",
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/NotesTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/share/ShareMemberRow.tsx",
+          "components/positions/details/share/ShareRequestRow.tsx",
+          "components/profile/company/points-of-contact/ActiveContactRow.tsx",
+          "components/profile/company/points-of-contact/ContactActionsCell.tsx",
+          "components/profile/company/points-of-contact/InvitedContactRow.tsx",
+          "components/requirements/CompanyRequirementItem.tsx",
+          "components/requirements/JobRequirementAccordion.tsx",
+          "components/shared/candidate/preferences/MinimumPayField.tsx",
+          "components/sidebar/UserDisplay.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_components/TabBar.tsx",
+          "app/_components/navbar.tsx",
+          "app/_components/sidebar.tsx",
+          "components/theme-toggle.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx"
+        ]
+      }
+    },
+    "empty": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateDocumentViewer.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateProfileTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/NotesTab.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "field": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "form": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(unsafe-routes)/application-appeal/page.tsx",
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/ApplicationForm.tsx",
+          "app/(unsafe-routes)/feedback/page.tsx",
+          "components/auth/form-input.tsx",
+          "components/auth/form-toggle.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/form/login-form.tsx",
+          "components/header/ReportProblem.tsx",
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/hire-lia/signup/HireLiaSignupForm.tsx",
+          "components/hire-lia/signup/UsWorkAuthorization.tsx",
+          "components/hire-lia/signup/YouStep.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/create-job/LocationFields.tsx",
+          "components/jobs/job-board/HelpDialog.tsx",
+          "components/jobs/job-board/JobBoardForm.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/dialogs/RejectRequestDialog.tsx",
+          "components/profile/company/AddOrEditContact.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/refer/payment-method-fields.tsx",
+          "components/refer/refer-signup-form.tsx",
+          "components/requests/company/dialogs/AppealDialog.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/shared/candidate/dialogs/appeal/AppealDialog.tsx",
+          "components/shared/candidate/dialogs/discard-job/DiscardJobDialog.tsx",
+          "components/shared/company/dialogs/discard-candidate/DiscardCandidateDialog.tsx",
+          "components/sidebar/user-display/HelpDialog.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/what-you-want/WhatYouWantHardPreferences.tsx",
+          "components/what-you-want/sections/CompanySizeField.tsx",
+          "components/what-you-want/sections/MinimumSalaryField.tsx",
+          "components/what-you-want/sections/RoleTypeField.tsx",
+          "components/what-you-want/sections/WillingToRelocateField.tsx",
+          "components/what-you-want/sections/WorkArrangementsField.tsx",
+          "components/what-you-want/sections/WorkFormatsField.tsx",
+          "components/who-you-are/WhoYouAreDetails.tsx",
+          "components/who-you-are/WhoYouAreLocation.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx",
+          "components/who-you-are/sections/CurrentLocationField.tsx",
+          "components/who-you-are/sections/LinkedInField.tsx",
+          "components/who-you-are/sections/UsAuthorizationField.tsx",
+          "components/who-you-are/sections/VisaSponsorshipField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "identical",
+        "files": [
+          "components/auth/form-input.tsx",
+          "components/auth/form-toggle.tsx",
+          "components/form/profile-form.tsx",
+          "components/form/resend-form.tsx"
+        ]
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": [
+          "components/auth/form-input.tsx",
+          "components/auth/form-toggle.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/form/login-form.tsx",
+          "components/refer/payment-method-fields.tsx",
+          "components/refer/refer-signup-form.tsx"
+        ]
+      }
+    },
+    "hover-card": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "input": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/ApplicationForm.tsx",
+          "components/account-status/RedeemCodeForm.tsx",
+          "components/account/DeleteAccountDialog.tsx",
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/auth/form-input.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/jobs/add-jobs/steps/PickStep.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/job-board/JobBoard.tsx",
+          "components/jobs/job-board/JobBoardForm.tsx",
+          "components/jobs/select-jobs/SelectableJobsList.tsx",
+          "components/jobs/your-jobs/YourJobsHeader.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/EditCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/ManageStageColumnsDialog.tsx",
+          "components/positions/details/share/ShareInviteView.tsx",
+          "components/positions/details/shared/components/SearchPanel.tsx",
+          "components/profile/career/AddSectionDialog.tsx",
+          "components/profile/career/CareerElementDialog.tsx",
+          "components/profile/career/media/MediaEditor.tsx",
+          "components/profile/company/AddOrEditContact.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/profile/company/points-of-contact/ConfirmContactDialog.tsx",
+          "components/refer/payment-method-fields.tsx",
+          "components/refer/refer-signup-form.tsx",
+          "components/refer/share-link-card.tsx",
+          "components/requests/company/RequestsContainer.tsx",
+          "components/requests/company/RequestsLoading.tsx",
+          "components/search/candidate/JobsContainer.tsx",
+          "components/search/company/filters/KeywordSearch.tsx",
+          "components/shared/ExpandingSearchInput.tsx",
+          "components/shared/candidate/company-request/CompanyRequestForm.tsx",
+          "components/shared/candidate/experience/ExperienceProofPicker.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx",
+          "components/who-you-are/sections/LinkedInField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/application-hire/ApplicationHirePanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CandidateEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-contact-editor/CompanyContactEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-editor/CompanyEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/extension-access/ExtensionAccessPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/job-editor/JobLocationsSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterLevelScoreEditor.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/auth/form-input.tsx",
+          "components/login-form.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "app/components/TalkToUs.tsx",
+          "components/HearAboutRefer.tsx",
+          "components/QuickSignupForm.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/auth/form-input.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/team-panel.tsx",
+          "components/refer/payment-method-fields.tsx",
+          "components/refer/refer-signup-form.tsx",
+          "components/refer/share-link-card.tsx",
+          "components/team/team-sign-in.tsx"
+        ]
+      }
+    },
+    "input-group": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/shared/candidate/preferences/MinimumPayField.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "input-otp": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "item": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "kbd": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "label": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/jobs/create-job/LocationFields.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/EditCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/PipelineConfirmationDialog.tsx",
+          "components/positions/details/share/ShareInviteView.tsx",
+          "components/shared/candidate/preferences/MinimumPayField.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/login-form.tsx"
+        ]
+      },
+      "landing": {
+        "status": "identical",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "app/components/TalkToUs.tsx",
+          "components/HearAboutRefer.tsx",
+          "components/QuickSignupForm.tsx"
+        ]
+      },
+      "partners": {
+        "status": "identical",
+        "files": [
+          "components/dashboard/team-panel.tsx"
+        ]
+      }
+    },
+    "marker": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "menubar": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "message": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/NotesTab.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "message-scroller": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "native-select": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "navigation-menu": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "pagination": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "popover": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/search/filters/CompanyFilter.tsx",
+          "components/apply/search/filters/LocationFilter.tsx",
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/jobs/dialogs/edit-jobs/BulkTransferOrClosePrompt.tsx",
+          "components/jobs/job-board/JobBoardForm.tsx",
+          "components/jobs/select-jobs/JobMembersPopover.tsx",
+          "components/positions/details/card/JobVisibilityButton.tsx",
+          "components/positions/details/pipeline/candidate-dialog/AddToAnotherJob.tsx",
+          "components/positions/details/share/JobSharePopover.tsx",
+          "components/positions/details/share/ShareOwnerPicker.tsx",
+          "components/profile/career/MonthYearPicker.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/company/CandidateAvatar.tsx",
+          "components/search/company/candidate-detail/CandidateLocation.tsx",
+          "components/search/company/filters/ExperienceFilter.tsx",
+          "components/search/company/filters/LocationFilter.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobLocationDisplay.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateLocations.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobPicker.tsx",
+          "components/sidebar/user-display/ReplyRate.tsx",
+          "components/tracker/TrackedJobStatusMenu.tsx",
+          "components/who-you-are/ProfileHiddenCompanies.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/referral-link-panel.tsx"
+        ]
+      }
+    },
+    "progress": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/hire-lia/signup/HireLiaSignupForm.tsx",
+          "components/profile/career/media/MediaEditor.tsx"
+        ]
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "questionnaire": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "radio-group": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(unsafe-routes)/careers/[slug]/[publicId]/ApplicationForm.tsx",
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/hire-lia/signup/UsWorkAuthorization.tsx",
+          "components/hire-lia/signup/YouStep.tsx",
+          "components/jobs/create-job/LocationFields.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx",
+          "components/what-you-want/sections/RoleTypeField.tsx",
+          "components/who-you-are/sections/UsAuthorizationField.tsx",
+          "components/who-you-are/sections/VisaSponsorshipField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "components/HearAboutRefer.tsx"
+        ]
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "radio-group-boxed": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/hire-lia/signup/FiltersStep.tsx",
+          "components/hire-lia/signup/UsWorkAuthorization.tsx",
+          "components/hire-lia/signup/YouStep.tsx",
+          "components/what-you-want/sections/RoleTypeField.tsx",
+          "components/who-you-are/sections/UsAuthorizationField.tsx",
+          "components/who-you-are/sections/VisaSponsorshipField.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "components/HearAboutRefer.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "resizable": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "identical",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "responsive-dialog": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/ApplyConfirmDialog.tsx",
+          "components/apply/ApplyRequirementsDialog.tsx",
+          "components/apply/search/filters/WereOnItDialog.tsx",
+          "components/jobs/dialogs/edit-jobs/EditJobsDialog.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/search/candidate/FirstAccess.tsx",
+          "components/shared/candidate/dialogs/referme-job/RefermeJobDialog.tsx",
+          "components/shared/candidate/experience/ResumeHelpLink.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/who-you-are/dialogs/EditProfileDialog.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "scroll-area": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/jobs/add-jobs/steps/BriefStep.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateHistoryTimeline.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/share/ShareAccessList.tsx",
+          "components/positions/dialogs/DeleteJobsDialog.tsx",
+          "components/positions/dialogs/ReopenJobsDialog.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobBodyContent.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateBody.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customize-home-sheet.tsx",
+          "app/(pages)/referrals-admin/page.tsx"
+        ]
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "select": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/dashboard/referrals-table.tsx",
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/ManageStageColumnsDialog.tsx",
+          "components/positions/details/pipeline/PipelineStageSelect.tsx",
+          "components/positions/details/share/ShareGeneralAccess.tsx",
+          "components/positions/details/share/ShareInviteView.tsx",
+          "components/positions/dialogs/CloseJobsDialog.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/refer/payment-method-fields.tsx",
+          "components/search/company/filters/ExperienceFilter.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/sidebar/user-display/StatusDialog.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CandidateEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CareersSection.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-contact-editor/CompanyContactEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-editor/CompanyEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterLevelScoreEditor.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx",
+          "components/chart-area-interactive.tsx",
+          "components/chart-pie-interactive.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/companies/signup/page.tsx",
+          "components/ExpertiseItem.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/refer/payment-method-fields.tsx"
+        ]
+      }
+    },
+    "separator": {
+      "portal": {
+        "status": "diverged",
+        "files": [
+          "components/account-status/WaitlistConfirmedScreen.tsx",
+          "components/apply/search/filters/CompanyFilter.tsx",
+          "components/apply/search/filters/LocationFilter.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/form/login-form.tsx",
+          "components/jobs/create-job/CreateJob.tsx",
+          "components/jobs/dialogs/edit-jobs/BulkTransferOrClosePrompt.tsx",
+          "components/positions/details/PositionRequirements.tsx",
+          "components/positions/details/edit/JobEditForm.tsx",
+          "components/positions/details/share/ShareAccessList.tsx",
+          "components/profile/company/CompanyProfileForm.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/company/SearchCardShell.tsx",
+          "components/search/company/filters/LocationFilter.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/search/company/filters/controls.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobSeparator.tsx",
+          "components/shared/job-description/FormattedDescription.tsx",
+          "components/sidebar/UserDisplay.tsx",
+          "components/what-you-want/WhatYouWantHardPreferences.tsx",
+          "components/who-you-are/WhoYouAreDetails.tsx",
+          "components/who-you-are/WhoYouAreLocation.tsx",
+          "components/who-you-are/sections/ProfileIdentitySection.tsx",
+          "components/who-you-are/sections/ResumeSection.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customize-home-sheet.tsx",
+          "app/(main)/layout.tsx",
+          "app/(pages)/iris/_compoments/applicationForms/matchForms.tsx",
+          "app/(pages)/layout.tsx",
+          "components/auth/card-wrapper.tsx"
+        ]
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "app/confirmation/page.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/form/login-form.tsx"
+        ]
+      }
+    },
+    "sheet": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/PipelineNotesSheet.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customize-home-sheet.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/components/Navigation.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "sidebar": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/layout.tsx",
+          "app/(pages)/layout.tsx",
+          "app/_components/sidebar.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "skeleton": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/FeedLoadingSentence.tsx",
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/summary-cards.tsx",
+          "components/extension/extension-install.tsx",
+          "components/jobs/dialogs/shared/SelectJobsSkeleton.tsx",
+          "components/jobs/your-jobs/YourJobsItemSkeleton.tsx",
+          "components/positions/details/card/PositionDetailsCardSkeleton.tsx",
+          "components/positions/details/edit/JobEditPanel.tsx",
+          "components/positions/details/lists/JobRequestsBoard.tsx",
+          "components/positions/details/pipeline/PipelineLoadingState.tsx",
+          "components/positions/details/pipeline/PipelineToolbar.tsx",
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateProfileTab.tsx",
+          "components/positions/details/shared/components/CandidateListSkeleton.tsx",
+          "components/positions/details/shared/components/RequirementsLoading.tsx",
+          "components/search/candidate/JobCardSkeleton.tsx",
+          "components/search/company/AllEngineersListSkeleton.tsx",
+          "components/search/company/CareersFilter.tsx",
+          "components/shared/candidate/applications/components/RequestCardItemSkeleton.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/JobsSectionSkeleton.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobInlineCard.tsx",
+          "components/shared/company/dialogs/discard-candidate/DiscardCandidateDialog.tsx",
+          "components/sidebar/UserDisplay.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/short-links/page.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/booster-cards.tsx",
+          "components/dashboard/copilot-style-dialog.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/payment-settings-form.tsx",
+          "components/dashboard/payouts-list.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referral-link-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/summary-cards.tsx",
+          "components/dashboard/team-panel.tsx",
+          "components/extension/connect-extension.tsx",
+          "components/extension/install-extension.tsx",
+          "components/team/team-connect.tsx"
+        ]
+      }
+    },
+    "slider": {
+      "portal": {
+        "status": "identical",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "identical",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "sonner": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/layout.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/toaster-provider.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "app/layout.tsx"
+        ]
+      }
+    },
+    "spinner": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "switch": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/auth/form-toggle.tsx",
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/jobs/add-jobs/steps/BoostStep.tsx",
+          "components/jobs/future-jobs/FutureJobsPanel.tsx",
+          "components/jobs/home/AutoAddRow.tsx",
+          "components/sidebar/BoostedJobsButton.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(main)/_components/customize-home-sheet.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "components/auth/form-toggle.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/auth/form-toggle.tsx"
+        ]
+      }
+    },
+    "table": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/rules-panel.tsx",
+          "components/invitations/InvitationDashboard.tsx",
+          "components/profile/company/PointsOfContact.tsx",
+          "components/profile/company/points-of-contact/ActiveContactRow.tsx",
+          "components/profile/company/points-of-contact/ContactActionsCell.tsx",
+          "components/profile/company/points-of-contact/ContactNameCell.tsx",
+          "components/profile/company/points-of-contact/ContactTable.tsx",
+          "components/profile/company/points-of-contact/InvitedContactRow.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/company-contact-editor/CompanyContactEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_apps/company-editor/CompanyEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterActivityLog.tsx",
+          "app/(pages)/(internal-tools)/short-links/page.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/earnings-table.tsx",
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/dashboard/rules-panel.tsx",
+          "components/dashboard/team-panel.tsx"
+        ]
+      }
+    },
+    "tabs": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(ui-candidate)/(home)/NotSignedUpHome.tsx",
+          "app/(ui-candidate)/(home)/PendingHome.tsx",
+          "app/(ui-company)/(jobs)/Jobs.tsx",
+          "components/dashboard/dashboard-page.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/positions/details/PositionDetailsContent.tsx",
+          "components/positions/details/card/PositionDetailsCard.tsx",
+          "components/positions/details/pipeline/PipelineToolbar.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/shared/components/JobDetailLoadingShell.tsx",
+          "components/profile/candidate/ProfilePage.tsx",
+          "components/profile/company/PointsOfContact.tsx",
+          "components/requests/company/RequestsContainer.tsx",
+          "components/requests/company/RequestsLoading.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/search/candidate/JobsContainer.tsx",
+          "components/search/company/AllEngineersContainer.tsx",
+          "components/search/company/CandidatesLoading.tsx",
+          "components/shared/candidate/preferences/MinimumPayField.tsx",
+          "components/tracker/AddJobDialog.tsx",
+          "components/tracker/TrackerContainer.tsx",
+          "components/tracker/TrackerPill.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_editor/EditorTabs.tsx",
+          "app/(pages)/hephaestus/page.tsx",
+          "app/(pages)/hermes/page.tsx",
+          "app/(pages)/iris/_compoments/orchestratorEventLogs/OrchestratorEventLogs.tsx",
+          "app/(pages)/iris/_compoments/orchestratorTracker/OrchestratorTracker.tsx",
+          "app/(pages)/iris/page.tsx",
+          "app/_components/FeedbackSection.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/copilot-style-dialog.tsx",
+          "components/dashboard/dashboard-page.tsx"
+        ]
+      }
+    },
+    "textarea": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "app/(unsafe-routes)/application-appeal/page.tsx",
+          "app/(unsafe-routes)/feedback/page.tsx",
+          "components/apply/ApplyConfirmDialog.tsx",
+          "components/header/ReportProblem.tsx",
+          "components/hire-lia/signup/YouStep.tsx",
+          "components/invitations/CreateInvitationCodeModal.tsx",
+          "components/jobs/job-board/HelpDialog.tsx",
+          "components/positions/details/PositionRequirements.tsx",
+          "components/positions/details/pipeline/AddCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/EditCandidateMockDialog.tsx",
+          "components/positions/details/pipeline/PipelineNotesSheet.tsx",
+          "components/positions/dialogs/RejectRequestDialog.tsx",
+          "components/profile/career/CareerElementDialog.tsx",
+          "components/requests/company/dialogs/AppealDialog.tsx",
+          "components/requirements/AddCompanyRequirement.tsx",
+          "components/shared/candidate/dialogs/appeal/AppealDialog.tsx",
+          "components/shared/candidate/dialogs/discard-job/DiscardJobDialog.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/NoteField.tsx",
+          "components/shared/candidate/experience/ExperienceProofPicker.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/NoteField.tsx",
+          "components/shared/company/dialogs/discard-candidate/DiscardCandidateDialog.tsx",
+          "components/sidebar/user-display/HelpDialog.tsx",
+          "components/tracker/EditTrackedJobDialog.tsx",
+          "components/what-you-want/AdditionalFeedback.tsx",
+          "components/who-you-are/WhoYouAreDetails.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_apps/candidate-editor/CandidateEditorPanel.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx",
+          "app/(pages)/referrals-admin/page.tsx",
+          "app/(pages)/waitlist/page.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "app/components/TalkToUs.tsx"
+        ]
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/copilot-style-dialog.tsx"
+        ]
+      }
+    },
+    "toast": {
+      "portal": {
+        "status": "missing",
+        "files": []
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "hooks/use-toast.ts"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": [
+          "hooks/use-toast.ts"
+        ]
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    },
+    "toggle": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/search/company/CareersFilter.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "identical",
+        "files": []
+      }
+    },
+    "toggle-group": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/NoteComposer.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": []
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": []
+      }
+    },
+    "tooltip": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/apply/search/filters/CompanyFilter.tsx",
+          "components/dashboard/referrals-table.tsx",
+          "components/jobs/add-jobs/AddJobsDialog.tsx",
+          "components/jobs/add-jobs/steps/BriefStep.tsx",
+          "components/jobs/add-jobs/steps/PickStep.tsx",
+          "components/jobs/add-jobs/steps/ReadingStep.tsx",
+          "components/jobs/dialogs/shared/SelectJobsLayout.tsx",
+          "components/jobs/home/JobBoardTab.tsx",
+          "components/jobs/job-board/JobBoard.tsx",
+          "components/jobs/job-board/SupportedAtsProviders.tsx",
+          "components/jobs/select-jobs/JobRow.tsx",
+          "components/positions/details/card/JobActionsMenu.tsx",
+          "components/positions/details/pipeline/ManageStageColumnsDialog.tsx",
+          "components/positions/details/pipeline/PipelineToolbar.tsx",
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx",
+          "components/positions/details/pipeline/candidate-dialog/CandidateHistoryTimeline.tsx",
+          "components/positions/details/pipeline/candidate-dialog/PipelineCandidateDialog.tsx",
+          "components/positions/details/pipeline/candidate-dialog/noteScore.tsx",
+          "components/positions/details/shared/components/ActionTooltip.tsx",
+          "components/positions/details/shared/components/CandidateOriginBadge.tsx",
+          "components/positions/details/shared/components/CandidateRatingBadge.tsx",
+          "components/positions/details/shared/components/CandidateSourceBadge.tsx",
+          "components/profile/company/points-of-contact/InvitedContactRow.tsx",
+          "components/requests/company/shared/components/CandidateRequestListItem.tsx",
+          "components/search/candidate/companies/CompanyProfile.tsx",
+          "components/search/candidate/job-detail/JobHeaderCard.tsx",
+          "components/search/company/candidate-detail/CandidateProfileCard.tsx",
+          "components/search/company/candidate-detail/Requests.tsx",
+          "components/search/company/filters/LocationFilter.tsx",
+          "components/search/company/filters/PreviousCompanyFilter.tsx",
+          "components/search/company/filters/controls.tsx",
+          "components/shared/candidate/dialogs/job-details/parts/JobDetailsHeader.tsx",
+          "components/shared/candidate/dialogs/referme-job/parts/CreditsBanner.tsx",
+          "components/shared/company/dialogs/candidate-details/job-card/CandidateRequestJobCard.tsx",
+          "components/shared/company/dialogs/candidate-details/parts/CandidateHeaderActions.tsx",
+          "components/shared/company/dialogs/confirm-intro-request/parts/JobPicker.tsx",
+          "components/sidebar/PendingInfoBadge.tsx",
+          "components/sidebar/user-display/ReplyRate.tsx",
+          "components/who-you-are/sections/ResumeSection.tsx"
+        ]
+      },
+      "argus": {
+        "status": "diverged",
+        "files": [
+          "app/(pages)/(internal-tools)/operations/_components/HomeLauncher.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ActivityStrip.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/ClusterActivityLog.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/RiskIcon.tsx",
+          "app/(pages)/(internal-tools)/operations/_editor/TableSection.tsx"
+        ]
+      },
+      "landing": {
+        "status": "diverged",
+        "files": []
+      },
+      "partners": {
+        "status": "diverged",
+        "files": [
+          "components/dashboard/prospects-panel.tsx",
+          "components/dashboard/referrals-table.tsx"
+        ]
+      }
+    },
+    "trace": {
+      "portal": {
+        "status": "identical",
+        "files": [
+          "components/positions/details/pipeline/candidate-dialog/ActivityTab.tsx"
+        ]
+      },
+      "argus": {
+        "status": "missing",
+        "files": []
+      },
+      "landing": {
+        "status": "missing",
+        "files": []
+      },
+      "partners": {
+        "status": "missing",
+        "files": []
+      }
+    }
+  }
+}

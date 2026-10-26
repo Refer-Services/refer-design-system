@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "registry:build": "prettier --log-level silent --write \"registry/**/*.{ts,tsx,json,mdx}\" --cache && npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts"
+    "registry:build": "prettier --log-level silent --write \"registry/**/*.{ts,tsx,json,mdx}\" --cache && npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
+    "usage:build": "npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-usage.mts"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

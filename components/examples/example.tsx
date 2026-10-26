@@ -1,14 +1,20 @@
+"use client"
+
 import * as React from "react"
+import { CodeIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useExampleSource } from "@/components/docs/example-sources"
+import { Button } from "@/registry/refer/ui/button"
 
 // Gallery layout for components/examples/*, mirroring shadcn's example harness so their example files port as-is.
+// On a component page, each section can also show its own code (see ExampleSourcesProvider).
 function ExampleWrapper({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="example-wrapper"
       className={cn(
-        "mx-auto grid w-full max-w-5xl min-w-0 items-start gap-8 p-4 sm:gap-12 sm:p-6 md:grid-cols-2 md:gap-8 lg:p-12 2xl:max-w-6xl",
+        "mx-auto grid w-full max-w-5xl min-w-0 items-start gap-8 md:grid-cols-2 md:gap-6 2xl:max-w-6xl",
         className
       )}
       {...props}
@@ -26,6 +32,9 @@ function Example({
   title?: string
   containerClassName?: string
 }) {
+  const code = useExampleSource(title)
+  const [showCode, setShowCode] = React.useState(false)
+
   return (
     <div
       data-slot="example"
@@ -35,20 +44,37 @@ function Example({
       )}
       {...props}
     >
-      {title && (
-        <div className="text-muted-foreground px-1.5 py-2 text-xs font-medium">
-          {title}
+      {(title || code) && (
+        <div className="flex min-h-8 items-center gap-2 px-1.5">
+          {title && (
+            <div className="text-muted-foreground text-xs font-medium">
+              {title}
+            </div>
+          )}
+          {code && (
+            <Button
+              variant="ghost"
+              size="xs"
+              className="text-muted-foreground ml-auto h-7 px-2.5 text-xs has-[>svg]:pl-2"
+              aria-expanded={showCode}
+              onClick={() => setShowCode((value) => !value)}
+            >
+              <CodeIcon className="size-3.5" />
+              {showCode ? "Hide code" : "Code"}
+            </Button>
+          )}
         </div>
       )}
       <div
         data-slot="example-content"
         className={cn(
-          "bg-card text-foreground shadow-card flex min-w-0 flex-1 flex-col items-start gap-6 rounded-2xl p-12 *:[div:not([class*='w-'])]:w-full",
+          "bg-card text-foreground shadow-card flex min-w-0 flex-1 flex-col items-start gap-6 rounded-2xl p-10 *:[div:not([class*='w-'])]:w-full",
           className
         )}
       >
         {children}
       </div>
+      {code && showCode && <div className="mt-2 min-w-0">{code}</div>}
     </div>
   )
 }
