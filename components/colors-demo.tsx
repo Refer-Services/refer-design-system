@@ -5,6 +5,8 @@ import { useTheme } from "next-themes"
 import { toast } from "sonner"
 
 import { cn } from "@/lib/utils"
+// Generated from app/globals.css by `npm run registry:build` (the published globals item).
+import globals from "@/public/r/refer/globals.json"
 
 // Class names are written out in full so Tailwind generates them (it only emits classes it finds in the source).
 
@@ -552,6 +554,33 @@ function copy(className: string) {
     .catch(() => toast.error("Couldn't copy to the clipboard"))
 }
 
+const themeVars = globals.cssVars as {
+  light: Record<string, string>
+  dark: Record<string, string>
+}
+
+// "var(--color-refer-600)" -> "refer-600", "--alpha(var(--primary) / 5%)" -> "primary / 5%".
+function formatAlias(value?: string) {
+  if (!value) return undefined
+  return value
+    .replace(/--alpha\((.*)\)/, "$1")
+    .replace(/var\(--color-([\w-]+)\)/g, "$1")
+    .replace(/var\(--([\w-]+)\)/g, "$1")
+}
+
+function useAlias(name: string) {
+  const { resolvedTheme } = useTheme()
+  const [alias, setAlias] = React.useState<string>()
+  React.useEffect(() => {
+    const value =
+      resolvedTheme === "dark"
+        ? (themeVars.dark[name] ?? themeVars.light[name])
+        : themeVars.light[name]
+    setAlias(formatAlias(value))
+  }, [name, resolvedTheme])
+  return alias
+}
+
 function useComputedColor(ref: React.RefObject<HTMLElement | null>) {
   const { resolvedTheme } = useTheme()
   const [value, setValue] = React.useState("")
@@ -564,12 +593,13 @@ function useComputedColor(ref: React.RefObject<HTMLElement | null>) {
 function SemanticSwatch({ swatch }: { swatch: Swatch }) {
   const ref = React.useRef<HTMLSpanElement>(null)
   const value = useComputedColor(ref)
+  const alias = useAlias(swatch.name)
   return (
     <button
       type="button"
       onClick={() => copy(swatch.className)}
       className="hover:bg-accent rounded-input group flex min-w-0 items-center gap-3 p-1.5 text-left transition-colors"
-      title={`Copy ${swatch.className}`}
+      title={`Copy ${swatch.className}${value ? ` · ${value}` : ""}`}
     >
       <span
         ref={ref}
@@ -581,7 +611,7 @@ function SemanticSwatch({ swatch }: { swatch: Swatch }) {
       <span className="flex min-w-0 flex-col">
         <span className="truncate text-sm font-medium">{swatch.name}</span>
         <span className="text-muted-foreground truncate font-mono text-[11px]">
-          {value || swatch.className}
+          {alias ?? swatch.className}
         </span>
       </span>
     </button>
@@ -618,8 +648,9 @@ export function ColorsDemo() {
           <p className="text-muted-foreground text-sm">
             The Refer theme&apos;s tokens, defined in{" "}
             <code className="font-mono">app/globals.css</code>. Prefer these
-            over raw palette colors. Values update with the theme; click to copy
-            the class.
+            over raw palette colors. Each one shows the token it points to in
+            the current theme (hover for the final value); click to copy the
+            class.
           </p>
         </div>
         {semantic.map((group) => (
