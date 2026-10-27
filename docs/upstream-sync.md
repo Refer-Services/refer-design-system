@@ -34,6 +34,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | Change | DS | Apps synced |
 |---|---|---|
 | UI labels: translatable component text (see [UI labels](#ui-labels-translatable-component-text)), asked by the olympus thread for the portal's i18n | Merged 2026-10-27 | Pending: portal (olympus thread) reinstalls `ui-labels`, dialog, sheet, breadcrumb, pagination, sidebar, command, carousel (not drawer: it waits for the wave 5 sync), wraps `app/layout.tsx` in `UILabelsProvider` with next-intl strings and adds `tests/components/ui/ui-labels.test.tsx`. argus, landing, partners: not needed until they translate |
+| Fields default to `bg-card` like Input: SelectTrigger (its `bg-transparent` was overriding `bg-card`), Textarea, InputGroup (and so Combobox); dark mode `bg-input/10` on all | Merged 2026-10-27 | Pending: portal reinstalls `@refer/select @refer/textarea @refer/input-group`; overrides that set `bg-card` on them can go |
 
 ## How to run a sync
 
@@ -121,7 +122,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 | Component | Refer keeps | Skipped (why) | Pending |
 |---|---|---|---|
-| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, scroll-area, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60` | — | Nothing upstream to take |
+| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, scroll-area, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60`; textarea `bg-card` like Input | — | Nothing upstream to take |
 | alert | Refer styling | — | — |
 | alert-dialog | `rounded-2xl shadow-xl` content | Upstream `rounded-lg shadow-lg` | Done in W2: `size` (`sm`) on content, actions as `<Button asChild>` with `variant`/`size` (defaults `primary`/`outline`, `md`), `data-slot`s on actions. Refer difference from upstream: the actions pass `className` to `Button` (tailwind-merge), not to the Slot child, which only concatenates; so an app's `className="bg-destructive"` still wins over `bg-primary`. Prefer `variant="destructive"` in apps. W4: `AlertDialogMedia` (needs Refer styling) |
 | avatar | `size-10` default; `overflow-hidden` on root (crops square logos passed via `className`) | — | Done in W2: `select-none`, `AvatarGroup`, `AvatarGroupCount`. W4: upstream's muted fallback text (`text-muted-foreground`) changes initials to gray in 6 portal and 7 argus fallbacks that don't set a color; `size` prop on a Refer scale and `AvatarBadge` (needs design: the root's `overflow-hidden` would clip a corner badge) |
@@ -136,7 +137,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | context-menu, dropdown-menu | dropdown: primary highlight, `rounded-input` items, `rounded-card shadow-popover` content | — | Done in W1 (SubTrigger icons) |
 | dialog | `title` (sr-only) and `showCloseButton` props on content, custom close button, overlay `backdrop-blur-[1px]`, `DialogContentWithNavigation`, `NavigationArrow` with `loading`, `useDialogNavigation`, `rounded-3xl bg-card shadow-xl` | Upstream content styles | Done in W1 (close slot, `outline-none`). Done in W2: `DialogFooter showCloseButton` (adds `button` to the item's `registryDependencies`) |
 | drawer | — | — | W4: header centered on mobile, `gap-0.5` (design call) |
-| empty, field, input-group, item, kbd, spinner, button-group | empty: icon variant; field: `text-destructive-content`; input-group: `rounded-input`, primary focus ring | — | Done in W2: publish button-group, field, item, kbd, spinner. Variations galleries at `/examples/<name>` for button-group, field, item, kbd, native-select, spinner. Pending (additive): item `size="xs"`, which upstream has only in the newer bases system (radix-vega), not in new-york-v4; the item gallery leaves out its 4 extra-small sections until we add it |
+| empty, field, input-group, item, kbd, spinner, button-group | empty: icon variant; field: `text-destructive-content`; input-group: `rounded-input`, primary focus ring, `bg-card` (dark `bg-input/10`) like Input | — | Done in W2: publish button-group, field, item, kbd, spinner. Variations galleries at `/examples/<name>` for button-group, field, item, kbd, native-select, spinner. Pending (additive): item `size="xs"`, which upstream has only in the newer bases system (radix-vega), not in new-york-v4; the item gallery leaves out its 4 extra-small sections until we add it |
 | input | `rounded-input`, `bg-card`, h-10, primary focus ring | — | Done in W1 (no `flex`) |
 | native-select | — | — | Done in W1 (`Canvas` option colors). Done in W2: publish. W4: Refer styling (it's still stock: `rounded-md`, `ring-ring/50`) |
 | pagination | — | — | Done in W1 (type-only `Button` import) |
@@ -144,7 +145,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | radio-group-boxed, checkbox-boxed, responsive-dialog | Refer-only components | — | — |
 | refer-menu-item | — | — | Done in W2: delete (only the docs demo uses it) |
 | resizable | — | — | Item pins `react-resizable-panels@^3` (the v2-era component works on v3: same `PanelGroup`/`Panel`/`PanelResizeHandle`, `direction` and `data-panel-group-direction`; apps are on 3.x). W5: v4 (`Group`/`Separator`, `orientation`, sizes as `"50%"` strings, `onLayoutChange`), then pin `^4` |
-| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover` | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
+| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
 | separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
 | sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
