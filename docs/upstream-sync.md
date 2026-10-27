@@ -293,14 +293,18 @@ upstream code, so we ported by hand from `registry/bases/base/ui/drawer.tsx`, ke
 | `ui/responsive-dialog.tsx` | Comment only (it no longer relies on vaul being Radix) |
 | registry | `drawer`: `@base-ui/react@^1.9.0` (portal runs 1.7.0), `registryDependencies: ["dialog"]`; `vaul` removed from the DS |
 | `ui/drawer.tsx` (variant) | `DrawerContent` `variant`: `default` (flush with the edge) or `floating` (8px off the edges via `--drawer-inset`, all corners rounded, like a Dialog). Look split from the swipe mechanics with `cva` |
-| docs | Drawer gallery and demo on the Base UI API (`swipeDirection`, `render`); gallery section "With controls inside" keeps `asChild` on purpose and is the regression check; new `responsive-dialog` demo |
+| `ui/drawer.tsx` (handle, nested) | Upstream's `showSwipeHandle` on `Drawer` and the exported `DrawerSwipeHandle` (`data-slot="drawer-swipe-handle"`, Refer bar: `bg-border`, 40×4px). Refer default kept: without the prop the handle shows on bottom drawers only; `true` shows it on any side (inner edge; side drawers lay out in a row for it), `false` hides it. `DrawerContent showDragHandle` is `@deprecated` (`false` still hides it; the portal passes it). Under a nested drawer the parent's body and handle fade out, as upstream |
+| `ui/responsive-dialog.tsx` (handle) | Passes `showSwipeHandle={dismissible}` to the Drawer instead of `showDragHandle` to the content |
+| docs | Drawer gallery and demo on the Base UI API (`swipeDirection`, `render`); gallery section "With controls inside" keeps `asChild` on purpose and is the regression check; new `responsive-dialog` demo. The drawer page mirrors shadcn's docs: main demo (responsive bottom/right, choice cards, toast), Position, Floating (Refer), Swipe handle, Nested, Non modal, Snap points, Responsive (our ResponsiveDialog); demos take an optional `description`. Gallery re-ported from upstream `bases/base/examples/drawer-example.tsx` at `96da9cc7` (Demo, Swipe Handle, Position, Custom Width and Height, Scrollable Content, Snap Points, Nested, Non Modal), plus the Refer sections |
 
 **Verified** (headless Chrome, real input events; dev and production builds): Radix Select (mouse and keyboard), DropdownMenu,
 Popover and Tooltip and the Base UI Combobox inside the drawer, without closing it; Escape in an open popup closes only the
 popup; outside press closes a dismissible drawer and not a `dismissible={false}` one; swipe down closes or not
 accordingly; DialogDescription/DialogClose asChild inside it; focus returns to the trigger; ResponsiveDialog is a drawer at
 390px and a Radix dialog at 1280px; side drawers from `direction`. Mixing Radix layers inside a Base UI modal was the main
-risk and works.
+risk and works. Docs demos: three nested drawers stack and close one at a time (Escape and swipe); non modal leaves the page
+scrollable and clickable without closing; snap points peek at 31rem and expand to full with a touch swipe (a mouse drag
+inside the body selects text instead, as upstream: drag from the handle); handle on the inner edge of all four sides.
 
 **Apps:** only the portal uses drawer (17 files + `tests/components/ui/responsive-dialog.test.tsx`): ResponsiveDialog in 11,
 Drawer directly in 6, using `direction`, `dismissible`, `activeSnapPoint` (without snap points; ignored, as Vaul did),

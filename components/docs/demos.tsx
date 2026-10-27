@@ -30,6 +30,12 @@ import { DatePickerDemo } from "@/components/date-picker-demo"
 import { DialogDemo } from "@/components/dialog-demo"
 import { DirectionDemo } from "@/components/direction-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
+import { DrawerFloatingDemo } from "@/components/drawer-floating-demo"
+import { DrawerNestedDemo } from "@/components/drawer-nested-demo"
+import { DrawerNonModalDemo } from "@/components/drawer-non-modal-demo"
+import { DrawerSidesDemo } from "@/components/drawer-sides-demo"
+import { DrawerSnapPointsDemo } from "@/components/drawer-snap-points-demo"
+import { DrawerSwipeHandleDemo } from "@/components/drawer-swipe-handle-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
 import { EmptyExample } from "@/components/empty-demo"
 import { FieldDemo } from "@/components/field-demo"
@@ -76,6 +82,7 @@ import { TypographyDemo } from "@/components/typography-demo"
 
 export type Demo = {
   title?: string
+  description?: string
   component: React.ComponentType
   // Source shown in the Code tab, relative to the repo root.
   file: string
@@ -84,9 +91,10 @@ export type Demo = {
 function demo(
   component: React.ComponentType,
   file: string,
-  title?: string
+  title?: string,
+  description?: string
 ): Demo {
-  return { component, file: `components/${file}.tsx`, title }
+  return { component, file: `components/${file}.tsx`, title, description }
 }
 
 // Demos per docs page (registry item name or foundation). Pages without an entry show "No demo yet".
@@ -125,7 +133,51 @@ export const demos: Record<string, Demo[]> = {
   "context-menu": [demo(ContextMenuDemo, "context-menu-demo")],
   dialog: [demo(DialogDemo, "dialog-demo")],
   direction: [demo(DirectionDemo, "direction-demo")],
-  drawer: [demo(DrawerDemo, "drawer-demo")],
+  drawer: [
+    demo(DrawerDemo, "drawer-demo"),
+    demo(
+      DrawerSidesDemo,
+      "drawer-sides-demo",
+      "Position",
+      "Set the side with swipeDirection: up, right, down (the default) or left."
+    ),
+    demo(
+      DrawerFloatingDemo,
+      "drawer-floating-demo",
+      "Floating",
+      'Refer variant. variant="floating" on DrawerContent keeps the drawer 8px from the edges with every corner rounded, like a Dialog. The default stays flush with the edge.'
+    ),
+    demo(
+      DrawerSwipeHandleDemo,
+      "drawer-swipe-handle-demo",
+      "Swipe handle",
+      "Bottom drawers show the handle by default. showSwipeHandle on Drawer adds it on any side; false hides it."
+    ),
+    demo(
+      DrawerNestedDemo,
+      "drawer-nested-demo",
+      "Nested",
+      "Open drawers from inside another drawer. Parent drawers stay mounted and stack behind the frontmost one."
+    ),
+    demo(
+      DrawerNonModalDemo,
+      "drawer-non-modal-demo",
+      "Non modal",
+      'modal={false} lets people use the rest of the page while the drawer is open; disablePointerDismissal keeps it open on outside presses. modal="trap-focus" keeps focus inside without blocking scroll and pointer.'
+    ),
+    demo(
+      DrawerSnapPointsDemo,
+      "drawer-snap-points-demo",
+      "Snap points",
+      "snapPoints snaps a bottom or top drawer to preset heights: 0 to 1 is a fraction of the viewport, above 1 is pixels, and strings take px or rem. Track the active one with snapPoint and onSnapPointChange."
+    ),
+    demo(
+      ResponsiveDialogDemo,
+      "responsive-dialog-demo",
+      "Responsive",
+      "ResponsiveDialog renders a Dialog from md (768px) up and a bottom Drawer below, with the same children."
+    ),
+  ],
   "dropdown-menu": [demo(DropdownMenuDemo, "dropdown-menu-demo")],
   empty: [demo(EmptyExample, "empty-demo")],
   field: [demo(FieldDemo, "field-demo")],

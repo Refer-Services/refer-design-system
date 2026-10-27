@@ -15,7 +15,6 @@ import { Drawer, DrawerContent } from "@/registry/refer/ui/drawer"
 
 const ResponsiveDialogContext = React.createContext({
   isMobile: false,
-  dismissible: true,
 })
 
 interface ResponsiveDialogProps {
@@ -33,10 +32,7 @@ function ResponsiveDialog({
   children,
 }: ResponsiveDialogProps) {
   const isMobile = useIsMobile()
-  const context = React.useMemo(
-    () => ({ isMobile, dismissible }),
-    [isMobile, dismissible]
-  )
+  const context = React.useMemo(() => ({ isMobile }), [isMobile])
 
   return (
     <ResponsiveDialogContext.Provider value={context}>
@@ -45,6 +41,7 @@ function ResponsiveDialog({
           open={open}
           onOpenChange={onOpenChange}
           dismissible={dismissible}
+          showSwipeHandle={dismissible}
         >
           {children}
         </Drawer>
@@ -82,14 +79,13 @@ function ResponsiveDialogContent({
   showCloseButton,
   ...props
 }: ResponsiveDialogContentProps) {
-  const { isMobile, dismissible } = React.useContext(ResponsiveDialogContext)
+  const { isMobile } = React.useContext(ResponsiveDialogContext)
 
   if (isMobile) {
     return (
       <DrawerContent
         title={title}
         hideTitle
-        showDragHandle={dismissible}
         className={drawerClassName}
         {...props}
       >
