@@ -29,6 +29,18 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
+### Parked
+
+- **UI labels (translatable component text):** ready on branch `feat/ds-ui-labels` (`2926821`), not merged; picking
+  it up later. Text the components render on their own (Close, Previous/Next, pagination and breadcrumb names, sidebar,
+  spinner and more) comes from a `UILabelsProvider` with English as the default, so the portal can translate it with
+  next-intl without the DS importing an i18n library; `closeLabel` and similar props win over it. Asked by the
+  olympus thread for the portal's i18n: today the portal shows these texts in fixed English. The branch has the
+  docs page, the convention in this file and tests in the portal's format (they ran green in a portal copy). When
+  picking it up: merge main into it (no rebase); resolve the small conflict with wave 5 in `dialog.tsx` and
+  `drawer.tsx` (the Base UI drawer takes `title ?? labels.dialog`); line it up with wave 4.5's pagination `text` prop,
+  which is the per-instance override for the same strings.
+
 ## How to run a sync
 
 1. **Get the upstream delta, not our diff.** Our files are heavily customized, so diffing them against upstream is
