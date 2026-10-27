@@ -54,11 +54,11 @@ export function CommandMenu({ items }: { items: DocsItem[] }) {
       <Button
         variant="outline"
         size="sm"
-        className="text-muted-foreground w-full justify-start gap-2 font-normal sm:w-64"
+        className="text-muted-foreground w-full min-w-0 shrink justify-start gap-2 font-normal sm:w-64"
         onClick={() => setOpen(true)}
       >
         <SearchIcon />
-        <span>Search components…</span>
+        <span className="truncate">Search components…</span>
         <KbdGroup className="ml-auto hidden sm:inline-flex">
           <Kbd>⌘</Kbd>
           <Kbd>K</Kbd>
