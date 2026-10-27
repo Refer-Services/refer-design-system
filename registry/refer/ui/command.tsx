@@ -13,6 +13,7 @@ import {
   DialogTitle,
 } from "@/registry/refer/ui/dialog"
 import { InputGroup, InputGroupAddon } from "@/registry/refer/ui/input-group"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 function Command({
   className,
@@ -34,8 +35,8 @@ function Command({
 // pass the input and list directly; those still get wrapped in one. rounded-(--radius-card) keeps the dialog
 // concentric with the search field (10px + p-1.5).
 function CommandDialog({
-  title = "Command Palette",
-  description = "Search for a command to run...",
+  title,
+  description,
   children,
   className,
   showCloseButton = false,
@@ -47,12 +48,15 @@ function CommandDialog({
   showCloseButton?: boolean
 }) {
   const hasCommand = React.isValidElement(children) && children.type === Command
+  const labels = useUILabels()
 
   return (
     <Dialog {...props}>
       <DialogHeader className="sr-only">
-        <DialogTitle>{title}</DialogTitle>
-        <DialogDescription>{description}</DialogDescription>
+        <DialogTitle>{title ?? labels.commandPalette}</DialogTitle>
+        <DialogDescription>
+          {description ?? labels.commandPaletteDescription}
+        </DialogDescription>
       </DialogHeader>
       <DialogContent
         className={cn(

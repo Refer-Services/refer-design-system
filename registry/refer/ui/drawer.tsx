@@ -4,6 +4,7 @@ import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
 
 import { cn } from "@/lib/utils"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 function VisuallyHidden({ children, ...props }: React.ComponentProps<"span">) {
   return (
@@ -63,7 +64,7 @@ function DrawerOverlay({
 function DrawerContent({
   className,
   children,
-  title = "Dialog",
+  title,
   hideTitle = false,
   showDragHandle = true,
   ...props
@@ -72,6 +73,9 @@ function DrawerContent({
   hideTitle?: boolean
   showDragHandle?: boolean
 }) {
+  const labels = useUILabels()
+  const accessibleTitle = title ?? labels.dialog
+
   return (
     <DrawerPortal data-slot="drawer-portal">
       <DrawerOverlay />
@@ -89,11 +93,11 @@ function DrawerContent({
       >
         {hideTitle ? (
           <VisuallyHidden>
-            <DrawerPrimitive.Title>{title}</DrawerPrimitive.Title>
+            <DrawerPrimitive.Title>{accessibleTitle}</DrawerPrimitive.Title>
           </VisuallyHidden>
         ) : (
           <DrawerPrimitive.Title className="sr-only">
-            {title}
+            {accessibleTitle}
           </DrawerPrimitive.Title>
         )}
 

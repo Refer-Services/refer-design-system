@@ -123,6 +123,9 @@
       "dependencies": [
         "@radix-ui/react-slot"
       ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
+      ],
       "files": [
         {
           "path": "registry/refer/ui/breadcrumb.tsx",
@@ -197,7 +200,8 @@
         "embla-carousel-react"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -259,7 +263,8 @@
       "description": "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
-        "https://ds.tryrefer.com/r/refer/use-highlighted-code.json"
+        "https://ds.tryrefer.com/r/refer/use-highlighted-code.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -309,7 +314,8 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/dialog.json",
-        "https://ds.tryrefer.com/r/refer/input-group.json"
+        "https://ds.tryrefer.com/r/refer/input-group.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -340,7 +346,8 @@
         "@radix-ui/react-dialog"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -370,6 +377,9 @@
       "dependencies": [
         "vaul",
         "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -570,7 +580,8 @@
         "@shadcn/react@^0.3.1"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -623,7 +634,8 @@
       "name": "pagination",
       "description": "Page navigation with previous/next and page links.",
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -668,7 +680,8 @@
         "@shadcn/react@^0.3.1"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -785,6 +798,9 @@
       "dependencies": [
         "@radix-ui/react-dialog"
       ],
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
+      ],
       "files": [
         {
           "path": "registry/refer/ui/sheet.tsx",
@@ -808,7 +824,8 @@
         "https://ds.tryrefer.com/r/refer/tooltip.json",
         "https://ds.tryrefer.com/r/refer/input.json",
         "https://ds.tryrefer.com/r/refer/use-mobile.json",
-        "https://ds.tryrefer.com/r/refer/skeleton.json"
+        "https://ds.tryrefer.com/r/refer/skeleton.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -861,6 +878,9 @@
     {
       "name": "spinner",
       "description": "Loading spinner icon.",
+      "registryDependencies": [
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
+      ],
       "files": [
         {
           "path": "registry/refer/ui/spinner.tsx",
@@ -926,7 +946,8 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
         {
@@ -990,6 +1011,17 @@
       "files": [
         {
           "path": "registry/refer/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "ui-labels",
+      "description": "UILabelsProvider and useUILabels: the text components render on their own (close, previous/next, pagination, sidebar, spinner and other screen-reader names), English by default. Pass translated strings from any i18n library; a component prop such as closeLabel wins over it.",
+      "files": [
+        {
+          "path": "registry/refer/ui/ui-labels.tsx",
           "type": "registry:ui"
         }
       ],
@@ -1351,6 +1383,7 @@
         "https://ds.tryrefer.com/r/refer/toggle-group.json",
         "https://ds.tryrefer.com/r/refer/trace.json",
         "https://ds.tryrefer.com/r/refer/tooltip.json",
+        "https://ds.tryrefer.com/r/refer/ui-labels.json",
         "https://ds.tryrefer.com/r/refer/use-mobile.json",
         "https://ds.tryrefer.com/r/refer/use-highlighted-code.json",
         "https://ds.tryrefer.com/r/refer/refer-utils.json",

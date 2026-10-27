@@ -1,12 +1,19 @@
+"use client"
+
 import Link from "next/link"
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 function Breadcrumb({ ...props }: React.ComponentProps<"nav">) {
-  return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
+  const labels = useUILabels()
+
+  return (
+    <nav aria-label={labels.breadcrumb} data-slot="breadcrumb" {...props} />
+  )
 }
 
 function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
@@ -95,6 +102,8 @@ function BreadcrumbEllipsis({
   className,
   ...props
 }: React.ComponentProps<"span">) {
+  const labels = useUILabels()
+
   return (
     <span
       data-slot="breadcrumb-ellipsis"
@@ -104,7 +113,7 @@ function BreadcrumbEllipsis({
       {...props}
     >
       <MoreHorizontal className="size-4" />
-      <span className="sr-only">More</span>
+      <span className="sr-only">{labels.more}</span>
     </span>
   )
 }
