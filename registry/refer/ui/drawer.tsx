@@ -274,7 +274,7 @@ const drawerContentVariants = cva(
         true: "bg-card rounded-3xl border shadow-xl [--drawer-inset:--spacing(2)] after:hidden",
         // Attached to the edge it comes from, only the inner corners rounded.
         false:
-          "bg-background data-[swipe-direction=down]:rounded-t-lg data-[swipe-direction=down]:border-t data-[swipe-direction=left]:border-r data-[swipe-direction=right]:border-l data-[swipe-direction=up]:rounded-b-lg data-[swipe-direction=up]:border-b after:bg-inherit",
+          "bg-background data-[swipe-direction=down]:rounded-t-2xl data-[swipe-direction=down]:border-t data-[swipe-direction=left]:border-r data-[swipe-direction=right]:border-l data-[swipe-direction=up]:rounded-b-2xl data-[swipe-direction=up]:border-b after:bg-inherit",
       },
     },
     defaultVariants: {
