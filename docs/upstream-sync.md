@@ -34,7 +34,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | Change | DS | Apps synced |
 |---|---|---|
 | UI labels: translatable component text (see [UI labels](#ui-labels-translatable-component-text)), asked by the olympus thread for the portal's i18n | Merged 2026-10-27 | Pending: portal (olympus thread) reinstalls `ui-labels`, dialog, sheet, breadcrumb, pagination, sidebar, command, carousel (not drawer: it waits for the wave 5 sync), wraps `app/layout.tsx` in `UILabelsProvider` with next-intl strings and adds `tests/components/ui/ui-labels.test.tsx`. argus, landing, partners: not needed until they translate |
-| Fields default to `bg-card` like Input: SelectTrigger (its `bg-transparent` was overriding `bg-card`), Textarea, InputGroup (and so Combobox); dark mode `bg-input/10` on all. Select and NativeSelect hover tints the border like Input instead of `hover:bg-accent` | Merged 2026-10-27 | Pending: portal reinstalls `@refer/select @refer/textarea @refer/input-group` (and `@refer/native-select` if it has it); overrides that set `bg-card` on them can go |
+| Fields default to `bg-card` like Input: SelectTrigger (its `bg-transparent` was overriding `bg-card`), Textarea, InputGroup (and so Combobox); dark mode `bg-input/10` on all. Select and NativeSelect hover and press like the outline Button instead of `hover:bg-accent` | Merged 2026-10-27 | Pending: portal reinstalls `@refer/select @refer/textarea @refer/input-group` (and `@refer/native-select` if it has it); overrides that set `bg-card` on them can go |
 
 ## How to run a sync
 
@@ -147,7 +147,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | radio-group-boxed, checkbox-boxed, responsive-dialog | Refer-only components | — | — |
 | refer-menu-item | — | — | Done in W2: delete (only the docs demo uses it) |
 | resizable | — | — | Item pins `react-resizable-panels@^3` (the v2-era component works on v3: same `PanelGroup`/`Panel`/`PanelResizeHandle`, `direction` and `data-panel-group-direction`; apps are on 3.x). W5: v4 (`Group`/`Separator`, `orientation`, sizes as `"50%"` strings, `onLayoutChange`), then pin `^4` |
-| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27); hover only tints the border (`hover:border-primary/30`) like Input, also on native-select (`hover:bg-accent` turned the field almost transparent) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
+| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27); hover and press like the outline Button (`hover:bg-background`, `active:bg-stone-100`, dark `hover:bg-accent`), also on native-select (the old `hover:bg-accent` turned the field almost transparent in light mode) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
 | separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
 | sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
