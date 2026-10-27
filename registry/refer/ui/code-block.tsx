@@ -6,6 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 import { Button } from "@/registry/refer/ui/button"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 const codeBlockVariants = cva(
   "group/code-block squircle has-[>[data-slot=code-block-content]:focus-visible]:outline-ring relative flex w-full min-w-0 flex-col overflow-hidden rounded-xl text-sm has-[>[data-slot=code-block-content]:focus-visible]:outline-2 has-[>[data-slot=code-block-content]:focus-visible]:outline-offset-2 data-[size=sm]:text-xs",
@@ -91,6 +92,7 @@ function CodeBlockCopyButton({
   ...props
 }: React.ComponentProps<typeof Button> & { value: string }) {
   const [copied, setCopied] = React.useState(false)
+  const labels = useUILabels()
 
   React.useEffect(() => {
     if (!copied) {
@@ -108,7 +110,7 @@ function CodeBlockCopyButton({
         data-copied={copied || undefined}
         variant={variant}
         size={size}
-        aria-label={copied ? "Copied" : "Copy"}
+        aria-label={copied ? labels.copied : labels.copy}
         className={cn(className)}
         onClick={(event) => {
           onClick?.(event)
@@ -122,7 +124,7 @@ function CodeBlockCopyButton({
         {copied ? <CheckIcon /> : <CopyIcon />}
       </Button>
       <span aria-live="polite" className="sr-only">
-        {copied ? "Copied" : ""}
+        {copied ? labels.copied : ""}
       </span>
     </>
   )

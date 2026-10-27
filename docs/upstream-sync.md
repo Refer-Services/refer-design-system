@@ -29,6 +29,13 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 5 | Breaking migrations, one at a time, coordinated with apps. Pilot: drawer from Vaul to Base UI (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)), then decide Radix → Base UI per component | Pilot on branch `feat/shadcn-wave-5-drawer` | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
+### Other DS changes
+
+| Change | DS | Apps synced |
+|---|---|---|
+| UI labels: translatable component text (see [UI labels](#ui-labels-translatable-component-text)), asked by the olympus thread for the portal's i18n | Merged 2026-10-27 | Pending: portal (olympus thread) reinstalls `ui-labels`, dialog, sheet, breadcrumb, pagination, sidebar, command, carousel (not drawer: it waits for the wave 5 sync), wraps `app/layout.tsx` in `UILabelsProvider` with next-intl strings and adds `tests/components/ui/ui-labels.test.tsx`. argus, landing, partners: not needed until they translate |
+| Fields default to `bg-card` like Input: SelectTrigger (its `bg-transparent` was overriding `bg-card`), Textarea, InputGroup (and so Combobox); dark mode `bg-input/10` on all | Merged 2026-10-27 | Pending: portal reinstalls `@refer/select @refer/textarea @refer/input-group`; overrides that set `bg-card` on them can go |
+
 ## How to run a sync
 
 1. **Get the upstream delta, not our diff.** Our files are heavily customized, so diffing them against upstream is
@@ -43,9 +50,10 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 2. **Ignore the noise:** Tailwind class reordering, `import { cn } from "cn"`, `@radix-ui/react-x` → `radix-ui`,
    `Slot` → `Slot.Root`, `!m-0` → `m-0!`.
 3. **Merge, never replace.** Port each upstream change into our file and keep everything in the ledger's "Refer keeps"
-   column. When porting upstream code: `from "cn"` → `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*`
-   package, `@/registry/new-york-v4/...` → `@/registry/refer/...`, upstream variant names → ours (`default` →
-   `primary`, size `default` → `md`). In ported examples and galleries, turn `overflow-y-auto` scroll regions into
+   column. Text a component renders on its own comes from `useUILabels()`, never a hardcoded string (see
+   [UI labels](#ui-labels-translatable-component-text)). When porting upstream code: `from "cn"` →
+   `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*` package, `@/registry/new-york-v4/...` →
+   `@/registry/refer/...`, upstream variant names → ours (`default` → `primary`, size `default` → `md`). In ported examples and galleries, turn `overflow-y-auto` scroll regions into
    `ScrollArea` (see CLAUDE.md, "Scrolling in demos and galleries").
 4. **Never rename a `data-slot` an app targets** (see [What the apps depend on](#what-the-apps-depend-on)). Adding a
    missing slot is fine.
@@ -115,7 +123,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 | Component | Refer keeps | Skipped (why) | Pending |
 |---|---|---|---|
-| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60` | — | Nothing upstream to take |
+| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60`; textarea `bg-card` like Input | — | Nothing upstream to take |
 | alert | Refer styling | — | — |
 | scroll-area | Root `flex flex-col`, viewport `min-h-0 flex-1` (besides upstream's `size-full`): `max-h-*` or `flex-1 min-h-0` on the root makes the viewport scroll. Upstream's `size-full` alone needs a definite height, so in content-sized drawers and `max-h` boxes the viewport grew to its content and nothing scrolled (the apps worked around it with `overflow-y-auto` on the root or `[&_[data-slot=scroll-area-viewport]]:max-h-*`; both still work) | — | — |
 | alert-dialog | `rounded-2xl shadow-xl` content | Upstream `rounded-lg shadow-lg` | Done in W2: `size` (`sm`) on content, actions as `<Button asChild>` with `variant`/`size` (defaults `primary`/`outline`, `md`), `data-slot`s on actions. Refer difference from upstream: the actions pass `className` to `Button` (tailwind-merge), not to the Slot child, which only concatenates; so an app's `className="bg-destructive"` still wins over `bg-primary`. Prefer `variant="destructive"` in apps. W4: `AlertDialogMedia` (needs Refer styling) |
@@ -131,7 +139,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | context-menu, dropdown-menu | dropdown: primary highlight, `rounded-input` items, `rounded-card shadow-popover` content | — | Done in W1 (SubTrigger icons) |
 | dialog | `title` (sr-only) and `showCloseButton` props on content, custom close button, overlay `backdrop-blur-[1px]`, `DialogContentWithNavigation`, `NavigationArrow` with `loading`, `useDialogNavigation`, `rounded-3xl bg-card shadow-xl` | Upstream content styles | Done in W1 (close slot, `outline-none`). Done in W2: `DialogFooter showCloseButton` (adds `button` to the item's `registryDependencies`) |
 | drawer | Floating by default (`floating` on `DrawerContent`: `--drawer-inset` 8px, all corners `rounded-3xl`, border, `shadow-xl`, `bg-card` like Dialog, no bleed); `floating={false}`: `bg-background`, `rounded-t-2xl` + `border-t` (bottom), overlay `bg-black/50 backdrop-blur-[1px]`, drag handle on bottom drawers (`showDragHandle`), hidden `title` on `DrawerContent`, header `gap-0.5` centered on mobile, bottom/top up to `80vh` | — | W4: header centered on mobile, `gap-0.5` (design call). W5 pilot: Base UI Drawer instead of Vaul, with a Vaul/Radix compatibility layer (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)); floating by default, upstream's rhea/luma look (design call: the mobile ResponsiveDialog now looks like the desktop Dialog) |
-| empty, field, input-group, item, kbd, spinner, button-group | empty: icon variant; field: `text-destructive-content`; input-group: `rounded-input`, primary focus ring | — | Done in W2: publish button-group, field, item, kbd, spinner. Variations galleries at `/examples/<name>` for button-group, field, item, kbd, native-select, spinner. Pending (additive): item `size="xs"`, which upstream has only in the newer bases system (radix-vega), not in new-york-v4; the item gallery leaves out its 4 extra-small sections until we add it |
+| empty, field, input-group, item, kbd, spinner, button-group | empty: icon variant; field: `text-destructive-content`; input-group: `rounded-input`, primary focus ring, `bg-card` (dark `bg-input/10`) like Input | — | Done in W2: publish button-group, field, item, kbd, spinner. Variations galleries at `/examples/<name>` for button-group, field, item, kbd, native-select, spinner. Pending (additive): item `size="xs"`, which upstream has only in the newer bases system (radix-vega), not in new-york-v4; the item gallery leaves out its 4 extra-small sections until we add it |
 | input | `rounded-input`, `bg-card`, h-10, primary focus ring | — | Done in W1 (no `flex`) |
 | native-select | — | — | Done in W1 (`Canvas` option colors). Done in W2: publish. W4: Refer styling (it's still stock: `rounded-md`, `ring-ring/50`) |
 | pagination | — | — | Done in W1 (type-only `Button` import) |
@@ -139,7 +147,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | radio-group-boxed, checkbox-boxed, responsive-dialog | Refer-only components | — | — |
 | refer-menu-item | — | — | Done in W2: delete (only the docs demo uses it) |
 | resizable | — | — | Item pins `react-resizable-panels@^3` (the v2-era component works on v3: same `PanelGroup`/`Panel`/`PanelResizeHandle`, `direction` and `data-panel-group-direction`; apps are on 3.x). W5: v4 (`Group`/`Separator`, `orientation`, sizes as `"50%"` strings, `onLayoutChange`), then pin `^4` |
-| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover` | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
+| select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
 | separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
 | sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
@@ -334,6 +342,41 @@ else imports it. argus, landing and partners don't use drawer; skip them.
 - Headless mobile tests: `mobile: true` zooms out when the page overflows and shifts click coordinates; use `mobile:
   false` at 390px.
 - Not done: `combobox.tsx` still says "vaul Drawer" in a comment (left to avoid an app sync for a comment).
+
+## UI labels (translatable component text)
+
+The text components render on their own (screen-reader names, aria-labels, default button text) comes from
+`useUILabels()` in `ui/ui-labels.tsx`, never a hardcoded English string. Apps translate it once with
+`<UILabelsProvider labels={{ close: t("close"), … }}>` at the root; the DS imports no i18n library. English stays the
+default, keys left out fall back to the enclosing provider and then English, and per-instance props win:
+`closeLabel` on DialogContent, DialogFooter (`showCloseButton`), DialogContentWithNavigation (plus `previousLabel`,
+`nextLabel`) and SheetContent; `title`/`description` on CommandDialog and DrawerContent; `children` on the
+Questionnaire buttons and MessageScrollerButton; `aria-label` on Breadcrumb, Pagination and its links, Spinner and
+ToastClose.
+
+| Component | Keys |
+|---|---|
+| dialog | `close`, `previous`, `next` |
+| sheet | `close` |
+| drawer | `dialog` (hidden title when no `title`) |
+| breadcrumb | `breadcrumb`, `more` |
+| pagination | `pagination`, `previousPage`, `nextPage`, `previous`, `next`, `morePages` |
+| sidebar | `toggleSidebar`, `sidebar`, `sidebarDescription` |
+| command | `commandPalette`, `commandPaletteDescription` |
+| carousel | `previousSlide`, `nextSlide` |
+| spinner | `loading` |
+| code-block | `copy`, `copied` |
+| message-scroller | `scrollToEnd`, `scrollToStart` |
+| toast | `closeToast` |
+| questionnaire | `previous`, `skip`, `next`, `submit` |
+
+breadcrumb, pagination and spinner became client components (`"use client"`) to read the labels. Each of these items
+lists `ui-labels` in `registryDependencies`, so installing one brings the provider. Tests live in the portal
+(`tests/components/ui/ui-labels.test.tsx`: defaults, provider, fallback, props win), since the DS has no test
+runner.
+
+When porting upstream code, a new hardcoded string becomes a key in `UILabels` with upstream's English as its default.
+The wave 5 drawer (Base UI) takes its hidden title from `title ?? labels.dialog`.
 
 ## Infra decisions
 

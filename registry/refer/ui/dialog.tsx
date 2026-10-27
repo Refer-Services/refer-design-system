@@ -6,6 +6,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { XIcon, ArrowLeft, ArrowRight, Loader2Icon } from "lucide-react"
 
 import { Button } from "@/registry/refer/ui/button"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 // Inside a Drawer (Base UI), Radix's Title, Description and Close have no Dialog to attach to: the Drawer provides its
 // own parts here and DialogTitle, DialogDescription and DialogClose render those instead, so ResponsiveDialog can share
@@ -92,11 +93,16 @@ function DialogContent({
   children,
   title,
   showCloseButton = true,
+  closeLabel,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
   title?: string
   showCloseButton?: boolean
+  /** Close button's name for screen readers. Defaults to UILabelsProvider's `close`. */
+  closeLabel?: string
 }) {
+  const labels = useUILabels()
+
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
@@ -120,7 +126,7 @@ function DialogContent({
             className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
           >
             <XIcon />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">{closeLabel ?? labels.close}</span>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Content>
@@ -141,11 +147,16 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
 function DialogFooter({
   className,
   showCloseButton = false,
+  closeLabel,
   children,
   ...props
 }: React.ComponentProps<"div"> & {
   showCloseButton?: boolean
+  /** Text of the `showCloseButton` button. Defaults to UILabelsProvider's `close`. */
+  closeLabel?: string
 }) {
+  const labels = useUILabels()
+
   return (
     <div
       data-slot="dialog-footer"
@@ -158,7 +169,7 @@ function DialogFooter({
       {children}
       {showCloseButton && (
         <DialogClose asChild>
-          <Button variant="outline">Close</Button>
+          <Button variant="outline">{closeLabel ?? labels.close}</Button>
         </DialogClose>
       )}
     </div>
@@ -198,6 +209,7 @@ function DialogDescription({
 
 interface NavigationArrowProps {
   direction: "left" | "right"
+  label: string
   onClick?: () => void
   disabled?: boolean
   loading?: boolean
@@ -206,6 +218,7 @@ interface NavigationArrowProps {
 
 function NavigationArrow({
   direction,
+  label,
   onClick,
   disabled = false,
   loading = false,
@@ -230,7 +243,7 @@ function NavigationArrow({
         <button
           onClick={handleClick}
           disabled={loading}
-          aria-label={direction === "left" ? "Previous" : "Next"}
+          aria-label={label}
           className="group ease-smooth relative z-[9999] flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white/6 shadow-2xl ring ring-white/17 backdrop-blur-sm transition-all duration-300 hover:bg-white/12 hover:ring-white/30 focus-visible:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white/80 active:scale-[.95] active:bg-white/6"
         >
           {loading ? (
@@ -262,6 +275,12 @@ interface DialogContentWithNavigationProps extends React.ComponentProps<
   navigationPosition?: "external" | "internal"
   open?: boolean
   showCloseButton?: boolean
+  /** Close button's name for screen readers. Defaults to UILabelsProvider's `close`. */
+  closeLabel?: string
+  /** Previous arrow's name. Defaults to UILabelsProvider's `previous`. */
+  previousLabel?: string
+  /** Next arrow's name. Defaults to UILabelsProvider's `next`. */
+  nextLabel?: string
 }
 
 function DialogContentWithNavigation({
@@ -277,11 +296,16 @@ function DialogContentWithNavigation({
   open = true,
   title,
   showCloseButton = false,
+  closeLabel,
+  previousLabel,
+  nextLabel,
   ...props
 }: DialogContentWithNavigationProps & {
   title?: string
   showCloseButton?: boolean
 }) {
+  const labels = useUILabels()
+
   React.useEffect(() => {
     if (!showNavigation || !open) return
 
@@ -336,7 +360,7 @@ function DialogContentWithNavigation({
               className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
             >
               <XIcon />
-              <span className="sr-only">Close</span>
+              <span className="sr-only">{closeLabel ?? labels.close}</span>
             </DialogPrimitive.Close>
           )}
         </DialogPrimitive.Content>
@@ -366,6 +390,7 @@ function DialogContentWithNavigation({
             {canGoPrevious && (
               <NavigationArrow
                 direction="left"
+                label={previousLabel ?? labels.previous}
                 onClick={onPrevious}
                 disabled={false}
                 className="absolute top-1/2 left-[-120px] hidden -translate-y-1/2 sm:flex"
@@ -375,6 +400,7 @@ function DialogContentWithNavigation({
             {(canGoNext || isLoadingNext) && (
               <NavigationArrow
                 direction="right"
+                label={nextLabel ?? labels.next}
                 onClick={onNext}
                 disabled={false}
                 loading={isLoadingNext}
@@ -390,7 +416,7 @@ function DialogContentWithNavigation({
                 className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
               >
                 <XIcon />
-                <span className="sr-only">Close</span>
+                <span className="sr-only">{closeLabel ?? labels.close}</span>
               </DialogPrimitive.Close>
             )}
           </DialogPrimitive.Content>

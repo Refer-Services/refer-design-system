@@ -121,6 +121,7 @@ const registry = {
       description: "Path navigation using Next.js Link.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-slot"],
+      registryDependencies: ["ui-labels"],
       files: [
         {
           path: "ui/breadcrumb.tsx",
@@ -185,7 +186,7 @@ const registry = {
       description: "Embla-based carousel with previous/next controls.",
       type: "registry:ui",
       dependencies: ["embla-carousel-react"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/carousel.tsx",
@@ -236,7 +237,7 @@ const registry = {
       description:
         "Code, terminal, log or diff display with header, copy button, line numbers and highlights (shiki).",
       type: "registry:ui",
-      registryDependencies: ["button", "use-highlighted-code"],
+      registryDependencies: ["button", "use-highlighted-code", "ui-labels"],
       files: [
         {
           path: "ui/code-block.tsx",
@@ -276,7 +277,7 @@ const registry = {
         "Command palette and searchable list (cmdk): search field, groups, shortcuts, checkable items (data-checked); CommandDialog opens it in a dialog.",
       type: "registry:ui",
       dependencies: ["cmdk"],
-      registryDependencies: ["dialog", "input-group"],
+      registryDependencies: ["dialog", "input-group", "ui-labels"],
       files: [
         {
           path: "ui/command.tsx",
@@ -303,7 +304,7 @@ const registry = {
         "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/dialog.tsx",
@@ -330,7 +331,7 @@ const registry = {
         "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested and non-modal drawers, a swipe handle on any side; floats off the edges with rounded corners by default (floating={false} attaches it to the edge). Still accepts the direction, dismissible and asChild props from vaul.",
       type: "registry:ui",
       dependencies: ["@base-ui/react@^1.9.0"],
-      registryDependencies: ["dialog"],
+      registryDependencies: ["dialog", "ui-labels"],
       files: [
         {
           path: "ui/drawer.tsx",
@@ -512,7 +513,7 @@ const registry = {
         "Chat scroll container: follows streaming output, keeps position on history prepend, jump-to and scroll-to-bottom.",
       type: "registry:ui",
       dependencies: ["@shadcn/react@^0.3.1"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/message-scroller.tsx",
@@ -559,7 +560,7 @@ const registry = {
       name: "pagination",
       description: "Page navigation with previous/next and page links.",
       type: "registry:ui",
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/pagination.tsx",
@@ -598,7 +599,7 @@ const registry = {
         "Multi-step question flow with single, multiple, free-form and skippable questions.",
       type: "registry:ui",
       dependencies: ["@shadcn/react@^0.3.1"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/questionnaire.tsx",
@@ -695,6 +696,7 @@ const registry = {
       description: "Side panel that slides in from an edge.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
+      registryDependencies: ["ui-labels"],
       files: [
         {
           path: "ui/sheet.tsx",
@@ -719,6 +721,7 @@ const registry = {
         "input",
         "use-mobile",
         "skeleton",
+        "ui-labels",
       ],
       files: [
         {
@@ -768,6 +771,7 @@ const registry = {
       name: "spinner",
       description: "Loading spinner icon.",
       type: "registry:ui",
+      registryDependencies: ["ui-labels"],
       files: [
         {
           path: "ui/spinner.tsx",
@@ -827,7 +831,7 @@ const registry = {
         "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "ui-labels"],
       files: [
         {
           path: "ui/toast.tsx",
@@ -882,6 +886,18 @@ const registry = {
       files: [
         {
           path: "ui/tooltip.tsx",
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "ui-labels",
+      description:
+        "UILabelsProvider and useUILabels: the text components render on their own (close, previous/next, pagination, sidebar, spinner and other screen-reader names), English by default. Pass translated strings from any i18n library; a component prop such as closeLabel wins over it.",
+      type: "registry:ui",
+      files: [
+        {
+          path: "ui/ui-labels.tsx",
           type: "registry:ui",
         },
       ],

@@ -6,6 +6,7 @@ import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 import { DialogPartsContext } from "@/registry/refer/ui/dialog"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 // Base UI drawer (wave 5; it was vaul). The Vaul/Radix props the apps already pass keep working and are marked
 // @deprecated where Base UI has a direct equivalent: direction, activeSnapPoint, asChild, onOpenAutoFocus,
@@ -286,7 +287,7 @@ const drawerContentVariants = cva(
 function DrawerContent({
   className,
   children,
-  title = "Dialog",
+  title,
   // The title is always hidden now; hideTitle stays accepted for the apps that pass it.
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   hideTitle: _hideTitle,
@@ -299,7 +300,7 @@ function DrawerContent({
   onEscapeKeyDown,
   ...props
 }: DrawerPrimitive.Popup.Props & {
-  /** Accessible name, rendered hidden. */
+  /** Accessible name, rendered hidden. Defaults to UILabelsProvider's `dialog`. */
   title?: string
   /** 8px off the edges with all corners rounded (default). `false` attaches it to the edge it comes from. */
   floating?: boolean
@@ -324,6 +325,7 @@ function DrawerContent({
     showSwipeHandle,
     dismissHandlers,
   } = useDrawer()
+  const labels = useUILabels()
   const showHandle =
     showDragHandle !== false && (showSwipeHandle ?? swipeDirection === "down")
 
@@ -368,7 +370,7 @@ function DrawerContent({
           {...props}
         >
           <DrawerPrimitive.Title className="sr-only">
-            {title}
+            {title ?? labels.dialog}
           </DrawerPrimitive.Title>
           {showHandle && <DrawerSwipeHandle />}
           {/* Content lets mouse users select text without starting a swipe. It fades out under a nested drawer. */}
