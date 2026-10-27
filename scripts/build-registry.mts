@@ -327,7 +327,7 @@ const registry = {
     {
       name: "drawer",
       description:
-        "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested drawers. Still accepts vaul's direction/dismissible/asChild props.",
+        'Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested drawers; DrawerContent variant="floating" keeps it off the edges with rounded corners. Still accepts vaul\'s direction/dismissible/asChild props.',
       type: "registry:ui",
       dependencies: ["@base-ui/react@^1.9.0"],
       registryDependencies: ["dialog"],
