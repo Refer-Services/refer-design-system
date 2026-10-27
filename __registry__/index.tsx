@@ -464,7 +464,7 @@ export const Index: Record<string, any> = {
   },
   "drawer": {
     name: "drawer",
-    description: "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested and non-modal drawers, a swipe handle on any side; the floating variant of DrawerContent keeps it off the edges with rounded corners. Still accepts the direction, dismissible and asChild props from vaul.",
+    description: "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested and non-modal drawers, a swipe handle on any side; floats off the edges with rounded corners by default (floating={false} attaches it to the edge). Still accepts the direction, dismissible and asChild props from vaul.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json"],
     files: [{

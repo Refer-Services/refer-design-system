@@ -534,9 +534,9 @@ function DrawerMobileHeader() {
       </Drawer>
       <div
         aria-hidden="true"
-        className="bg-muted flex w-full justify-center rounded-2xl px-4 pt-10"
+        className="bg-muted flex w-full justify-center rounded-2xl px-4 pt-10 pb-2"
       >
-        <div className="bg-background w-[320px] rounded-t-[20px] border border-b-0 shadow-xl">
+        <div className="bg-card w-[320px] rounded-3xl border shadow-xl">
           <div className="bg-border mx-auto mt-2 h-1 w-10 rounded-full" />
           {/* Static frame: forces the mobile layout so it shows on a wide window. */}
           <DrawerHeader className="text-center">

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "@base-ui/react/drawer"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 import { DialogPartsContext } from "@/registry/refer/ui/dialog"
@@ -269,17 +269,16 @@ const drawerContentVariants = cva(
   ],
   {
     variants: {
-      variant: {
-        // Flush with the edge it comes from.
-        default:
+      floating: {
+        // 8px from the edges with all corners rounded, like a Dialog (no bleed: there's a gap to show).
+        true: "bg-card rounded-3xl border shadow-xl [--drawer-inset:--spacing(2)] after:hidden",
+        // Attached to the edge it comes from, only the inner corners rounded.
+        false:
           "bg-background data-[swipe-direction=down]:rounded-t-lg data-[swipe-direction=down]:border-t data-[swipe-direction=left]:border-r data-[swipe-direction=right]:border-l data-[swipe-direction=up]:rounded-b-lg data-[swipe-direction=up]:border-b after:bg-inherit",
-        // Floats 8px from the edges with all corners rounded, like a Dialog (no bleed: there's a gap to show).
-        floating:
-          "bg-card rounded-3xl border shadow-xl [--drawer-inset:--spacing(2)] after:hidden",
       },
     },
     defaultVariants: {
-      variant: "default",
+      floating: true,
     },
   }
 )
@@ -292,30 +291,31 @@ function DrawerContent({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   hideTitle: _hideTitle,
   showDragHandle,
-  variant = "default",
+  floating = true,
   initialFocus,
   onOpenAutoFocus,
   onInteractOutside,
   onPointerDownOutside,
   onEscapeKeyDown,
   ...props
-}: DrawerPrimitive.Popup.Props &
-  VariantProps<typeof drawerContentVariants> & {
-    /** Accessible name, rendered hidden. */
-    title?: string
-    /** @deprecated The title is always hidden. */
-    hideTitle?: boolean
-    /** @deprecated Use the Drawer's `showSwipeHandle`. `false` still hides the grab bar. */
-    showDragHandle?: boolean
-    /** @deprecated Radix's prop: use `initialFocus` (`false`, a ref, or a function returning the element). */
-    onOpenAutoFocus?(event: Event): void
-    /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "outside-press". */
-    onInteractOutside?(event: Event): void
-    /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "outside-press". */
-    onPointerDownOutside?(event: Event): void
-    /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "escape-key". */
-    onEscapeKeyDown?(event: KeyboardEvent): void
-  }) {
+}: DrawerPrimitive.Popup.Props & {
+  /** Accessible name, rendered hidden. */
+  title?: string
+  /** 8px off the edges with all corners rounded (default). `false` attaches it to the edge it comes from. */
+  floating?: boolean
+  /** @deprecated The title is always hidden. */
+  hideTitle?: boolean
+  /** @deprecated Use the Drawer's `showSwipeHandle`. `false` still hides the grab bar. */
+  showDragHandle?: boolean
+  /** @deprecated Radix's prop: use `initialFocus` (`false`, a ref, or a function returning the element). */
+  onOpenAutoFocus?(event: Event): void
+  /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "outside-press". */
+  onInteractOutside?(event: Event): void
+  /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "outside-press". */
+  onPointerDownOutside?(event: Event): void
+  /** @deprecated Radix's prop: use the Drawer's `onOpenChange` and `eventDetails.cancel()` for reason "escape-key". */
+  onEscapeKeyDown?(event: KeyboardEvent): void
+}) {
   const {
     hasSnapPoints,
     swipeDirection,
@@ -363,8 +363,8 @@ function DrawerContent({
           data-swipe-axis={swipeAxis}
           data-snap-points={hasSnapPoints ? "" : undefined}
           initialFocus={focusOnOpen}
-          data-variant={variant}
-          className={cn(drawerContentVariants({ variant }), className)}
+          data-floating={floating ? "" : undefined}
+          className={cn(drawerContentVariants({ floating }), className)}
           {...props}
         >
           <DrawerPrimitive.Title className="sr-only">

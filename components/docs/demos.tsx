@@ -145,7 +145,7 @@ export const demos: Record<string, Demo[]> = {
       DrawerFloatingDemo,
       "drawer-floating-demo",
       "Floating",
-      'Refer variant. variant="floating" on DrawerContent keeps the drawer 8px from the edges with every corner rounded, like a Dialog. The default stays flush with the edge.'
+      "Refer: drawers float 8px from the edges with every corner rounded, like a Dialog. floating={false} on DrawerContent attaches the drawer to the edge it comes from, with only the inner corners rounded."
     ),
     demo(
       DrawerSwipeHandleDemo,
