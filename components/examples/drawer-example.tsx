@@ -15,6 +15,7 @@ import {
 } from "@/registry/refer/ui/combobox"
 import { DialogClose, DialogDescription } from "@/registry/refer/ui/dialog"
 import { Label } from "@/registry/refer/ui/label"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 import { Switch } from "@/registry/refer/ui/switch"
 import {
   Drawer,
@@ -209,13 +210,15 @@ function DrawerCustomWidthAndHeight() {
                 Drawer with a custom height.
               </DrawerDescription>
             </DrawerHeader>
-            <div className="scroll-fade flex-1 scrollbar-thin overflow-y-auto p-4">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <p key={index} className="mb-4 leading-normal">
-                  {PARAGRAPHS[index % PARAGRAPHS.length]}
-                </p>
-              ))}
-            </div>
+            <ScrollArea className="min-h-0 flex-1">
+              <div className="p-4">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <p key={index} className="mb-4 leading-normal">
+                    {PARAGRAPHS[index % PARAGRAPHS.length]}
+                  </p>
+                ))}
+              </div>
+            </ScrollArea>
             <DrawerFooter>
               <DrawerClose render={<Button variant="outline" />}>
                 Close
@@ -234,13 +237,15 @@ function DrawerCustomWidthAndHeight() {
                 Drawer with a custom height.
               </DrawerDescription>
             </DrawerHeader>
-            <div className="scroll-fade flex-1 overflow-y-auto p-4">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <p key={index} className="mb-4 leading-normal">
-                  {PARAGRAPHS[index % PARAGRAPHS.length]}
-                </p>
-              ))}
-            </div>
+            <ScrollArea className="min-h-0 flex-1">
+              <div className="p-4">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <p key={index} className="mb-4 leading-normal">
+                    {PARAGRAPHS[index % PARAGRAPHS.length]}
+                  </p>
+                ))}
+              </div>
+            </ScrollArea>
             <DrawerFooter>
               <DrawerClose render={<Button variant="outline" />}>
                 Close
@@ -257,13 +262,15 @@ function DrawerCustomWidthAndHeight() {
               <DrawerTitle>Left drawer</DrawerTitle>
               <DrawerDescription>Drawer with a custom width.</DrawerDescription>
             </DrawerHeader>
-            <div className="scroll-fade flex-1 overflow-y-auto p-4">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <p key={index} className="mb-4 leading-normal">
-                  {PARAGRAPHS[index % PARAGRAPHS.length]}
-                </p>
-              ))}
-            </div>
+            <ScrollArea className="min-h-0 flex-1">
+              <div className="p-4">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <p key={index} className="mb-4 leading-normal">
+                    {PARAGRAPHS[index % PARAGRAPHS.length]}
+                  </p>
+                ))}
+              </div>
+            </ScrollArea>
             <DrawerFooter>
               <DrawerClose render={<Button variant="outline" />}>
                 Close
@@ -280,13 +287,15 @@ function DrawerCustomWidthAndHeight() {
               <DrawerTitle>Right drawer</DrawerTitle>
               <DrawerDescription>Drawer with a custom width.</DrawerDescription>
             </DrawerHeader>
-            <div className="scroll-fade flex-1 overflow-y-auto p-4">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <p key={index} className="mb-4 leading-normal">
-                  {PARAGRAPHS[index % PARAGRAPHS.length]}
-                </p>
-              ))}
-            </div>
+            <ScrollArea className="min-h-0 flex-1">
+              <div className="p-4">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <p key={index} className="mb-4 leading-normal">
+                    {PARAGRAPHS[index % PARAGRAPHS.length]}
+                  </p>
+                ))}
+              </div>
+            </ScrollArea>
             <DrawerFooter>
               <DrawerClose render={<Button variant="outline" />}>
                 Close
@@ -354,13 +363,15 @@ function DrawerScrollable() {
                   Set your daily activity goal.
                 </DrawerDescription>
               </DrawerHeader>
-              <div className="scroll-fade flex-1 overflow-y-auto p-4">
-                {Array.from({ length: 20 }).map((_, index) => (
-                  <p key={index} className="mb-4 leading-normal">
-                    {PARAGRAPHS[index % PARAGRAPHS.length]}
-                  </p>
-                ))}
-              </div>
+              <ScrollArea className="min-h-0 flex-1">
+                <div className="p-4">
+                  {Array.from({ length: 20 }).map((_, index) => (
+                    <p key={index} className="mb-4 leading-normal">
+                      {PARAGRAPHS[index % PARAGRAPHS.length]}
+                    </p>
+                  ))}
+                </div>
+              </ScrollArea>
               <DrawerFooter>
                 <Button>Submit</Button>
                 <DrawerClose render={<Button variant="outline" />}>
@@ -392,11 +403,13 @@ function DrawerSnapPoints() {
               full-height view.
             </DrawerDescription>
           </DrawerHeader>
-          <div className="scroll-fade grid flex-1 gap-3 overflow-y-auto p-4">
-            {Array.from({ length: 16 }).map((_, index) => (
-              <div key={index} className="bg-muted h-12 rounded-lg" />
-            ))}
-          </div>
+          <ScrollArea className="min-h-0 flex-1">
+            <div className="grid gap-3 p-4">
+              {Array.from({ length: 16 }).map((_, index) => (
+                <div key={index} className="bg-muted h-12 rounded-lg" />
+              ))}
+            </div>
+          </ScrollArea>
         </DrawerContent>
       </Drawer>
     </Example>

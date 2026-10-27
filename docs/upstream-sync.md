@@ -45,7 +45,8 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 3. **Merge, never replace.** Port each upstream change into our file and keep everything in the ledger's "Refer keeps"
    column. When porting upstream code: `from "cn"` → `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*`
    package, `@/registry/new-york-v4/...` → `@/registry/refer/...`, upstream variant names → ours (`default` →
-   `primary`, size `default` → `md`).
+   `primary`, size `default` → `md`). In ported examples and galleries, turn `overflow-y-auto` scroll regions into
+   `ScrollArea` (see CLAUDE.md, "Scrolling in demos and galleries").
 4. **Never rename a `data-slot` an app targets** (see [What the apps depend on](#what-the-apps-depend-on)). Adding a
    missing slot is fine.
 5. **Verify:**
@@ -114,8 +115,9 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 | Component | Refer keeps | Skipped (why) | Pending |
 |---|---|---|---|
-| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, scroll-area, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60` | — | Nothing upstream to take |
+| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60` | — | Nothing upstream to take |
 | alert | Refer styling | — | — |
+| scroll-area | Root `flex flex-col`, viewport `min-h-0 flex-1` (besides upstream's `size-full`): `max-h-*` or `flex-1 min-h-0` on the root makes the viewport scroll. Upstream's `size-full` alone needs a definite height, so in content-sized drawers and `max-h` boxes the viewport grew to its content and nothing scrolled (the apps worked around it with `overflow-y-auto` on the root or `[&_[data-slot=scroll-area-viewport]]:max-h-*`; both still work) | — | — |
 | alert-dialog | `rounded-2xl shadow-xl` content | Upstream `rounded-lg shadow-lg` | Done in W2: `size` (`sm`) on content, actions as `<Button asChild>` with `variant`/`size` (defaults `primary`/`outline`, `md`), `data-slot`s on actions. Refer difference from upstream: the actions pass `className` to `Button` (tailwind-merge), not to the Slot child, which only concatenates; so an app's `className="bg-destructive"` still wins over `bg-primary`. Prefer `variant="destructive"` in apps. W4: `AlertDialogMedia` (needs Refer styling) |
 | avatar | `size-10` default; `overflow-hidden` on root (crops square logos passed via `className`) | — | Done in W2: `select-none`, `AvatarGroup`, `AvatarGroupCount`. W4: upstream's muted fallback text (`text-muted-foreground`) changes initials to gray in 6 portal and 7 argus fallbacks that don't set a color; `size` prop on a Refer scale and `AvatarBadge` (needs design: the root's `overflow-hidden` would clip a corner badge) |
 | badge | Per-variant borders, semantic variant set, no `cursor-default` | Border moved to base; `ghost`/`link` variants (no use case yet) | Done in W2: default `variant="primary"`, `data-variant` |
@@ -295,6 +297,7 @@ upstream code, so we ported by hand from `registry/bases/base/ui/drawer.tsx`, ke
 | `ui/drawer.tsx` (floating) | `DrawerContent` `floating` (boolean, default `true`): 8px off the edges via `--drawer-inset`, all corners rounded, `bg-card`, like a Dialog. `floating={false}` attaches it to the edge (the Vaul-era look). `data-floating` on the popup. Look split from the swipe mechanics with `cva`. A boolean rather than a variant name: "flush" read oddly |
 | `ui/drawer.tsx` (handle, nested) | Upstream's `showSwipeHandle` on `Drawer` and the exported `DrawerSwipeHandle` (`data-slot="drawer-swipe-handle"`, Refer bar: `bg-border`, 40×4px). Refer default kept: without the prop the handle shows on bottom drawers only; `true` shows it on any side (inner edge; side drawers lay out in a row for it), `false` hides it. `DrawerContent showDragHandle` is `@deprecated` (`false` still hides it; the portal passes it). Under a nested drawer the parent's body and handle fade out, as upstream |
 | `ui/responsive-dialog.tsx` (handle) | Passes `showSwipeHandle={dismissible}` to the Drawer instead of `showDragHandle` to the content |
+| `ui/scroll-area.tsx` | Root `flex flex-col`, viewport `min-h-0 flex-1`, so a ScrollArea scrolls inside a content-sized drawer (see the ledger). Docs demos and galleries use ScrollArea for every scroll region (drawer, sheet, dialog); the sheet demo caps top/bottom sheets at `60vh`, which grew past the screen before |
 | docs | Drawer gallery and demo on the Base UI API (`swipeDirection`, `render`); gallery section "With controls inside" keeps `asChild` on purpose and is the regression check; new `responsive-dialog` demo. The drawer page mirrors shadcn's docs: main demo (responsive bottom/right, choice cards, toast), Position, Floating (Refer, with a switch), Swipe handle, Nested, Non modal, Snap points, Responsive (our ResponsiveDialog); demos take an optional `description`. Gallery re-ported from upstream `bases/base/examples/drawer-example.tsx` at `96da9cc7` (Demo, Swipe Handle, Position, Custom Width and Height, Scrollable Content, Snap Points, Nested, Non Modal), plus the Refer sections |
 
 **Verified** (headless Chrome, real input events; dev and production builds): Radix Select (mouse and keyboard), DropdownMenu,
@@ -313,7 +316,8 @@ Drawer directly in 6, using `direction`, `dismissible`, `activeSnapPoint` (witho
 `data-[vaul-drawer-direction=…]` selectors.
 
 **Portal sync** (after the DS deploy): `npx shadcn@latest add @refer/drawer @refer/dialog @refer/responsive-dialog
---overwrite` (brings `@base-ui/react@^1.9.0`); run the portal's tests; check the 6 direct drawers and a few
+--overwrite` (brings `@base-ui/react@^1.9.0`), plus `@refer/scroll-area` in every app that has it (portal, landing,
+argus, partners; fixes `max-h-*`/`flex-1` ScrollAreas such as argus's `max-h-[240px]` and portal's SelectJobsLayout); run the portal's tests; check the 6 direct drawers and a few
 ResponsiveDialogs on a phone (or 390px): open, swipe down, tap outside, the non-dismissible ones (FirstAccess, JobShare
 while saving), the left SidebarDrawer, candidate/job details. Every drawer turns floating (8px gap, all corners rounded):
 the full-height sheets (CandidateDetailsShell, PipelineCandidateDialog, AddJobsDialog) leave 54–60px at the top, so they

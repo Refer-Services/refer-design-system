@@ -73,7 +73,7 @@ function DialogScrollableContent() {
             This is a dialog with scrollable content.
           </DialogDescription>
         </DialogHeader>
-        <div className="-mx-6 max-h-[500px] overflow-y-auto px-6 text-sm">
+        <ScrollArea className="-mx-6 max-h-[500px] px-6 text-sm">
           <h4 className="mb-4 text-lg leading-none font-medium">Lorem Ipsum</h4>
           {Array.from({ length: 10 }).map((_, index) => (
             <p key={index} className="mb-4 leading-normal">
@@ -86,7 +86,7 @@ function DialogScrollableContent() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           ))}
-        </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   )
@@ -105,7 +105,7 @@ function DialogWithStickyFooter() {
             This is a dialog with scrollable content.
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className="-mx-6 max-h-[500px] overflow-y-auto px-6">
+        <ScrollArea className="-mx-6 max-h-[500px] px-6">
           <h4 className="mb-4 text-lg leading-none font-medium">Lorem Ipsum</h4>
           {Array.from({ length: 10 }).map((_, index) => (
             <p key={index} className="mb-4 text-sm leading-normal">

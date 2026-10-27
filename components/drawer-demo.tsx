@@ -24,6 +24,7 @@ import {
   FieldTitle,
 } from "@/registry/refer/ui/field"
 import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 
 const referrers = [
   {
@@ -94,30 +95,32 @@ export function DrawerDemo() {
             We&apos;ll send your request to one person at Acme.
           </DrawerDescription>
         </DrawerHeader>
-        <div className="scroll-fade flex-1 overflow-y-auto p-4">
-          <RadioGroup
-            value={referrer}
-            onValueChange={setReferrer}
-            className="gap-2"
-          >
-            {referrers.map((person) => (
-              <FieldLabel key={person.value} htmlFor={person.id}>
-                <Field orientation="horizontal">
-                  <FieldContent>
-                    <FieldTitle>
-                      {person.name}
-                      {person.badge ? (
-                        <Badge variant="primary_subtle">{person.badge}</Badge>
-                      ) : null}
-                    </FieldTitle>
-                    <FieldDescription>{person.description}</FieldDescription>
-                  </FieldContent>
-                  <RadioGroupItem value={person.value} id={person.id} />
-                </Field>
-              </FieldLabel>
-            ))}
-          </RadioGroup>
-        </div>
+        <ScrollArea className="min-h-0 flex-1">
+          <div className="p-4">
+            <RadioGroup
+              value={referrer}
+              onValueChange={setReferrer}
+              className="gap-2"
+            >
+              {referrers.map((person) => (
+                <FieldLabel key={person.value} htmlFor={person.id}>
+                  <Field orientation="horizontal">
+                    <FieldContent>
+                      <FieldTitle>
+                        {person.name}
+                        {person.badge ? (
+                          <Badge variant="primary_subtle">{person.badge}</Badge>
+                        ) : null}
+                      </FieldTitle>
+                      <FieldDescription>{person.description}</FieldDescription>
+                    </FieldContent>
+                    <RadioGroupItem value={person.value} id={person.id} />
+                  </Field>
+                </FieldLabel>
+              ))}
+            </RadioGroup>
+          </div>
+        </ScrollArea>
         <DrawerFooter>
           <Button onClick={handleConfirm}>Send request</Button>
           <DrawerClose render={<Button variant="outline" />}>

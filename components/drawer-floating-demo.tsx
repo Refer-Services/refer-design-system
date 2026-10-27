@@ -20,6 +20,7 @@ import {
   RadioGroupItemBoxedDescription,
   RadioGroupItemBoxedTitle,
 } from "@/registry/refer/ui/radio-group-boxed"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 import { Switch } from "@/registry/refer/ui/switch"
 
 const SLOTS = [
@@ -65,25 +66,24 @@ export function DrawerFloatingDemo() {
                   Ana gets the invite as soon as you confirm.
                 </DrawerDescription>
               </DrawerHeader>
-              <RadioGroup
-                defaultValue={SLOTS[0].id}
-                className="gap-2 overflow-y-auto px-4"
-              >
-                {SLOTS.map((slot) => (
-                  <RadioGroupItemBoxed
-                    key={slot.id}
-                    id={slot.id}
-                    name={`${swipe}-${slot.id}`}
-                  >
-                    <RadioGroupItemBoxedTitle>
-                      {slot.title}
-                    </RadioGroupItemBoxedTitle>
-                    <RadioGroupItemBoxedDescription>
-                      {slot.description}
-                    </RadioGroupItemBoxedDescription>
-                  </RadioGroupItemBoxed>
-                ))}
-              </RadioGroup>
+              <ScrollArea className="min-h-0 flex-1">
+                <RadioGroup defaultValue={SLOTS[0].id} className="gap-2 px-4">
+                  {SLOTS.map((slot) => (
+                    <RadioGroupItemBoxed
+                      key={slot.id}
+                      id={slot.id}
+                      name={`${swipe}-${slot.id}`}
+                    >
+                      <RadioGroupItemBoxedTitle>
+                        {slot.title}
+                      </RadioGroupItemBoxedTitle>
+                      <RadioGroupItemBoxedDescription>
+                        {slot.description}
+                      </RadioGroupItemBoxedDescription>
+                    </RadioGroupItemBoxed>
+                  ))}
+                </RadioGroup>
+              </ScrollArea>
               <DrawerFooter>
                 <Button>Confirm slot</Button>
                 <DrawerClose render={<Button variant="outline" />}>
