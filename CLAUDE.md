@@ -59,6 +59,12 @@ each component must keep, which `data-slot`s the apps target, and what was skipp
 - Data: `lib/docs.ts` (pages from `registry.json` + `config/docs.ts`), `components/docs/demos.tsx` (demo per page),
   `components/examples/` (galleries; list in `names.ts`), `data/usage.json` (from `npm run usage:build`).
 - Adding a demo: create `components/<name>-demo.tsx` and add it to `components/docs/demos.tsx`.
+- Scrolling in demos and galleries: always `ScrollArea` (`@/registry/refer/ui/scroll-area`), never a div with
+  `overflow-y-auto`. Size it with `min-h-0 flex-1` inside a flex column (drawer, sheet: header and footer stay put) or
+  `max-h-*`/`h-*` elsewhere. Put vertical padding on a div inside it, so the content scrolls to the edges; horizontal
+  padding can go on the root. Edge fade: `[&_[data-slot=scroll-area-viewport]]:scroll-fade-y`. When porting a shadcn
+  example, convert its `overflow-y-auto` regions. Components that scroll by themselves (CodeBlock, Command list) keep
+  their own scrolling.
 - `app/(view)/view/[name]/` — individual component viewer
 - `app/preview/[base]/[name]/` — isolated preview routes
 

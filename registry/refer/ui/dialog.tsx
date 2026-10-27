@@ -8,10 +8,28 @@ import { XIcon, ArrowLeft, ArrowRight, Loader2Icon } from "lucide-react"
 import { Button } from "@/registry/refer/ui/button"
 import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
+// Inside a Drawer (Base UI), Radix's Title, Description and Close have no Dialog to attach to: the Drawer provides its
+// own parts here and DialogTitle, DialogDescription and DialogClose render those instead, so ResponsiveDialog can share
+// children between both. A Dialog resets it for its own subtree.
+type DialogParts = {
+  Title: React.ElementType
+  Description: React.ElementType
+  Close: React.ElementType
+}
+
+const DialogPartsContext = React.createContext<DialogParts | null>(null)
+
 function Dialog({
+  children,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
-  return <DialogPrimitive.Root data-slot="dialog" {...props} />
+  return (
+    <DialogPrimitive.Root data-slot="dialog" {...props}>
+      <DialogPartsContext.Provider value={null}>
+        {children}
+      </DialogPartsContext.Provider>
+    </DialogPrimitive.Root>
+  )
 }
 
 function DialogTrigger({
@@ -27,9 +45,31 @@ function DialogPortal({
 }
 
 function DialogClose({
+  asChild,
+  children,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Close>) {
-  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />
+  const parts = React.useContext(DialogPartsContext)
+  if (parts) {
+    const render =
+      asChild && React.isValidElement<{ children?: React.ReactNode }>(children)
+        ? children
+        : undefined
+    return (
+      <parts.Close data-slot="dialog-close" render={render} {...props}>
+        {render ? render.props.children : children}
+      </parts.Close>
+    )
+  }
+  return (
+    <DialogPrimitive.Close
+      data-slot="dialog-close"
+      asChild={asChild}
+      {...props}
+    >
+      {children}
+    </DialogPrimitive.Close>
+  )
 }
 
 function DialogOverlay({
@@ -128,9 +168,9 @@ function DialogFooter({
     >
       {children}
       {showCloseButton && (
-        <DialogPrimitive.Close asChild>
+        <DialogClose asChild>
           <Button variant="outline">{closeLabel ?? labels.close}</Button>
-        </DialogPrimitive.Close>
+        </DialogClose>
       )}
     </div>
   )
@@ -140,8 +180,10 @@ function DialogTitle({
   className,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Title>) {
+  const Title =
+    React.useContext(DialogPartsContext)?.Title ?? DialogPrimitive.Title
   return (
-    <DialogPrimitive.Title
+    <Title
       data-slot="dialog-title"
       className={cn("text-lg leading-none font-medium", className)}
       {...props}
@@ -153,8 +195,11 @@ function DialogDescription({
   className,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Description>) {
+  const Description =
+    React.useContext(DialogPartsContext)?.Description ??
+    DialogPrimitive.Description
   return (
-    <DialogPrimitive.Description
+    <Description
       data-slot="dialog-description"
       className={cn("text-muted-foreground text-sm", className)}
       {...props}
@@ -431,6 +476,7 @@ export {
   DialogFooter,
   DialogHeader,
   DialogOverlay,
+  DialogPartsContext,
   DialogPortal,
   DialogTitle,
   DialogTrigger,

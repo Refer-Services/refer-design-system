@@ -30,6 +30,12 @@ import { DatePickerDemo } from "@/components/date-picker-demo"
 import { DialogDemo } from "@/components/dialog-demo"
 import { DirectionDemo } from "@/components/direction-demo"
 import { DrawerDemo } from "@/components/drawer-demo"
+import { DrawerFloatingDemo } from "@/components/drawer-floating-demo"
+import { DrawerNestedDemo } from "@/components/drawer-nested-demo"
+import { DrawerNonModalDemo } from "@/components/drawer-non-modal-demo"
+import { DrawerSidesDemo } from "@/components/drawer-sides-demo"
+import { DrawerSnapPointsDemo } from "@/components/drawer-snap-points-demo"
+import { DrawerSwipeHandleDemo } from "@/components/drawer-swipe-handle-demo"
 import { DropdownMenuDemo } from "@/components/dropdown-menu-demo"
 import { EmptyExample } from "@/components/empty-demo"
 import { FieldDemo } from "@/components/field-demo"
@@ -51,6 +57,7 @@ import { PopoverDemo } from "@/components/popover-demo"
 import { ProgressDemo } from "@/components/progress-demo"
 import { QuestionnaireDemo } from "@/components/questionnaire-demo"
 import { RadioGroupDemo } from "@/components/radio-group-demo"
+import { ResponsiveDialogDemo } from "@/components/responsive-dialog-demo"
 import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
 import { SelectDemo } from "@/components/select-demo"
@@ -127,7 +134,51 @@ export const demos: Record<string, Demo[]> = {
   "context-menu": [demo(ContextMenuDemo, "context-menu-demo")],
   dialog: [demo(DialogDemo, "dialog-demo")],
   direction: [demo(DirectionDemo, "direction-demo")],
-  drawer: [demo(DrawerDemo, "drawer-demo")],
+  drawer: [
+    demo(DrawerDemo, "drawer-demo"),
+    demo(
+      DrawerSidesDemo,
+      "drawer-sides-demo",
+      "Position",
+      "Set the side with swipeDirection: up, right, down (the default) or left."
+    ),
+    demo(
+      DrawerFloatingDemo,
+      "drawer-floating-demo",
+      "Floating",
+      "Refer: drawers float 8px from the edges with every corner rounded, like a Dialog. floating={false} on DrawerContent attaches the drawer to the edge it comes from, with only the inner corners rounded."
+    ),
+    demo(
+      DrawerSwipeHandleDemo,
+      "drawer-swipe-handle-demo",
+      "Swipe handle",
+      "Bottom drawers show the handle by default. showSwipeHandle on Drawer adds it on any side; false hides it."
+    ),
+    demo(
+      DrawerNestedDemo,
+      "drawer-nested-demo",
+      "Nested",
+      "Open drawers from inside another drawer. Parent drawers stay mounted and stack behind the frontmost one."
+    ),
+    demo(
+      DrawerNonModalDemo,
+      "drawer-non-modal-demo",
+      "Non modal",
+      'modal={false} lets people use the rest of the page while the drawer is open; disablePointerDismissal keeps it open on outside presses. modal="trap-focus" keeps focus inside without blocking scroll and pointer.'
+    ),
+    demo(
+      DrawerSnapPointsDemo,
+      "drawer-snap-points-demo",
+      "Snap points",
+      "snapPoints snaps a bottom or top drawer to preset heights: 0 to 1 is a fraction of the viewport, above 1 is pixels, and strings take px or rem. Track the active one with snapPoint and onSnapPointChange."
+    ),
+    demo(
+      ResponsiveDialogDemo,
+      "responsive-dialog-demo",
+      "Responsive",
+      "ResponsiveDialog renders a Dialog from md (768px) up and a bottom Drawer below, with the same children."
+    ),
+  ],
   "dropdown-menu": [demo(DropdownMenuDemo, "dropdown-menu-demo")],
   empty: [demo(EmptyExample, "empty-demo")],
   field: [demo(FieldDemo, "field-demo")],
@@ -149,6 +200,7 @@ export const demos: Record<string, Demo[]> = {
   progress: [demo(ProgressDemo, "progress-demo")],
   questionnaire: [demo(QuestionnaireDemo, "questionnaire-demo")],
   "radio-group": [demo(RadioGroupDemo, "radio-group-demo")],
+  "responsive-dialog": [demo(ResponsiveDialogDemo, "responsive-dialog-demo")],
   resizable: [demo(ResizableDemo, "resizable-demo")],
   "scroll-area": [demo(ScrollAreaDemo, "scroll-area-demo")],
   select: [

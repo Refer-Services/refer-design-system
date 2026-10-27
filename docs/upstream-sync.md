@@ -26,7 +26,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
 | 4 | Design decisions that change app visuals: Refer look for the wave 3 components and the remaining stock ones, then the rest of the W4 ledger items (see [Wave 4 visual pass](#wave-4-visual-pass) and its part 2). The separator `data-slot` rename and the dependency ranges followed in PR #12 | Merged (PR #11, both parts; PR #12) | Pending: portal sync after the deploy (expected to change alert-dialog, avatar, bubble, calendar, context-menu, drawer, menubar, message, navigation-menu, separator, sonner, switch, table, tabs; minor bumps inside the major for react-day-picker, recharts, react-resizable-panels; visible in toasts, avatar initials, tables, mobile drawers and the candidate dialog Notes tab) |
 | 4.5 | Additive gaps against upstream's `bases` registry (see [Gaps against upstream's bases registry](#gaps-against-upstreams-bases-registry)): calendar `locale`, pagination `text`, `AlertAction`, menu item `inset`, card `size="sm"`, toggle-group `orientation`, `useCarousel` export, missing slots. Then decide sheet close button and badge `ghost`/`link` from a preview | Pending (next) | — |
-| 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
+| 5 | Breaking migrations, one at a time, coordinated with apps. Pilot: drawer from Vaul to Base UI (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)), then decide Radix → Base UI per component | Pilot (drawer) merged 2026-10-27 with the floating default, swipe handle, shadcn's docs demos and the ScrollArea fix; other components: not started | Pending: portal (olympus thread) syncs drawer, dialog, responsive-dialog, scroll-area (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)); scroll-area also in argus, landing, partners |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
 ### Other DS changes
@@ -53,7 +53,8 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
    column. Text a component renders on its own comes from `useUILabels()`, never a hardcoded string (see
    [UI labels](#ui-labels-translatable-component-text)). When porting upstream code: `from "cn"` →
    `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*` package, `@/registry/new-york-v4/...` →
-   `@/registry/refer/...`, upstream variant names → ours (`default` → `primary`, size `default` → `md`).
+   `@/registry/refer/...`, upstream variant names → ours (`default` → `primary`, size `default` → `md`). In ported examples and galleries, turn `overflow-y-auto` scroll regions into
+   `ScrollArea` (see CLAUDE.md, "Scrolling in demos and galleries").
 4. **Never rename a `data-slot` an app targets** (see [What the apps depend on](#what-the-apps-depend-on)). Adding a
    missing slot is fine.
 5. **Verify:**
@@ -122,8 +123,9 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 
 | Component | Refer keeps | Skipped (why) | Pending |
 |---|---|---|---|
-| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, scroll-area, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60`; textarea `bg-card` like Input | — | Nothing upstream to take |
+| accordion, aspect-ratio, breadcrumb, carousel, collapsible, form, hover-card, input-otp, label, menubar, navigation-menu, progress, radio-group, skeleton, textarea, toggle | Refer styling; breadcrumb uses Next `Link`; textarea `placeholder:text-muted-foreground/60`; textarea `bg-card` like Input | — | Nothing upstream to take |
 | alert | Refer styling | — | — |
+| scroll-area | Root `flex flex-col`, viewport `min-h-0 flex-1` (besides upstream's `size-full`): `max-h-*` or `flex-1 min-h-0` on the root makes the viewport scroll. Upstream's `size-full` alone needs a definite height, so in content-sized drawers and `max-h` boxes the viewport grew to its content and nothing scrolled (the apps worked around it with `overflow-y-auto` on the root or `[&_[data-slot=scroll-area-viewport]]:max-h-*`; both still work) | — | — |
 | alert-dialog | `rounded-2xl shadow-xl` content | Upstream `rounded-lg shadow-lg` | Done in W2: `size` (`sm`) on content, actions as `<Button asChild>` with `variant`/`size` (defaults `primary`/`outline`, `md`), `data-slot`s on actions. Refer difference from upstream: the actions pass `className` to `Button` (tailwind-merge), not to the Slot child, which only concatenates; so an app's `className="bg-destructive"` still wins over `bg-primary`. Prefer `variant="destructive"` in apps. W4: `AlertDialogMedia` (needs Refer styling) |
 | avatar | `size-10` default; `overflow-hidden` on root (crops square logos passed via `className`) | — | Done in W2: `select-none`, `AvatarGroup`, `AvatarGroupCount`. W4: upstream's muted fallback text (`text-muted-foreground`) changes initials to gray in 6 portal and 7 argus fallbacks that don't set a color; `size` prop on a Refer scale and `AvatarBadge` (needs design: the root's `overflow-hidden` would clip a corner badge) |
 | badge | Per-variant borders, semantic variant set, no `cursor-default` | Border moved to base; `ghost`/`link` variants (no use case yet) | Done in W2: default `variant="primary"`, `data-variant` |
@@ -136,7 +138,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | command | Selected item `bg-primary/90` with white text, `rounded-input` items, group `p-1.5`, transparent background (it sits in Refer's translucent popover) | Upstream's `bases` version: `bg-popover`, `rounded-xl` and `p-1` on the root, selected `bg-muted` | Done in W2: `CommandDialog` `className` and `showCloseButton`. Ported from `bases` (branch `feat/command-update`): search field in an `InputGroup` (`bg-muted`, no border, search icon addon) with `p-1.5 pb-0` so it lines up with the items; `CommandDialog` at `top-1/3`, `rounded-(--radius-card)` (concentric with the field), close button off by default, and it accepts a `<Command>` child (upstream's new API) or wraps the children as before; `CommandItem` check indicator only when the item gets `data-checked` (call sites that draw their own check are unchanged); `CommandEmpty` takes `className`; shortcut readable on the selected item; thin list scrollbar like combobox. `registryDependencies` adds `input-group`. Variations gallery ported from `radix-vega/command-example` plus a Refer "Popover Picker" section |
 | context-menu, dropdown-menu | dropdown: primary highlight, `rounded-input` items, `rounded-card shadow-popover` content | — | Done in W1 (SubTrigger icons) |
 | dialog | `title` (sr-only) and `showCloseButton` props on content, custom close button, overlay `backdrop-blur-[1px]`, `DialogContentWithNavigation`, `NavigationArrow` with `loading`, `useDialogNavigation`, `rounded-3xl bg-card shadow-xl` | Upstream content styles | Done in W1 (close slot, `outline-none`). Done in W2: `DialogFooter showCloseButton` (adds `button` to the item's `registryDependencies`) |
-| drawer | — | — | W4: header centered on mobile, `gap-0.5` (design call) |
+| drawer | Floating by default (`floating` on `DrawerContent`: `--drawer-inset` 8px, all corners `rounded-3xl`, border, `shadow-xl`, `bg-card` like Dialog, no bleed); `floating={false}`: `bg-background`, `rounded-t-2xl` + `border-t` (bottom), overlay `bg-black/50 backdrop-blur-[1px]`, drag handle on bottom drawers (`showDragHandle`), hidden `title` on `DrawerContent`, header `gap-0.5` centered on mobile, bottom/top up to `80vh` | — | W4: header centered on mobile, `gap-0.5` (design call). W5 pilot: Base UI Drawer instead of Vaul, with a Vaul/Radix compatibility layer (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)); floating by default, upstream's rhea/luma look (design call: the mobile ResponsiveDialog now looks like the desktop Dialog) |
 | empty, field, input-group, item, kbd, spinner, button-group | empty: icon variant; field: `text-destructive-content`; input-group: `rounded-input`, primary focus ring, `bg-card` (dark `bg-input/10`) like Input | — | Done in W2: publish button-group, field, item, kbd, spinner. Variations galleries at `/examples/<name>` for button-group, field, item, kbd, native-select, spinner. Pending (additive): item `size="xs"`, which upstream has only in the newer bases system (radix-vega), not in new-york-v4; the item gallery leaves out its 4 extra-small sections until we add it |
 | input | `rounded-input`, `bg-card`, h-10, primary focus ring | — | Done in W1 (no `flex`) |
 | native-select | — | — | Done in W1 (`Canvas` option colors). Done in W2: publish. W4: Refer styling (it's still stock: `rounded-md`, `ring-ring/50`) |
@@ -281,6 +283,66 @@ sync of these items.
 | tabs | Default `TabsList` `rounded-[14px] squircle`, `TabsTrigger` `squircle rounded-[10px]` (inner radius = outer − `p-1`) | Visible: every default tabs in the portal (22 files) gets the new corners. `line` and `subtle` unchanged |
 | button | `destructive_subtle`, `destructive_ghost`, `positive`, `positive_subtle`, `positive_ghost`, `info`, `info_subtle`, `info_ghost`, mirroring the primary trio with the existing `-subtle`/`-content` tokens. The subtle borders use the color at 10% (15% dark) inline, what `primary-border` resolves to, so no new token and no `globals` sync is needed | Additive; existing variants unchanged |
 
+## Wave 5 pilot: drawer on Base UI
+
+Why: shadcn made Base UI its default (changelog 2026-07, "Base UI as the Default"; Radix stays supported, no need to
+migrate) and Vaul, under our drawer, has had no release since 12/2024. The drawer is the pilot to measure what moving a
+component off Radix/Vaul costs in the DS and in the apps before deciding on others. Branch `feat/shadcn-wave-5-drawer`.
+
+**shadcn's migration skill** (`npx skills add shadcn/ui`, source in upstream `skills/migrate-radix-to-base/`) skips
+`vaul` by rule; its drawer mapping is opt-in and matches the "Migrating from Vaul" section of
+`content/docs/components/base/drawer.mdx`. For new-york-v4 (our legacy style) it only classifies; it doesn't replay
+upstream code, so we ported by hand from `registry/bases/base/ui/drawer.tsx`, keeping the Refer look.
+
+**What changed in the DS**
+
+| File | Change |
+|---|---|
+| `ui/drawer.tsx` | `@base-ui/react/drawer` (Root > Portal > Backdrop + Viewport > Popup > Content), upstream's swipe/stack/snap CSS, Refer look kept. Compatibility: `direction` → `swipeDirection`, `activeSnapPoint`/`setActiveSnapPoint` → `snapPoint`/`onSnapPointChange`, `asChild` on Trigger/Close → `render`, content's `onOpenAutoFocus` → `initialFocus`, `onInteractOutside`/`onPointerDownOutside`/`onEscapeKeyDown` → `onOpenChange` + `eventDetails.cancel()`. All marked `@deprecated`. `dismissible={false}` (Refer) blocks outside press, Escape and swipe (Base UI's `disablePointerDismissal` only blocks outside press). Sets `data-swipe-axis` itself (Base UI doesn't). `data-slot="drawer-content"` stays on the element that takes `className` (the Popup); the inner Base UI Content is `drawer-body` |
+| `ui/dialog.tsx` | `DialogPartsContext`: inside a Drawer, `DialogTitle`, `DialogDescription` and `DialogClose` (incl. `asChild`) render the Drawer's parts. Needed because ResponsiveDialog shares children and Radix's parts throw outside a Radix Dialog. `Dialog` resets it, so a dialog opened from a drawer uses its own parts. `DialogFooter showCloseButton` uses `DialogClose` |
+| `ui/responsive-dialog.tsx` | Comment only (it no longer relies on vaul being Radix) |
+| registry | `drawer`: `@base-ui/react@^1.9.0` (portal runs 1.7.0), `registryDependencies: ["dialog"]`; `vaul` removed from the DS |
+| `ui/drawer.tsx` (floating) | `DrawerContent` `floating` (boolean, default `true`): 8px off the edges via `--drawer-inset`, all corners rounded, `bg-card`, like a Dialog. `floating={false}` attaches it to the edge (the Vaul-era look). `data-floating` on the popup. Look split from the swipe mechanics with `cva`. A boolean rather than a variant name: "flush" read oddly |
+| `ui/drawer.tsx` (handle, nested) | Upstream's `showSwipeHandle` on `Drawer` and the exported `DrawerSwipeHandle` (`data-slot="drawer-swipe-handle"`, Refer bar: `bg-border`, 40×4px). Refer default kept: without the prop the handle shows on bottom drawers only; `true` shows it on any side (inner edge; side drawers lay out in a row for it), `false` hides it. `DrawerContent showDragHandle` is `@deprecated` (`false` still hides it; the portal passes it). Under a nested drawer the parent's body and handle fade out, as upstream |
+| `ui/responsive-dialog.tsx` (handle) | Passes `showSwipeHandle={dismissible}` to the Drawer instead of `showDragHandle` to the content |
+| `ui/scroll-area.tsx` | Root `flex flex-col`, viewport `min-h-0 flex-1`, so a ScrollArea scrolls inside a content-sized drawer (see the ledger). Docs demos and galleries use ScrollArea for every scroll region (drawer, sheet, dialog); the sheet demo caps top/bottom sheets at `60vh`, which grew past the screen before |
+| docs | Drawer gallery and demo on the Base UI API (`swipeDirection`, `render`); gallery section "With controls inside" keeps `asChild` on purpose and is the regression check; new `responsive-dialog` demo. The drawer page mirrors shadcn's docs: main demo (responsive bottom/right, choice cards, toast), Position, Floating (Refer, with a switch), Swipe handle, Nested, Non modal, Snap points, Responsive (our ResponsiveDialog); demos take an optional `description`. Gallery re-ported from upstream `bases/base/examples/drawer-example.tsx` at `96da9cc7` (Demo, Swipe Handle, Position, Custom Width and Height, Scrollable Content, Snap Points, Nested, Non Modal), plus the Refer sections |
+
+**Verified** (headless Chrome, real input events; dev and production builds): Radix Select (mouse and keyboard), DropdownMenu,
+Popover and Tooltip and the Base UI Combobox inside the drawer, without closing it; Escape in an open popup closes only the
+popup; outside press closes a dismissible drawer and not a `dismissible={false}` one; swipe down closes or not
+accordingly; DialogDescription/DialogClose asChild inside it; focus returns to the trigger; ResponsiveDialog is a drawer at
+390px and a Radix dialog at 1280px; side drawers from `direction`. Mixing Radix layers inside a Base UI modal was the main
+risk and works. Docs demos: three nested drawers stack and close one at a time (Escape and swipe); non modal leaves the page
+scrollable and clickable without closing; snap points peek at 31rem and expand to full with a touch swipe (a mouse drag
+inside the body selects text instead, as upstream: drag from the handle); handle on the inner edge of all four sides.
+
+**Apps:** only the portal uses drawer (17 files + `tests/components/ui/responsive-dialog.test.tsx`): ResponsiveDialog in 11,
+Drawer directly in 6, using `direction`, `dismissible`, `activeSnapPoint` (without snap points; ignored, as Vaul did),
+`asChild`, `onOpenAutoFocus`, `onInteractOutside`, `onEscapeKeyDown`, `onPointerDownOutside`, and Radix
+`DialogDescription`/`DialogClose` inside the drawer. With the compatibility layer none of them needs a change. No app uses
+`data-[vaul-drawer-direction=…]` selectors.
+
+**Portal sync** (after the DS deploy): `npx shadcn@latest add @refer/drawer @refer/dialog @refer/responsive-dialog
+--overwrite` (brings `@base-ui/react@^1.9.0`), plus `@refer/scroll-area` in every app that has it (portal, landing,
+argus, partners; fixes `max-h-*`/`flex-1` ScrollAreas such as argus's `max-h-[240px]` and portal's SelectJobsLayout); run the portal's tests; check the 6 direct drawers and a few
+ResponsiveDialogs on a phone (or 390px): open, swipe down, tap outside, the non-dismissible ones (FirstAccess, JobShare
+while saving), the left SidebarDrawer, candidate/job details. Every drawer turns floating (8px gap, all corners rounded):
+the full-height sheets (CandidateDetailsShell, PipelineCandidateDialog, AddJobsDialog) leave 54–60px at the top, so they
+still fit, and set their own background; check how the corners sit against the phone's. The SidebarDrawer (main
+navigation) floats too unless the portal passes `floating={false}`. Remove `vaul` from the portal only after the sync, if nothing
+else imports it. argus, landing and partners don't use drawer; skip them.
+
+**Lessons for the next migrations**
+- Measure the apps first: imports, props and parts used across files (the estimate from direct `vaul` imports was 3 files;
+  the real surface was 17).
+- A DS compatibility layer (old prop names translated, `asChild` → `render`, parts bridged by context) lets a component
+  switch library with no app changes; mark the old names `@deprecated` so new code uses the Base UI ones.
+- Test nested layers from the other library inside the migrated one, with real input events (not `.click()`).
+- Headless mobile tests: `mobile: true` zooms out when the page overflows and shifts click coordinates; use `mobile:
+  false` at 390px.
+- Not done: `combobox.tsx` still says "vaul Drawer" in a comment (left to avoid an app sync for a comment).
+
 ## UI labels (translatable component text)
 
 The text components render on their own (screen-reader names, aria-labels, default button text) comes from
@@ -314,8 +376,7 @@ lists `ui-labels` in `registryDependencies`, so installing one brings the provid
 runner.
 
 When porting upstream code, a new hardcoded string becomes a key in `UILabels` with upstream's English as its default.
-The wave 5 drawer (Base UI) still has `title = "Dialog"`: whichever of the two branches merges second takes
-`title ?? labels.dialog` into it.
+The wave 5 drawer (Base UI) takes its hidden title from `title ?? labels.dialog`.
 
 ## Infra decisions
 

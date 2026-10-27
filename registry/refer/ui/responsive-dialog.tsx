@@ -7,15 +7,14 @@ import { Dialog, DialogContent, DialogTitle } from "@/registry/refer/ui/dialog"
 import { Drawer, DrawerContent } from "@/registry/refer/ui/drawer"
 
 /**
- * Dialog on desktop, bottom Drawer below md (768px). vaul renders the same
- * Radix Dialog underneath, so DialogHeader, DialogFooter, DialogDescription and
- * DialogClose work inside either; only the root, the content and the title
- * switch.
+ * Dialog on desktop, bottom Drawer below md (768px). DialogHeader, DialogFooter,
+ * DialogDescription and DialogClose work inside either: inside the Drawer they
+ * render its own parts (see DialogPartsContext in dialog.tsx). Only the root, the
+ * content and the title switch.
  */
 
 const ResponsiveDialogContext = React.createContext({
   isMobile: false,
-  dismissible: true,
 })
 
 interface ResponsiveDialogProps {
@@ -33,10 +32,7 @@ function ResponsiveDialog({
   children,
 }: ResponsiveDialogProps) {
   const isMobile = useIsMobile()
-  const context = React.useMemo(
-    () => ({ isMobile, dismissible }),
-    [isMobile, dismissible]
-  )
+  const context = React.useMemo(() => ({ isMobile }), [isMobile])
 
   return (
     <ResponsiveDialogContext.Provider value={context}>
@@ -45,6 +41,7 @@ function ResponsiveDialog({
           open={open}
           onOpenChange={onOpenChange}
           dismissible={dismissible}
+          showSwipeHandle={dismissible}
         >
           {children}
         </Drawer>
@@ -82,14 +79,13 @@ function ResponsiveDialogContent({
   showCloseButton,
   ...props
 }: ResponsiveDialogContentProps) {
-  const { isMobile, dismissible } = React.useContext(ResponsiveDialogContext)
+  const { isMobile } = React.useContext(ResponsiveDialogContext)
 
   if (isMobile) {
     return (
       <DrawerContent
         title={title}
         hideTitle
-        showDragHandle={dismissible}
         className={drawerClassName}
         {...props}
       >

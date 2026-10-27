@@ -327,10 +327,11 @@ const registry = {
     },
     {
       name: "drawer",
-      description: "Bottom sheet for mobile (vaul).",
+      description:
+        "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested and non-modal drawers, a swipe handle on any side; floats off the edges with rounded corners by default (floating={false} attaches it to the edge). Still accepts the direction, dismissible and asChild props from vaul.",
       type: "registry:ui",
-      dependencies: ["vaul", "@radix-ui/react-dialog"],
-      registryDependencies: ["ui-labels"],
+      dependencies: ["@base-ui/react@^1.9.0"],
+      registryDependencies: ["dialog", "ui-labels"],
       files: [
         {
           path: "ui/drawer.tsx",
@@ -1134,7 +1135,7 @@ export const Index: Record<string, any> = {`
     index += `
   "${item.name}": {
     name: "${item.name}",
-    description: "${item.description ?? ""}",
+    description: ${JSON.stringify(item.description ?? "")},
     type: "${item.type}",
     registryDependencies: ${JSON.stringify(item.registryDependencies)},
     files: [${item.files?.map((file) => {

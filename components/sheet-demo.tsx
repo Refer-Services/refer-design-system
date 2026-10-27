@@ -1,6 +1,7 @@
 import { Button } from "@/registry/refer/ui/button"
 import { Input } from "@/registry/refer/ui/input"
 import { Label } from "@/registry/refer/ui/label"
+import { ScrollArea } from "@/registry/refer/ui/scroll-area"
 import {
   Sheet,
   SheetClose,
@@ -55,7 +56,12 @@ export function SheetDemo() {
                 {side}
               </Button>
             </SheetTrigger>
-            <SheetContent side={side}>
+            <SheetContent
+              side={side}
+              className={
+                side === "top" || side === "bottom" ? "max-h-[60vh]" : undefined
+              }
+            >
               <SheetHeader>
                 <SheetTitle>Edit profile</SheetTitle>
                 <SheetDescription>
@@ -63,7 +69,7 @@ export function SheetDemo() {
                   done.
                 </SheetDescription>
               </SheetHeader>
-              <div className="overflow-y-auto px-4 text-sm">
+              <ScrollArea className="min-h-0 flex-1 px-4 text-sm">
                 <h4 className="mb-4 text-lg leading-none font-medium">
                   Lorem Ipsum
                 </h4>
@@ -79,7 +85,7 @@ export function SheetDemo() {
                     deserunt mollit anim id est laborum.
                   </p>
                 ))}
-              </div>
+              </ScrollArea>
               <SheetFooter>
                 <Button type="submit">Save changes</Button>
                 <SheetClose asChild>
