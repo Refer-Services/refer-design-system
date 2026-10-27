@@ -1119,7 +1119,7 @@ export const Index: Record<string, any> = {`
     index += `
   "${item.name}": {
     name: "${item.name}",
-    description: "${item.description ?? ""}",
+    description: ${JSON.stringify(item.description ?? "")},
     type: "${item.type}",
     registryDependencies: ${JSON.stringify(item.registryDependencies)},
     files: [${item.files?.map((file) => {
