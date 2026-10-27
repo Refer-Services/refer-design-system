@@ -6,6 +6,7 @@ import { Questionnaire as QuestionnairePrimitive } from "@shadcn/react/questionn
 import { cn } from "@/lib/utils"
 
 import { buttonVariants, type Button } from "@/registry/refer/ui/button"
+import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 function Questionnaire({
   className,
@@ -220,6 +221,8 @@ function QuestionnairePrevious({
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Previous> &
   Pick<React.ComponentProps<typeof Button>, "size" | "variant">) {
+  const labels = useUILabels()
+
   return (
     <QuestionnairePrimitive.Previous
       data-slot="questionnaire-previous"
@@ -232,7 +235,7 @@ function QuestionnairePrevious({
       )}
       {...props}
     >
-      {children ?? "Previous"}
+      {children ?? labels.previous}
     </QuestionnairePrimitive.Previous>
   )
 }
@@ -245,6 +248,8 @@ function QuestionnaireSkip({
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Skip> &
   Pick<React.ComponentProps<typeof Button>, "size" | "variant">) {
+  const labels = useUILabels()
+
   return (
     <QuestionnairePrimitive.Skip
       data-slot="questionnaire-skip"
@@ -257,7 +262,7 @@ function QuestionnaireSkip({
       )}
       {...props}
     >
-      {children ?? "Skip"}
+      {children ?? labels.skip}
     </QuestionnairePrimitive.Skip>
   )
 }
@@ -270,6 +275,8 @@ function QuestionnaireNext({
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Next> &
   Pick<React.ComponentProps<typeof Button>, "size" | "variant">) {
+  const labels = useUILabels()
+
   return (
     <QuestionnairePrimitive.Next
       data-slot="questionnaire-next"
@@ -282,7 +289,7 @@ function QuestionnaireNext({
       )}
       {...props}
     >
-      {children ?? "Next"}
+      {children ?? labels.next}
     </QuestionnairePrimitive.Next>
   )
 }
@@ -295,6 +302,8 @@ function QuestionnaireSubmit({
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Submit> &
   Pick<React.ComponentProps<typeof Button>, "size" | "variant">) {
+  const labels = useUILabels()
+
   return (
     <QuestionnairePrimitive.Submit
       data-slot="questionnaire-submit"
@@ -307,7 +316,7 @@ function QuestionnaireSubmit({
       )}
       {...props}
     >
-      {children ?? "Submit"}
+      {children ?? labels.submit}
     </QuestionnairePrimitive.Submit>
   )
 }

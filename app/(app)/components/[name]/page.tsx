@@ -79,7 +79,11 @@ export default async function ComponentPage({
         pageDemos.map((demo, index) => {
           const Demo = demo.component
           return (
-            <Section key={demo.file} title={demo.title}>
+            <Section
+              key={demo.file}
+              title={demo.title}
+              description={demo.description}
+            >
               <ComponentPreview
                 name={item.title}
                 preview={<Demo />}

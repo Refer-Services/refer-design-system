@@ -29,17 +29,11 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 5 | Breaking migrations, one at a time, coordinated with apps | Pending | — |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
-### Parked
+### Other DS changes
 
-- **UI labels (translatable component text):** ready on branch `feat/ds-ui-labels` (`2926821`), not merged; picking
-  it up later. Text the components render on their own (Close, Previous/Next, pagination and breadcrumb names, sidebar,
-  spinner and more) comes from a `UILabelsProvider` with English as the default, so the portal can translate it with
-  next-intl without the DS importing an i18n library; `closeLabel` and similar props win over it. Asked by the
-  olympus thread for the portal's i18n: today the portal shows these texts in fixed English. The branch has the
-  docs page, the convention in this file and tests in the portal's format (they ran green in a portal copy). When
-  picking it up: merge main into it (no rebase); resolve the small conflict with wave 5 in `dialog.tsx` and
-  `drawer.tsx` (the Base UI drawer takes `title ?? labels.dialog`); line it up with wave 4.5's pagination `text` prop,
-  which is the per-instance override for the same strings.
+| Change | DS | Apps synced |
+|---|---|---|
+| UI labels: translatable component text (see [UI labels](#ui-labels-translatable-component-text)), asked by the olympus thread for the portal's i18n | Merged 2026-10-27 | Pending: portal (olympus thread) reinstalls `ui-labels`, dialog, sheet, breadcrumb, pagination, sidebar, command, carousel (not drawer: it waits for the wave 5 sync), wraps `app/layout.tsx` in `UILabelsProvider` with next-intl strings and adds `tests/components/ui/ui-labels.test.tsx`. argus, landing, partners: not needed until they translate |
 
 ## How to run a sync
 
@@ -55,9 +49,10 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 2. **Ignore the noise:** Tailwind class reordering, `import { cn } from "cn"`, `@radix-ui/react-x` → `radix-ui`,
    `Slot` → `Slot.Root`, `!m-0` → `m-0!`.
 3. **Merge, never replace.** Port each upstream change into our file and keep everything in the ledger's "Refer keeps"
-   column. When porting upstream code: `from "cn"` → `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*`
-   package, `@/registry/new-york-v4/...` → `@/registry/refer/...`, upstream variant names → ours (`default` →
-   `primary`, size `default` → `md`).
+   column. Text a component renders on its own comes from `useUILabels()`, never a hardcoded string (see
+   [UI labels](#ui-labels-translatable-component-text)). When porting upstream code: `from "cn"` →
+   `from "@/lib/utils"`, `radix-ui` → the `@radix-ui/react-*` package, `@/registry/new-york-v4/...` →
+   `@/registry/refer/...`, upstream variant names → ours (`default` → `primary`, size `default` → `md`).
 4. **Never rename a `data-slot` an app targets** (see [What the apps depend on](#what-the-apps-depend-on)). Adding a
    missing slot is fine.
 5. **Verify:**
@@ -284,6 +279,42 @@ sync of these items.
 |---|---|---|
 | tabs | Default `TabsList` `rounded-[14px] squircle`, `TabsTrigger` `squircle rounded-[10px]` (inner radius = outer − `p-1`) | Visible: every default tabs in the portal (22 files) gets the new corners. `line` and `subtle` unchanged |
 | button | `destructive_subtle`, `destructive_ghost`, `positive`, `positive_subtle`, `positive_ghost`, `info`, `info_subtle`, `info_ghost`, mirroring the primary trio with the existing `-subtle`/`-content` tokens. The subtle borders use the color at 10% (15% dark) inline, what `primary-border` resolves to, so no new token and no `globals` sync is needed | Additive; existing variants unchanged |
+
+## UI labels (translatable component text)
+
+The text components render on their own (screen-reader names, aria-labels, default button text) comes from
+`useUILabels()` in `ui/ui-labels.tsx`, never a hardcoded English string. Apps translate it once with
+`<UILabelsProvider labels={{ close: t("close"), … }}>` at the root; the DS imports no i18n library. English stays the
+default, keys left out fall back to the enclosing provider and then English, and per-instance props win:
+`closeLabel` on DialogContent, DialogFooter (`showCloseButton`), DialogContentWithNavigation (plus `previousLabel`,
+`nextLabel`) and SheetContent; `title`/`description` on CommandDialog and DrawerContent; `children` on the
+Questionnaire buttons and MessageScrollerButton; `aria-label` on Breadcrumb, Pagination and its links, Spinner and
+ToastClose.
+
+| Component | Keys |
+|---|---|
+| dialog | `close`, `previous`, `next` |
+| sheet | `close` |
+| drawer | `dialog` (hidden title when no `title`) |
+| breadcrumb | `breadcrumb`, `more` |
+| pagination | `pagination`, `previousPage`, `nextPage`, `previous`, `next`, `morePages` |
+| sidebar | `toggleSidebar`, `sidebar`, `sidebarDescription` |
+| command | `commandPalette`, `commandPaletteDescription` |
+| carousel | `previousSlide`, `nextSlide` |
+| spinner | `loading` |
+| code-block | `copy`, `copied` |
+| message-scroller | `scrollToEnd`, `scrollToStart` |
+| toast | `closeToast` |
+| questionnaire | `previous`, `skip`, `next`, `submit` |
+
+breadcrumb, pagination and spinner became client components (`"use client"`) to read the labels. Each of these items
+lists `ui-labels` in `registryDependencies`, so installing one brings the provider. Tests live in the portal
+(`tests/components/ui/ui-labels.test.tsx`: defaults, provider, fallback, props win), since the DS has no test
+runner.
+
+When porting upstream code, a new hardcoded string becomes a key in `UILabels` with upstream's English as its default.
+The wave 5 drawer (Base UI) still has `title = "Dialog"`: whichever of the two branches merges second takes
+`title ?? labels.dialog` into it.
 
 ## Infra decisions
 

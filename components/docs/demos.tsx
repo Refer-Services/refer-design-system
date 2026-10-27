@@ -72,9 +72,11 @@ import { ToggleGroupDemo } from "@/components/toggle-group-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
 import { TraceDemo } from "@/components/trace-demo"
 import { TypographyDemo } from "@/components/typography-demo"
+import { UILabelsDemo } from "@/components/ui-labels-demo"
 
 export type Demo = {
   title?: string
+  description?: string
   component: React.ComponentType
   // Source shown in the Code tab, relative to the repo root.
   file: string
@@ -83,9 +85,10 @@ export type Demo = {
 function demo(
   component: React.ComponentType,
   file: string,
-  title?: string
+  title?: string,
+  description?: string
 ): Demo {
-  return { component, file: `components/${file}.tsx`, title }
+  return { component, file: `components/${file}.tsx`, title, description }
 }
 
 // Demos per docs page (registry item name or foundation). Pages without an entry show "No demo yet".
@@ -166,6 +169,14 @@ export const demos: Record<string, Demo[]> = {
   toggle: [demo(ToggleDemo, "toggle-demo")],
   "toggle-group": [demo(ToggleGroupDemo, "toggle-group-demo")],
   tooltip: [demo(TooltipDemo, "tooltip-demo")],
+  "ui-labels": [
+    demo(
+      UILabelsDemo,
+      "ui-labels-demo",
+      undefined,
+      "Wrap the app once in UILabelsProvider with translated strings; the DS imports no i18n library. Without it, everything stays in English, and keys you leave out fall back to English. A component prop such as closeLabel on DialogContent or SheetContent wins over the provider."
+    ),
+  ],
   trace: [demo(TraceDemo, "trace-demo")],
   typography: [demo(TypographyDemo, "typography-demo")],
   shadows: [demo(ShadowDemo, "shadow-demo")],

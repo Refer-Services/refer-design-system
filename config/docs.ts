@@ -12,6 +12,7 @@ export const newComponents = [
   "questionnaire",
   "toast",
   "trace",
+  "ui-labels",
 ]
 
 // Pages about tokens rather than registry items: no install command, no usage stats.
@@ -32,7 +33,9 @@ export function titleFromName(name: string) {
   return name
     .split("-")
     .map((part) =>
-      part === "otp" ? "OTP" : part[0].toUpperCase() + part.slice(1)
+      part === "otp" || part === "ui"
+        ? part.toUpperCase()
+        : part[0].toUpperCase() + part.slice(1)
     )
     .join(" ")
 }
