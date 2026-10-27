@@ -464,9 +464,9 @@ export const Index: Record<string, any> = {
   },
   "drawer": {
     name: "drawer",
-    description: "Bottom sheet for mobile (vaul).",
+    description: "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested drawers. Still accepts vaul's direction/dismissible/asChild props.",
     type: "registry:ui",
-    registryDependencies: undefined,
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/dialog.json"],
     files: [{
       path: "registry/ui/drawer.tsx",
       type: "registry:ui",

@@ -7,10 +7,10 @@ import { Dialog, DialogContent, DialogTitle } from "@/registry/refer/ui/dialog"
 import { Drawer, DrawerContent } from "@/registry/refer/ui/drawer"
 
 /**
- * Dialog on desktop, bottom Drawer below md (768px). vaul renders the same
- * Radix Dialog underneath, so DialogHeader, DialogFooter, DialogDescription and
- * DialogClose work inside either; only the root, the content and the title
- * switch.
+ * Dialog on desktop, bottom Drawer below md (768px). DialogHeader, DialogFooter,
+ * DialogDescription and DialogClose work inside either: inside the Drawer they
+ * render its own parts (see DialogPartsContext in dialog.tsx). Only the root, the
+ * content and the title switch.
  */
 
 const ResponsiveDialogContext = React.createContext({

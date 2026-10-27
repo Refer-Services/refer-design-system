@@ -51,6 +51,7 @@ import { PopoverDemo } from "@/components/popover-demo"
 import { ProgressDemo } from "@/components/progress-demo"
 import { QuestionnaireDemo } from "@/components/questionnaire-demo"
 import { RadioGroupDemo } from "@/components/radio-group-demo"
+import { ResponsiveDialogDemo } from "@/components/responsive-dialog-demo"
 import { ResizableDemo } from "@/components/resizable-demo"
 import { ScrollAreaDemo } from "@/components/scroll-area-demo"
 import { SelectDemo } from "@/components/select-demo"
@@ -146,6 +147,7 @@ export const demos: Record<string, Demo[]> = {
   progress: [demo(ProgressDemo, "progress-demo")],
   questionnaire: [demo(QuestionnaireDemo, "questionnaire-demo")],
   "radio-group": [demo(RadioGroupDemo, "radio-group-demo")],
+  "responsive-dialog": [demo(ResponsiveDialogDemo, "responsive-dialog-demo")],
   resizable: [demo(ResizableDemo, "resizable-demo")],
   "scroll-area": [demo(ScrollAreaDemo, "scroll-area-demo")],
   select: [

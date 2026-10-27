@@ -1,7 +1,21 @@
 "use client"
 
+import * as React from "react"
+import { MoreHorizontalIcon } from "lucide-react"
+
 import { Example, ExampleWrapper } from "@/components/examples/example"
 import { Button } from "@/registry/refer/ui/button"
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/registry/refer/ui/combobox"
+import { DialogClose, DialogDescription } from "@/registry/refer/ui/dialog"
+import { Label } from "@/registry/refer/ui/label"
+import { Switch } from "@/registry/refer/ui/switch"
 import {
   Drawer,
   DrawerClose,
@@ -12,6 +26,29 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/registry/refer/ui/drawer"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/registry/refer/ui/dropdown-menu"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/refer/ui/popover"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/refer/ui/select"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/registry/refer/ui/tooltip"
 
 export function DrawerExample() {
   return (
@@ -19,32 +56,35 @@ export function DrawerExample() {
       <DrawerScrollableContent />
       <DrawerWithSides />
       <DrawerMobileHeader />
+      <DrawerWithControls />
     </ExampleWrapper>
   )
 }
 
-const DRAWER_SIDES = ["top", "right", "bottom", "left"] as const
+const DRAWER_SIDES = [
+  { label: "top", swipe: "up" },
+  { label: "right", swipe: "right" },
+  { label: "bottom", swipe: "down" },
+  { label: "left", swipe: "left" },
+] as const
 
 function DrawerWithSides() {
   return (
     <Example title="Sides">
       <div className="flex flex-wrap gap-2">
-        {DRAWER_SIDES.map((side) => (
-          <Drawer
-            key={side}
-            direction={
-              side === "bottom" ? undefined : (side as "top" | "right" | "left")
-            }
-          >
-            <DrawerTrigger asChild>
-              <Button
-                variant="outline"
-                className="style-sera:uppercase capitalize"
-              >
-                {side}
-              </Button>
+        {DRAWER_SIDES.map(({ label, swipe }) => (
+          <Drawer key={label} swipeDirection={swipe}>
+            <DrawerTrigger
+              render={
+                <Button
+                  variant="outline"
+                  className="style-sera:uppercase capitalize"
+                />
+              }
+            >
+              {label}
             </DrawerTrigger>
-            <DrawerContent className="data-[vaul-drawer-direction=bottom]:max-h-[50vh] data-[vaul-drawer-direction=top]:max-h-[50vh]">
+            <DrawerContent className="data-[swipe-axis=y]:max-h-[50vh]">
               <DrawerHeader>
                 <DrawerTitle>Move Goal</DrawerTitle>
                 <DrawerDescription>
@@ -70,8 +110,8 @@ function DrawerWithSides() {
               </div>
               <DrawerFooter>
                 <Button>Submit</Button>
-                <DrawerClose asChild>
-                  <Button variant="outline">Cancel</Button>
+                <DrawerClose render={<Button variant="outline" />}>
+                  Cancel
                 </DrawerClose>
               </DrawerFooter>
             </DrawerContent>
@@ -85,9 +125,9 @@ function DrawerWithSides() {
 function DrawerScrollableContent() {
   return (
     <Example title="Scrollable Content">
-      <Drawer direction="right">
-        <DrawerTrigger asChild>
-          <Button variant="outline">Scrollable Content</Button>
+      <Drawer swipeDirection="right">
+        <DrawerTrigger render={<Button variant="outline" />}>
+          Scrollable Content
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
@@ -112,8 +152,8 @@ function DrawerScrollableContent() {
           </div>
           <DrawerFooter>
             <Button>Submit</Button>
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+            <DrawerClose render={<Button variant="outline" />}>
+              Cancel
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -132,8 +172,8 @@ function DrawerMobileHeader() {
         a phone, or see the frame below.
       </p>
       <Drawer>
-        <DrawerTrigger asChild>
-          <Button variant="outline">Open bottom drawer</Button>
+        <DrawerTrigger render={<Button variant="outline" />}>
+          Open bottom drawer
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
@@ -144,8 +184,8 @@ function DrawerMobileHeader() {
           </DrawerHeader>
           <DrawerFooter>
             <Button>Move</Button>
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+            <DrawerClose render={<Button variant="outline" />}>
+              Cancel
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -171,6 +211,105 @@ function DrawerMobileHeader() {
           </div>
         </div>
       </div>
+    </Example>
+  )
+}
+
+const STAGES = ["Applied", "Screening", "Interview", "Offer", "Hired"]
+
+// Refer: regression check for the Base UI drawer. Radix popups (select, menu, popover, tooltip) and the Base UI
+// combobox open inside it, Dialog parts work inside it (ResponsiveDialog relies on that), and dismissible={false}
+// keeps it open on outside press, Escape and swipe. Escape in an open popup closes only that popup. It keeps
+// asChild on purpose: the apps still pass it, so this also checks the compatibility path.
+function DrawerWithControls() {
+  const [open, setOpen] = React.useState(false)
+  const [dismissible, setDismissible] = React.useState(true)
+
+  return (
+    <Example title="With controls inside">
+      <div className="flex items-center gap-2">
+        <Switch
+          id="drawer-dismissible"
+          checked={dismissible}
+          onCheckedChange={setDismissible}
+        />
+        <Label htmlFor="drawer-dismissible">
+          Closes on outside press, Escape and swipe
+        </Label>
+      </div>
+      <Drawer open={open} onOpenChange={setOpen} dismissible={dismissible}>
+        <DrawerTrigger asChild>
+          <Button variant="outline">Open drawer with controls</Button>
+        </DrawerTrigger>
+        <DrawerContent title="Edit candidate">
+          <DrawerHeader>
+            <DrawerTitle>Edit candidate</DrawerTitle>
+            <DialogDescription>
+              {dismissible
+                ? "Closes on outside press, Escape, swipe or the buttons."
+                : "Only the buttons below close this drawer."}
+            </DialogDescription>
+          </DrawerHeader>
+          <div className="flex flex-col gap-3 px-4">
+            <Select defaultValue="Interview">
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Stage" />
+              </SelectTrigger>
+              <SelectContent>
+                {STAGES.map((stage) => (
+                  <SelectItem key={stage} value={stage}>
+                    {stage}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Combobox items={STAGES}>
+              <ComboboxInput placeholder="Search a stage" />
+              <ComboboxContent>
+                <ComboboxEmpty>No stage found.</ComboboxEmpty>
+                <ComboboxList>
+                  {(item: string) => (
+                    <ComboboxItem key={item} value={item}>
+                      {item}
+                    </ComboboxItem>
+                  )}
+                </ComboboxList>
+              </ComboboxContent>
+            </Combobox>
+            <div className="flex gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon" aria-label="More">
+                    <MoreHorizontalIcon />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Copy link</DropdownMenuItem>
+                  <DropdownMenuItem>Archive</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline">Notes</Button>
+                </PopoverTrigger>
+                <PopoverContent>Ana prefers mornings.</PopoverContent>
+              </Popover>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost">Hover me</Button>
+                </TooltipTrigger>
+                <TooltipContent>Tooltip inside a drawer</TooltipContent>
+              </Tooltip>
+            </div>
+          </div>
+          <DrawerFooter>
+            <Button onClick={() => setOpen(false)}>Save</Button>
+            <DialogClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DialogClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
     </Example>
   )
 }

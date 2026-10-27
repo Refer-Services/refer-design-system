@@ -326,9 +326,11 @@ const registry = {
     },
     {
       name: "drawer",
-      description: "Bottom sheet for mobile (vaul).",
+      description:
+        "Swipeable sheet from any edge (Base UI Drawer): bottom sheet on mobile, side panels, snap points, nested drawers. Still accepts vaul's direction/dismissible/asChild props.",
       type: "registry:ui",
-      dependencies: ["vaul", "@radix-ui/react-dialog"],
+      dependencies: ["@base-ui/react@^1.9.0"],
+      registryDependencies: ["dialog"],
       files: [
         {
           path: "ui/drawer.tsx",

@@ -77,8 +77,8 @@ function DrawerBottom() {
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <Button variant="outline">Open Drawer</Button>
+      <DrawerTrigger render={<Button variant="outline" />}>
+        Open Drawer
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
@@ -135,8 +135,8 @@ function DrawerBottom() {
           </div>
           <DrawerFooter>
             <Button>Submit</Button>
-            <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+            <DrawerClose render={<Button variant="outline" />}>
+              Cancel
             </DrawerClose>
           </DrawerFooter>
         </div>
@@ -147,9 +147,9 @@ function DrawerBottom() {
 
 function DrawerScrollableContent() {
   return (
-    <Drawer direction="right">
-      <DrawerTrigger asChild>
-        <Button variant="outline">Scrollable Content</Button>
+    <Drawer swipeDirection="right">
+      <DrawerTrigger render={<Button variant="outline" />}>
+        Scrollable Content
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
@@ -172,8 +172,8 @@ function DrawerScrollableContent() {
         </div>
         <DrawerFooter>
           <Button>Submit</Button>
-          <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+          <DrawerClose render={<Button variant="outline" />}>
+            Cancel
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
@@ -181,17 +181,22 @@ function DrawerScrollableContent() {
   )
 }
 
-const directions = ["top", "right", "bottom", "left"] as const
+const directions = [
+  { label: "top", swipe: "up" },
+  { label: "right", swipe: "right" },
+  { label: "bottom", swipe: "down" },
+  { label: "left", swipe: "left" },
+] as const
 
 function DrawerDirections() {
   return (
     <>
-      {directions.map((direction) => (
-        <Drawer key={direction} direction={direction}>
-          <DrawerTrigger asChild>
-            <Button variant="outline" className="capitalize">
-              {direction}
-            </Button>
+      {directions.map(({ label, swipe }) => (
+        <Drawer key={label} swipeDirection={swipe}>
+          <DrawerTrigger
+            render={<Button variant="outline" className="capitalize" />}
+          >
+            {label}
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
@@ -216,8 +221,8 @@ function DrawerDirections() {
             </div>
             <DrawerFooter>
               <Button>Submit</Button>
-              <DrawerClose asChild>
-                <Button variant="outline">Cancel</Button>
+              <DrawerClose render={<Button variant="outline" />}>
+                Cancel
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
