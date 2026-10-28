@@ -1243,7 +1243,7 @@ export const Index: Record<string, any> = {
   },
   "toggle-group": {
     name: "toggle-group",
-    description: "Set of toggles, joined or spaced, single or multiple selection.",
+    description: "Set of toggles, single or multiple selection: spaced by default (spacing={0} joins them into a segmented control), horizontal or vertical (orientation).",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/toggle.json"],
     files: [{

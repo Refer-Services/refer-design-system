@@ -1,26 +1,31 @@
 import { ToggleGroup, ToggleGroupItem } from "@/registry/refer/ui/toggle-group"
 
+const items = ["top", "bottom", "left", "right"]
+
 export function ToggleGroupSpacingDemo() {
   return (
-    <ToggleGroup
-      type="single"
-      size="sm"
-      defaultValue="top"
-      variant="outline"
-      spacing={2}
-    >
-      <ToggleGroupItem value="top" aria-label="Toggle top">
-        Top
-      </ToggleGroupItem>
-      <ToggleGroupItem value="bottom" aria-label="Toggle bottom">
-        Bottom
-      </ToggleGroupItem>
-      <ToggleGroupItem value="left" aria-label="Toggle left">
-        Left
-      </ToggleGroupItem>
-      <ToggleGroupItem value="right" aria-label="Toggle right">
-        Right
-      </ToggleGroupItem>
-    </ToggleGroup>
+    <div className="flex flex-col items-start gap-4">
+      {[2, 0].map((spacing) => (
+        <ToggleGroup
+          key={spacing}
+          type="single"
+          size="sm"
+          defaultValue="top"
+          variant="outline"
+          spacing={spacing}
+        >
+          {items.map((item) => (
+            <ToggleGroupItem
+              key={item}
+              value={item}
+              aria-label={`Toggle ${item}`}
+              className="capitalize"
+            >
+              {item}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
+      ))}
+    </div>
   )
 }

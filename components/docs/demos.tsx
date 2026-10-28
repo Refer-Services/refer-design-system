@@ -923,13 +923,13 @@ export const demos: Record<string, Demo[]> = {
       ToggleGroupSpacingDemo,
       "toggle-group-spacing-demo",
       "Spacing",
-      "Use `spacing` to add space between items. Refer's default is `0` (connected items); upstream changed its default to `2`."
+      "Use `spacing` to set the space between items. The default is `2`; `spacing={0}` joins the items into one segmented control, with shared borders and only the outer corners rounded."
     ),
     demo(
       ToggleGroupVerticalDemo,
       "toggle-group-vertical-demo",
       "Vertical",
-      'Use `orientation="vertical"` for arrow-key navigation up and down, plus `flex-col` and `flex-none` on the items to stack them: our `ToggleGroup` doesn\'t lay out by orientation yet.'
+      'Use `orientation="vertical"` to stack the items. Arrow keys move up and down, and with `spacing={0}` the top and bottom corners round instead.'
     ),
     demo(
       ToggleGroupDisabledDemo,

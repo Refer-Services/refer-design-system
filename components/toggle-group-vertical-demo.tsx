@@ -9,7 +9,6 @@ export function ToggleGroupVerticalDemo() {
       orientation="vertical"
       spacing={1}
       defaultValue={["bold", "italic"]}
-      className="flex-col *:data-[slot=toggle-group-item]:flex-none"
     >
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <BoldIcon />

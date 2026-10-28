@@ -854,7 +854,7 @@ const registry = {
     {
       name: "toggle-group",
       description:
-        "Set of toggles, joined or spaced, single or multiple selection.",
+        "Set of toggles, single or multiple selection: spaced by default (spacing={0} joins them into a segmented control), horizontal or vertical (orientation).",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-toggle-group"],
       registryDependencies: ["toggle"],

@@ -25,7 +25,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 | 2 | Additive APIs (see ledger), publish `button-group`, `field`, `item`, `kbd`, `native-select`, `spinner` (with demos), delete `refer-menu-item`, bump `@base-ui/react` and `date-fns` in the DS | Merged (PR #8) | portal 2026-10-22 (portal commit `6324f9349`, together with wave 1: the wave components changed, `package.json` and lockfile untouched; all 52 components identical to the DS). argus, landing, partners: not synced |
 | 3 | All new upstream components, with docs demos (see [Components added from upstream in wave 3](#components-added-from-upstream-in-wave-3)) | Merged (PR #9) | portal 2026-10-22: only `combobox` changed (native scrollbar utilities); `@utility no-scrollbar` deleted by hand from `globals.css` (the CLI doesn't delete rules); `package.json` and lockfile untouched. No app installs a wave 3 component yet. argus, landing, partners: not synced |
 | 4 | Design decisions that change app visuals: Refer look for the wave 3 components and the remaining stock ones, then the rest of the W4 ledger items (see [Wave 4 visual pass](#wave-4-visual-pass) and its part 2). The separator `data-slot` rename and the dependency ranges followed in PR #12 | Merged (PR #11, both parts; PR #12) | Pending: portal sync after the deploy (expected to change alert-dialog, avatar, bubble, calendar, context-menu, drawer, menubar, message, navigation-menu, separator, sonner, switch, table, tabs; minor bumps inside the major for react-day-picker, recharts, react-resizable-panels; visible in toasts, avatar initials, tables, mobile drawers and the candidate dialog Notes tab) |
-| 4.5 | Additive gaps against upstream's `bases` registry (see [Gaps against upstream's bases registry](#gaps-against-upstreams-bases-registry)): calendar `locale`, pagination `text`, `AlertAction`, menu item `inset`, card `size="sm"`, toggle-group `orientation`, `useCarousel` export, missing slots. Then decide sheet close button and badge `ghost`/`link` from a preview | Pending (next) | — |
+| 4.5 | Additive gaps against upstream's `bases` registry (see [Gaps against upstream's bases registry](#gaps-against-upstreams-bases-registry)): calendar `locale`, pagination `text`, `AlertAction`, menu item `inset`, card `size="sm"`, `useCarousel` export, missing slots. Then decide sheet close button and badge `ghost`/`link` from a preview | Pending (next) | — |
 | 5 | Breaking migrations, one at a time, coordinated with apps. Pilot: drawer from Vaul to Base UI (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)), then decide Radix → Base UI per component | Pilot (drawer) merged 2026-10-27 with the floating default, swipe handle, shadcn's docs demos and the ScrollArea fix; other components: not started | Pending: portal (olympus thread) syncs drawer, dialog, responsive-dialog, scroll-area (see [Wave 5 pilot](#wave-5-pilot-drawer-on-base-ui)); scroll-area also in argus, landing, partners |
 | 6 | A Refer `llms.txt` + one `.md` per component on ds.tryrefer.com | Pending | — |
 
@@ -35,6 +35,7 @@ points at one wave. A wave is done when the apps are synced, not when the PR mer
 |---|---|---|
 | UI labels: translatable component text (see [UI labels](#ui-labels-translatable-component-text)), asked by the olympus thread for the portal's i18n | Merged 2026-10-27 | Pending: portal (olympus thread) reinstalls `ui-labels`, dialog, sheet, breadcrumb, pagination, sidebar, command, carousel (not drawer: it waits for the wave 5 sync), wraps `app/layout.tsx` in `UILabelsProvider` with next-intl strings and adds `tests/components/ui/ui-labels.test.tsx`. argus, landing, partners: not needed until they translate |
 | Fields default to `bg-card` like Input: SelectTrigger (its `bg-transparent` was overriding `bg-card`), Textarea, InputGroup (and so Combobox); dark mode `bg-input/10` on all. Select and NativeSelect hover and press like the outline Button instead of `hover:bg-accent` | Merged 2026-10-27 | Pending: portal reinstalls `@refer/select @refer/textarea @refer/input-group` (and `@refer/native-select` if it has it); overrides that set `bg-card` on them can go |
+| ToggleGroup: `orientation` prop, default `spacing` 2 (was 0), items sized to content (no `flex-1`) | Merged 2026-10-28 | Pending: portal reinstalls `@refer/toggle-group`; `NoteComposer` keeps `spacing={1}`, its score chips get content widths (add `*:data-[slot=toggle-group-item]:flex-1` to keep them equal). A joined group now needs `spacing={0}` |
 
 ## How to run a sync
 
@@ -156,7 +157,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | switch | Custom geometry (22×40 track, press stretch) | — | W4: `size="sm"` on a Refer scale; add a focus-visible ring (missing today) |
 | table | — | — | W4: `has-aria-expanded:bg-muted/50` row highlight (changes app visuals) |
 | tabs | Refer list/trigger styles; default list `rounded-[14px] squircle` around `squircle rounded-[10px]` triggers (concentric, docs-site PR) | — | W4: `orientation`, `variant="line"`, focus-visible ring (missing today) |
-| toggle-group | `rounded-lg`, items `flex-1` | — | Done in W2: `spacing` prop (joined styles only when `spacing=0`). Those styles are now `data-[spacing=0]:` variants, so a plain item `className` like `rounded-full` no longer overrides them; use `data-[spacing=0]:rounded-full`. No app uses toggle-group yet |
+| toggle-group | `rounded-lg`; joined (`spacing={0}`) corners and borders for both orientations | — | Done 2026-10-28 from `bases`: `orientation` prop (`data-orientation`, vertical stacks with `items-stretch`), default `spacing` 2 (upstream's 2026-05-17 change; was 0), items sized to their content (dropped the old fork's `flex-1`, which collapsed vertical items). Portal: `NoteComposer` passes `spacing={1}`; its score chips lose equal widths. Done in W2: `spacing` prop (joined styles only when `spacing=0`). Those styles are now `data-[spacing=0]:` variants, so a plain item `className` like `rounded-full` no longer overrides them; use `data-[spacing=0]:rounded-full`. |
 | tooltip | `rounded-[10px]`, `ease-smooth`, built-in `TooltipProvider` | — | Done in W1 (`text-background`). W5: drop the built-in Provider once every app has one at its root |
 
 ## Gaps against upstream's bases registry
@@ -174,7 +175,7 @@ variants, subcomponents, defaults; class-only differences ignored). From the nex
 | alert | `AlertAction`, `data-slot="alert-action"` | Additive |
 | dropdown-menu, context-menu, menubar | `inset` on checkbox/radio items; `data-slot` on their indicators | Additive |
 | card | `size="sm"` (`data-size`) | Additive |
-| toggle-group | `orientation` (`horizontal`/`vertical`, `data-orientation`) | Additive |
+| toggle-group | `orientation` (`horizontal`/`vertical`, `data-orientation`) | Done 2026-10-28 (see ledger) |
 | carousel | export `useCarousel` (already in the file) | Additive |
 | spinner, accordion | `data-slot="spinner"`; `data-slot="accordion-trigger-icon"` | Additive (new slots) |
 | sheet | Close button is a `Button` `ghost` `icon-sm` | Visual: decide from a preview |
@@ -304,7 +305,7 @@ Gaps the port found in our components (registry untouched, candidates for wave 4
 | radio-group-boxed | `id` is the item's value and `name` the radio's element id; `disabled` and `aria-invalid` aren't forwarded |
 | table | Container has no `overflow-x-auto` (upstream has); the checkbox table demo wraps it in a `ScrollArea` |
 | button-group | An `Input` keeps its `rounded-input` outer corner next to a pill `Button` (also in the button-group gallery) |
-| toggle-group | No layout by `orientation` (wave 4.5); items are `flex-1`, so in a `flex-col` group they collapse to their icon height (the Vertical demo adds `flex-none`). Upstream changed the default `spacing` from `0` to `2` (2026-05-17); ours stays `0`, since the apps rely on connected items |
+| toggle-group | Fixed 2026-10-28: `orientation` prop, default `spacing` 2, no `flex-1` on items (see ledger) |
 
 ## Wave 5 pilot: drawer on Base UI
 
