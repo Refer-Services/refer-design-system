@@ -253,6 +253,14 @@ export const demos: Record<string, Demo[]> = {
       "Refer's `CheckboxBoxed` is a card-style checkbox, the one the apps use for choice cards. It takes `CheckboxBoxedTitle` and an optional `CheckboxBoxedDescription`, and turns `primary-subtle` with a `primary-border` when checked."
     ),
   ],
+  "checkbox-boxed": [
+    demo(
+      CheckboxBoxedDemo,
+      "checkbox-boxed-demo",
+      undefined,
+      "A `Checkbox` rendered as a selectable bordered card. It takes `CheckboxBoxedTitle` and an optional `CheckboxBoxedDescription`, and turns `primary-subtle` with a `primary-border` when checked. Also shown on the Checkbox page."
+    ),
+  ],
   "code-block": [demo(CodeBlockDemo, "code-block-demo")],
   collapsible: [demo(CollapsibleDemo, "collapsible-demo")],
   combobox: [
@@ -706,6 +714,14 @@ export const demos: Record<string, Demo[]> = {
   popover: [demo(PopoverDemo, "popover-demo")],
   progress: [demo(ProgressDemo, "progress-demo")],
   questionnaire: [demo(QuestionnaireDemo, "questionnaire-demo")],
+  "radio-group-boxed": [
+    demo(
+      RadioGroupChoiceCardDemo,
+      "radio-group-choice-card-demo",
+      undefined,
+      "Radio options rendered as selectable bordered cards: `RadioGroupItemBoxed` with `RadioGroupItemBoxedTitle` and an optional `RadioGroupItemBoxedDescription`, inside a `RadioGroup`. Its `id` prop is the item's value and `name` is the radio's element id. Also shown on the Radio Group page."
+    ),
+  ],
   "radio-group": [
     demo(RadioGroupDemo, "radio-group-demo"),
     demo(
@@ -794,7 +810,7 @@ export const demos: Record<string, Demo[]> = {
       SwitchChoiceCardDemo,
       "switch-choice-card-demo",
       "Choice Card",
-      "A card-style setting: `FieldLabel` wraps the whole `Field`, so the card is clickable."
+      "A card-style setting with the same look as `RadioGroupItemBoxed` and `CheckboxBoxed`: a `Label` wraps the text and the `Switch`, so the whole card toggles it, and it turns `primary-subtle` with a `primary-border` when on. There is no boxed switch component; copy the classes from the code."
     ),
     demo(
       SwitchDisabledDemo,
