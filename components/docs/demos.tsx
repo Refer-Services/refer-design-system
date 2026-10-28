@@ -425,7 +425,7 @@ export const demos: Record<string, Demo[]> = {
       FormRhfRadiogroupDemo,
       "form-rhf-radiogroup-demo",
       "Radio Group",
-      "Pass `field.value` and `field.onChange` to `RadioGroup`, and put `aria-invalid` on each `RadioGroupItem`. Here each option is a choice card: a `Field` wrapped in `FieldLabel`."
+      "Pass `field.value` and `field.onChange` to `RadioGroup` as `value` and `onValueChange`. Each option is a `RadioGroupItemBoxed` choice card, whose `id` is the option's value; `FieldError` below the group shows the message."
     ),
     demo(
       FormRhfSwitchDemo,

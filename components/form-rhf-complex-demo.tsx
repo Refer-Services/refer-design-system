@@ -25,9 +25,13 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
-  FieldTitle,
 } from "@/registry/refer/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
+import { RadioGroup } from "@/registry/refer/ui/radio-group"
+import {
+  RadioGroupItemBoxed,
+  RadioGroupItemBoxedDescription,
+  RadioGroupItemBoxedTitle,
+} from "@/registry/refer/ui/radio-group-boxed"
 import {
   Select,
   SelectContent,
@@ -131,34 +135,23 @@ export function FormRhfComplexDemo() {
                       onValueChange={field.onChange}
                       aria-invalid={isInvalid}
                     >
-                      <FieldLabel htmlFor="form-rhf-complex-basic">
-                        <Field orientation="horizontal">
-                          <FieldContent>
-                            <FieldTitle>Basic</FieldTitle>
-                            <FieldDescription>
-                              For individuals and small teams
-                            </FieldDescription>
-                          </FieldContent>
-                          <RadioGroupItem
-                            value="basic"
-                            id="form-rhf-complex-basic"
-                          />
-                        </Field>
-                      </FieldLabel>
-                      <FieldLabel htmlFor="form-rhf-complex-pro">
-                        <Field orientation="horizontal">
-                          <FieldContent>
-                            <FieldTitle>Pro</FieldTitle>
-                            <FieldDescription>
-                              For businesses with higher demands
-                            </FieldDescription>
-                          </FieldContent>
-                          <RadioGroupItem
-                            value="pro"
-                            id="form-rhf-complex-pro"
-                          />
-                        </Field>
-                      </FieldLabel>
+                      <RadioGroupItemBoxed
+                        id="basic"
+                        name="form-rhf-complex-basic"
+                      >
+                        <RadioGroupItemBoxedTitle>
+                          Basic
+                        </RadioGroupItemBoxedTitle>
+                        <RadioGroupItemBoxedDescription>
+                          For individuals and small teams
+                        </RadioGroupItemBoxedDescription>
+                      </RadioGroupItemBoxed>
+                      <RadioGroupItemBoxed id="pro" name="form-rhf-complex-pro">
+                        <RadioGroupItemBoxedTitle>Pro</RadioGroupItemBoxedTitle>
+                        <RadioGroupItemBoxedDescription>
+                          For businesses with higher demands
+                        </RadioGroupItemBoxedDescription>
+                      </RadioGroupItemBoxed>
                     </RadioGroup>
                     {isInvalid && <FieldError errors={[fieldState.error]} />}
                   </FieldSet>

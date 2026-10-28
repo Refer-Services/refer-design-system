@@ -16,16 +16,18 @@ import {
 } from "@/registry/refer/ui/card"
 import {
   Field,
-  FieldContent,
   FieldDescription,
   FieldError,
   FieldGroup,
-  FieldLabel,
   FieldLegend,
   FieldSet,
-  FieldTitle,
 } from "@/registry/refer/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/registry/refer/ui/radio-group"
+import { RadioGroup } from "@/registry/refer/ui/radio-group"
+import {
+  RadioGroupItemBoxed,
+  RadioGroupItemBoxedDescription,
+  RadioGroupItemBoxedTitle,
+} from "@/registry/refer/ui/radio-group-boxed"
 
 const plans = [
   {
@@ -94,27 +96,18 @@ export function FormRhfRadiogroupDemo() {
                     aria-invalid={fieldState.invalid}
                   >
                     {plans.map((plan) => (
-                      <FieldLabel
+                      <RadioGroupItemBoxed
                         key={plan.id}
-                        htmlFor={`form-rhf-radiogroup-${plan.id}`}
+                        id={plan.id}
+                        name={`form-rhf-radiogroup-${plan.id}`}
                       >
-                        <Field
-                          orientation="horizontal"
-                          data-invalid={fieldState.invalid}
-                        >
-                          <FieldContent>
-                            <FieldTitle>{plan.title}</FieldTitle>
-                            <FieldDescription>
-                              {plan.description}
-                            </FieldDescription>
-                          </FieldContent>
-                          <RadioGroupItem
-                            value={plan.id}
-                            id={`form-rhf-radiogroup-${plan.id}`}
-                            aria-invalid={fieldState.invalid}
-                          />
-                        </Field>
-                      </FieldLabel>
+                        <RadioGroupItemBoxedTitle>
+                          {plan.title}
+                        </RadioGroupItemBoxedTitle>
+                        <RadioGroupItemBoxedDescription>
+                          {plan.description}
+                        </RadioGroupItemBoxedDescription>
+                      </RadioGroupItemBoxed>
                     ))}
                   </RadioGroup>
                   {fieldState.invalid && (
