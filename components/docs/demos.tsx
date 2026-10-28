@@ -160,7 +160,18 @@ import { TextareaFieldDemo } from "@/components/textarea-field-demo"
 import { TextareaInvalidDemo } from "@/components/textarea-invalid-demo"
 import { ToastDemo } from "@/components/toast-demo"
 import { ToggleDemo } from "@/components/toggle-demo"
+import { ToggleDashedDemo } from "@/components/toggle-dashed-demo"
+import { ToggleDisabledDemo } from "@/components/toggle-disabled-demo"
 import { ToggleGroupDemo } from "@/components/toggle-group-demo"
+import { ToggleGroupDisabledDemo } from "@/components/toggle-group-disabled-demo"
+import { ToggleGroupFontWeightSelectorDemo } from "@/components/toggle-group-font-weight-selector-demo"
+import { ToggleGroupOutlineDemo } from "@/components/toggle-group-outline-demo"
+import { ToggleGroupSizesDemo } from "@/components/toggle-group-sizes-demo"
+import { ToggleGroupSpacingDemo } from "@/components/toggle-group-spacing-demo"
+import { ToggleGroupVerticalDemo } from "@/components/toggle-group-vertical-demo"
+import { ToggleOutlineDemo } from "@/components/toggle-outline-demo"
+import { ToggleSizesDemo } from "@/components/toggle-sizes-demo"
+import { ToggleTextDemo } from "@/components/toggle-text-demo"
 import { TooltipDemo } from "@/components/tooltip-demo"
 import { TraceDemo } from "@/components/trace-demo"
 import { TypographyDemo } from "@/components/typography-demo"
@@ -861,8 +872,78 @@ export const demos: Record<string, Demo[]> = {
     ),
   ],
   toast: [demo(ToastDemo, "toast-demo")],
-  toggle: [demo(ToggleDemo, "toggle-demo")],
-  "toggle-group": [demo(ToggleGroupDemo, "toggle-group-demo")],
+  toggle: [
+    demo(ToggleDemo, "toggle-demo"),
+    demo(
+      ToggleOutlineDemo,
+      "toggle-outline-demo",
+      "Outline",
+      'Use `variant="outline"` for an outline style.'
+    ),
+    demo(
+      ToggleTextDemo,
+      "toggle-text-demo",
+      "With Text",
+      "Put text next to the icon; the toggle grows to fit it."
+    ),
+    demo(
+      ToggleSizesDemo,
+      "toggle-sizes-demo",
+      "Size",
+      "Use the `size` prop (`sm`, `default`, `lg`) to change the size of the toggle."
+    ),
+    demo(
+      ToggleDisabledDemo,
+      "toggle-disabled-demo",
+      "Disabled",
+      "Use the `disabled` prop to disable the toggle."
+    ),
+    demo(
+      ToggleDashedDemo,
+      "toggle-dashed-demo",
+      "Dashed",
+      'Refer\'s `variant="dashed"` is a pill for filters: dashed border when off, `primary-subtle` with a solid `primary-border` when on.'
+    ),
+  ],
+  "toggle-group": [
+    demo(ToggleGroupDemo, "toggle-group-demo"),
+    demo(
+      ToggleGroupOutlineDemo,
+      "toggle-group-outline-demo",
+      "Outline",
+      'Use `variant="outline"` for an outline style.'
+    ),
+    demo(
+      ToggleGroupSizesDemo,
+      "toggle-group-sizes-demo",
+      "Size",
+      "Use the `size` prop to change the size of the toggle group."
+    ),
+    demo(
+      ToggleGroupSpacingDemo,
+      "toggle-group-spacing-demo",
+      "Spacing",
+      "Use `spacing` to add space between items. Refer's default is `0` (connected items); upstream changed its default to `2`."
+    ),
+    demo(
+      ToggleGroupVerticalDemo,
+      "toggle-group-vertical-demo",
+      "Vertical",
+      'Use `orientation="vertical"` for arrow-key navigation up and down, plus `flex-col` and `flex-none` on the items to stack them: our `ToggleGroup` doesn\'t lay out by orientation yet.'
+    ),
+    demo(
+      ToggleGroupDisabledDemo,
+      "toggle-group-disabled-demo",
+      "Disabled",
+      "Use the `disabled` prop on `ToggleGroup` to disable every item."
+    ),
+    demo(
+      ToggleGroupFontWeightSelectorDemo,
+      "toggle-group-font-weight-selector-demo",
+      "Custom",
+      "A font weight picker: a single-select `ToggleGroup` with spaced, card-like items inside a `Field`."
+    ),
+  ],
   tooltip: [demo(TooltipDemo, "tooltip-demo")],
   "ui-labels": [
     demo(

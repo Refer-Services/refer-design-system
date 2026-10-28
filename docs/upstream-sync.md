@@ -287,7 +287,7 @@ sync of these items.
 
 Ported 2026-10-27 from upstream `96da9cc7`: every section of shadcn's docs pages for input, textarea, label, field,
 select, native-select, checkbox, radio-group, switch, input-group and input-otp (from `apps/v4/examples/radix/`,
-RTL sections left out), one `components/<example>-demo.tsx` per section, wired in `components/docs/demos.tsx` with
+RTL sections left out; toggle and toggle-group followed on 2026-10-28), one `components/<example>-demo.tsx` per section, wired in `components/docs/demos.tsx` with
 upstream's section title and prose. shadcn has no Form docs page any more (`form.tsx` is still in its registry); forms
 are guides on Field + React Hook Form's `Controller`. Our Form page became that guide: `form-rhf-*` demos from
 `registry/new-york-v4/examples/`, plus the `Form` wrapper the apps use (53 files), kept as "With the Form component".
@@ -304,6 +304,7 @@ Gaps the port found in our components (registry untouched, candidates for wave 4
 | radio-group-boxed | `id` is the item's value and `name` the radio's element id; `disabled` and `aria-invalid` aren't forwarded |
 | table | Container has no `overflow-x-auto` (upstream has); the checkbox table demo wraps it in a `ScrollArea` |
 | button-group | An `Input` keeps its `rounded-input` outer corner next to a pill `Button` (also in the button-group gallery) |
+| toggle-group | No layout by `orientation` (wave 4.5); items are `flex-1`, so in a `flex-col` group they collapse to their icon height (the Vertical demo adds `flex-none`). Upstream changed the default `spacing` from `0` to `2` (2026-05-17); ours stays `0`, since the apps rely on connected items |
 
 ## Wave 5 pilot: drawer on Base UI
 

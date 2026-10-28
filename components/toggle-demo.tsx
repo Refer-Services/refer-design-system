@@ -1,44 +1,17 @@
-import { BoldIcon, BookmarkIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
+import { BookmarkIcon } from "lucide-react"
 
 import { Toggle } from "@/registry/refer/ui/toggle"
 
 export function ToggleDemo() {
   return (
-    <div className="flex flex-wrap items-center gap-6">
-      <Toggle aria-label="Toggle italic">
-        <BoldIcon />
-      </Toggle>
-      <Toggle aria-label="Toggle italic" variant="default">
-        <UnderlineIcon />
-      </Toggle>
-      <Toggle aria-label="Toggle italic" variant="default" disabled>
-        Disabled
-      </Toggle>
-      <Toggle variant="outline" aria-label="Toggle italic">
-        <ItalicIcon />
-        Italic
-      </Toggle>
-      <Toggle
-        aria-label="Toggle book"
-        className="data-[state=on]:[&_svg]:fill-accent-foreground"
-      >
-        <BookmarkIcon />
-      </Toggle>
-      <Toggle variant="outline" aria-label="Toggle italic" size="sm">
-        Small
-      </Toggle>
-      <Toggle variant="outline" aria-label="Toggle italic" size="lg">
-        Large
-      </Toggle>
-      <Toggle variant="dashed" aria-label="Toggle italic" size="sm">
-        Small Dashed
-      </Toggle>
-      <Toggle variant="dashed" aria-label="Toggle italic">
-        Default Dashed
-      </Toggle>
-      <Toggle variant="dashed" aria-label="Toggle italic" size="lg">
-        Large Dashed
-      </Toggle>
-    </div>
+    <Toggle
+      aria-label="Toggle bookmark"
+      size="sm"
+      variant="outline"
+      className="data-[state=on]:[&_svg]:fill-current"
+    >
+      <BookmarkIcon />
+      Bookmark
+    </Toggle>
   )
 }
