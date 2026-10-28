@@ -42,7 +42,7 @@ function ToggleGroup({
       orientation={orientation}
       style={{ "--gap": spacing } as React.CSSProperties}
       className={cn(
-        "group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-lg data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-stretch data-[spacing=0]:data-[variant=outline]:shadow-xs",
+        "group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-[10px] data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-stretch data-[spacing=0]:data-[variant=outline]:shadow-xs",
         className
       )}
       {...props}
@@ -80,8 +80,8 @@ function ToggleGroupItem({
         "min-w-0 shrink-0 focus:z-10 focus-visible:z-10",
         // Connected items (spacing 0): only the outer corners stay round, and outline items share their borders.
         "data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none",
-        "group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:first:rounded-l-lg group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:last:rounded-r-lg group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l",
-        "group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:last:rounded-b-lg group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t",
+        "group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:first:rounded-l-[10px] group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:last:rounded-r-[10px] group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-[orientation=horizontal]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l",
+        "group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:first:rounded-t-[10px] group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:last:rounded-b-[10px] group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-[orientation=vertical]/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t",
         className
       )}
       {...props}

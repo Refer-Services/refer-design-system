@@ -17,11 +17,14 @@ export function ComponentPreview({
   preview,
   code,
   className,
+  surface = "background",
 }: {
   name: string
   preview: React.ReactNode
   code: React.ReactNode
   className?: string
+  // The stage's color: the page background, or a card for components that mostly sit on cards.
+  surface?: "background" | "card"
 }) {
   return (
     <Tabs defaultValue="preview" className="gap-4">
@@ -32,7 +35,12 @@ export function ComponentPreview({
       <TabsContent value="preview">
         {/* Demos fit the stage width (w-full children wrap or truncate). A demo wider than the stage scrolls from its
             start instead of being cut (justify-center-safe); padding stays inside so shadows aren't clipped. */}
-        <ScrollArea className="bg-background rounded-card @container w-full [&_[data-slot=scroll-area-viewport]>div]:block!">
+        <ScrollArea
+          className={cn(
+            "rounded-card @container w-full [&_[data-slot=scroll-area-viewport]>div]:block!",
+            surface === "card" ? "bg-card border" : "bg-background"
+          )}
+        >
           <div
             className={cn(
               "flex min-h-[320px] w-full items-center justify-center-safe p-6 sm:p-10",

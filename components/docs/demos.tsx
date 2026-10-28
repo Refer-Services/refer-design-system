@@ -183,6 +183,7 @@ export type Demo = {
   component: React.ComponentType
   // Source shown in the Code tab, relative to the repo root.
   file: string
+  surface?: "background" | "card"
 }
 
 function demo(
@@ -192,6 +193,11 @@ function demo(
   description?: string
 ): Demo {
   return { component, file: `components/${file}.tsx`, title, description }
+}
+
+// Shows a page's demos on a card stage, for components mostly used on cards.
+function onCard(pageDemos: Demo[]): Demo[] {
+  return pageDemos.map((item) => ({ ...item, surface: "card" }))
 }
 
 // Demos per docs page (registry item name or foundation). Pages without an entry show "No demo yet".
@@ -872,7 +878,7 @@ export const demos: Record<string, Demo[]> = {
     ),
   ],
   toast: [demo(ToastDemo, "toast-demo")],
-  toggle: [
+  toggle: onCard([
     demo(ToggleDemo, "toggle-demo"),
     demo(
       ToggleOutlineDemo,
@@ -904,8 +910,8 @@ export const demos: Record<string, Demo[]> = {
       "Dashed",
       'Refer\'s `variant="dashed"` is a pill for filters: dashed border when off, `primary-subtle` with a solid `primary-border` when on.'
     ),
-  ],
-  "toggle-group": [
+  ]),
+  "toggle-group": onCard([
     demo(ToggleGroupDemo, "toggle-group-demo"),
     demo(
       ToggleGroupOutlineDemo,
@@ -943,7 +949,7 @@ export const demos: Record<string, Demo[]> = {
       "Custom",
       "A font weight picker: a single-select `ToggleGroup` with spaced, card-like items inside a `Field`."
     ),
-  ],
+  ]),
   tooltip: [demo(TooltipDemo, "tooltip-demo")],
   "ui-labels": [
     demo(

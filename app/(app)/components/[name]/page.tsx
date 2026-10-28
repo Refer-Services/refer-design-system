@@ -88,6 +88,7 @@ export default async function ComponentPage({
                 name={item.title}
                 preview={<Demo />}
                 code={<DocsCode code={demoSources[index]} title={demo.file} />}
+                surface={demo.surface}
               />
             </Section>
           )
