@@ -151,11 +151,29 @@ function Section({
         <div className="flex flex-col gap-1">
           {title && <h2 className="text-lg font-semibold">{title}</h2>}
           {description && (
-            <p className="text-muted-foreground text-sm">{description}</p>
+            <p className="text-muted-foreground text-sm">
+              <InlineCode text={description} />
+            </p>
           )}
         </div>
       )}
       {children}
     </section>
+  )
+}
+
+// Demo descriptions are plain strings; `backticked` names render as inline code.
+function InlineCode({ text }: { text: string }) {
+  return text.split("`").map((part, index) =>
+    index % 2 === 1 ? (
+      <code
+        key={index}
+        className="bg-muted text-foreground rounded-md px-1 py-0.5 font-mono text-[0.8125rem]"
+      >
+        {part}
+      </code>
+    ) : (
+      part
+    )
   )
 }

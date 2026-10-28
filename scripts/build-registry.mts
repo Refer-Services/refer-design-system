@@ -379,7 +379,7 @@ const registry = {
     {
       name: "form",
       description:
-        "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
+        "Forms with React Hook Form and Zod: the Form wrapper (FormField, FormItem, FormControl, FormMessage) wires ids and aria for you; Field with Controller is the alternative.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-label",

@@ -283,6 +283,28 @@ sync of these items.
 | tabs | Default `TabsList` `rounded-[14px] squircle`, `TabsTrigger` `squircle rounded-[10px]` (inner radius = outer − `p-1`) | Visible: every default tabs in the portal (22 files) gets the new corners. `line` and `subtle` unchanged |
 | button | `destructive_subtle`, `destructive_ghost`, `positive`, `positive_subtle`, `positive_ghost`, `info`, `info_subtle`, `info_ghost`, mirroring the primary trio with the existing `-subtle`/`-content` tokens. The subtle borders use the color at 10% (15% dark) inline, what `primary-border` resolves to, so no new token and no `globals` sync is needed | Additive; existing variants unchanged |
 
+## Docs for inputs and forms
+
+Ported 2026-10-27 from upstream `96da9cc7`: every section of shadcn's docs pages for input, textarea, label, field,
+select, native-select, checkbox, radio-group, switch, input-group and input-otp (from `apps/v4/examples/radix/`,
+RTL sections left out), one `components/<example>-demo.tsx` per section, wired in `components/docs/demos.tsx` with
+upstream's section title and prose. shadcn has no Form docs page any more (`form.tsx` is still in its registry); forms
+are guides on Field + React Hook Form's `Controller`. Our Form page became that guide: `form-rhf-*` demos from
+`registry/new-york-v4/examples/`, plus the `Form` wrapper the apps use (53 files), kept as "With the Form component".
+Docs only, so no app sync. Refer choices: choice cards on the checkbox and radio pages show `CheckboxBoxed` and
+`RadioGroupItemBoxed`; ids are prefixed per demo, since every section renders on one page.
+
+Gaps the port found in our components (registry untouched, candidates for wave 4.5):
+
+| Component | Gap |
+|---|---|
+| switch | No `aria-invalid` styling (upstream: destructive border and ring); only the `Field` label turns red |
+| input-otp | `InputOTPSlot` is stock shadcn (`rounded-md`, `ring-ring`, `h-9`), not Refer's input look (`rounded-input`, `bg-card`, primary focus) |
+| field | `FieldLabel` choice card (`rounded-md`, checked `bg-primary/5`) differs from the boxed cards (`rounded-xl`, `primary-subtle`, `primary-border`) |
+| radio-group-boxed | `id` is the item's value and `name` the radio's element id; `disabled` and `aria-invalid` aren't forwarded |
+| table | Container has no `overflow-x-auto` (upstream has); the checkbox table demo wraps it in a `ScrollArea` |
+| button-group | An `Input` keeps its `rounded-input` outer corner next to a pill `Button` (also in the button-group gallery) |
+
 ## Wave 5 pilot: drawer on Base UI
 
 Why: shadcn made Base UI its default (changelog 2026-07, "Base UI as the Default"; Radix stays supported, no need to

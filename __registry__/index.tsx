@@ -540,7 +540,7 @@ export const Index: Record<string, any> = {
   },
   "form": {
     name: "form",
-    description: "react-hook-form bindings: FormField, FormItem, FormLabel, FormMessage.",
+    description: "Forms with React Hook Form and Zod: the Form wrapper (FormField, FormItem, FormControl, FormMessage) wires ids and aria for you; Field with Controller is the alternative.",
     type: "registry:ui",
     registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/label.json"],
     files: [{
