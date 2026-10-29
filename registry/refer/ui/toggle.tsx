@@ -7,11 +7,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-medium hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-muted data-[state=on]:text-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive whitespace-nowrap active:scale-pressed duration-150 ease-out",
+  "inline-flex items-center justify-center gap-2 rounded-[10px] text-sm font-medium hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:border-primary/13 dark:data-[state=on]:border-primary/25 data-[state=on]:bg-primary-subtle data-[state=on]:text-primary-content data-[state=on]:hover:bg-primary/10 data-[state=on]:hover:text-primary-content [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive whitespace-nowrap active:scale-pressed duration-150 ease-out",
   {
     variants: {
       variant: {
-        default: "squircle bg-transparent",
+        default: "squircle border border-transparent bg-transparent",
         outline:
           "squircle border border-input bg-transparent shadow-xs hover:bg-muted",
         dashed:
