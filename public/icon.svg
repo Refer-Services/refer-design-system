@@ -1,5 +1,5 @@
 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Background: --foreground; mark: --background (app/globals.css) -->
+<!-- Background: foreground token; mark: background token (app/globals.css) -->
 <style>
 .bg { fill: #44403b; }
 .mark { fill: #fafaf9; }
