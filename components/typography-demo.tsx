@@ -41,6 +41,24 @@ const weights = [
   { className: "font-bold", value: "700" },
 ]
 
+const leadings = [
+  { className: "leading-none", value: "1 · 100%" },
+  { className: "leading-tight", value: "1.25 · 125%" },
+  { className: "leading-snug", value: "1.375 · 137.5%" },
+  { className: "leading-normal", value: "1.5 · 150%" },
+  { className: "leading-relaxed", value: "1.625 · 162.5%" },
+  { className: "leading-loose", value: "2 · 200%" },
+]
+
+const trackings = [
+  { className: "tracking-tighter", value: "-0.05em" },
+  { className: "tracking-tight", value: "-0.025em" },
+  { className: "tracking-normal", value: "0" },
+  { className: "tracking-wide", value: "0.025em" },
+  { className: "tracking-wider", value: "0.05em" },
+  { className: "tracking-widest", value: "0.1em" },
+]
+
 const styles = [
   {
     name: "Page title",
@@ -196,6 +214,67 @@ export function TypographyDemo() {
                   {weight.className}
                 </span>
                 <Meta>{weight.note ?? weight.value}</Meta>
+              </span>
+            </button>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Leading"
+        description="Line height, relative to the font size. The shaded block shows how tall the lines get."
+      >
+        <div className="divide-border-low flex flex-col divide-y">
+          {leadings.map((step) => (
+            <button
+              key={step.className}
+              type="button"
+              onClick={() => copy(step.className)}
+              title={`Copy ${step.className}`}
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-start @xl:gap-6"
+            >
+              <span className="flex flex-col gap-0.5">
+                <span className="font-mono text-xs font-medium">
+                  {step.className}
+                </span>
+                <Meta>{step.value}</Meta>
+              </span>
+              <span
+                className={cn(
+                  "bg-muted block max-w-md rounded-sm text-sm",
+                  step.className
+                )}
+              >
+                Ana worked with Marina for three years on the design team. She
+                led the redesign of the onboarding flow and mentored two
+                juniors.
+              </span>
+            </button>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        title="Tracking"
+        description="Letter spacing, in em so it scales with the font size."
+      >
+        <div className="divide-border-low flex flex-col divide-y">
+          {trackings.map((step) => (
+            <button
+              key={step.className}
+              type="button"
+              onClick={() => copy(step.className)}
+              title={`Copy ${step.className}`}
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-3 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
+            >
+              <span className="flex flex-col gap-0.5">
+                <span className="font-mono text-xs font-medium">
+                  {step.className}
+                </span>
+                <Meta>{step.value}</Meta>
+              </span>
+              <span className={cn("min-w-0 truncate text-lg", step.className)}>
+                Refer the people you&apos;d hire again
               </span>
             </button>
           ))}
