@@ -262,8 +262,9 @@ const drawerContentVariants = cva(
     "[--bleed:3rem] [--peek:1rem] [--stack-height:var(--drawer-frontmost-height,var(--drawer-height,0px))] [--stack-peek-offset:max(0px,calc((var(--nested-drawers)-var(--stack-progress))*var(--peek)))] [--stack-progress:clamp(0,var(--drawer-swipe-progress),1)] [--stack-scale-base:max(0,calc(1-(var(--nested-drawers)*var(--stack-step))))] [--stack-scale:clamp(0,calc(var(--stack-scale-base)+(var(--stack-step)*var(--stack-progress))),1)] [--stack-shrink:calc(1-var(--stack-scale))] [--stack-step:0.05]",
     // Transitions.
     "data-ending-style:transform-(--closed-transform) data-ending-style:opacity-[0.9999] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-nested-drawer-swiping:duration-0 data-ending-style:data-nested-drawer-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:transform-(--closed-transform) data-swiping:duration-0 data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)]",
-    // Directions.
-    "data-[swipe-direction=down]:inset-x-0 data-[swipe-direction=down]:bottom-0 data-[swipe-direction=down]:origin-bottom data-[swipe-direction=down]:[--closed-transform:translate3d(0,calc(100%+var(--drawer-inset,0px)+2px),0)] data-[swipe-direction=down]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)-var(--stack-peek-offset)-(var(--stack-shrink)*var(--stack-height)))] data-[swipe-direction=down]:data-nested-drawer-open:h-(--stack-height)",
+    // Directions. A bottom drawer rises by --drawer-safe-lift (the floating one's home-indicator area) and closes
+    // as far below, or its last pixels would show as it leaves.
+    "data-[swipe-direction=down]:inset-x-0 data-[swipe-direction=down]:bottom-0 data-[swipe-direction=down]:mb-[calc(var(--drawer-inset,0px)+var(--drawer-safe-lift,0px))] data-[swipe-direction=down]:origin-bottom data-[swipe-direction=down]:[--closed-transform:translate3d(0,calc(100%+var(--drawer-inset,0px)+var(--drawer-safe-lift,0px)+2px),0)] data-[swipe-direction=down]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)-var(--stack-peek-offset)-(var(--stack-shrink)*var(--stack-height)))] data-[swipe-direction=down]:data-nested-drawer-open:h-(--stack-height)",
     "data-[swipe-direction=up]:inset-x-0 data-[swipe-direction=up]:top-0 data-[swipe-direction=up]:origin-top data-[swipe-direction=up]:[--closed-transform:translate3d(0,calc(-100%-var(--drawer-inset,0px)-2px),0)] data-[swipe-direction=up]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)+var(--stack-peek-offset)+(var(--stack-shrink)*var(--stack-height)))] data-[swipe-direction=up]:data-nested-drawer-open:h-(--stack-height)",
     "data-[swipe-direction=left]:inset-y-0 data-[swipe-direction=left]:left-0 data-[swipe-direction=left]:origin-left data-[swipe-direction=left]:[--closed-transform:translate3d(calc(-100%-var(--drawer-inset,0px)-2px),0,0)] data-[swipe-direction=left]:[--translate-x:calc(var(--drawer-swipe-movement-x)+var(--stack-peek-offset)+(var(--stack-shrink)*100%))]",
     "data-[swipe-direction=right]:inset-y-0 data-[swipe-direction=right]:right-0 data-[swipe-direction=right]:origin-right data-[swipe-direction=right]:[--closed-transform:translate3d(calc(100%+var(--drawer-inset,0px)+2px),0,0)] data-[swipe-direction=right]:[--translate-x:calc(var(--drawer-swipe-movement-x)-var(--stack-peek-offset)-(var(--stack-shrink)*100%))]",
@@ -271,11 +272,13 @@ const drawerContentVariants = cva(
   {
     variants: {
       floating: {
-        // 8px from the edges with all corners rounded, like a Dialog (no bleed: there's a gap to show).
-        true: "bg-card rounded-3xl border shadow-xl [--drawer-inset:--spacing(2)] after:hidden",
-        // Attached to the edge it comes from, only the inner corners rounded.
+        // 8px from the edges with all corners rounded, like a Dialog (no bleed: there's a gap to show). From the
+        // bottom, 8px over the home indicator (the safe area), not under it: the whole card rises.
+        true: "bg-card rounded-3xl border shadow-xl [--drawer-inset:--spacing(2)] [--drawer-safe-lift:env(safe-area-inset-bottom,0px)] after:hidden",
+        // Attached to the edge it comes from, only the inner corners rounded. From the bottom, the surface stays
+        // on the edge, under the home indicator, and the body pads its content clear of it.
         false:
-          "bg-background data-[swipe-direction=down]:rounded-t-2xl data-[swipe-direction=down]:border-t data-[swipe-direction=left]:border-r data-[swipe-direction=right]:border-l data-[swipe-direction=up]:rounded-b-2xl data-[swipe-direction=up]:border-b after:bg-inherit",
+          "[--drawer-safe-padding:env(safe-area-inset-bottom,0px)] bg-background data-[swipe-direction=down]:rounded-t-2xl data-[swipe-direction=down]:border-t data-[swipe-direction=left]:border-r data-[swipe-direction=right]:border-l data-[swipe-direction=up]:rounded-b-2xl data-[swipe-direction=up]:border-b after:bg-inherit",
       },
     },
     defaultVariants: {
@@ -376,7 +379,7 @@ function DrawerContent({
           {/* Content lets mouse users select text without starting a swipe. It fades out under a nested drawer. */}
           <DrawerPrimitive.Content
             data-slot="drawer-body"
-            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overscroll-contain rounded-[inherit] transition-opacity duration-300 ease-[cubic-bezier(0.45,1.005,0,1.005)] select-text group-data-nested-drawer-open/drawer-popup:opacity-0 group-data-nested-drawer-swiping/drawer-popup:opacity-100 group-data-swiping/drawer-popup:select-none"
+            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overscroll-contain rounded-[inherit] transition-opacity duration-300 ease-[cubic-bezier(0.45,1.005,0,1.005)] select-text group-data-nested-drawer-open/drawer-popup:opacity-0 group-data-nested-drawer-swiping/drawer-popup:opacity-100 group-data-swiping/drawer-popup:select-none group-data-[swipe-direction=down]/drawer-popup:pb-(--drawer-safe-padding,0px)"
           >
             {children}
           </DrawerPrimitive.Content>
