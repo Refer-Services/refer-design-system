@@ -219,7 +219,7 @@ export const Index: Record<string, any> = {
     name: "calendar",
     description: "Date grid for single, multiple or range selection (react-day-picker v9).",
     type: "registry:ui",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/direction.json"],
     files: [{
       path: "registry/ui/calendar.tsx",
       type: "registry:ui",

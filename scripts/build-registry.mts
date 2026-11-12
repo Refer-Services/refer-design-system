@@ -162,7 +162,7 @@ const registry = {
         "Date grid for single, multiple or range selection (react-day-picker v9).",
       type: "registry:ui",
       dependencies: ["react-day-picker@^9"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "direction"],
       files: [
         {
           path: "ui/calendar.tsx",

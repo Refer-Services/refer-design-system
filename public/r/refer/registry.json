@@ -172,7 +172,8 @@
         "react-day-picker@^9"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json"
       ],
       "files": [
         {

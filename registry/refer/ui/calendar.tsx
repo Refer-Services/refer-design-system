@@ -14,6 +14,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 
 function Calendar({
   className,
@@ -23,19 +24,28 @@ function Calendar({
   buttonVariant = "ghost",
   formatters,
   components,
+  dir,
   ...props
 }: React.ComponentProps<typeof DayPicker> & {
   buttonVariant?: React.ComponentProps<typeof Button>["variant"]
 }) {
   const defaultClassNames = getDefaultClassNames()
+  // react-day-picker turns its arrow keys around from its own dir prop, not the page's. "ltr" isn't written, so a
+  // right-to-left page whose app has no DirectionProvider still lays the calendar out from the right.
+  const direction = useDirection()
+  // In right-to-left, DayPicker points the chevrons the other way itself only with navLayout="around"; its default
+  // Nav keeps them pointing left and right, so they turn here.
+  const turnChevrons = props.navLayout !== "around"
 
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      dir={dir ?? (direction === "rtl" ? "rtl" : undefined)}
       className={cn(
         "group/calendar bg-popover text-popover-foreground rounded-card shadow-popover p-3 backdrop-blur-xl [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=card-content]_&]:shadow-none [[data-slot=card-content]_&]:backdrop-blur-none [[data-slot=popover-content]_&]:bg-transparent [[data-slot=popover-content]_&]:shadow-none [[data-slot=popover-content]_&]:backdrop-blur-none",
-        String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
-        String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
+        turnChevrons && String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
+        turnChevrons &&
+          String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
       )}
       captionLayout={captionLayout}
