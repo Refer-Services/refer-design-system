@@ -84,7 +84,7 @@ export function TabsDemo() {
             Profile
             <Badge
               variant="secondary"
-              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -mr-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
+              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -me-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
             >
               1
             </Badge>
@@ -93,7 +93,7 @@ export function TabsDemo() {
             Account
             <Badge
               variant="secondary"
-              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -mr-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
+              className="group-data-[state=active]:bg-primary group-data-[state=active]:text-primary-foreground -me-0.5 h-[18px] min-w-[18px] rounded-md px-1 py-0.5 opacity-50 group-data-[state=active]:opacity-80"
             >
               27
             </Badge>

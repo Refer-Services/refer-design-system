@@ -59,7 +59,7 @@ export function CommandMenu({ items }: { items: DocsItem[] }) {
       >
         <SearchIcon />
         <span className="truncate">Search components…</span>
-        <KbdGroup className="ml-auto hidden sm:inline-flex">
+        <KbdGroup className="ms-auto hidden sm:inline-flex">
           <Kbd>⌘</Kbd>
           <Kbd>K</Kbd>
         </KbdGroup>
@@ -96,7 +96,7 @@ export function CommandMenu({ items }: { items: DocsItem[] }) {
               >
                 <span className="shrink-0">{item.title}</span>
                 {item.description && (
-                  <span className="text-muted-foreground group-data-[selected=true]/command-item:text-primary-foreground/80 ml-2 truncate text-xs">
+                  <span className="text-muted-foreground group-data-[selected=true]/command-item:text-primary-foreground/80 ms-2 truncate text-xs">
                     {item.description}
                   </span>
                 )}

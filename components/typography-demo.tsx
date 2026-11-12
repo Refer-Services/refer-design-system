@@ -140,7 +140,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(face.className)}
               title={`Copy ${face.className}`}
-              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-6 rounded-2xl p-6 text-left transition-colors"
+              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-6 rounded-2xl p-6 text-start transition-colors"
             >
               <span className={cn("text-6xl leading-none", face.className)}>
                 Aa
@@ -175,7 +175,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(step.className)}
               title={`Copy ${step.className}`}
-              className="hover:bg-background -mx-3 flex items-baseline gap-6 rounded-lg px-3 py-3 text-left transition-colors"
+              className="hover:bg-background -mx-3 flex items-baseline gap-6 rounded-lg px-3 py-3 text-start transition-colors"
             >
               <span className="flex w-28 shrink-0 flex-col">
                 <span className="font-mono text-xs font-medium">
@@ -204,7 +204,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(weight.className)}
               title={`Copy ${weight.className}`}
-              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-4 rounded-2xl p-5 text-left transition-colors"
+              className="bg-card shadow-card squircle hover:bg-background flex flex-col gap-4 rounded-2xl p-5 text-start transition-colors"
             >
               <span className={cn("text-4xl leading-none", weight.className)}>
                 Aa
@@ -231,7 +231,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(step.className)}
               title={`Copy ${step.className}`}
-              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-start @xl:gap-6"
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-start transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-start @xl:gap-6"
             >
               <span className="flex flex-col gap-0.5">
                 <span className="font-mono text-xs font-medium">
@@ -265,7 +265,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(step.className)}
               title={`Copy ${step.className}`}
-              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-3 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-3 text-start transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
             >
               <span className="flex flex-col gap-0.5">
                 <span className="font-mono text-xs font-medium">
@@ -292,7 +292,7 @@ export function TypographyDemo() {
               type="button"
               onClick={() => copy(style.className)}
               title={`Copy ${style.className}`}
-              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-left transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
+              className="hover:bg-background -mx-3 grid gap-2 rounded-lg px-3 py-4 text-start transition-colors @xl:grid-cols-[11rem_1fr] @xl:items-baseline @xl:gap-6"
             >
               <span className="flex flex-col gap-0.5">
                 <span className="text-sm font-medium">{style.name}</span>

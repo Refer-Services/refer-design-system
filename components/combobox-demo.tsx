@@ -157,7 +157,7 @@ function FrameworkCombobox({ frameworks }: { frameworks: Framework[] }) {
                   {framework.label}
                   <CheckIcon
                     className={cn(
-                      "ml-auto",
+                      "ms-auto",
                       value === framework.value ? "opacity-100" : "opacity-0"
                     )}
                   />
@@ -235,7 +235,7 @@ function UserCombobox({
                   {user.username}
                   <CheckIcon
                     className={cn(
-                      "ml-auto",
+                      "ms-auto",
                       value === user.id ? "opacity-100" : "opacity-0"
                     )}
                   />
@@ -319,7 +319,7 @@ function TimezoneCombobox({
                   >
                     {timezone.label}
                     <CheckIcon
-                      className="ml-auto opacity-0 data-[selected=true]:opacity-100"
+                      className="ms-auto opacity-0 data-[selected=true]:opacity-100"
                       data-selected={value === timezone.value}
                     />
                   </CommandItem>
@@ -327,7 +327,7 @@ function TimezoneCombobox({
               </CommandGroup>
             ))}
             <CommandSeparator className="sticky bottom-10" />
-            <CommandGroup className="bg-popover sticky bottom-0 rounded-bl-xl">
+            <CommandGroup className="bg-popover sticky bottom-0 rounded-es-xl">
               <CommandItem>
                 <PlusCircleIcon />
                 Create timezone

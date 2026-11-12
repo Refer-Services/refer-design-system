@@ -129,7 +129,7 @@ function SpinnerInEmpty() {
           </div>
           <Button variant="link" asChild className="text-muted-foreground">
             <a href="#">
-              Learn more <ArrowRightIcon />
+              Learn more <ArrowRightIcon className="rtl:-scale-x-100" />
             </a>
           </Button>
         </EmptyContent>

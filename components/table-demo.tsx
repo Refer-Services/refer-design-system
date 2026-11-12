@@ -65,7 +65,7 @@ export function TableDemo() {
           <TableHead className="w-[100px]">Invoice</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="text-end">Amount</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -74,14 +74,14 @@ export function TableDemo() {
             <TableCell className="font-medium">{invoice.invoice}</TableCell>
             <TableCell>{invoice.paymentStatus}</TableCell>
             <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+            <TableCell className="text-end">{invoice.totalAmount}</TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
+          <TableCell className="text-end">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>
     </Table>
@@ -94,16 +94,16 @@ export function TableDemo() {
             <TableHead className="w-[100px]">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead className="text-end">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody className="">
           {invoices.map((invoice) => (
             <TableRow key={invoice.invoice} className="h-14 group shadow-xs rounded-xl">
-              <TableCell className="bg-card font-medium group-first:rounded-tl-lg group-last:rounded-bl-xl">{invoice.invoice}</TableCell>
+              <TableCell className="bg-card font-medium group-first:rounded-ss-lg group-last:rounded-es-xl">{invoice.invoice}</TableCell>
               <TableCell className="bg-card">{invoice.paymentStatus}</TableCell>
               <TableCell className="bg-card">{invoice.paymentMethod}</TableCell>
-              <TableCell className="bg-card text-right group-first:rounded-tr-lg group-last:rounded-br-xl">{invoice.totalAmount}</TableCell>
+              <TableCell className="bg-card text-end group-first:rounded-se-lg group-last:rounded-ee-xl">{invoice.totalAmount}</TableCell>
             </TableRow>
           ))}
         </TableBody>

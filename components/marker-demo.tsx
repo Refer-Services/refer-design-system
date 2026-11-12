@@ -28,7 +28,7 @@ export function MarkerDemo() {
           </MarkerIcon>
           <MarkerContent className="flex-1">Interview scheduled</MarkerContent>
           <MarkerIcon>
-            <ChevronRightIcon />
+            <ChevronRightIcon className="rtl:-scale-x-100" />
           </MarkerIcon>
         </a>
       </Marker>

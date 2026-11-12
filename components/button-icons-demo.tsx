@@ -31,8 +31,8 @@ function Row({
 }
 
 // The size's has-[>svg] padding assumes a leading icon; a trailing one swaps it with
-// className="has-[>svg]:pr-3.5 has-[>svg]:pl-4" (md).
-const trailing = "has-[>svg]:pr-3.5 has-[>svg]:pl-4"
+// className="has-[>svg]:pe-3.5 has-[>svg]:ps-4" (md).
+const trailing = "has-[>svg]:pe-3.5 has-[>svg]:ps-4"
 
 export function ButtonIconsDemo() {
   return (
@@ -62,7 +62,7 @@ export function ButtonIconsDemo() {
       </Row>
       <Row label="trailing">
         <Button className={trailing}>
-          Continue <ArrowRightIcon />
+          Continue <ArrowRightIcon className="rtl:-scale-x-100" />
         </Button>
         <Button variant="primary_ghost" className={trailing}>
           Send invite <Send />
@@ -74,7 +74,7 @@ export function ButtonIconsDemo() {
           Status <ChevronDown />
         </Button>
         <Button variant="secondary" className={trailing}>
-          Learn more <ArrowRightIcon />
+          Learn more <ArrowRightIcon className="rtl:-scale-x-100" />
         </Button>
       </Row>
       <Row label="loading / disabled">

@@ -24,7 +24,7 @@ export function InputGroupTextareaDemo() {
         />
         <InputGroupAddon align="block-end" className="border-t">
           <InputGroupText>Line 1, Column 1</InputGroupText>
-          <InputGroupButton size="sm" className="ml-auto" variant="primary">
+          <InputGroupButton size="sm" className="ms-auto" variant="primary">
             Run <CornerDownLeftIcon />
           </InputGroupButton>
         </InputGroupAddon>
@@ -34,7 +34,7 @@ export function InputGroupTextareaDemo() {
             script.js
           </InputGroupText>
           <InputGroupButton
-            className="ml-auto"
+            className="ms-auto"
             size="icon-xs"
             aria-label="Refresh"
           >

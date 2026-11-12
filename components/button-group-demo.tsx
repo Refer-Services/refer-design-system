@@ -36,7 +36,7 @@ export function ButtonGroupDemo() {
     <ButtonGroup>
       <ButtonGroup className="hidden sm:flex">
         <Button variant="outline" size="icon" aria-label="Go Back">
-          <ArrowLeftIcon />
+          <ArrowLeftIcon className="rtl:-scale-x-100" />
         </Button>
       </ButtonGroup>
       <ButtonGroup>

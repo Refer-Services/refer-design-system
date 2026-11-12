@@ -660,7 +660,7 @@ function TraceTurn() {
 }
 
 function ChevronRightGlyph() {
-  return <ChevronRightIcon />
+  return <ChevronRightIcon className="rtl:-scale-x-100" />
 }
 
 function ArrowUpRightGlyph() {

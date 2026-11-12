@@ -14,7 +14,7 @@ export function InputGroupCustomDemo() {
           placeholder="Autoresize textarea..."
         />
         <InputGroupAddon align="block-end">
-          <InputGroupButton className="ml-auto" size="sm" variant="primary">
+          <InputGroupButton className="ms-auto" size="sm" variant="primary">
             Submit
           </InputGroupButton>
         </InputGroupAddon>

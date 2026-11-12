@@ -345,7 +345,7 @@ function TabsWithInputAndButton() {
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
           </TabsList>
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ms-auto flex items-center gap-2">
             <Input placeholder="Search..." className="w-44" />
             <Button>Action</Button>
           </div>

@@ -93,7 +93,7 @@ function MarkerDefault() {
             <div>Marker as a button</div>
           </MarkerContent>
           <MarkerIcon>
-            <ChevronRightIcon />
+            <ChevronRightIcon className="rtl:-scale-x-100" />
           </MarkerIcon>
         </button>
       </Marker>

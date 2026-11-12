@@ -78,22 +78,22 @@ export function BadgeDemo() {
       <div className="flex w-full flex-wrap gap-2">
         <Badge asChild>
           <a href="#">
-            Link <ArrowRightIcon />
+            Link <ArrowRightIcon className="rtl:-scale-x-100" />
           </a>
         </Badge>
         <Badge asChild variant="secondary">
           <a href="#">
-            Link <ArrowRightIcon />
+            Link <ArrowRightIcon className="rtl:-scale-x-100" />
           </a>
         </Badge>
         <Badge asChild variant="destructive">
           <a href="#">
-            Link <ArrowRightIcon />
+            Link <ArrowRightIcon className="rtl:-scale-x-100" />
           </a>
         </Badge>
         <Badge asChild variant="outline">
           <a href="#">
-            Link <ArrowRightIcon />
+            Link <ArrowRightIcon className="rtl:-scale-x-100" />
           </a>
         </Badge>
       </div>

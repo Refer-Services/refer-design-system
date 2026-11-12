@@ -224,7 +224,7 @@ function ButtonGroupWithSelect() {
           </Select>
           <Input placeholder="Enter amount to send" />
           <Button variant="outline">
-            <ArrowRightIcon />
+            <ArrowRightIcon className="rtl:-scale-x-100" />
           </Button>
         </ButtonGroup>
       </Field>
@@ -371,7 +371,10 @@ function ButtonGroupPagination() {
     <Example title="Pagination">
       <ButtonGroup>
         <Button variant="outline" size="sm">
-          <ArrowLeftIcon data-icon="inline-start" />
+          <ArrowLeftIcon
+            className="rtl:-scale-x-100"
+            data-icon="inline-start"
+          />
           Previous
         </Button>
         <Button variant="outline" size="sm">
@@ -391,7 +394,7 @@ function ButtonGroupPagination() {
         </Button>
         <Button variant="outline" size="sm">
           Next
-          <ArrowRightIcon data-icon="inline-end" />
+          <ArrowRightIcon className="rtl:-scale-x-100" data-icon="inline-end" />
         </Button>
       </ButtonGroup>
     </Example>
@@ -421,10 +424,10 @@ function ButtonGroupPaginationSplit() {
         </ButtonGroup>
         <ButtonGroup>
           <Button variant="outline" size="icon-xs">
-            <ArrowLeftIcon />
+            <ArrowLeftIcon className="rtl:-scale-x-100" />
           </Button>
           <Button variant="outline" size="icon-xs">
-            <ArrowRightIcon />
+            <ArrowRightIcon className="rtl:-scale-x-100" />
           </Button>
         </ButtonGroup>
       </ButtonGroup>
@@ -438,15 +441,15 @@ function ButtonGroupNavigation() {
       <ButtonGroup>
         <ButtonGroup>
           <Button variant="outline">
-            <ArrowLeftIcon />
+            <ArrowLeftIcon className="rtl:-scale-x-100" />
           </Button>
           <Button variant="outline">
-            <ArrowRightIcon />
+            <ArrowRightIcon className="rtl:-scale-x-100" />
           </Button>
         </ButtonGroup>
         <ButtonGroup aria-label="Single navigation button">
           <Button variant="outline" size="icon">
-            <ArrowLeftIcon />
+            <ArrowLeftIcon className="rtl:-scale-x-100" />
           </Button>
         </ButtonGroup>
       </ButtonGroup>
