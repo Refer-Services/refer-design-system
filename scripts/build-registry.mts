@@ -831,7 +831,7 @@ const registry = {
         "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
-      registryDependencies: ["button", "ui-labels"],
+      registryDependencies: ["button", "direction", "ui-labels"],
       files: [
         {
           path: "ui/toast.tsx",
