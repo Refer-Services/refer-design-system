@@ -57,6 +57,9 @@
   --sidebar-ring: var(--ring);
 
   --font-sans: Geist, sans-serif;
+  /* Faces an app declares (app/fonts.css here) with only their script's unicode-range; without them, no font. */
+  --font-arabic: "Refer Arabic";
+  --font-hebrew: "Refer Hebrew";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -211,7 +214,8 @@
   --color-refer-900: #722e2a;
   --color-refer-950: #3d1412;
 
-  --font-sans: var(--font-sans);
+  /* Arabic and Hebrew first: their faces only cover their own letters, and Geist's fallback face would catch them. */
+  --font-sans: var(--font-arabic), var(--font-hebrew), var(--font-sans), var(--font-script, ui-sans-serif), sans-serif;
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
@@ -254,6 +258,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Arabic script joins its letters, and letter-spacing pulls them apart: in it the tracking-* scale is 0. */
+  :lang(ar), :lang(fa), :lang(ur), :lang(ps), :lang(ckb), :lang(sd), :lang(ug) {
+    --tracking-tighter: 0;
+    --tracking-tight: 0;
+    --tracking-wide: 0;
+    --tracking-wider: 0;
+    --tracking-widest: 0;
   }
 }
 

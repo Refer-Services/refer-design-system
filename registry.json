@@ -1134,6 +1134,8 @@
           "sidebar-border": "var(--border)",
           "sidebar-ring": "var(--ring)",
           "font-sans": "Geist, sans-serif",
+          "font-arabic": "\"Refer Arabic\"",
+          "font-hebrew": "\"Refer Hebrew\"",
           "font-serif": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
           "font-mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
           "radius": "0.5rem",
@@ -1270,7 +1272,7 @@
           "color-refer-800": "#88312c",
           "color-refer-900": "#722e2a",
           "color-refer-950": "#3d1412",
-          "font-sans": "var(--font-sans)",
+          "font-sans": "var(--font-arabic), var(--font-hebrew), var(--font-sans), var(--font-script, ui-sans-serif), sans-serif",
           "font-mono": "var(--font-mono)",
           "font-serif": "var(--font-serif)",
           "font-weight-semibold": "550",
@@ -1307,6 +1309,13 @@
           },
           "body": {
             "@apply bg-background text-foreground": {}
+          },
+          ":lang(ar), :lang(fa), :lang(ur), :lang(ps), :lang(ckb), :lang(sd), :lang(ug)": {
+            "--tracking-tighter": "0",
+            "--tracking-tight": "0",
+            "--tracking-wide": "0",
+            "--tracking-wider": "0",
+            "--tracking-widest": "0"
           }
         },
         "@utility squircle": {
