@@ -81,7 +81,7 @@ function CommandInput({
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
-            "placeholder:text-muted-foreground h-full w-full bg-transparent pr-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+            "placeholder:text-muted-foreground h-full w-full bg-transparent pe-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           {...props}
@@ -174,7 +174,7 @@ function CommandItem({
       {checkable && (
         <CheckIcon
           data-slot="command-item-indicator"
-          className="ml-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100"
+          className="ms-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100"
         />
       )}
     </CommandPrimitive.Item>
@@ -189,7 +189,7 @@ function CommandShortcut({
     <span
       data-slot="command-shortcut"
       className={cn(
-        "text-muted-foreground group-data-[selected=true]/command-item:text-primary-foreground/80 ml-auto text-xs tracking-widest",
+        "text-muted-foreground group-data-[selected=true]/command-item:text-primary-foreground/80 ms-auto text-xs tracking-widest",
         className
       )}
       {...props}

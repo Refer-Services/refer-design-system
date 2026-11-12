@@ -461,7 +461,7 @@ function SelectPlan() {
 function SelectPlanItem({ plan }: { plan: (typeof plans)[number] }) {
   return (
 
-    <div className="flex flex-col text-left">
+    <div className="flex flex-col text-start">
         <div className="text-sm font-medium">
           {plan.name}
         </div>

@@ -14,6 +14,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 
 function Calendar({
   className,
@@ -23,19 +24,28 @@ function Calendar({
   buttonVariant = "ghost",
   formatters,
   components,
+  dir,
   ...props
 }: React.ComponentProps<typeof DayPicker> & {
   buttonVariant?: React.ComponentProps<typeof Button>["variant"]
 }) {
   const defaultClassNames = getDefaultClassNames()
+  // react-day-picker turns its arrow keys around from its own dir prop, not the page's. "ltr" isn't written, so a
+  // right-to-left page whose app has no DirectionProvider still lays the calendar out from the right.
+  const direction = useDirection()
+  // In right-to-left, DayPicker points the chevrons the other way itself only with navLayout="around"; its default
+  // Nav keeps them pointing left and right, so they turn here.
+  const turnChevrons = props.navLayout !== "around"
 
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      dir={dir ?? (direction === "rtl" ? "rtl" : undefined)}
       className={cn(
         "group/calendar bg-popover text-popover-foreground rounded-card shadow-popover p-3 backdrop-blur-xl [--cell-size:--spacing(8)] [[data-slot=card-content]_&]:bg-transparent [[data-slot=card-content]_&]:shadow-none [[data-slot=card-content]_&]:backdrop-blur-none [[data-slot=popover-content]_&]:bg-transparent [[data-slot=popover-content]_&]:shadow-none [[data-slot=popover-content]_&]:backdrop-blur-none",
-        String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
-        String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
+        turnChevrons && String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
+        turnChevrons &&
+          String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
       )}
       captionLayout={captionLayout}
@@ -85,7 +95,7 @@ function Calendar({
           "font-medium select-none",
           captionLayout === "label"
             ? "text-sm font-semibold"
-            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pr-1 pl-2 text-sm [&>svg]:size-3.5",
+            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pe-1 ps-2 text-sm [&>svg]:size-3.5",
           defaultClassNames.caption_label
         ),
         month_grid: cn("w-full border-collapse", defaultClassNames.month_grid),
@@ -104,19 +114,19 @@ function Calendar({
           defaultClassNames.week_number
         ),
         day: cn(
-          "group/day relative aspect-square h-full w-full p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-r-input",
+          "group/day relative aspect-square h-full w-full p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-e-input",
           props.showWeekNumber
-            ? "[&:nth-child(2)[data-selected=true]_button]:rounded-l-input"
-            : "[&:first-child[data-selected=true]_button]:rounded-l-input",
+            ? "[&:nth-child(2)[data-selected=true]_button]:rounded-s-input"
+            : "[&:first-child[data-selected=true]_button]:rounded-s-input",
           defaultClassNames.day
         ),
         range_start: cn(
-          "bg-primary-subtle rounded-l-input",
+          "bg-primary-subtle rounded-s-input",
           defaultClassNames.range_start
         ),
         range_middle: cn("rounded-none", defaultClassNames.range_middle),
         range_end: cn(
-          "bg-primary-subtle rounded-r-input",
+          "bg-primary-subtle rounded-e-input",
           defaultClassNames.range_end
         ),
         today: cn("data-[selected=true]:rounded-none", defaultClassNames.today),

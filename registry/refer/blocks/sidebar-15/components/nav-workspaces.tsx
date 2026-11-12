@@ -46,10 +46,10 @@ export function NavWorkspaces({
                 </SidebarMenuButton>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuAction
-                    className="bg-sidebar-accent text-sidebar-accent-foreground left-2 data-[state=open]:rotate-90"
+                    className="bg-sidebar-accent text-sidebar-accent-foreground inset-s-2 data-[state=open]:rotate-90 rtl:data-[state=open]:-rotate-90"
                     showOnHover
                   >
-                    <ChevronRight />
+                    <ChevronRight className="rtl:-scale-x-100" />
                   </SidebarMenuAction>
                 </CollapsibleTrigger>
                 <SidebarMenuAction showOnHover>

@@ -172,7 +172,8 @@
         "react-day-picker@^9"
       ],
       "registryDependencies": [
-        "https://ds.tryrefer.com/r/refer/button.json"
+        "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json"
       ],
       "files": [
         {
@@ -201,6 +202,7 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
@@ -347,6 +349,7 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
@@ -359,9 +362,10 @@
     },
     {
       "name": "direction",
-      "description": "DirectionProvider and useDirection for right-to-left layouts.",
+      "description": "DirectionProvider (gives the reading direction to Radix and Base UI) and useDirection for right-to-left layouts.",
       "dependencies": [
-        "@radix-ui/react-direction"
+        "@radix-ui/react-direction",
+        "@base-ui/react"
       ],
       "files": [
         {
@@ -811,7 +815,7 @@
     },
     {
       "name": "sidebar",
-      "description": "Composable, collapsible app sidebar.",
+      "description": "Composable, collapsible app sidebar; its side (start or end) follows the reading direction.",
       "dependencies": [
         "@radix-ui/react-slot",
         "class-variance-authority",
@@ -819,6 +823,7 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/separator.json",
         "https://ds.tryrefer.com/r/refer/sheet.json",
         "https://ds.tryrefer.com/r/refer/tooltip.json",
@@ -947,6 +952,7 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [
@@ -1128,6 +1134,8 @@
           "sidebar-border": "var(--border)",
           "sidebar-ring": "var(--ring)",
           "font-sans": "Geist, sans-serif",
+          "font-arabic": "\"Refer Arabic\"",
+          "font-hebrew": "\"Refer Hebrew\"",
           "font-serif": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
           "font-mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
           "radius": "0.5rem",
@@ -1264,7 +1272,7 @@
           "color-refer-800": "#88312c",
           "color-refer-900": "#722e2a",
           "color-refer-950": "#3d1412",
-          "font-sans": "var(--font-sans)",
+          "font-sans": "var(--font-arabic), var(--font-hebrew), var(--font-sans), var(--font-script, ui-sans-serif), sans-serif",
           "font-mono": "var(--font-mono)",
           "font-serif": "var(--font-serif)",
           "font-weight-semibold": "550",
@@ -1301,6 +1309,13 @@
           },
           "body": {
             "@apply bg-background text-foreground": {}
+          },
+          ":lang(ar), :lang(fa), :lang(ur), :lang(ps), :lang(ckb), :lang(sd), :lang(ug)": {
+            "--tracking-tighter": "0",
+            "--tracking-tight": "0",
+            "--tracking-wide": "0",
+            "--tracking-wider": "0",
+            "--tracking-widest": "0"
           }
         },
         "@utility squircle": {

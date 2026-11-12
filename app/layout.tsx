@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/registry/refer/ui/sonner"
 
 import "./globals.css"
+import "./fonts.css"
 
 export const metadata: Metadata = {
   title: {

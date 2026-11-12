@@ -13,6 +13,7 @@ import { Toast as ToastPrimitive } from "@base-ui/react/toast"
 import { cn } from "@/lib/utils"
 
 import { Button } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 const toast = ToastPrimitive.createToastManager()
@@ -30,7 +31,7 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
     <ToastPrimitive.Viewport
       data-slot="toast-viewport"
       className={cn(
-        "pointer-events-none fixed inset-x-4 bottom-4 z-50 mx-auto w-auto max-w-sm outline-none sm:right-4 sm:left-auto sm:mx-0 sm:w-full",
+        "pointer-events-none fixed inset-x-4 bottom-4 z-50 mx-auto w-auto max-w-sm outline-none sm:inset-s-auto sm:inset-e-4 sm:mx-0 sm:w-full",
         className
       )}
       {...props}
@@ -38,15 +39,25 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
   )
 }
 
-function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
+function Toast({
+  className,
+  swipeDirection,
+  ...props
+}: ToastPrimitive.Root.Props) {
+  // The viewport sits at the end of the line (inset-e-4): the toast swipes away down or toward that edge, the left one
+  // in a right-to-left page. An explicit swipeDirection still wins.
+  const direction = useDirection()
   return (
     <ToastPrimitive.Root
       data-slot="toast"
+      swipeDirection={
+        swipeDirection ?? ["down", direction === "rtl" ? "left" : "right"]
+      }
       className={cn(
-        "group/toast bg-popover text-popover-foreground shadow-popover pointer-events-auto absolute right-0 bottom-0 z-[calc(1000-var(--toast-index))] w-full origin-bottom rounded-[12px] backdrop-blur-[24px] will-change-transform select-none",
+        "group/toast bg-popover text-popover-foreground shadow-popover pointer-events-auto absolute inset-e-0 bottom-0 z-[calc(1000-var(--toast-index))] w-full origin-bottom rounded-[12px] backdrop-blur-[24px] will-change-transform select-none",
         "[--gap:0.75rem] [--height:var(--toast-frontmost-height,var(--toast-height))] [--offset-y:calc(var(--toast-offset-y)*-1+calc(var(--toast-index)*var(--gap)*-1)+var(--toast-swipe-movement-y))] [--peek:0.75rem] [--scale:calc(max(0,1-(var(--toast-index)*0.1)))] [--shrink:calc(1-var(--scale))]",
         "h-(--height) [transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)-(var(--toast-index)*var(--peek))-(var(--shrink)*var(--height))))_scale(var(--scale))] [transition:transform_500ms_cubic-bezier(0.22,1,0.36,1),opacity_500ms,height_150ms]",
-        "after:absolute after:top-full after:left-0 after:h-[calc(var(--gap)+1px)] after:w-full after:content-['']",
+        "after:absolute after:inset-s-0 after:top-full after:h-[calc(var(--gap)+1px)] after:w-full after:content-['']",
         "data-expanded:h-(--toast-height) data-expanded:[transform:translateX(var(--toast-swipe-movement-x))_translateY(var(--offset-y))]",
         "data-limited:opacity-0 data-starting-style:[transform:translateY(150%)]",
         "[&[data-ending-style]:not([data-limited]):not([data-swipe-direction])]:[transform:translateY(150%)]",

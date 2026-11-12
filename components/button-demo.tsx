@@ -19,7 +19,7 @@ export function ButtonDemo() {
         ))}
         {tones.map(({ name, label }) => (
           <div key={name} className="contents">
-            <span className="text-muted-foreground pr-3 font-mono text-xs">
+            <span className="text-muted-foreground pe-3 font-mono text-xs">
               {name}
             </span>
             <Button variant={name}>{label}</Button>

@@ -162,7 +162,7 @@ const registry = {
         "Date grid for single, multiple or range selection (react-day-picker v9).",
       type: "registry:ui",
       dependencies: ["react-day-picker@^9"],
-      registryDependencies: ["button"],
+      registryDependencies: ["button", "direction"],
       files: [
         {
           path: "ui/calendar.tsx",
@@ -186,7 +186,7 @@ const registry = {
       description: "Embla-based carousel with previous/next controls.",
       type: "registry:ui",
       dependencies: ["embla-carousel-react"],
-      registryDependencies: ["button", "ui-labels"],
+      registryDependencies: ["button", "direction", "ui-labels"],
       files: [
         {
           path: "ui/carousel.tsx",
@@ -304,7 +304,7 @@ const registry = {
         "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
-      registryDependencies: ["button", "ui-labels"],
+      registryDependencies: ["button", "direction", "ui-labels"],
       files: [
         {
           path: "ui/dialog.tsx",
@@ -315,9 +315,9 @@ const registry = {
     {
       name: "direction",
       description:
-        "DirectionProvider and useDirection for right-to-left layouts.",
+        "DirectionProvider (gives the reading direction to Radix and Base UI) and useDirection for right-to-left layouts.",
       type: "registry:ui",
-      dependencies: ["@radix-ui/react-direction"],
+      dependencies: ["@radix-ui/react-direction", "@base-ui/react"],
       files: [
         {
           path: "ui/direction.tsx",
@@ -706,7 +706,8 @@ const registry = {
     },
     {
       name: "sidebar",
-      description: "Composable, collapsible app sidebar.",
+      description:
+        "Composable, collapsible app sidebar; its side (start or end) follows the reading direction.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-slot",
@@ -715,6 +716,7 @@ const registry = {
       ],
       registryDependencies: [
         "button",
+        "direction",
         "separator",
         "sheet",
         "tooltip",
@@ -831,7 +833,7 @@ const registry = {
         "Base UI toast with actions, status types, promises and stacking. Apps on Radix keep using sonner.",
       type: "registry:ui",
       dependencies: ["@base-ui/react"],
-      registryDependencies: ["button", "ui-labels"],
+      registryDependencies: ["button", "direction", "ui-labels"],
       files: [
         {
           path: "ui/toast.tsx",
@@ -1038,10 +1040,31 @@ function styleFromGlobals(globalsPath: string) {
  * every bare name at the Refer item instead, and fail the build on a name that
  * isn't one, or on a Refer import an item doesn't declare.
  */
+// What `shadcn init` installs in every app, so an item doesn't list it in dependencies.
+const PROVIDED_PACKAGES = new Set([
+  "react",
+  "react-dom",
+  "next",
+  "lucide-react",
+  "class-variance-authority",
+  "clsx",
+  "tailwind-merge",
+  "tw-animate-css",
+])
+
+// "@base-ui/react@^1.9.0" -> "@base-ui/react"; "@base-ui/react/toast" -> "@base-ui/react".
+const packageName = (specifier: string) => {
+  const versionAt = specifier.indexOf("@", 1)
+  const bare = versionAt > 0 ? specifier.slice(0, versionAt) : specifier
+  const parts = bare.split("/")
+  return bare.startsWith("@") ? parts.slice(0, 2).join("/") : parts[0]
+}
+
 function resolveRegistryDependencies() {
   const names = new Set(registry.items.map((item) => item.name))
 
   for (const item of registry.items) {
+    const packages = new Set((item.dependencies ?? []).map(packageName))
     const deps = item.registryDependencies ?? []
     for (const dep of deps) {
       if (!dep.startsWith("http") && !names.has(dep)) {
@@ -1064,6 +1087,20 @@ function resolveRegistryDependencies() {
         if (used !== item.name && !declared.has(used)) {
           throw new Error(
             `${item.name}: imports "${used}" without listing it in registryDependencies.`
+          )
+        }
+      }
+      // An npm package an item imports but doesn't list works in this repo (it's in node_modules) and breaks the
+      // install in an app that doesn't have it.
+      if (!/\.tsx?$/.test(filePath)) continue
+      for (const [, specifier] of source.matchAll(
+        /(?:from|import)\s+["']([^"'./][^"']*)["']/g
+      )) {
+        if (specifier.startsWith("@/")) continue
+        const used = packageName(specifier)
+        if (!PROVIDED_PACKAGES.has(used) && !packages.has(used)) {
+          throw new Error(
+            `${item.name}: imports "${used}" without listing it in dependencies.`
           )
         }
       }

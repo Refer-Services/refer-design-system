@@ -423,7 +423,7 @@ function MessageHeaderFooter() {
           <MessageContent>
             <MessageHeader>
               <span>Olivia</span>
-              <span className="ml-auto font-normal">1m ago</span>
+              <span className="ms-auto font-normal">1m ago</span>
             </MessageHeader>
             <Bubble variant="muted">
               <BubbleContent>

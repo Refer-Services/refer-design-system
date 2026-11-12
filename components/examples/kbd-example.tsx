@@ -141,7 +141,7 @@ function KbdInTooltip() {
             <SaveIcon />
           </Button>
         </TooltipTrigger>
-        <TooltipContent className="pr-1.5">
+        <TooltipContent className="pe-1.5">
           <div className="flex items-center gap-2">
             Save Changes <Kbd>S</Kbd>
           </div>

@@ -19,10 +19,15 @@ function Progress({
       )}
       {...props}
     >
+      {/* The bar fills from the start of the line: the offset is a variable so a right-to-left page can mirror it. */}
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
-        className="bg-primary/90 h-full w-full flex-1 transition-all"
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+        className="bg-primary/90 h-full w-full flex-1 -translate-x-(--progress-offset) transition-all rtl:translate-x-(--progress-offset)"
+        style={
+          {
+            "--progress-offset": `${100 - (value || 0)}%`,
+          } as React.CSSProperties
+        }
       />
     </ProgressPrimitive.Root>
   )

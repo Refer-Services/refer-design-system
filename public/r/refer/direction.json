@@ -1,14 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "direction",
-  "description": "DirectionProvider and useDirection for right-to-left layouts.",
+  "description": "DirectionProvider (gives the reading direction to Radix and Base UI) and useDirection for right-to-left layouts.",
   "dependencies": [
-    "@radix-ui/react-direction"
+    "@radix-ui/react-direction",
+    "@base-ui/react"
   ],
   "files": [
     {
       "path": "registry/refer/ui/direction.tsx",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as Direction from \"@radix-ui/react-direction\"\n\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n  direction?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"]\n}) {\n  return (\n    <Direction.DirectionProvider dir={direction ?? dir}>\n      {children}\n    </Direction.DirectionProvider>\n  )\n}\n\nconst useDirection = Direction.useDirection\n\nexport { DirectionProvider, useDirection }\n",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { DirectionProvider as BaseUIDirectionProvider } from \"@base-ui/react/direction-provider\"\nimport * as Direction from \"@radix-ui/react-direction\"\n\n// Radix and Base UI each keep the reading direction in their own context: without its provider, Base UI's\n// useDirection() reads \"ltr\" (the combobox's chip arrows, popup sides). Wrap the app once here, not in either one.\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: {\n  children?: React.ReactNode\n  /** The reading direction (Radix's name for it). */\n  dir?: \"ltr\" | \"rtl\"\n  /** The same, by Base UI's name; either one works. */\n  direction?: \"ltr\" | \"rtl\"\n}) {\n  const value = direction ?? dir ?? \"ltr\"\n  return (\n    <Direction.DirectionProvider dir={value}>\n      <BaseUIDirectionProvider direction={value}>\n        {children}\n      </BaseUIDirectionProvider>\n    </Direction.DirectionProvider>\n  )\n}\n\n// The components that need the direction (carousel, calendar, dialog, sidebar, toast) read it here.\nconst useDirection = Direction.useDirection\n\nexport { DirectionProvider, useDirection }\n",
       "type": "registry:ui"
     }
   ],

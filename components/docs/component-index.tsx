@@ -71,7 +71,7 @@ function Grid({ items }: { items: IndexItem[] }) {
               className="bg-primary size-1.5 self-center rounded-full"
             />
           )}
-          <span className="text-muted-foreground ml-auto text-xs tabular-nums">
+          <span className="text-muted-foreground ms-auto text-xs tabular-nums">
             {item.uses === 0 ? "Unused" : `${item.uses} uses`}
           </span>
         </Link>

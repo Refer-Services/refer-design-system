@@ -34,7 +34,7 @@ export function NavProjects({
     icon: LucideIcon
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile, side } = useSidebar()
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -57,7 +57,7 @@ export function NavProjects({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-48 rounded-lg"
-                side={isMobile ? "bottom" : "right"}
+                side={isMobile ? "bottom" : side === "right" ? "left" : "right"}
                 align={isMobile ? "end" : "start"}
               >
                 <DropdownMenuItem>

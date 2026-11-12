@@ -144,6 +144,10 @@ It explains **what this project is**, **where to make changes**, and **how not t
 - **Imports**
   - Import registry primitives from **`@/registry/refer/ui/...`**.
   - Do **not** invent a generic `@/components/ui` path for registry code.
+- **Right to left**
+  - Write start and end, not left and right (`ms/me`, `ps/pe`, `inset-s/e`, `text-start/end`, `rounded-s/e`,
+    `border-s/e`), mirror what moves along a side under `rtl:`, and read the direction from
+    `@/registry/refer/ui/direction`. What stays physical and why is in CLAUDE.md (Component conventions).
 
 **Agent rule**: When creating or refactoring components, **match these conventions** for exports, typing, and styling.
 

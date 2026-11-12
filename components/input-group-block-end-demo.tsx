@@ -35,7 +35,7 @@ export function InputGroupBlockEndDemo() {
           />
           <InputGroupAddon align="block-end">
             <InputGroupText>0/280</InputGroupText>
-            <InputGroupButton variant="primary" size="sm" className="ml-auto">
+            <InputGroupButton variant="primary" size="sm" className="ms-auto">
               Post
             </InputGroupButton>
           </InputGroupAddon>

@@ -23,7 +23,7 @@ export default function Page() {
             <SidebarTrigger />
             <Separator
               orientation="vertical"
-              className="mr-2 data-[orientation=vertical]:h-4"
+              className="me-2 data-[orientation=vertical]:h-4"
             />
             <Breadcrumb>
               <BreadcrumbList>
@@ -35,7 +35,7 @@ export default function Page() {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="ml-auto px-3">
+          <div className="ms-auto px-3">
             <NavActions />
           </div>
         </header>

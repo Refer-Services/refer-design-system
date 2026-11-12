@@ -25,7 +25,7 @@ function Switch({
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
         className={cn(
-          "bg-card dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block h-[18px] w-[18px] rounded-full shadow-md ring-0 transition-all group-active:w-[22px] group-data-[size=sm]:h-[14px] group-data-[size=sm]:w-[14px] group-data-[size=sm]:group-active:w-[18px] data-[state=checked]:translate-x-[19px] data-[state=checked]:group-active:translate-x-[15px] group-data-[size=sm]:data-[state=checked]:translate-x-[15px] group-data-[size=sm]:data-[state=checked]:group-active:translate-x-[11px] data-[state=unchecked]:translate-x-px"
+          "bg-card dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block h-[18px] w-[18px] rounded-full shadow-md ring-0 transition-all group-active:w-[22px] group-data-[size=sm]:h-[14px] group-data-[size=sm]:w-[14px] group-data-[size=sm]:group-active:w-[18px] data-[state=checked]:translate-x-[19px] data-[state=checked]:group-active:translate-x-[15px] group-data-[size=sm]:data-[state=checked]:translate-x-[15px] group-data-[size=sm]:data-[state=checked]:group-active:translate-x-[11px] data-[state=unchecked]:translate-x-px rtl:data-[state=checked]:-translate-x-[19px] rtl:data-[state=checked]:group-active:-translate-x-[15px] rtl:group-data-[size=sm]:data-[state=checked]:-translate-x-[15px] rtl:group-data-[size=sm]:data-[state=checked]:group-active:-translate-x-[11px] rtl:data-[state=unchecked]:-translate-x-px"
         )}
       />
     </SwitchPrimitive.Root>

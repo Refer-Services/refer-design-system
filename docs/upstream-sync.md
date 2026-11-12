@@ -151,7 +151,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27); hover and press like the outline Button (`hover:bg-background`, `active:bg-stone-100`, dark `hover:bg-accent`), also on native-select (the old `hover:bg-accent` turned the field almost transparent in light mode) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
 | separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
-| sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
+| sidebar | No `cssVars`/`tailwind` in the item; `side` takes `"start" \| "end"` (default `"start"`, resolved to left or right with `useDirection`; `"left" \| "right"` still work) and `data-side` stays the physical side, so `data-[side=left]` selectors keep working; `SidebarInset`'s inset margins follow `data-side`; `SidebarMenuSub` `border-s` with its 1px nudge mirrored; icon-mode tooltips open away from the sidebar; `useSidebar()` also returns that `side`; `SidebarTrigger` takes `side` for its icon (`PanelLeftIcon`/`PanelRightIcon`) | Upstream `side` default `"left"` | Done in W1 (`var()` ring, type-only import) |
 | slider | — | — | Optional: thumb `bg-white` (check in visual QA) |
 | sonner | `borderRadius: 12px`, `backdropFilter: blur(24px)` | — | W4: default lucide icons on every toast (changes app visuals) |
 | switch | Custom geometry (22×40 track, press stretch) | — | W4: `size="sm"` on a Refer scale; add a focus-visible ring (missing today) |
@@ -183,7 +183,7 @@ variants, subcomponents, defaults; class-only differences ignored). From the nex
 | dropdown-menu | `DropdownMenuContent` default `align="start"` (was center) | Behavior: moves every app dropdown; don't take as default |
 | badge | `ghost`, `link` variants | Skipped before (no use case) |
 | resizable, chart | react-resizable-panels v4, Recharts v3 | Wave 5 |
-| sidebar | `dir` (RTL) | Skip |
+| sidebar | `dir` (RTL) | Done our way (2026-11-12, PR #17): upstream passes `dir` to the mobile Sheet and leaves left/right to the app (its CLI rewrites classes to logical at install); ours resolves `side="start" \| "end"` from `useDirection` (see the ledger) |
 
 Upstream `bases` has no `form` (it points to `field`). Ours only: `form`, `toast`, `checkbox-boxed`,
 `radio-group-boxed`, `responsive-dialog`.
@@ -367,6 +367,34 @@ else imports it. argus, landing and partners don't use drawer; skip them.
 - Headless mobile tests: `mobile: true` zooms out when the page overflows and shifts click coordinates; use `mobile:
   false` at 390px.
 - Not done: `combobox.tsx` still says "vaul Drawer" in a comment (left to avoid an app sync for a comment).
+
+## Right to left (PR #17)
+
+The apps read right to left in Arabic, Hebrew, Persian and Urdu, and the DS is written so a component follows the
+reader without the app doing anything but `<html dir lang>` and the `direction` item's `DirectionProvider`. Upstream
+gets there differently: its CLI rewrites physical classes to logical ones at install time (`rtl` option, `cn-rtl-flip`
+on icons) and its sidebar takes a `dir` prop; our source is already logical, so that rewrite has nothing to do here.
+The rules, and what stays physical and why, are in CLAUDE.md (Component conventions).
+
+When porting from upstream: run `python3 scripts/port-shadcn-example.py --logical <file>` on the ported file and
+deal with what it lists (a class list that also moves by a side, a rotated corner, a rotate next to an rtl: flip, an
+icon without `rtl:-scale-x-100`, a physical inline style); then open the component with the docs' LTR/RTL switch.
+
+| Component | Right-to-left behavior (Refer) |
+|---|---|
+| direction | `DirectionProvider` feeds Radix and Base UI (`@base-ui/react/direction-provider`); `useDirection` is the one the components read |
+| accordion, trace, sidebar blocks | Chevrons that turn 90° when open counter-rotate under `rtl:` (the mirror and the rotation compose) |
+| carousel | Embla `direction` and the arrow keys follow the reader; arrows mirrored only when horizontal |
+| calendar | `dir` passed to react-day-picker (its arrow keys read it); the chevrons' `rtl:` rotate-180 stays except with `navLayout="around"`, where DayPicker turns them itself |
+| dialog | `NavigationArrow` picks ArrowLeft/ArrowRight from the direction; ←/→ swap |
+| input | `type="email"`, `url`, `tel` are `dir="ltr"` |
+| input-otp | Container `[direction:ltr]`, slots with physical corners; `rtl:w-fit` keeps the row at the start of the line |
+| navigation-menu | Content `inset-s-0 pe-2.5`; motion (`data-motion`) stays physical (Radix reverses the items first); indicator `rounded-tl-sm` (rotated corner) |
+| progress | Indicator offset through `--progress-offset`, mirrored under `rtl:` |
+| sidebar | `side="start" \| "end"` (default `start`) resolved with `useDirection`; `data-side` stays physical; inset margins by `data-side`; tooltips open away from it; trigger icon follows its side |
+| switch | Thumb translate mirrored under `rtl:` |
+| textarea, bubble | `unicode-bidi: plaintext`: what a person writes takes its own direction |
+| toast | Default swipe `["down", "left"]` in right-to-left (toward the nearest edge) |
 
 ## UI labels (translatable component text)
 

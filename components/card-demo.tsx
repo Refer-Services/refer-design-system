@@ -42,7 +42,7 @@ export function CardDemo() {
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                    className="ms-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
                     Forgot your password?
                   </a>
@@ -79,7 +79,7 @@ export function CardDemo() {
             Client requested dashboard redesign with focus on mobile
             responsiveness.
           </p>
-          <ol className="mt-4 flex list-decimal flex-col gap-2 pl-6">
+          <ol className="mt-4 flex list-decimal flex-col gap-2 ps-6">
             <li>New analytics widgets for daily/weekly metrics</li>
             <li>Simplified navigation menu</li>
             <li>Dark mode support</li>
@@ -131,7 +131,7 @@ export function CardDemo() {
           <Badge variant="outline">
             <LandPlotIcon /> 350m²
           </Badge>
-          <div className="ml-auto font-medium tabular-nums">$135,000</div>
+          <div className="ms-auto font-medium tabular-nums">$135,000</div>
         </CardFooter>
       </Card>
       <div className="flex w-full flex-wrap items-start gap-8 md:*:data-[slot=card]:basis-1/4">

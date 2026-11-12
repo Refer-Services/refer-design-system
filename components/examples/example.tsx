@@ -55,7 +55,7 @@ function Example({
             <Button
               variant="ghost"
               size="xs"
-              className="text-muted-foreground ml-auto h-7 px-2.5 text-xs has-[>svg]:pl-2"
+              className="text-muted-foreground ms-auto h-7 px-2.5 text-xs has-[>svg]:ps-2"
               aria-expanded={showCode}
               onClick={() => setShowCode((value) => !value)}
             >

@@ -99,7 +99,7 @@ function TableBasic() {
             <TableHead className="w-[100px]">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead className="text-end">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -108,9 +108,7 @@ function TableBasic() {
               <TableCell className="font-medium">{invoice.invoice}</TableCell>
               <TableCell>{invoice.paymentStatus}</TableCell>
               <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell className="text-right">
-                {invoice.totalAmount}
-              </TableCell>
+              <TableCell className="text-end">{invoice.totalAmount}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -129,7 +127,7 @@ function TableWithFooter() {
             <TableHead className="w-[100px]">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead className="text-end">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -138,16 +136,14 @@ function TableWithFooter() {
               <TableCell className="font-medium">{invoice.invoice}</TableCell>
               <TableCell>{invoice.paymentStatus}</TableCell>
               <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell className="text-right">
-                {invoice.totalAmount}
-              </TableCell>
+              <TableCell className="text-end">{invoice.totalAmount}</TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
+            <TableCell className="text-end">$2,500.00</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
@@ -163,24 +159,24 @@ function TableSimple() {
           <TableRow>
             <TableHead>Name</TableHead>
             <TableHead>Email</TableHead>
-            <TableHead className="text-right">Role</TableHead>
+            <TableHead className="text-end">Role</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
             <TableCell className="font-medium">Sarah Chen</TableCell>
             <TableCell>sarah.chen@acme.com</TableCell>
-            <TableCell className="text-right">Admin</TableCell>
+            <TableCell className="text-end">Admin</TableCell>
           </TableRow>
           <TableRow>
             <TableCell className="font-medium">Marc Rodriguez</TableCell>
             <TableCell>marcus.rodriguez@acme.com</TableCell>
-            <TableCell className="text-right">User</TableCell>
+            <TableCell className="text-end">User</TableCell>
           </TableRow>
           <TableRow>
             <TableCell className="font-medium">Emily Watson</TableCell>
             <TableCell>emily.watson@acme.com</TableCell>
-            <TableCell className="text-right">User</TableCell>
+            <TableCell className="text-end">User</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -196,7 +192,7 @@ function TableWithBadges() {
           <TableRow>
             <TableHead>Task</TableHead>
             <TableHead>Status</TableHead>
-            <TableHead className="text-right">Priority</TableHead>
+            <TableHead className="text-end">Priority</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -207,7 +203,7 @@ function TableWithBadges() {
                 Completed
               </span>
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <span className="inline-flex items-center rounded-full bg-blue-500/10 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-400">
                 High
               </span>
@@ -220,7 +216,7 @@ function TableWithBadges() {
                 In Progress
               </span>
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-400">
                 Medium
               </span>
@@ -233,7 +229,7 @@ function TableWithBadges() {
                 Pending
               </span>
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <span className="inline-flex items-center rounded-full bg-gray-500/10 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-400">
                 Low
               </span>
@@ -253,14 +249,14 @@ function TableWithActions() {
           <TableRow>
             <TableHead>Product</TableHead>
             <TableHead>Price</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
+            <TableHead className="text-end">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
             <TableCell className="font-medium">Wireless Mouse</TableCell>
             <TableCell>$29.99</TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="size-8">
@@ -282,7 +278,7 @@ function TableWithActions() {
           <TableRow>
             <TableCell className="font-medium">Mechanical Keyboard</TableCell>
             <TableCell>$129.99</TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="size-8">
@@ -304,7 +300,7 @@ function TableWithActions() {
           <TableRow>
             <TableCell className="font-medium">USB-C Hub</TableCell>
             <TableCell>$49.99</TableCell>
-            <TableCell className="text-right">
+            <TableCell className="text-end">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon" className="size-8">

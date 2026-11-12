@@ -94,16 +94,16 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center gap-2 rounded-md py-4 text-left text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50",
+          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center gap-2 rounded-md py-4 text-start text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50",
           isIconStart
-            ? "justify-start [&[data-state=open]>svg]:rotate-90"
+            ? "justify-start [&[data-state=open]>svg]:rotate-90 rtl:[&[data-state=open]>svg]:-rotate-90"
             : "justify-between [&[data-state=open]>svg]:rotate-180",
           className
         )}
         {...props}
       >
         {isIconStart && (
-          <ChevronRightIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200" />
+          <ChevronRightIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 transition-transform duration-200 rtl:-scale-x-100" />
         )}
         {children}
         {!isIconStart && (

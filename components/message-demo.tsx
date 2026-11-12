@@ -25,7 +25,7 @@ export function MessageDemo() {
         <MessageContent>
           <MessageHeader>
             <span>Marina Silva</span>
-            <span className="ml-auto font-normal">2m ago</span>
+            <span className="ms-auto font-normal">2m ago</span>
           </MessageHeader>
           <Bubble variant="muted">
             <BubbleContent>

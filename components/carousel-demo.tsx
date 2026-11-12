@@ -52,9 +52,9 @@ export function CarouselDemo() {
         <CarouselNext />
       </Carousel>
       <Carousel className="max-w-sm *:data-[slot=carousel-next]:hidden *:data-[slot=carousel-previous]:hidden *:data-[slot=carousel-next]:md:inline-flex *:data-[slot=carousel-previous]:md:inline-flex">
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ms-1">
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="pl-1 md:basis-1/2">
+            <CarouselItem key={index} className="ps-1 md:basis-1/2">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">

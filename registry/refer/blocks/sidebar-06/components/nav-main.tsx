@@ -30,7 +30,7 @@ export function NavMain({
     }[]
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile, side } = useSidebar()
 
   return (
     <SidebarGroup>
@@ -40,12 +40,14 @@ export function NavMain({
             <SidebarMenuItem>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-                  {item.title} <MoreHorizontal className="ml-auto" />
+                  {item.title} <MoreHorizontal className="ms-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               {item.items?.length ? (
                 <DropdownMenuContent
-                  side={isMobile ? "bottom" : "right"}
+                  side={
+                    isMobile ? "bottom" : side === "right" ? "left" : "right"
+                  }
                   align={isMobile ? "end" : "start"}
                   className="min-w-56 rounded-lg"
                 >

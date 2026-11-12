@@ -598,7 +598,7 @@ function SemanticSwatch({ swatch }: { swatch: Swatch }) {
     <button
       type="button"
       onClick={() => copy(swatch.className)}
-      className="hover:bg-accent rounded-input group flex min-w-0 items-center gap-3 p-1.5 text-left transition-colors"
+      className="hover:bg-accent rounded-input group flex min-w-0 items-center gap-3 p-1.5 text-start transition-colors"
       title={`Copy ${swatch.className}${value ? ` · ${value}` : ""}`}
     >
       <span

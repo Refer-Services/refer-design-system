@@ -35,7 +35,7 @@ export function ItemDemo() {
             <ItemTitle>Your profile has been verified.</ItemTitle>
           </ItemContent>
           <ItemActions>
-            <ChevronRightIcon className="size-4" />
+            <ChevronRightIcon className="size-4 rtl:-scale-x-100" />
           </ItemActions>
         </a>
       </Item>

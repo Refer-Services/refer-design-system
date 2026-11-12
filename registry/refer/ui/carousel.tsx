@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 type CarouselApi = UseEmblaCarouselType[1]
@@ -52,8 +53,11 @@ function Carousel({
   children,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
+  // The reading direction the app gives DirectionProvider: a right-to-left page scrolls from the right.
+  const direction = useDirection()
   const [carouselRef, api] = useEmblaCarousel(
     {
+      direction,
       ...opts,
       axis: orientation === "horizontal" ? "x" : "y",
     },
@@ -78,15 +82,18 @@ function Carousel({
 
   const handleKeyDown = React.useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === "ArrowLeft") {
+      // The arrow that points back is the one toward the start of the line.
+      const back = direction === "rtl" ? "ArrowRight" : "ArrowLeft"
+      const forward = direction === "rtl" ? "ArrowLeft" : "ArrowRight"
+      if (event.key === back) {
         event.preventDefault()
         scrollPrev()
-      } else if (event.key === "ArrowRight") {
+      } else if (event.key === forward) {
         event.preventDefault()
         scrollNext()
       }
     },
-    [scrollPrev, scrollNext]
+    [direction, scrollPrev, scrollNext]
   )
 
   React.useEffect(() => {
@@ -145,7 +152,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
       <div
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "-ms-4" : "-mt-4 flex-col",
           className
         )}
         {...props}
@@ -164,7 +171,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="carousel-item"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "ps-4" : "pt-4",
         className
       )}
       {...props}
@@ -189,7 +196,7 @@ function CarouselPrevious({
       className={cn(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
-          ? "top-1/2 -left-12 -translate-y-1/2"
+          ? "-inset-s-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -197,7 +204,9 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft />
+      <ArrowLeft
+        className={cn(orientation === "horizontal" && "rtl:-scale-x-100")}
+      />
       <span className="sr-only">{labels.previousSlide}</span>
     </Button>
   )
@@ -220,7 +229,7 @@ function CarouselNext({
       className={cn(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
-          ? "top-1/2 -right-12 -translate-y-1/2"
+          ? "-inset-e-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -228,7 +237,9 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight />
+      <ArrowRight
+        className={cn(orientation === "horizontal" && "rtl:-scale-x-100")}
+      />
       <span className="sr-only">{labels.nextSlide}</span>
     </Button>
   )

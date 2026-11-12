@@ -16,8 +16,11 @@ function InputOTP({
   return (
     <OTPInput
       data-slot="input-otp"
+      // A code is a number, and a number reads left to right in Arabic and Hebrew too: the slots stay left to right
+      // (OTPInput passes no props to its container, hence the CSS direction). In right-to-left the row is as wide as
+      // its slots, so the page still puts it at the start of the line.
       containerClassName={cn(
-        "flex items-center gap-2 has-disabled:opacity-50",
+        "flex items-center gap-2 [direction:ltr] has-disabled:opacity-50 rtl:w-fit",
         containerClassName
       )}
       className={cn("disabled:cursor-not-allowed", className)}
@@ -36,6 +39,9 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+// The slots always sit left to right (InputOTP's [direction:ltr]), so their corners and borders are physical: a
+// build that lowers logical classes to :lang() rules (Next 15's dev server, Turbopack) would turn them with the
+// page's language instead.
 function InputOTPSlot({
   index,
   className,

@@ -3,6 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { DirectionSwitch } from "@/components/docs/direction-switch"
 import { ScrollArea, ScrollBar } from "@/registry/refer/ui/scroll-area"
 import {
   Tabs,
@@ -28,10 +29,14 @@ export function ComponentPreview({
 }) {
   return (
     <Tabs defaultValue="preview" className="gap-4">
-      <TabsList>
-        <TabsTrigger value="preview">Preview</TabsTrigger>
-        <TabsTrigger value="code">Code</TabsTrigger>
-      </TabsList>
+      <div className="flex items-center justify-between gap-2">
+        <TabsList>
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
+        </TabsList>
+        {/* Turns the whole page right to left, as an app in Arabic or Hebrew does. */}
+        <DirectionSwitch />
+      </div>
       <TabsContent value="preview">
         {/* Demos fit the stage width (w-full children wrap or truncate). A demo wider than the stage scrolls from its
             start instead of being cut (justify-center-safe); padding stays inside so shadows aren't clipped. */}

@@ -34,7 +34,7 @@ export function NavFavorites({
     emoji: string
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile, side } = useSidebar()
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -57,7 +57,7 @@ export function NavFavorites({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-56 rounded-lg"
-                side={isMobile ? "bottom" : "right"}
+                side={isMobile ? "bottom" : side === "right" ? "left" : "right"}
                 align={isMobile ? "end" : "start"}
               >
                 <DropdownMenuItem>

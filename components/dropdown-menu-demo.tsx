@@ -202,13 +202,13 @@ function DropdownMenuWithAvatar() {
             <AvatarImage src="https://github.com/shadcn.png" alt="Shadcn" />
             <AvatarFallback className="rounded-lg">CN</AvatarFallback>
           </Avatar>
-          <div className="grid flex-1 text-left text-sm leading-tight">
+          <div className="grid flex-1 text-start text-sm leading-tight">
             <span className="truncate font-semibold">shadcn</span>
             <span className="text-muted-foreground truncate text-xs">
               shadcn@example.com
             </span>
           </div>
-          <ChevronsUpDownIcon className="text-muted-foreground ml-auto" />
+          <ChevronsUpDownIcon className="text-muted-foreground ms-auto" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -216,12 +216,12 @@ function DropdownMenuWithAvatar() {
         align="start"
       >
         <DropdownMenuLabel className="p-0 font-normal">
-          <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+          <div className="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" alt="Shadcn" />
               <AvatarFallback className="rounded-lg">CN</AvatarFallback>
             </Avatar>
-            <div className="grid flex-1 text-left text-sm leading-tight">
+            <div className="grid flex-1 text-start text-sm leading-tight">
               <span className="truncate font-semibold">shadcn</span>
               <span className="text-muted-foreground truncate text-xs">
                 shadcn@example.com
@@ -280,12 +280,12 @@ function DropdownMenuAvatarOnly() {
         align="start"
       >
         <DropdownMenuLabel className="p-0 font-normal">
-          <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+          <div className="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
             <Avatar>
               <AvatarImage src="https://github.com/leerob.png" alt="leerob" />
               <AvatarFallback className="rounded-lg">LR</AvatarFallback>
             </Avatar>
-            <div className="grid flex-1 text-left text-sm leading-tight">
+            <div className="grid flex-1 text-start text-sm leading-tight">
               <span className="truncate font-semibold">leerob</span>
               <span className="text-muted-foreground truncate text-xs">
                 leerob@example.com

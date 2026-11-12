@@ -42,7 +42,9 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 1. Implement it under `registry/refer/ui/` (or `blocks/`, `charts/`, `hooks/`, `lib/` as appropriate).
 2. Add or update its entry in `scripts/build-registry.mts`. List every Refer component or hook it imports in
    `registryDependencies` by bare name (`"button"`): the build turns them into Refer URLs (a bare name would
-   otherwise install shadcn's own component) and fails on an undeclared import or an unknown name.
+   otherwise install shadcn's own component) and fails on an undeclared import or an unknown name. List every npm
+   package it imports in `dependencies` too: the build fails on one it doesn't list, except what `shadcn init`
+   installs in every app (`react`, `next`, `lucide-react`, `class-variance-authority`, `clsx`, `tailwind-merge`).
 3. Run `npm run registry:build`.
 4. Optionally add a `*-demo.tsx` in `components/` and wire it into the relevant `app/(app)/` route.
 
@@ -80,6 +82,35 @@ each component must keep, which `data-slot`s the apps target, and what was skipp
   `rounded-lg` media). Check it whenever a rounded element sits inside another.
 - Icons from `lucide-react`; rely on `[&_svg:not([class*='size-'])]:size-4` for default icon sizing.
 - Import registry primitives from `@/registry/refer/ui/...`, **not** `@/components/ui`.
+- **Start and end, not left and right.** The apps read right to left in Arabic, Hebrew, Persian and Urdu. Write
+  `ms/me`, `ps/pe`, `inset-s/e`, `text-start/end`, `rounded-s/e` (`ss/se/es/ee`), `border-s/e`; `gap`, `space-x`,
+  `justify-*` and `inset-x` already follow the direction. `scripts/port-shadcn-example.py --logical <file>` converts
+  a file and lists what it leaves to you. Physical on purpose, and why:
+  - `left-1/2` / `left-[50%]` with their `-translate-x-1/2`: they centre in either direction.
+  - A class under a variant that names a side (`data-[side=left]:`, `data-[swipe-direction=right]:`,
+    `[[data-side=left]_&]:`): it follows the side a popover, sheet or drawer was put on.
+  - Sides chosen by name: Sheet's `side`, Drawer's `swipeDirection`, the sidebar's `data-side` (its `side` prop takes
+    `"start" | "end"` and resolves to one).
+  - A corner that `rotate-45` turns into a tip (the navigation menu's indicator).
+  - A row fixed left to right: InputOTP's slots (`[direction:ltr]`, a code reads left to right everywhere).
+- **What moves turns too.** A translate or inline transform along a side gets its `rtl:` mirror (the Switch thumb;
+  Progress through `--progress-offset`). An icon that means next or back takes `rtl:-scale-x-100`; if it also rotates
+  (a chevron that opens), counter-rotate it under `rtl:` (`rtl:[&[data-state=open]>svg]:-rotate-90`), since scale and
+  rotate compose; if it scales on hover, swap the icon from `useDirection` instead (the hover scale would undo the
+  mirror). ArrowLeft and ArrowRight that mean back and forward swap in right-to-left.
+- **The direction in code** comes from `useDirection` in `@/registry/refer/ui/direction` (list `"direction"` in
+  `registryDependencies`), never from `@radix-ui/react-direction` or Base UI directly. An app wraps its tree in that
+  item's `DirectionProvider`, which feeds Radix and Base UI, and needs a single copy of `@radix-ui/react-direction`
+  (`npm ls @radix-ui/react-direction`; each copy has its own context; see `overrides` in `package.json`).
+- **`lang` goes with `dir`.** Next 15's dev server (Turbopack, with Next 15's old default browser targets) writes
+  logical classes as `:lang(ar), :lang(he)…` rules, so there they follow the page's language, not its `dir`
+  (`next build` and Next 16 keep them logical). A right-to-left page sets both; a box fixed left to right inside one
+  uses physical classes.
+- **What people write reads in its own direction:** `[unicode-bidi:plaintext]` on fields and messages (Textarea,
+  BubbleContent), not `dir="auto"`, which turns an empty field left to right and flips the element's own logical
+  corners. A name or other user text inside a translated sentence goes in `<bdi>`, so its letters don't reorder the
+  sentence around it: `Sent to <bdi>{name}</bdi>`.
+- Check a change with the LTR/RTL switch on any preview of the docs site.
 
 ## Design tokens
 
@@ -112,6 +143,11 @@ What consuming apps (portal, landing, argus, partners) install, and the rules th
 - Semantic colors: `primary-content`, `primary-subtle`, `primary-border`, `destructive-subtle`, `destructive-content`, `positive`, `positive-subtle`, `positive-content`, `info`, `info-subtle`, `info-content`, `border-high`, `border-low`
 - Shadows: `shadow-card`, `shadow-popover`, `shadow-avatar`
 - Radii: `radius-input`, `radius-card`
+- Fonts: `--font-sans` is `--font-arabic`, `--font-hebrew`, the brand font, `--font-script` (the apps' system fonts per
+  script), `sans-serif`. Arabic and Hebrew come first because their faces cover only their own letters, and
+  next/font's "Geist Fallback" (a local Arial) would draw them otherwise. The faces are declared by the app: here
+  `app/fonts.css` with `app/fonts/` (an app copies both and imports the CSS); without them the names match no font.
+  In Arabic-script languages the `tracking-*` scale is 0 (it pulls joined letters apart).
 - Motion: `scale-pressed`, `ease-smooth`
 
 ## Formatting

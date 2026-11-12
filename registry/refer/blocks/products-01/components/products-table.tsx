@@ -117,15 +117,15 @@ export function ProductsTable({
         <Table>
           <TableHeader className="bg-muted/50">
             <TableRow className="!border-0">
-              <TableHead className="w-12 rounded-l-lg px-4">
+              <TableHead className="w-12 rounded-s-lg px-4">
                 <Checkbox />
               </TableHead>
               <TableHead>Product</TableHead>
-              <TableHead className="text-right">Price</TableHead>
-              <TableHead className="text-right">Stock</TableHead>
+              <TableHead className="text-end">Price</TableHead>
+              <TableHead className="text-end">Stock</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Date Added</TableHead>
-              <TableHead className="rounded-r-lg" />
+              <TableHead className="rounded-e-lg" />
             </TableRow>
           </TableHeader>
           <TableBody className="**:data-[slot=table-cell]:py-2.5">
@@ -135,10 +135,10 @@ export function ProductsTable({
                   <Checkbox />
                 </TableCell>
                 <TableCell className="font-medium">{product.name}</TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-end">
                   ${product.price.toFixed(2)}
                 </TableCell>
-                <TableCell className="text-right">{product.stock}</TableCell>
+                <TableCell className="text-end">{product.stock}</TableCell>
                 <TableCell>
                   <Badge
                     variant="secondary"

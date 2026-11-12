@@ -32,7 +32,7 @@ export function UsagePanel({ name }: { name: string }) {
                   {appLabels[app] ?? app}
                 </span>
                 <Badge variant={badge.variant}>{badge.label}</Badge>
-                <span className="text-muted-foreground ml-auto tabular-nums">
+                <span className="text-muted-foreground ms-auto tabular-nums">
                   {appUsage.files.length === 0
                     ? "Not imported"
                     : `${appUsage.files.length} ${appUsage.files.length === 1 ? "file" : "files"}`}

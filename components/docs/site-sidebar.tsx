@@ -122,7 +122,7 @@ function NavLink({
           {isNew && (
             <span
               aria-label="New"
-              className="bg-primary ml-auto size-1.5 rounded-full"
+              className="bg-primary ms-auto size-1.5 rounded-full"
             />
           )}
         </Link>
