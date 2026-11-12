@@ -201,6 +201,7 @@
       ],
       "registryDependencies": [
         "https://ds.tryrefer.com/r/refer/button.json",
+        "https://ds.tryrefer.com/r/refer/direction.json",
         "https://ds.tryrefer.com/r/refer/ui-labels.json"
       ],
       "files": [

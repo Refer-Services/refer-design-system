@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDirection } from "@radix-ui/react-direction"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
@@ -9,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 type CarouselApi = UseEmblaCarouselType[1]
@@ -53,7 +53,7 @@ function Carousel({
   children,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
-  // The reading direction the app gives Radix (DirectionProvider): a right-to-left page scrolls from the right.
+  // The reading direction the app gives DirectionProvider: a right-to-left page scrolls from the right.
   const direction = useDirection()
   const [carouselRef, api] = useEmblaCarousel(
     {

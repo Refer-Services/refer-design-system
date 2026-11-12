@@ -42,7 +42,9 @@ After any change under `registry/refer/**` or `scripts/build-registry.mts`, run 
 1. Implement it under `registry/refer/ui/` (or `blocks/`, `charts/`, `hooks/`, `lib/` as appropriate).
 2. Add or update its entry in `scripts/build-registry.mts`. List every Refer component or hook it imports in
    `registryDependencies` by bare name (`"button"`): the build turns them into Refer URLs (a bare name would
-   otherwise install shadcn's own component) and fails on an undeclared import or an unknown name.
+   otherwise install shadcn's own component) and fails on an undeclared import or an unknown name. List every npm
+   package it imports in `dependencies` too: the build fails on one it doesn't list, except what `shadcn init`
+   installs in every app (`react`, `next`, `lucide-react`, `class-variance-authority`, `clsx`, `tailwind-merge`).
 3. Run `npm run registry:build`.
 4. Optionally add a `*-demo.tsx` in `components/` and wire it into the relevant `app/(app)/` route.
 

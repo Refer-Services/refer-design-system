@@ -257,7 +257,7 @@ export const Index: Record<string, any> = {
     name: "carousel",
     description: "Embla-based carousel with previous/next controls.",
     type: "registry:ui",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/direction.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
     files: [{
       path: "registry/ui/carousel.tsx",
       type: "registry:ui",
