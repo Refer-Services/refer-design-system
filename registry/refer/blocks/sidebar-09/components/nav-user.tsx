@@ -35,7 +35,7 @@ export function NavUser({
     avatar: string
   }
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile, side } = useSidebar()
 
   return (
     <SidebarMenu>
@@ -59,7 +59,7 @@ export function NavUser({
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
-            side={isMobile ? "bottom" : "right"}
+            side={isMobile ? "bottom" : side === "right" ? "left" : "right"}
             align="end"
             sideOffset={4}
           >

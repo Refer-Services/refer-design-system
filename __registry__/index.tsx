@@ -1034,9 +1034,9 @@ export const Index: Record<string, any> = {
   },
   "sidebar": {
     name: "sidebar",
-    description: "Composable, collapsible app sidebar.",
+    description: "Composable, collapsible app sidebar; its side (start or end) follows the reading direction.",
     type: "registry:ui",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/direction.json","https://ds.tryrefer.com/r/refer/separator.json","https://ds.tryrefer.com/r/refer/sheet.json","https://ds.tryrefer.com/r/refer/tooltip.json","https://ds.tryrefer.com/r/refer/input.json","https://ds.tryrefer.com/r/refer/use-mobile.json","https://ds.tryrefer.com/r/refer/skeleton.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
     files: [{
       path: "registry/ui/sidebar.tsx",
       type: "registry:ui",

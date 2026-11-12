@@ -31,7 +31,7 @@ export default function Page() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <SidebarTrigger className="ms-auto -me-1 rotate-180" />
+          <SidebarTrigger side="end" className="ms-auto -me-1" />
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -42,7 +42,7 @@ export default function Page() {
           <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
         </div>
       </SidebarInset>
-      <AppSidebar side="right" />
+      <AppSidebar side="end" />
     </SidebarProvider>
   )
 }

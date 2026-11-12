@@ -151,7 +151,7 @@ without a new reason. "Pending" is upstream change still to bring in, with its w
 | select | `position="item-aligned"`, `rounded-input`, sizes xs–lg, primary highlight, `rounded-card shadow-popover`; trigger `bg-card` like Input (upstream's `bg-transparent` came later in the class string and won over it until 2026-10-27); hover and press like the outline Button (`hover:bg-background`, `active:bg-stone-100`, dark `hover:bg-accent`), also on native-select (the old `hover:bg-accent` turned the field almost transparent in light mode) | Upstream trigger/item styles | Done in W1 (`align`, indicator slot) |
 | separator | — | — | Done: `data-slot="separator"` (upstream name; was `separator-root`). Portal's `PublicJobDescription.tsx` hides it with a selector that matches both names; drop `separator-root` there after the sync |
 | sheet | — | — | Done in W2: `showCloseButton` on content |
-| sidebar | No `cssVars`/`tailwind` in the item | — | Done in W1 (`var()` ring, type-only import) |
+| sidebar | No `cssVars`/`tailwind` in the item; `side` takes `"start" \| "end"` (default `"start"`, resolved to left or right with `useDirection`; `"left" \| "right"` still work) and `data-side` stays the physical side, so `data-[side=left]` selectors keep working; `SidebarInset`'s inset margins follow `data-side`; `SidebarMenuSub` `border-s` with its 1px nudge mirrored; icon-mode tooltips open away from the sidebar; `useSidebar()` also returns that `side`; `SidebarTrigger` takes `side` for its icon (`PanelLeftIcon`/`PanelRightIcon`) | Upstream `side` default `"left"` | Done in W1 (`var()` ring, type-only import) |
 | slider | — | — | Optional: thumb `bg-white` (check in visual QA) |
 | sonner | `borderRadius: 12px`, `backdropFilter: blur(24px)` | — | W4: default lucide icons on every toast (changes app visuals) |
 | switch | Custom geometry (22×40 track, press stretch) | — | W4: `size="sm"` on a Refer scale; add a focus-visible ring (missing today) |
@@ -183,7 +183,7 @@ variants, subcomponents, defaults; class-only differences ignored). From the nex
 | dropdown-menu | `DropdownMenuContent` default `align="start"` (was center) | Behavior: moves every app dropdown; don't take as default |
 | badge | `ghost`, `link` variants | Skipped before (no use case) |
 | resizable, chart | react-resizable-panels v4, Recharts v3 | Wave 5 |
-| sidebar | `dir` (RTL) | Skip |
+| sidebar | `dir` (RTL) | Done our way (2026-11-12, PR #17): upstream passes `dir` to the mobile Sheet and leaves left/right to the app (its CLI rewrites classes to logical at install); ours resolves `side="start" \| "end"` from `useDirection` (see the ledger) |
 
 Upstream `bases` has no `form` (it points to `field`). Ours only: `form`, `toast`, `checkbox-boxed`,
 `radio-group-boxed`, `responsive-dialog`.

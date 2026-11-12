@@ -706,7 +706,8 @@ const registry = {
     },
     {
       name: "sidebar",
-      description: "Composable, collapsible app sidebar.",
+      description:
+        "Composable, collapsible app sidebar; its side (start or end) follows the reading direction.",
       type: "registry:ui",
       dependencies: [
         "@radix-ui/react-slot",
@@ -715,6 +716,7 @@ const registry = {
       ],
       registryDependencies: [
         "button",
+        "direction",
         "separator",
         "sheet",
         "tooltip",

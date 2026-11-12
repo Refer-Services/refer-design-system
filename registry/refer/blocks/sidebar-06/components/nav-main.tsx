@@ -30,7 +30,7 @@ export function NavMain({
     }[]
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile, side } = useSidebar()
 
   return (
     <SidebarGroup>
@@ -45,7 +45,9 @@ export function NavMain({
               </DropdownMenuTrigger>
               {item.items?.length ? (
                 <DropdownMenuContent
-                  side={isMobile ? "bottom" : "right"}
+                  side={
+                    isMobile ? "bottom" : side === "right" ? "left" : "right"
+                  }
                   align={isMobile ? "end" : "start"}
                   className="min-w-56 rounded-lg"
                 >
