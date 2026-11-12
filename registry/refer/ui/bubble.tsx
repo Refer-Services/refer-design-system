@@ -70,10 +70,12 @@ function BubbleContent({
   const Comp = asChild ? Slot : "div"
 
   return (
+    // A message reads in its own direction (unicode-bidi: plaintext, paragraph by paragraph), while the bubble keeps
+    // the page's: dir="auto" would also turn its logical corners around for a message in the other direction.
     <Comp
       data-slot="bubble-content"
       className={cn(
-        "w-fit max-w-full min-w-0 overflow-hidden rounded-2xl rounded-es-md border border-transparent px-3.5 py-2.5 text-sm leading-relaxed wrap-break-word group-data-[align=end]/bubble:self-end group-data-[align=end]/bubble:rounded-ee-md group-data-[align=end]/bubble:rounded-es-2xl group-data-[align=end]/message:rounded-ee-md group-data-[align=end]/message:rounded-es-2xl [button]:text-start [button,a]:transition-colors",
+        "w-fit max-w-full min-w-0 overflow-hidden rounded-2xl rounded-es-md border border-transparent px-3.5 py-2.5 text-sm leading-relaxed wrap-break-word [unicode-bidi:plaintext] group-data-[align=end]/bubble:self-end group-data-[align=end]/bubble:rounded-ee-md group-data-[align=end]/bubble:rounded-es-2xl group-data-[align=end]/message:rounded-ee-md group-data-[align=end]/message:rounded-es-2xl [button]:text-start [button,a]:transition-colors",
         className
       )}
       {...props}
