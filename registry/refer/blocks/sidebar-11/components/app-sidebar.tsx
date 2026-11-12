@@ -123,7 +123,7 @@ function Tree({ item }: { item: string | any[] }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton>
-            <ChevronRight className="transition-transform" />
+            <ChevronRight className="transition-transform rtl:-scale-x-100" />
             <Folder />
             {name}
           </SidebarMenuButton>

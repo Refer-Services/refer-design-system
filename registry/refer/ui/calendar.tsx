@@ -85,7 +85,7 @@ function Calendar({
           "font-medium select-none",
           captionLayout === "label"
             ? "text-sm font-semibold"
-            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pr-1 pl-2 text-sm [&>svg]:size-3.5",
+            : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pe-1 ps-2 text-sm [&>svg]:size-3.5",
           defaultClassNames.caption_label
         ),
         month_grid: cn("w-full border-collapse", defaultClassNames.month_grid),
@@ -104,19 +104,19 @@ function Calendar({
           defaultClassNames.week_number
         ),
         day: cn(
-          "group/day relative aspect-square h-full w-full p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-r-input",
+          "group/day relative aspect-square h-full w-full p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-e-input",
           props.showWeekNumber
-            ? "[&:nth-child(2)[data-selected=true]_button]:rounded-l-input"
-            : "[&:first-child[data-selected=true]_button]:rounded-l-input",
+            ? "[&:nth-child(2)[data-selected=true]_button]:rounded-s-input"
+            : "[&:first-child[data-selected=true]_button]:rounded-s-input",
           defaultClassNames.day
         ),
         range_start: cn(
-          "bg-primary-subtle rounded-l-input",
+          "bg-primary-subtle rounded-s-input",
           defaultClassNames.range_start
         ),
         range_middle: cn("rounded-none", defaultClassNames.range_middle),
         range_end: cn(
-          "bg-primary-subtle rounded-r-input",
+          "bg-primary-subtle rounded-e-input",
           defaultClassNames.range_end
         ),
         today: cn("data-[selected=true]:rounded-none", defaultClassNames.today),

@@ -123,7 +123,7 @@ function DialogContent({
         {showCloseButton && (
           <DialogPrimitive.Close
             data-slot="dialog-close"
-            className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
+            className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute inset-e-3.5 top-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
           >
             <XIcon />
             <span className="sr-only">{closeLabel ?? labels.close}</span>
@@ -357,7 +357,7 @@ function DialogContentWithNavigation({
           {showCloseButton && (
             <DialogPrimitive.Close
               data-slot="dialog-close"
-              className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
+              className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute inset-e-3.5 top-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
             >
               <XIcon />
               <span className="sr-only">{closeLabel ?? labels.close}</span>
@@ -393,7 +393,7 @@ function DialogContentWithNavigation({
                 label={previousLabel ?? labels.previous}
                 onClick={onPrevious}
                 disabled={false}
-                className="absolute top-1/2 left-[-120px] hidden -translate-y-1/2 sm:flex"
+                className="absolute inset-s-[-120px] top-1/2 hidden -translate-y-1/2 sm:flex"
               />
             )}
 
@@ -404,7 +404,7 @@ function DialogContentWithNavigation({
                 onClick={onNext}
                 disabled={false}
                 loading={isLoadingNext}
-                className="absolute top-1/2 right-[-120px] hidden -translate-y-1/2 sm:flex"
+                className="absolute inset-e-[-120px] top-1/2 hidden -translate-y-1/2 sm:flex"
               />
             )}
 
@@ -413,7 +413,7 @@ function DialogContentWithNavigation({
             {showCloseButton && (
               <DialogPrimitive.Close
                 data-slot="dialog-close"
-                className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute top-3.5 right-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
+                className="ring-offset-card focus:ring-ring bg-border/60 hover:bg-border [&_svg:not([class*='size-'])]:text-muted-foreground/90 hover:[&_svg:not([class*='size-'])]:text-foreground/80 active:bg-muted absolute inset-e-3.5 top-3.5 rounded-full p-1.5 transition-all duration-200 ease-out hover:scale-[1.05] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden active:scale-90 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5"
               >
                 <XIcon />
                 <span className="sr-only">{closeLabel ?? labels.close}</span>

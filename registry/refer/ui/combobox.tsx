@@ -180,7 +180,7 @@ function ComboboxItem({
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       className={cn(
-        "group data-highlighted:bg-primary/85 data-highlighted:active:bg-primary/65 data-highlighted:text-primary-foreground data-highlighted:[&_svg]:text-primary-foreground rounded-input my-0.5 gap-2 py-1.5 pr-8 pl-2 text-sm last:my-0 [&_svg:not([class*='size-'])]:size-4",
+        "group data-highlighted:bg-primary/85 data-highlighted:active:bg-primary/65 data-highlighted:text-primary-foreground data-highlighted:[&_svg]:text-primary-foreground rounded-input my-0.5 gap-2 py-1.5 ps-2 pe-8 text-sm last:my-0 [&_svg:not([class*='size-'])]:size-4",
         "relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         "data-selected:bg-primary/10 data-selected:text-primary-content data-selected:[&_svg]:text-primary-content data-highlighted:data-selected:bg-primary/85 data-highlighted:data-selected:active:bg-primary/70 data-highlighted:data-selected:text-primary-foreground data-highlighted:data-selected:[&_svg]:text-primary-foreground data-selected:font-medium data-selected:shadow-[inset_0_1px_1px_rgba(191,66,59,.12)] data-highlighted:data-selected:font-normal data-highlighted:data-selected:shadow-[inset_0_1px_1px_rgba(0,0,0,.16)]",
         className
@@ -191,10 +191,10 @@ function ComboboxItem({
       <ComboboxPrimitive.ItemIndicator
         data-slot="combobox-item-indicator"
         render={
-          <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center" />
+          <span className="pointer-events-none absolute inset-e-2 flex size-4 items-center justify-center" />
         }
       >
-        <Check className="-mr-px size-[13px] stroke-3" />
+        <Check className="-me-px size-[13px] stroke-3" />
       </ComboboxPrimitive.ItemIndicator>
     </ComboboxPrimitive.Item>
   )
@@ -284,7 +284,7 @@ function ComboboxChip({
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
       className={cn(
-        "bg-secondary/10 text-foreground has-data-[slot=combobox-chip-remove]:hover:shadow-avatar has-data-[slot=combobox-chip-remove]:hover:bg-secondary/12 flex h-6 w-fit cursor-default items-center justify-center gap-1 rounded-md px-[7px] text-xs font-medium whitespace-nowrap transition-all duration-150 has-data-[slot=combobox-chip-remove]:rounded-r-xl has-data-[slot=combobox-chip-remove]:pr-0",
+        "bg-secondary/10 text-foreground has-data-[slot=combobox-chip-remove]:hover:shadow-avatar has-data-[slot=combobox-chip-remove]:hover:bg-secondary/12 flex h-6 w-fit cursor-default items-center justify-center gap-1 rounded-md px-[7px] text-xs font-medium whitespace-nowrap transition-all duration-150 has-data-[slot=combobox-chip-remove]:rounded-e-xl has-data-[slot=combobox-chip-remove]:pe-0",
         "has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50",
         className
       )}
@@ -294,9 +294,9 @@ function ComboboxChip({
       {showRemove && (
         <ComboboxPrimitive.ChipRemove
           render={
-            <Button variant="ghost" size="icon" className="mr-[3px] size-4" />
+            <Button variant="ghost" size="icon" className="me-[3px] size-4" />
           }
-          className="-ml-[3px] opacity-50 hover:opacity-100"
+          className="-ms-[3px] opacity-50 hover:opacity-100"
           data-slot="combobox-chip-remove"
         >
           <X className="pointer-events-none size-3" />
