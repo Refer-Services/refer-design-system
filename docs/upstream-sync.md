@@ -368,6 +368,34 @@ else imports it. argus, landing and partners don't use drawer; skip them.
   false` at 390px.
 - Not done: `combobox.tsx` still says "vaul Drawer" in a comment (left to avoid an app sync for a comment).
 
+## Right to left (PR #17)
+
+The apps read right to left in Arabic, Hebrew, Persian and Urdu, and the DS is written so a component follows the
+reader without the app doing anything but `<html dir lang>` and the `direction` item's `DirectionProvider`. Upstream
+gets there differently: its CLI rewrites physical classes to logical ones at install time (`rtl` option, `cn-rtl-flip`
+on icons) and its sidebar takes a `dir` prop; our source is already logical, so that rewrite has nothing to do here.
+The rules, and what stays physical and why, are in CLAUDE.md (Component conventions).
+
+When porting from upstream: run `python3 scripts/port-shadcn-example.py --logical <file>` on the ported file and
+deal with what it lists (a class list that also moves by a side, a rotated corner, a rotate next to an rtl: flip, an
+icon without `rtl:-scale-x-100`, a physical inline style); then open the component with the docs' LTR/RTL switch.
+
+| Component | Right-to-left behavior (Refer) |
+|---|---|
+| direction | `DirectionProvider` feeds Radix and Base UI (`@base-ui/react/direction-provider`); `useDirection` is the one the components read |
+| accordion, trace, sidebar blocks | Chevrons that turn 90° when open counter-rotate under `rtl:` (the mirror and the rotation compose) |
+| carousel | Embla `direction` and the arrow keys follow the reader; arrows mirrored only when horizontal |
+| calendar | `dir` passed to react-day-picker (its arrow keys read it); the chevrons' `rtl:` rotate-180 stays except with `navLayout="around"`, where DayPicker turns them itself |
+| dialog | `NavigationArrow` picks ArrowLeft/ArrowRight from the direction; ←/→ swap |
+| input | `type="email"`, `url`, `tel` are `dir="ltr"` |
+| input-otp | Container `[direction:ltr]`, slots with physical corners; `rtl:w-fit` keeps the row at the start of the line |
+| navigation-menu | Content `inset-s-0 pe-2.5`; motion (`data-motion`) stays physical (Radix reverses the items first); indicator `rounded-tl-sm` (rotated corner) |
+| progress | Indicator offset through `--progress-offset`, mirrored under `rtl:` |
+| sidebar | `side="start" \| "end"` (default `start`) resolved with `useDirection`; `data-side` stays physical; inset margins by `data-side`; tooltips open away from it; trigger icon follows its side |
+| switch | Thumb translate mirrored under `rtl:` |
+| textarea, bubble | `unicode-bidi: plaintext`: what a person writes takes its own direction |
+| toast | Default swipe `["down", "left"]` in right-to-left (toward the nearest edge) |
+
 ## UI labels (translatable component text)
 
 The text components render on their own (screen-reader names, aria-labels, default button text) comes from
