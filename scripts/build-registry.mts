@@ -315,9 +315,9 @@ const registry = {
     {
       name: "direction",
       description:
-        "DirectionProvider and useDirection for right-to-left layouts.",
+        "DirectionProvider (gives the reading direction to Radix and Base UI) and useDirection for right-to-left layouts.",
       type: "registry:ui",
-      dependencies: ["@radix-ui/react-direction"],
+      dependencies: ["@radix-ui/react-direction", "@base-ui/react"],
       files: [
         {
           path: "ui/direction.tsx",

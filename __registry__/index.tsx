@@ -445,7 +445,7 @@ export const Index: Record<string, any> = {
   },
   "direction": {
     name: "direction",
-    description: "DirectionProvider and useDirection for right-to-left layouts.",
+    description: "DirectionProvider (gives the reading direction to Radix and Base UI) and useDirection for right-to-left layouts.",
     type: "registry:ui",
     registryDependencies: undefined,
     files: [{
