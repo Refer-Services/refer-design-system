@@ -96,7 +96,7 @@ function AccordionTrigger({
         className={cn(
           "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center gap-2 rounded-md py-4 text-start text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50",
           isIconStart
-            ? "justify-start [&[data-state=open]>svg]:rotate-90"
+            ? "justify-start [&[data-state=open]>svg]:rotate-90 rtl:[&[data-state=open]>svg]:-rotate-90"
             : "justify-between [&[data-state=open]>svg]:rotate-180",
           className
         )}

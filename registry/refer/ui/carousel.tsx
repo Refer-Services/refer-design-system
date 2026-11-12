@@ -204,7 +204,9 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="rtl:-scale-x-100" />
+      <ArrowLeft
+        className={cn(orientation === "horizontal" && "rtl:-scale-x-100")}
+      />
       <span className="sr-only">{labels.previousSlide}</span>
     </Button>
   )
@@ -235,7 +237,9 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="rtl:-scale-x-100" />
+      <ArrowRight
+        className={cn(orientation === "horizontal" && "rtl:-scale-x-100")}
+      />
       <span className="sr-only">{labels.nextSlide}</span>
     </Button>
   )

@@ -118,7 +118,7 @@ function TraceCollapsibleTrigger({
       {...props}
     >
       {children}
-      <TraceIcon className="transition-transform group-aria-expanded/trace-collapsible-trigger:rotate-90">
+      <TraceIcon className="transition-transform group-aria-expanded/trace-collapsible-trigger:rotate-90 rtl:group-aria-expanded/trace-collapsible-trigger:-rotate-90">
         <ChevronRightIcon className="rtl:-scale-x-100" />
       </TraceIcon>
     </CollapsibleTrigger>

@@ -39,7 +39,7 @@ export function Calendars({
               >
                 <CollapsibleTrigger>
                   {calendar.name}{" "}
-                  <ChevronRight className="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-90 rtl:-scale-x-100" />
+                  <ChevronRight className="ms-auto transition-transform group-data-[state=open]/collapsible:rotate-90 rtl:-scale-x-100 rtl:group-data-[state=open]/collapsible:-rotate-90" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
               <CollapsibleContent>
