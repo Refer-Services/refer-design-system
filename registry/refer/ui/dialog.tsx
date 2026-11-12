@@ -6,6 +6,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { XIcon, ArrowLeft, ArrowRight, Loader2Icon } from "lucide-react"
 
 import { Button } from "@/registry/refer/ui/button"
+import { useDirection } from "@/registry/refer/ui/direction"
 import { useUILabels } from "@/registry/refer/ui/ui-labels"
 
 // Inside a Drawer (Base UI), Radix's Title, Description and Close have no Dialog to attach to: the Drawer provides its
@@ -208,6 +209,7 @@ function DialogDescription({
 }
 
 interface NavigationArrowProps {
+  /** "left" is the previous arrow, "right" the next one; in a right-to-left page each points the other way. */
   direction: "left" | "right"
   label: string
   onClick?: () => void
@@ -224,7 +226,11 @@ function NavigationArrow({
   loading = false,
   className,
 }: NavigationArrowProps) {
-  const Icon = direction === "left" ? ArrowLeft : ArrowRight
+  // The icon component changes rather than mirroring with rtl:-scale-x-100: its hover and focus scale-115 write the
+  // same scale and would turn it back.
+  const readingDirection = useDirection()
+  const pointsLeft = (direction === "left") !== (readingDirection === "rtl")
+  const Icon = pointsLeft ? ArrowLeft : ArrowRight
 
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation()
@@ -305,16 +311,20 @@ function DialogContentWithNavigation({
   showCloseButton?: boolean
 }) {
   const labels = useUILabels()
+  const readingDirection = useDirection()
 
   React.useEffect(() => {
     if (!showNavigation || !open) return
 
+    // The arrow key that points back is the one toward the start of the line, where the previous arrow sits.
+    const back = readingDirection === "rtl" ? "ArrowRight" : "ArrowLeft"
+    const forward = readingDirection === "rtl" ? "ArrowLeft" : "ArrowRight"
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft" && canGoPrevious && onPrevious) {
+      if (event.key === back && canGoPrevious && onPrevious) {
         event.preventDefault()
         onPrevious()
       } else if (
-        event.key === "ArrowRight" &&
+        event.key === forward &&
         canGoNext &&
         !isLoadingNext &&
         onNext
@@ -329,6 +339,7 @@ function DialogContentWithNavigation({
   }, [
     showNavigation,
     open,
+    readingDirection,
     onPrevious,
     onNext,
     canGoPrevious,

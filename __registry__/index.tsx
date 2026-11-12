@@ -428,7 +428,7 @@ export const Index: Record<string, any> = {
     name: "dialog",
     description: "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
     type: "registry:ui",
-    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
+    registryDependencies: ["https://ds.tryrefer.com/r/refer/button.json","https://ds.tryrefer.com/r/refer/direction.json","https://ds.tryrefer.com/r/refer/ui-labels.json"],
     files: [{
       path: "registry/ui/dialog.tsx",
       type: "registry:ui",

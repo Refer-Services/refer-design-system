@@ -304,7 +304,7 @@ const registry = {
         "Modal dialog with optional built-in close button, sr-only title and prev/next navigation arrows.",
       type: "registry:ui",
       dependencies: ["@radix-ui/react-dialog"],
-      registryDependencies: ["button", "ui-labels"],
+      registryDependencies: ["button", "direction", "ui-labels"],
       files: [
         {
           path: "ui/dialog.tsx",
