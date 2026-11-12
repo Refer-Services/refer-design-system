@@ -572,7 +572,7 @@ export function DataTable({
                 disabled={!table.getCanPreviousPage()}
               >
                 <span className="sr-only">Go to first page</span>
-                <IconChevronsLeft />
+                <IconChevronsLeft className="rtl:-scale-x-100" />
               </Button>
               <Button
                 variant="outline"
@@ -582,7 +582,7 @@ export function DataTable({
                 disabled={!table.getCanPreviousPage()}
               >
                 <span className="sr-only">Go to previous page</span>
-                <IconChevronLeft />
+                <IconChevronLeft className="rtl:-scale-x-100" />
               </Button>
               <Button
                 variant="outline"
@@ -592,7 +592,7 @@ export function DataTable({
                 disabled={!table.getCanNextPage()}
               >
                 <span className="sr-only">Go to next page</span>
-                <IconChevronRight />
+                <IconChevronRight className="rtl:-scale-x-100" />
               </Button>
               <Button
                 variant="outline"
@@ -602,7 +602,7 @@ export function DataTable({
                 disabled={!table.getCanNextPage()}
               >
                 <span className="sr-only">Go to last page</span>
-                <IconChevronsRight />
+                <IconChevronsRight className="rtl:-scale-x-100" />
               </Button>
             </div>
           </div>
